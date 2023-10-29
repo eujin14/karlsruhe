@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +12,8 @@
     <div class="grid_12">
       <h1 class="logo">
         <a href="index.html">
-          LIGHT
-          <span>Modern Church</span>
+         KARLSRUHE
+          <span>칼스루에 한인교회</span>
         </a>
       </h1>
     </div>
@@ -28,11 +28,11 @@
           <div class="navigation">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">Home</a></li>
-               <li><a href="about.html">About</a></li>
-               <li><a href="mission.html">Mission</a></li>
-               <li><a href="membership.html">Membership</a></li>
-               <li><a href="contacts.html">Contacts</a></li>
+               <li class="current"><a href="index.html">홈</a></li>
+               <li><a href="about.html">교회 소개</a></li>
+               <li><a href="mission.html">교회 소식</a></li>
+               <li><a href="membership.html">게시판</a></li>
+               <li><a href="contacts.html">오시는 길</a></li>
              </ul>
             </nav>
             <div class="clear"></div>
@@ -45,9 +45,9 @@
 </header>
 <section class="slider_wrapper">
   <div id="camera_wrap" class="">
-    <div data-src="/resources/images/slide.jpg"></div>
-    <div data-src="/resources/images/slide1.jpg"></div>
-    <div data-src="/resources/images/slide2.jpg"></div>  
+    <div data-src="/resources/images/1.jpg"></div>
+    <div data-src="/resources/images/2.jpg"></div>
+    <div data-src="/resources/images/3.jpg"></div>  
   </div>  
 </section> 
 </body>
