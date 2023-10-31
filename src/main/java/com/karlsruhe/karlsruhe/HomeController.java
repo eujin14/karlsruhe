@@ -34,6 +34,15 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+		
+
 	}
+	
+	@RequestMapping("/main")
+	public String main() {
+		
+		return "main";
+	}
+	
 	
 }
