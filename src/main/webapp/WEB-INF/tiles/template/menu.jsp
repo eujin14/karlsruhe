@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +10,17 @@
 <header>
   <div class="container_12">
     <div class="grid_12">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" role="group" aria-label="Basic outlined example">
+  <button type="button" class="btn btn-outline-danger"><a href="/user/join">회원가입</button>
+  <button type="button" class="btn btn-outline-primary"><a href="/login">로그인</a></button>
+</div>
       <h1 class="logo">
-        <a href="index.html">
-          LIGHT
-          <span>Modern Church</span>
+        <a href="/main">
+         KARLSRUHE
+          <span>칼스루에 한인교회</span>
         </a>
       </h1>
+      
     </div>
     <div class="clear"></div>
   </div>
@@ -28,11 +33,11 @@
           <div class="navigation">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">Home</a></li>
-               <li><a href="about.html">About</a></li>
-               <li><a href="mission.html">Mission</a></li>
-               <li><a href="membership.html">Membership</a></li>
-               <li><a href="contacts.html">Contacts</a></li>
+               <li><a href="about.html">교회 소개</a></li>
+               <li><a href="membership.html">공지사항</a></li>
+               <li><a href="mission.html">예배안내</a></li>
+               <li><a href="contacts.html">게시판</a></li>
+               <li><a href="contacts.html">갤러리</a></li>
              </ul>
             </nav>
             <div class="clear"></div>
@@ -45,9 +50,9 @@
 </header>
 <section class="slider_wrapper">
   <div id="camera_wrap" class="">
-    <div data-src="/resources/images/slide.jpg"></div>
-    <div data-src="/resources/images/slide1.jpg"></div>
-    <div data-src="/resources/images/slide2.jpg"></div>  
+    <div data-src="/resources/images/1.jpg"></div>
+    <div data-src="/resources/images/2.jpg"></div>
+    <div data-src="/resources/images/3.jpg"></div>  
   </div>  
 </section> 
 </body>

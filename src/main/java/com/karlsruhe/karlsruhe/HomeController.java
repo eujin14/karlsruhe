@@ -1,6 +1,7 @@
 package com.karlsruhe.karlsruhe;
 
 
+import java.security.Principal;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -36,6 +37,13 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping("/main")
+	public String main(Model model, Principal principal) {
+		
+		return "main";
+	}
+	
 	
 }
 
