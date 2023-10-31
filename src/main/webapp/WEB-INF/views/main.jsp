@@ -122,25 +122,25 @@ Children</a>
           </div>
           <div class="item">
             <div class="banner">
-              <div class="banner_title">July 25</div>
+              <div class="banner_title">유치부</div>
               <p>The detailed description of the <a href="http://blog.templatemonster.com/free-website-templates/" rel="nofollow" class="color2">freebie</a> is published on the blog. <br><br>
               Find <a href="http://www.templatemonster.com/properties/topic/society-people/" rel="nofollow" class="color2">society &amp; people themes</a> in the same name category at TemplateMonster.com</p>
-              <a href="#" class="owl_link">Read More</a>
+              <a href="#" class="owl_link">바로 가기</a>
             </div>
           </div>
           <div class="item">
             <div class="banner">
-              <div class="banner_title">August 17</div>
+              <div class="banner_title">청소년부</div>
               
               <p>Horem ipsum dolor sit tetur dipiscing elit. In mollis erat mattis neque facilisis, sit wertolio mero dasererat rutrumrem ipsum dolor sit tetur dipiscing elit. In mollis erat mattis neque facilisis</p>
-              <a href="#" class="owl_link">Read More</a>
+              <a href="#" class="owl_link">바로 가기</a>
             </div>
           </div>
           <div class="item">
             <div class="banner">
-              <div class="banner_title">September 10</div>
+              <div class="banner_title">청년부</div>
               <p>Jorem ipsum dolor sit tetur dipiscing elit. In mollis erat mattis neque facilisis, sit wertolio mero dasererat rutrumrem ipsum dolor sit tetur dipiscing elit. In mollis erat mattis neque facilisise </p>
-              <a href="#" class="owl_link">Read More</a>
+              <a href="#" class="owl_link">바로 가기</a>
             </div>
           </div>
         </div>
@@ -153,4 +153,3 @@ Children</a>
 
 </body>
 </html>
-
