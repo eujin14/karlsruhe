@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+
+	<insert id="create" parameterType="hashMap">
+	<![CDATA[
+		INSERT INTO user
+		(username, password, authority, enabled, uname, utel, uemail, uaddr)
+		VALUES
+		(#{username}, #{password}, "ROLE_USER", "1", #{uname}, #{ubirth}, #{ugender}, #{utel}, #{uemail}, #{uaddr})
+	]]>
+	</insert>
+	
+	<select id="memberlist" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			user
+	]]>
+	</select>
+
+	<select id="memberdetail" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			user
+		WHERE 
+			username = #{username}
+	]]>
+	</select>
+
+	<update id="memberupdate" parameterType="hashMap">
+	<![CDATA[
+		UPDATE user
+			SET
+		password = #{password},
+		uname = #{uname},
+		utel = #{utel},
+		uemail = #{uemail}, 
+		uaddr = #{uaddr},
+		uimg = #{uimg}
+			WHERE
+		username = #{username}
+	]]>
+	
+	</update>
+	
+	<delete id="memberdelete" parameterType="String">
+	<![CDATA[
+		DELETE FROM 
+			user
+		WHERE 
+			username = #{username}
+	]]>
+	</delete>
+	
+	<select id="memberexist" parameterType="String" resultType="shop.fran365.users.UsersDTO">
+	<![CDATA[
+		SELECT * FROM 
+			user
+		WHERE 
+			uemail = #{uemail}
+	]]>
+	</select>
+	
+	<select id="getUserDataByUsername" parameterType="String" resultType="Map">
+     <![CDATA[
+        SELECT uname, uposition, udepart, uemail FROM 
+        	user
+        WHERE 
+        	username = #{username}
+     
+     ]]>
+     </select>
+     
+	<select id="unlist" resultType="hashMap">
+<![CDATA[
+	SELECT 
+		username 
+	FROM 
+		user
+]]>
+</select>
+     
+</mapper>
