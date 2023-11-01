@@ -71,13 +71,5 @@
      ]]>
      </select>
      
-	<select id="unlist" resultType="hashMap">
-<![CDATA[
-	SELECT 
-		username 
-	FROM 
-		user
-]]>
-</select>
      
 </mapper>
