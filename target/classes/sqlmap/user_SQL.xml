@@ -53,7 +53,7 @@
 	]]>
 	</delete>
 	
-	<select id="memberexist" parameterType="String" resultType="shop.fran365.users.UsersDTO">
+	<select id="memberexist" parameterType="String" resultType="com.karlsruhe.user.UserDTO">
 	<![CDATA[
 		SELECT * FROM 
 			users
