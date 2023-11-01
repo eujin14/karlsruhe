@@ -2,5 +2,91 @@
 <!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="users">
 
+<insert id="create" parameterType="hashMap">
+<![CDATA[
+	INSERT INTO noti
+	(npid, ntitle, nwriter, ncontent, ncategory, nimage, ncount, npin)
+	VALUES
+	(#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{ncategory}, #{nimage}, #{ncount}, #{npin})
+]]>
+</insert>
+
+<select id="readlist" resultType="hashMap">
+<![CDATA[
+	SELECT * FROM
+		notice
+	WHERE 
+		npid IS NOT NULL
+	ORDER BY 
+		npin DESC , nid DESC
+]]>
+</select>
+
+
+<select id="readdetail" parameterType="String" resultType="hashMap">
+<![CDATA[
+	SELECT * 
+	FROM noti
+	WHERE
+	nno = #{nno}
+]]>
+</select>
+
+<select id="readreply" parameterType="String" resultType="hashMap">
+<![CDATA[
+	SELECT * FROM 
+		noti
+	WHERE
+	    npid = #{npid}
+	ORDER BY 
+		nno DESC
+]]>
+</select>
+
+<update id="update" parameterType="hashMap" >
+<![CDATA[
+	UPDATE noti SET
+	ntitle = #{ntitle},
+	ncontent = #{ncontent},
+	npid = #{npid},
+	nwriter = #{nwriter},
+	ncate = #{ncate},
+	nimage = #{nimage},
+	npin = #{npin}
+	
+	WHERE 
+	nno = #{nno}
+]]>
+</update>
+
+<delete id="delete" parameterType="String" >
+<![CDATA[
+	DELETE FROM noti 
+	WHERE 
+	nno = #{nno}
+]]>
+</delete>
+
+<update id="nlike_Upcount" parameterType="hashMap" >
+	<![CDATA[
+		UPDATE 
+		     noti
+		SET 
+		     nlike = nlike +1
+		WHERE 
+		     nno = #{nno}
+	]]>
+</update>
+<update id="nhate_Upcount" parameterType="hashMap" >
+	<![CDATA[
+		UPDATE 
+		     noti
+		SET      
+		     nhate = nhate +1    
+		WHERE 
+		     nno = #{nno}
+	]]>
+</update>
+
 
 </mapper>
