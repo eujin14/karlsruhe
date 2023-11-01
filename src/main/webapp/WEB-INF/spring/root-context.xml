@@ -4,13 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
  <!-- mysql 연결 설정 -->
-	<!--  <bean id="dataSource"
+	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName"
 			value="com.mysql.cj.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/test?serverTimezone=UTC" />
+			value="jdbc:mysql://localhost:3306/karlsruhe?serverTimezone=UTC" />
 		<property name="username" value="root" />
 		<property name="password" value="0000" />
 	</bean>
@@ -24,7 +24,7 @@
 	<bean id="sqlSessionTemplate"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" /> 
-	</bean>-->
+	</bean>
 
 
 </beans>
