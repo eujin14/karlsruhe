@@ -8,13 +8,13 @@ public interface UsersRepository {
 	
 	void create(Map<String, Object> map); 
 
-	List<Map<String, Object>>memberlist();
+	List<Map<String, Object>>memberList();
 	
-	Map<String, Object> memberdetail(String bid);
+	Map<String, Object> memberDetail(String uno);
 	
 	void memberupdate(Map<String, Object> map);
 	
-	void memberdelete(String username);
+	void memberdelete(String uno);
 	
 	
 	void findUpositionByUsername(String username);

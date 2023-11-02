@@ -5,15 +5,15 @@ import java.util.Map;
 
 public interface UsersService {
 	
-void create(Map<String, Object> map); 
+   void create(Map<String, Object> map); 
 	
-	List<Map<String, Object>>memberlist();
+	List<Map<String, Object>>memberList();
 	
-	Map<String, Object> memberdetail(String bid);
+	Map<String, Object> memberDetail(String uno);
 	
 	void memberupdate(Map<String, Object> map);
 	
-	void memberdelete(String username);
+	void memberdelete(String uno);
 	
 
 	
@@ -22,6 +22,8 @@ void create(Map<String, Object> map);
 	UsersDTO memberexist(String uemail);
 
 	Map<String, Object> getUserDataByUsername(String username);
+
+	
 
 
 }

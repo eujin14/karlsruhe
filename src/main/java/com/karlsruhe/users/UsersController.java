@@ -65,34 +65,29 @@ public class UsersController {
 		return "redirect:/";
 	}
 
-	@GetMapping("/memberlist")
+	@GetMapping("/memberList")
 	public String memberlist(Model model) {
 
-		model.addAttribute("members", usersService.memberlist());
+		model.addAttribute("members", usersService.memberList());
 
-		return "users/memberlist";
+		return "users/memberList";
 	}
 
-	@GetMapping("/membermap")
-	public String membermap(@RequestParam("username") String username, Model model) {
+	
 
-		model.addAttribute("member", usersService.memberdetail(username));
+	@GetMapping("/memberDetail")
+	public String memberdetail(@RequestParam String uno, Model model) {
 
-		return "users/membermap";
+		model.addAttribute("member", usersService.memberDetail(uno));
+
+		return "users/memberDetail";
 	}
-
-	@GetMapping("/memberdetail")
-	public String memberdetail(@RequestParam("username") String username, Model model) {
-
-		model.addAttribute("member", usersService.memberdetail(username));
-
-		return "users/memberdetail";
-	}
+	
 
 	@GetMapping("/memberupdate")
-	public String update(@RequestParam("username") String username, Model model) {
+	public String update(@RequestParam("uno") String uno, Model model) {
 
-		model.addAttribute("member", usersService.memberdetail(username));
+		model.addAttribute("member", usersService.memberDetail(uno));
 
 		return "users/memberupdate";
 	}
@@ -115,18 +110,20 @@ public class UsersController {
 	}
 
 	@GetMapping("/memberdelete")
-	public String delete(@RequestParam("username") String username) {
+	public String delete(@RequestParam String uno) {
 
-		usersService.memberdelete(username);
-		return "redirect:/users/memberlist";
+		usersService.memberdelete(uno);
+		
+		return "redirect:/users/memberList";
 	}
 
 	@PostMapping("/memberdelete")
-	public String deletepost(@RequestParam("username") String username) {
+	public String deletepost(@RequestParam String uno) {
 		// POST 요청 처리 로직
-		usersService.memberdelete(username);
+		usersService.memberdelete(uno);
 		return "redirect:/";
 	}
+	
 
 	@PostMapping("/kakaocheck")
 	public String ajaxkakao(HttpServletRequest req, @RequestParam("uemail") String uemail) {

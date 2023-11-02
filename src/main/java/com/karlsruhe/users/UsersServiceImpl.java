@@ -18,13 +18,13 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public List<Map<String, Object>> memberlist() {
-		return usersRepository.memberlist();
+	public List<Map<String, Object>> memberList() {
+		return usersRepository.memberList();
 	}
 
 	@Override
-	public Map<String, Object> memberdetail(String username) {
-		return usersRepository.memberdetail(username);
+	public Map<String, Object> memberDetail(String uno) {
+		return usersRepository.memberDetail(uno);
 	}
 
 	@Override
@@ -33,8 +33,8 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public void memberdelete(String username) {
-		usersRepository.memberdelete(username);
+	public void memberdelete(String uno) {
+		usersRepository.memberdelete(uno);
 
 	}
 

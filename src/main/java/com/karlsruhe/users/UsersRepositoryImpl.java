@@ -20,13 +20,13 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-	public List<Map<String, Object>> memberlist() {
+	public List<Map<String, Object>> memberList() {
 		return sqlSessionTemplate.selectList("users.memberlist");
 	}
 
 	@Override
-	public Map<String, Object> memberdetail(String username) {
-		return sqlSessionTemplate.selectOne("users.memberdetail", username);
+	public Map<String, Object> memberDetail(String uno) {
+		return sqlSessionTemplate.selectOne("users.memberdetail", uno);
 	}
 
 	@Override
@@ -36,8 +36,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-	public void memberdelete(String username) {
-		sqlSessionTemplate.delete("users.memberdelete", username);
+	public void memberdelete(String uno) {
+		sqlSessionTemplate.delete("users.memberdelete", uno);
 		
 	}
 

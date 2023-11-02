@@ -9,9 +9,11 @@
 
 <br><br>
 <a href="main">phoenix test</a>
+<br>
 
-
-<a href="/users/join">로그인</a>
+<a href="/users/join">회원가입</a>
+<br>
+<a href="/users/memberList">회원목록</a>
 
 
 </body>
