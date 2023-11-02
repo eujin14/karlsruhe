@@ -1,16 +1,15 @@
-package com.karlsruhe.user;
-
+package com.karlsruhe.users;
 
 import java.util.List;
 import java.util.Map;
 
-public interface UserRepository {
+public interface UsersService {
 	
-   void create(Map<String, Object> map); 
+void create(Map<String, Object> map); 
 	
 	List<Map<String, Object>>memberlist();
 	
-	Map<String, Object> memberdetail(String uno);
+	Map<String, Object> memberdetail(String bid);
 	
 	void memberupdate(Map<String, Object> map);
 	
@@ -20,7 +19,7 @@ public interface UserRepository {
 	
 	void getUpositionByUsername(String username);
 
-	UserDTO memberexist(String uemail);
+	UsersDTO memberexist(String uemail);
 
 	Map<String, Object> getUserDataByUsername(String username);
 

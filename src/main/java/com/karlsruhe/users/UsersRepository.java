@@ -1,26 +1,28 @@
-package com.karlsruhe.user;
+package com.karlsruhe.users;
+
 
 import java.util.List;
 import java.util.Map;
 
-public interface UserService {
+public interface UsersRepository {
 	
-    void create(Map<String, Object> map); 
-	
+	void create(Map<String, Object> map); 
+
 	List<Map<String, Object>>memberlist();
 	
-	Map<String, Object> memberdetail(String uno);
+	Map<String, Object> memberdetail(String bid);
 	
 	void memberupdate(Map<String, Object> map);
 	
 	void memberdelete(String username);
 	
-
 	
-	void getUpositionByUsername(String username);
+	void findUpositionByUsername(String username);
+	
 
-	UserDTO memberexist(String uemail);
-
+	UsersDTO memberexist(String uemail);
+	
 	Map<String, Object> getUserDataByUsername(String username);
+
 
 }
