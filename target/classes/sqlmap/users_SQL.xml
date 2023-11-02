@@ -4,7 +4,7 @@
 
 	<insert id="create" parameterType="hashMap">
 	<![CDATA[
-		INSERT INTO user
+		INSERT INTO users
 		(username, password, authority, enabled, uname,  utel, uemail, uaddr)
 		VALUES
 		(#{username}, #{password}, "ROLE_USER", "1", #{uname}, #{utel}, #{uemail}, #{uaddr})

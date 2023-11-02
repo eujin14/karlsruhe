@@ -24,11 +24,20 @@
 	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
 		<beans:property name="order" value="1"/>	
-</beans:bean>
-
-<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	</beans:bean>
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions" value="/WEB-INF/tiles/tiles.xml"/>
-</beans:bean>
+	</beans:bean>
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="1000000"/>
+		<beans:property name="defaultEncoding" value="utf-8"/>
+		<beans:property name="uploadTempDir" ref="uploadDirResource"/>
+	</beans:bean>
+	<beans:bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
+	      <beans:constructor-arg value="/d121034/tomcat/webapps/upload/"/>
+	  </beans:bean>
+   
 	
 	<context:component-scan base-package="com.karlsruhe.*" />
 	
