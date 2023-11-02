@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="users">
+<mapper namespace="guide">
+
+<insert id="create" parameterType="hashMap">
+<![CDATA[
+	INSERT INTO guide
+	(gtitle, gwriter, gcontent, gimage, gcount)
+	VALUES
+	(#{gtitle}, #{gwriter}, #{gcontent}, #{gimage}, #{gcount})
+]]>
+</insert>
+
+<select id="readList" resultType="hashMap">
+<![CDATA[
+	SELECT * FROM
+		guide
+	WHERE 
+		npid IS NOT NULL
+	ORDER BY 
+		gid DESC
+]]>
+</select>
+
+
+<select id="readDetail" parameterType="String" resultType="hashMap">
+<![CDATA[
+	SELECT * 
+	FROM guide
+	WHERE
+	gid = #{gid}
+]]>
+</select>
+
+
+<update id="update" parameterType="hashMap" >
+<![CDATA[
+	UPDATE guide SET
+	gtitle = #{gtitle},
+	gwriter = #{gwriter},
+	gcontent = #{gcontent},
+	gimage = #{gimage},
+	gpin = #{gpin}
+	
+	WHERE 
+	gid = #{gid}
+]]>
+</update>
+
+<delete id="delete" parameterType="String" >
+<![CDATA[
+	DELETE FROM guide
+	WHERE 
+	gid = #{gid}
+]]>
+</delete>
+
 
 
 </mapper>
