@@ -21,7 +21,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 	@Override
 	public List<Map<String, Object>> memberList() {
-		return sqlSessionTemplate.selectList("users.memberlist");
+		return sqlSessionTemplate.selectList("users.memberList");
 	}
 
 	@Override

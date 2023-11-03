@@ -4,10 +4,10 @@
 <insert id="create" parameterType="hashMap">
 <![CDATA[ INSERT INTO photo (ptitle, pcontent, pwriter,pcount) VALUES (#{ptitle}, #{pcontent}, #{pwriter}, 0) ]]>
 </insert>
-<select id="readlist" resultType="hashMap">
+<select id="readList" resultType="hashMap">
 <![CDATA[ SELECT * FROM photo ORDER BY pno DESC ]]>
 </select>
-<select id="readdetail" parameterType="String" resultType="hashMap"> 
+<select id="readDetail" parameterType="String" resultType="hashMap"> 
 <![CDATA[ SELECT * FROM photo WHERE pno = #{pno} ]]>
 </select>
 <update id="update" parameterType="hashMap">

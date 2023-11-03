@@ -16,7 +16,7 @@ public class NoticeRepositoryImpl implements NoticeRepository {
 	
 	@Override
 	public void create(Map<String, Object> map) {
-		sqlSessionTemplate.insert("notice.create",map);
+		sqlSessionTemplate.insert("notice.create", map);
 	}
 	
 	@Override
@@ -36,7 +36,7 @@ public class NoticeRepositoryImpl implements NoticeRepository {
 	
 	@Override
 	public void update(Map<String, Object> map) {
-		sqlSessionTemplate.update("notice.update",map);
+		sqlSessionTemplate.update("notice.update", map);
 	}
 
 	@Override

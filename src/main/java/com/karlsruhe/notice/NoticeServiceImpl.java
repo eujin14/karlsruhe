@@ -29,7 +29,6 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public List<NoticeDTO> readReply(String npid) {
-		// TODO Auto-generated method stub
 		return noticeRepository.readReply(npid);
 	}
 	

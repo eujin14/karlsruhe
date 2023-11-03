@@ -4,10 +4,10 @@
 <insert id="create" parameterType="hashMap">
 <![CDATA[ INSERT INTO boardReply (rwriter,rcontent) VALUES (#{rwriter}, #{rcontent}) ]]>
 </insert>
-<select id="readlist" resultType="hashMap">
+<select id="readList" resultType="hashMap">
 <![CDATA[ SELECT * FROM boardReply ORDER BY rno DESC ]]>
 </select>
-<select id="readdetail" parameterType="String" resultType="hashMap"> 
+<select id="readDetail" parameterType="String" resultType="hashMap"> 
 <![CDATA[ SELECT * FROM boardReply WHERE rno = #{rno} ]]>
 </select>
 <update id="update" parameterType="hashMap">

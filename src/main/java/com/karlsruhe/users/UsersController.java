@@ -66,7 +66,7 @@ public class UsersController {
 	}
 
 	@GetMapping("/memberList")
-	public String memberlist(Model model) {
+	public String memberList(Model model) {
 
 		model.addAttribute("members", usersService.memberList());
 

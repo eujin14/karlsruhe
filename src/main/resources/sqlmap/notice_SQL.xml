@@ -16,7 +16,7 @@
 	SELECT * FROM
 		notice
 	WHERE 
-		npid IS NOT NULL
+		npid IS NULL
 	ORDER BY 
 		npin DESC , nid DESC
 ]]>
