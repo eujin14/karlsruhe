@@ -12,9 +12,15 @@
     <div class="grid_12">
       <h1 class="logo">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<<<<<<< HEAD
           <button type="button" class="btn btn-outline-primary"><a href="/user/join">회원가입</a></button>
             <button type="button" class="btn btn-outline-danger"><a href="/login">로그인</a></button>
          </div>
+=======
+		 <button type="button" class="btn btn-outline-primary"><a href="/user/join">회원가입</a></button>
+		  <button type="button" class="btn btn-outline-danger"><a href="/login">로그인</a></button>
+      </div>
+>>>>>>> main
         <a href="index.html">
          KARLSRUHE
           <span>칼스루에 한인교회</span>
@@ -22,7 +28,10 @@
       </h1>
     </div>
     <div class="clear"></div>
+<<<<<<< HEAD
   
+=======
+>>>>>>> main
   </div>
   <section id="stuck_container">
   <!--==============================
