@@ -11,18 +11,23 @@
   <div class="container_12">
     <div class="grid_12">
       <h1 class="logo">
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="button" class="btn btn-outline-primary"><a href="/user/join">회원가입</a></button>
-            <button type="button" class="btn btn-outline-danger"><a href="/login">로그인</a></button>
-         </div>
         <a href="index.html">
          KARLSRUHE
           <span>칼스루에 한인교회</span>
         </a>
       </h1>
+      <sec:authentication property="principal" var="user" />
+      <sec:authorize access="isAnonymous()">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" class="btn btn-outline-primary"><a href="/users/join">회원가입</a></button>
+          <button type="button" class="btn btn-outline-danger"><a href="/login">로그인</a></button>
+        </div>
+      </sec:authorize>
+      <sec:authorize access="isAuthenticated()">
+        <div id="name" class="d-grid gap-2 d-md-flex justify-content-md-end">[ ${user.username} ]님 로그인 중입니다.</div>
+      </sec:authorize>
     </div>
     <div class="clear"></div>
-  
   </div>
   <section id="stuck_container">
   <!--==============================

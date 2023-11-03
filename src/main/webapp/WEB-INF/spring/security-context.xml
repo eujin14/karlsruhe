@@ -54,6 +54,6 @@
 		 authorities-by-username-query="SELECT username, authority FROM users WHERE username=?"
 		 /> 
 		</security:authentication-provider>
-	</security:authentication-manager>
+</security:authentication-manager>
 
 </beans>

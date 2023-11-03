@@ -29,18 +29,17 @@
 
 	<update id="memberUpdate" parameterType="hashMap">
 	<![CDATA[
-		UPDATE users 
-			SET
-		password = #{password},
-		uname = #{uname},
-		ubirth = #{ubirth},	
-		utel = #{utel},
+	    UPDATE users 
+	          SET
+		username = #{username}, 
+		password = #{password}, 
+		uname = #{uname}, 
+		utel = #{utel},  
 		uemail = #{uemail}, 
-		uaddr = #{uaddr},
-		uimg = #{uimg}
-			WHERE
+		uaddr = #{uaddr}
+	        WHERE
 		uno = #{uno}
-	]]>
+]]>
 	
 	</update>
 	

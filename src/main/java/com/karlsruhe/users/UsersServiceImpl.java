@@ -28,13 +28,13 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public void memberupdate(Map<String, Object> map) {
-		usersRepository.memberupdate(map);
+	public void memberUpdate(Map<String, Object> map) {
+		usersRepository.memberUpdate(map);
 	}
 
 	@Override
-	public void memberdelete(String uno) {
-		usersRepository.memberdelete(uno);
+	public void memberDelete(String uno) {
+		usersRepository.memberDelete(uno);
 
 	}
 
@@ -45,8 +45,8 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public UsersDTO memberexist(String uemail) {
-		return usersRepository.memberexist(uemail);
+	public UsersDTO memberExist(String uemail) {
+		return usersRepository.memberExist(uemail);
 	}
 
 	@Override
