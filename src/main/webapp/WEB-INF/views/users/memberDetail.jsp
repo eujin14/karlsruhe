@@ -9,7 +9,7 @@
 </head>
 <body>
 
-${user.uno} <br><br>
+${member.uno} <br><br>
 
 ${member.username} <br><br> 
 
