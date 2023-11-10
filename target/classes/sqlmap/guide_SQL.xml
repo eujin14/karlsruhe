@@ -15,8 +15,6 @@
 <![CDATA[
 	SELECT * FROM
 		guide
-	WHERE 
-		npid IS NOT NULL
 	ORDER BY 
 		gid DESC
 ]]>

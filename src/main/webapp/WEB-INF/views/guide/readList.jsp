@@ -25,23 +25,20 @@
 <body>
 
 
-
-
-
 <!-- 게시물 목록 -->
 	<table class="table table-hover">
 			<tr>
 				<th class="col-md">번호</th>
 				<th class="col-md-8">제목</th>
 				<th class="col-md-2">작성일</th>
-				<th class="col-md">카테고리</th>
+				<th class="col-md">조회수</th>
 			</tr>
-			<c:forEach items="${lists}" var="notice">
+			<c:forEach items="${lists}" var="guide">
 			<tr>
-				<td>${notice.nid}</td>
-				<td><a href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
-				<td>${notice.ndate}</td>
-				<td>${notice.ncategory}</td>
+				<td>${guide.gid}</td>
+				<td><a href="/guide/readDetail?gid=${guide.gid}">${guide.gtitle}</a></td>
+				<td>${guide.gdate}</td>
+				<td>${guide.gcount}</td>
 			</tr>
 		</c:forEach>			
 	</table>
