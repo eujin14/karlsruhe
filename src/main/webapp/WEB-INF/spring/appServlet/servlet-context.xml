@@ -34,7 +34,7 @@
 		<beans:property name="defaultEncoding" value="utf-8"/>
 		<beans:property name="uploadTempDir" ref="uploadDirResource"/>
 	</beans:bean>
-	<beans:bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
+    <beans:bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
 	      <beans:constructor-arg value="/d121034/tomcat/webapps/upload/"/>
 	  </beans:bean>
    

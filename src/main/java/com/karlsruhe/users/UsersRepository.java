@@ -12,15 +12,15 @@ public interface UsersRepository {
 	
 	Map<String, Object> memberDetail(String uno);
 	
-	void memberupdate(Map<String, Object> map);
+	void memberUpdate(Map<String, Object> map);
 	
-	void memberdelete(String uno);
+	void memberDelete(String uno);
 	
 	
 	void findUpositionByUsername(String username);
 	
 
-	UsersDTO memberexist(String uemail);
+	UsersDTO memberExist(String uemail);
 	
 	Map<String, Object> getUserDataByUsername(String username);
 

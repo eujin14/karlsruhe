@@ -26,18 +26,18 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 	@Override
 	public Map<String, Object> memberDetail(String uno) {
-		return sqlSessionTemplate.selectOne("users.memberdetail", uno);
+		return sqlSessionTemplate.selectOne("users.memberDetail", uno);
 	}
 
 	@Override
-	public void memberupdate(Map<String, Object> map) {
-		sqlSessionTemplate.update("users.memberupdate", map);
+	public void memberUpdate(Map<String, Object> map) {
+		sqlSessionTemplate.update("users.memberUpdate", map);
 		
 	}
 
 	@Override
-	public void memberdelete(String uno) {
-		sqlSessionTemplate.delete("users.memberdelete", uno);
+	public void memberDelete(String uno) {
+		sqlSessionTemplate.delete("users.memberDelete", uno);
 		
 	}
 
@@ -48,8 +48,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-	public UsersDTO memberexist(String uemail) {
-		return sqlSessionTemplate.selectOne("users.memberexist", uemail);
+	public UsersDTO memberExist(String uemail) {
+		return sqlSessionTemplate.selectOne("users.memberExist", uemail);
 	}
 
 	@Override
