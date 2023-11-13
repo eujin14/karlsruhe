@@ -14,6 +14,10 @@
 <a href="/users/join">회원가입</a>
 <br>
 <a href="/users/memberList">회원목록</a>
+<br>
+<a href="/notice/create">공지등록</a>
+<br>
+<a href="/notice/readList">공지목록</a>
 
 
 </body>

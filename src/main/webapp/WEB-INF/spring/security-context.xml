@@ -14,8 +14,8 @@
 		
 		
 		<security:intercept-url pattern="/admin/**" access="hasAuthority('ROLE_ADMIN')" />
-		<security:intercept-url pattern="/main" access="isAuthenticated()" />
 		<security:intercept-url pattern="/**" access="permitAll" />
+	
 		
 <!-- authority  -->
 
@@ -54,6 +54,6 @@
 		 authorities-by-username-query="SELECT username, authority FROM users WHERE username=?"
 		 /> 
 		</security:authentication-provider>
-	</security:authentication-manager>
+</security:authentication-manager>
 
 </beans>

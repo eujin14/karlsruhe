@@ -11,14 +11,14 @@
 	]]>
 	</insert>
 	
-	<select id="memberlist" resultType="hashMap">
+	<select id="memberList" resultType="hashMap">
 	<![CDATA[
 		SELECT * FROM 
 			users
 	]]>
 	</select>
 
-	<select id="memberdetail" resultType="hashMap">
+	<select id="memberDetail" resultType="hashMap">
 	<![CDATA[
 		SELECT * FROM 
 			users
@@ -27,24 +27,23 @@
 	]]>
 	</select>
 
-	<update id="memberupdate" parameterType="hashMap">
+	<update id="memberUpdate" parameterType="hashMap">
 	<![CDATA[
-		UPDATE users 
-			SET
-		password = #{password},
-		uname = #{uname},
-		ubirth = #{ubirth},	
-		utel = #{utel},
+	    UPDATE users 
+	          SET
+		username = #{username}, 
+		password = #{password}, 
+		uname = #{uname}, 
+		utel = #{utel},  
 		uemail = #{uemail}, 
-		uaddr = #{uaddr},
-		uimg = #{uimg}
-			WHERE
-		ㅕㅜㅐ
-	]]>
+		uaddr = #{uaddr}
+	        WHERE
+		uno = #{uno}
+]]>
 	
 	</update>
 	
-	<delete id="memberdelete" parameterType="String">
+	<delete id="memberDelete" parameterType="String">
 	<![CDATA[
 		DELETE FROM 
 			users
@@ -53,7 +52,7 @@
 	]]>
 	</delete>
 	
-	<select id="memberexist" parameterType="String" resultType="com.karlsruhe.users.UsersDTO">
+	<select id="memberExist" parameterType="String" resultType="com.karlsruhe.users.UsersDTO">
 	<![CDATA[
 		SELECT * FROM 
 			users
