@@ -10,7 +10,7 @@ public interface UsersRepository {
 
 	List<Map<String, Object>>memberList();
 	
-	Map<String, Object> memberDetail(String uno);
+	Map<String, Object> memberDetail(String username);
 	
 	void memberUpdate(Map<String, Object> map);
 	

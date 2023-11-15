@@ -24,8 +24,8 @@ ${member.uaddr} <br><br>
 ${member.udate} <br><br>
 
 <br><br> <br><br> 
-<a href="/users/memberUpdate?uno=${member.uno}">수정</a>
+<a href="/users/memberUpdate?username=${member.username}">수정</a>
 <br><br> 
-<a href="/users/memberDelete?uno=${member.uno}">삭제</a>
+<a href="/users/memberDelete?username=${member.username}">삭제</a>
 </body>
 </html>

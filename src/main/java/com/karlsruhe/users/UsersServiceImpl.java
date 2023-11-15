@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,8 +25,11 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public Map<String, Object> memberDetail(String uno) {
-		return usersRepository.memberDetail(uno);
+	public Map<String, Object> memberDetail(String username) {
+		
+	
+		
+		return usersRepository.memberDetail(username);
 	}
 
 	@Override

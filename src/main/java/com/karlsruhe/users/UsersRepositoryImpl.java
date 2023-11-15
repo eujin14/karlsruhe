@@ -25,8 +25,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-	public Map<String, Object> memberDetail(String uno) {
-		return sqlSessionTemplate.selectOne("users.memberDetail", uno);
+	public Map<String, Object> memberDetail(String username) {
+		return sqlSessionTemplate.selectOne("users.memberDetail", username);
 	}
 
 	@Override

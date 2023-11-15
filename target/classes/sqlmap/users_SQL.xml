@@ -23,7 +23,7 @@
 		SELECT * FROM 
 			users
 		WHERE 
-			uno = #{uno}
+			username = #{username}
 	]]>
 	</select>
 

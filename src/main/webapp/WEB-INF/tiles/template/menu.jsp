@@ -18,7 +18,7 @@
         </div>
       </sec:authorize>   
       <sec:authorize access="isAuthenticated()">
-        <div id="name" class="d-grid gap-2 d-md-flex justify-content-md-end" ><a href="/users/memberDetail?uno=${member.uno}">[${user.username} ]님 로그인 중입니다.</a></div>
+        <div id="name" class="d-grid gap-2 d-md-flex justify-content-md-end" ><a href="/users/memberDetail?username=${user.username}">[${user.username} ]님 로그인 중입니다.</a></div>
       </sec:authorize>
       <h1 class="logo">
         <a href="index.html">
@@ -38,11 +38,10 @@
           <div class="navigation">
             <nav>
               <ul class="sf-menu">
-               <li class="current"><a href="index.html">홈</a></li>
-               <li><a href="about.html">교회 소개</a></li>
-               <li><a href="mission.html">교회 소식</a></li>
+               <li class="current"><a href="index.html">교회 소개</a></li>
+               <li><a href="about.html">예배 안내</a></li>
+               <li><a href="mission.html">갤러리</a></li>
                <li><a href="membership.html">게시판</a></li>
-               <li><a href="contacts.html">오시는 길</a></li>
              </ul>
             </nav>
             <div class="clear"></div>

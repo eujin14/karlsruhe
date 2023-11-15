@@ -62,7 +62,7 @@ public class UsersController {
 		 * mailService.sendMail(to, subject, body);
 		 */
 
-		return "redirect:/";
+		return "redirect:/main";
 	}
 
 	@GetMapping("/memberList")
@@ -76,13 +76,10 @@ public class UsersController {
 	
 
 	@GetMapping("/memberDetail")
-	public String memberdetail(@RequestParam ("uno")String uno, Model model) {
-
-		model.addAttribute("member", usersService.memberDetail(uno));
-
-		return "users/memberDetail";
+	public String memberdetail(String username, Model model) {
+	    model.addAttribute("member", usersService.memberDetail(username));
+	    return "users/memberDetail";  // Just the logical view name without query parameters
 	}
-	
 
 	
 
@@ -108,7 +105,7 @@ public class UsersController {
 
 		usersService.memberDelete(uno);
 		
-		return "redirect:/users/memberList";
+		return "redirect:/main";
 	}
 
 
