@@ -52,6 +52,12 @@
     </div> 
   </section>
 </header>
-
+<section class="slider_wrapper">
+  <div id="camera_wrap" class="">
+    <div data-src="/resources/images/1.jpg"></div>
+    <div data-src="/resources/images/2.jpg"></div>
+    <div data-src="/resources/images/3.jpg"></div>  
+  </div>  
+</section>
 </body>
 </html>
