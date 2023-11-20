@@ -5,7 +5,13 @@
 <html lang="en">
 
 <body class="page1" id="top">
-
+<section class="slider_wrapper">
+  <div id="camera_wrap" class="">
+    <div data-src="/resources/images/1.jpg"></div>
+    <div data-src="/resources/images/2.jpg"></div>
+    <div data-src="/resources/images/3.jpg"></div>  
+  </div>  
+</section> 
 <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - September22, 2014!</div>
   <div class="container_12">
     <div class="grid_4">
