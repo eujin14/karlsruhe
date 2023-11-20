@@ -2,7 +2,7 @@
 <!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="photo">
 <insert id="create" parameterType="hashMap">
-<![CDATA[ INSERT INTO photo (ptitle, pcontent, pwriter,pcount) VALUES (#{ptitle}, #{pcontent}, #{pwriter}, 0) ]]>
+<![CDATA[ INSERT INTO photo (ptitle, pcontent, pimage, pwriter,pcount) VALUES (#{ptitle}, #{pcontent}, #{pimage}, #{pwriter}, 0) ]]>
 </insert>
 <select id="readList" resultType="hashMap">
 <![CDATA[ SELECT * FROM photo ORDER BY pno DESC ]]>
@@ -11,7 +11,7 @@
 <![CDATA[ SELECT * FROM photo WHERE pno = #{pno} ]]>
 </select>
 <update id="update" parameterType="hashMap">
-<![CDATA[ UPDATE photo SET ptitle = #{ptitle}, pcontent = #{pcontent}, pwriter = #{pwriter}, pcount = #{pcount} WHERE pno = #{pno} ]]>
+<![CDATA[ UPDATE photo SET ptitle = #{ptitle}, pcontent = #{pcontent}, pimage = #{pimage}, pwriter = #{pwriter}, pcount = #{pcount} WHERE pno = #{pno} ]]>
 </update>
 <delete id="delete" parameterType="String">
 <![CDATA[ DELETE FROM photo WHERE pno = #{pno} ]]>

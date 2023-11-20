@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -22,17 +25,48 @@
 			<input type="file" name="nimage" id="nimage" value="${details.nimage}">
 			<br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
 			
+	<div class="row mb-3">
+						<label class="col-sm-2 col-form-label" for="inputn">고정/미고정</label>
+						<c:choose>
+							<c:when test="${notice.npin eq '1'}">
+								<div class="col-sm-10">
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" id="flexRadioDefault1"
+											type="radio" name="npin" value="1" checked="checked" /> <label
+											class="form-check-label mb-0" for="flexRadioDefault1">고정
+										</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" id="flexRadioDefault2"
+											type="radio" name="npin" value="0" /> <label
+											class="form-check-label mb-0" for="flexRadioDefault2">미고정</label>
+									</div>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="col-sm-10">
+									<div class="form-check form-check-inline">
+
+										<input class="form-check-input" id="flexRadioDefault1"
+											type="radio" name="npin" value="1" /> <label
+											class="form-check-label mb-0" for="flexRadioDefault1">고정
+										</label>
+									</div>
+									<div class="form-check form-check-inline">
+
+										<input class="form-check-input" id="flexRadioDefault2"
+											type="radio" name="npin" value="0" checked="checked" /> <label
+											class="form-check-label mb-0" for="flexRadioDefault2">미고정</label>
+									</div>
+								</div>
+							</c:otherwise>
+						</c:choose>
+					</div>		
 	<input type="hidden" name="nwriter" value="${details.nwriter}">
     <input type="hidden" name="nid" value="${details.nid}" />
     <input type="hidden" name="nimage" value="${details.nimage}" />
-    	
-				
 	<p><input type="submit" value="저장"> 
 	</form>
-	
-	
-	
-	
 
 <script>
  $('#summernote').summernote({
@@ -50,8 +84,5 @@
         ]
       });
  </script>
-
-    
-
 </body>
 </html>

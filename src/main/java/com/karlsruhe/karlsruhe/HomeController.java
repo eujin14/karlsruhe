@@ -57,6 +57,11 @@ public class HomeController {
 	public String loginfailed() {
 		return "loginfailed";
 	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "logout";
+	}
 
 }
 
