@@ -9,17 +9,17 @@ public interface UsersService {
 	
 	List<Map<String, Object>>memberList();
 	
-	Map<String, Object> memberDetail(String uno);
+	Map<String, Object> memberDetail(String username);
 	
-	void memberupdate(Map<String, Object> map);
+	void memberUpdate(Map<String, Object> map);
 	
-	void memberdelete(String uno);
+	void memberDelete(String uno);
 	
 
 	
 	void getUpositionByUsername(String username);
 
-	UsersDTO memberexist(String uemail);
+	UsersDTO memberExist(String uemail);
 
 	Map<String, Object> getUserDataByUsername(String username);
 

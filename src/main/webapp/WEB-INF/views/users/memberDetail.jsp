@@ -9,7 +9,7 @@
 </head>
 <body>
 
-${user.uno} <br><br>
+${member.uno} <br><br>
 
 ${member.username} <br><br> 
 
@@ -24,8 +24,9 @@ ${member.uaddr} <br><br>
 ${member.udate} <br><br>
 
 <br><br> <br><br> 
-<a href="/users/memberupdate?uno=${user.uno}">수정</a>
+<a href="/users/memberUpdate?uno=${member.uno}">수정</a>
 <br><br> 
-<a href="/users/memberdelete?uno=${user.uno}">삭제</a>
+<a href="/users/memberDelete?uno=${member.uno}">삭제</a>
+<a href="/logout">로그아웃</a>
 </body>
 </html>

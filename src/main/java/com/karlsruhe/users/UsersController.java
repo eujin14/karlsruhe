@@ -62,7 +62,7 @@ public class UsersController {
 		 * mailService.sendMail(to, subject, body);
 		 */
 
-		return "redirect:/";
+		return "redirect:/main";
 	}
 
 	@GetMapping("/memberList")
@@ -76,60 +76,46 @@ public class UsersController {
 	
 
 	@GetMapping("/memberDetail")
-	public String memberdetail(@RequestParam String uno, Model model) {
-
-		model.addAttribute("member", usersService.memberDetail(uno));
-
-		return "users/memberDetail";
+	public String memberdetail(String username, Model model) {
+	    model.addAttribute("member", usersService.memberDetail(username));
+	    return "users/memberDetail";  // Just the logical view name without query parameters
 	}
+
 	
 
-	@GetMapping("/memberupdate")
-	public String update(@RequestParam("uno") String uno, Model model) {
+	@GetMapping("/memberUpdate")
+	public String update(@RequestParam ("uno") String uno, Model model) {
 
 		model.addAttribute("member", usersService.memberDetail(uno));
 
-		return "users/memberupdate";
+		return "users/memberUpdate";
 	}
 
-	@PostMapping("/memberupdate")
+	@PostMapping("/memberUpdate")
 	public String updatepost(@RequestParam Map<String, Object> map) {
-
-		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
 		
-		String pass = (String) map.get("password");
-
-		String encodedPassword = bcryptPasswordEncoder.encode(pass);
-
-		map.put("password", encodedPassword);
+		usersService.memberUpdate(map);
 		
-		usersService.memberupdate(map);
-		
-		return "/users/main";
+		return "redirect:/users/memberDetail";
 
 	}
 
-	@GetMapping("/memberdelete")
-	public String delete(@RequestParam String uno) {
+	@GetMapping("/memberDelete")
+	public String delete(@RequestParam ("uno") String uno) {
 
-		usersService.memberdelete(uno);
+		usersService.memberDelete(uno);
 		
-		return "redirect:/users/memberList";
+		return "redirect:/main";
 	}
 
-	@PostMapping("/memberdelete")
-	public String deletepost(@RequestParam String uno) {
-		// POST 요청 처리 로직
-		usersService.memberdelete(uno);
-		return "redirect:/";
-	}
+
 	
 
 	@PostMapping("/kakaocheck")
 	public String ajaxkakao(HttpServletRequest req, @RequestParam("uemail") String uemail) {
 		System.out.println("컨트롤러로 넘어온 데이터 값 : " + uemail);
 
-		UsersDTO user = this.usersService.memberexist(uemail);
+		UsersDTO user = this.usersService.memberExist(uemail);
 
 		if (user != null) {
 			System.out.println("디비에 회원정보 있음 즉 이미 회원임");
