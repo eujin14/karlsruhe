@@ -10,4 +10,14 @@
 		<property name="java-output-path" value="target/classes"/>
         <property name="context-root" value="karlsruhe"/>
 	</wb-module>
+
+    <wb-module deploy-name="karlsruhe-1.0.0-BUILD-SNAPSHOT">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <property name="context-root" value="karlsruhe"/>
+        <property name="java-output-path" value="/karlsruhe/target/classes"/>
+    </wb-module>
 </project-modules>

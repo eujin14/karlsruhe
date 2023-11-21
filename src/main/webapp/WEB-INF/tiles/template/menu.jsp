@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header>
+<header style="background-color: Aquamarine;">
   <div class="container_12">
     <div class="grid_12">
     <sec:authentication property="principal" var="user" />
@@ -37,10 +37,17 @@
         <div class="grid_12">          
           <div class="navigation">
             <nav>
+
               <ul class="sf-menu">
                <li class="current"><a href="index.html">교회 소개</a></li>
                <li><a href="about.html">예배 안내</a></li>
                <li><a href="mission.html">갤러리</a></li>
+
+              <ul class="sf-menu" >
+               <li class="current"><a href="index.html">홈</a></li>
+               <li><a href="about.html">교회 소개</a></li>
+               <li><a href="mission.html">교회 소식</a></li>
+
                <li><a href="membership.html">게시판</a></li>
              </ul>
             </nav>
