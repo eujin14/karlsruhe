@@ -1,4 +1,4 @@
-package com.karlsruhe.board;
+package com.karlsruhe.photo;
 
 import java.util.Map;
 import java.util.UUID;
@@ -14,22 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-@RequestMapping("/board")
+@RequestMapping("/photo")
 @Controller
-public class BoardController {
-
+public class PhotoController {
 		
 		@Autowired
-		private BoardService boardService;
-		
-			
+		private PhotoService photoService;
+					
 		@GetMapping("/create")
 		public String create() {
-			return "board/create";
+			return "photo/create";
 		}
 
 		@PostMapping("/create")
-		public String create(@RequestParam Map<String, Object> map, @RequestParam("bimage") MultipartFile file) {
+		public String create(@RequestParam Map<String, Object> map, @RequestParam("pcontent") MultipartFile file) {
 
 			String filecheck = file.getOriginalFilename();
 
@@ -37,7 +35,7 @@ public class BoardController {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 				String LOGIN = "tjdgml789";
 				String PSW = "qwaserdf123";
-				String REMOTE_DIRECTORY = "board";
+				String REMOTE_DIRECTORY = "photo";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
@@ -63,49 +61,49 @@ public class BoardController {
 				} catch (Exception e) {
 					System.out.println("fail!!!");
 				}
-				map.put("bimage", filename);
+				map.put("pcontent", filename);
 
 			}
 
-			boardService.create(map);
-			return "redirect:/board/readList";
+			photoService.create(map);
+			return "redirect:/photo/readList";
 		}
 		
 		@PostMapping("/createreply")
 		public String createreply(@RequestParam Map<String, Object> map) {
 
-			boardService.create(map);
-			return "redirect:/board/readList";
+			photoService.create(map);
+			return "redirect:/photo/readList";
 		}
 		@GetMapping("/readList")
 		public String readList(Model model) {
 
-			model.addAttribute("boards", boardService.readList());
+			model.addAttribute("photos", photoService.readList());
 
-			return "board/readList";
+			return "photo/readList";
 		}
 		@GetMapping("/readDetail")
-		public String readDetail(@RequestParam String bno, Model model) {
+		public String readDetail(@RequestParam String pno, Model model) {
 
-			model.addAttribute("board", boardService.readDetail(bno));
+			model.addAttribute("photo", photoService.readDetail(pno));
 
 			// 디테일에서 댓글의 목록을 볼 수 있게 함
-			//model.addAttribute("replylist", boardService.readreply(bno));
+			//model.addAttribute("replylist", photoService.readreply(pno));
 
-			return "board/readDetail";
+			return "photo/readDetail";
 		}
 
 		@GetMapping("/update")
-		public String update(@RequestParam("bno") String bno, Model model) {
+		public String update(@RequestParam("pno") String pno, Model model) {
 
-			model.addAttribute("board", boardService.readDetail(bno));
+			model.addAttribute("photo", photoService.readDetail(pno));
 
-			return "board/update";
+			return "photo/update";
 		}
 
 		// U 저장시에 사진값이 mdn에 담길 수 있는 방법 + 사진이 안 담겼을 경우 mdn에 저장 되지 않게함
 		@PostMapping("/update")
-		public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("bimage") MultipartFile file) {
+		public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("pcontent") MultipartFile file) {
 			String filecheck = file.getOriginalFilename();
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
@@ -127,7 +125,7 @@ public class BoardController {
 						con.enterLocalPassiveMode();
 						con.setFileType(FTP.BINARY_FILE_TYPE);
 
-						con.changeWorkingDirectory("noti");
+						con.changeWorkingDirectory("photo");
 
 						con.storeFile(filename, file.getInputStream());
 						con.logout();
@@ -137,42 +135,30 @@ public class BoardController {
 				} catch (Exception e) {
 					System.out.println("fail!!!");
 				}
-				map.put("bimage", filename);
+				map.put("pcontent", filename);
 
 			}
 
-			boardService.update(map);
+			photoService.update(map);
 
-			return "redirect:/board/readList";
+			return "redirect:/photo/readList";
 		}
 
 		@GetMapping("/delete")
-		public String delete(@RequestParam("bno") String bno) {
+		public String delete(@RequestParam("pno") String pno) {
 
-			boardService.delete(bno);
+			photoService.delete(pno);
 
-			return "redirect:/board/readList";
+			return "redirect:/photo/readList";
 		}
-
-		// 댓글이 작성될 수 있게 하며 댓글의 내용이 담길 수 있게 함
-		/*
-		 * @ResponseBody
-		 * 
-		 * @PostMapping("/readreply") public List<Map<String, Object>>
-		 * readreply(@RequestParam("breply") String breply) {
-		 * 
-		 * return boardService.readreply(breply);
-		 * 
-		 * }
-		 */
 
 		// 좋아요 클릭시에 숫자 증가하고 나타나게 함
 		@PostMapping("/count")
 		public String count(@RequestParam Map<String, Object> map, Model model) {
 
-			boardService.count(map);
+			photoService.count(map);
 
-			return "redirect:/board/readList";
+			return "redirect:/photo/readList";
 		}
 
 	}

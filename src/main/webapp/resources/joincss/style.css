@@ -1,3 +1,5 @@
+
+
 /* @extend display-flex; */
 display-flex {
   display: flex;
@@ -144,7 +146,7 @@ body {
 .container {
   width: 586px;
   background: #fff;
-  margin-left: 165px;
+  margin: 0 auto;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -152,7 +154,10 @@ body {
   -ms-border-radius: 10px; }
 
 .appointment-form {
-  padding: 50px 60px 70px 60px; }
+  padding: 50px 60px 70px 60px; 
+  box-sizing: border-box;
+  margin: 0 auto;
+  }
 
 input, select {
   width: 100%;

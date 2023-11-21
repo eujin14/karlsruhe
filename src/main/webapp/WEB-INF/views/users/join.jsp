@@ -14,29 +14,28 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="/resources/joincss/style.css">
+    
 </head>
 <body>
 
     <div class="main">
 
         <div class="container">
-            <form method="POST" class="appointment-form" id="appointment-form">
-                <h2>education appointment form</h2>
-                <div class="form-group-1">
-                    <input type="text" name="title" id="title" placeholder="Title" required />
-                    <input type="text" name="name" id="name" placeholder="Your Name" required />
-                    <input type="email" name="email" id="email" placeholder="Email" required />
-                    <input type="number" name="phone_number" id="phone_number" placeholder="Phone number" required />
-                    <div class="select-list">
-                        <select name="course_type" id="course_type">
-                            <option slected value="">Course Type</option>
-                            <option value="society">Society</option>
-                            <option value="language">Language</option>
-                        </select>
-                    </div>
+            <form action="/users/join?${_csrf.parameterName}=${_csrf.token}" name="Member" method="POST" class="appointment-form" id="appointment-form">
+                <h2>회원가입</h2>
+                <div class="form-group-1"> 
+                    <input type="text" name="username" id="username" placeholder="아이디" required />
+                    <input type="text" name="password" id="password" placeholder="비밀번호" required />
+                    <input type="password" name="password1" id="password1" placeholder="비밀번호 확인" required />
+                    <input type="text" name="uname" id="uname" placeholder="이름"  />
+                    <input type="email" name="uemail" id="uemail" placeholder="이메일을 작성해 주세요"  />
+                    <input type="text" name="utel" id="utel" placeholder="전화번호"  />
+                    <input type="text" name="utel" id="utel" placeholder="인증번호"  />
+                    <input type="text" name="uaddr" id="uaddr" placeholder="주소"  />
+                    
                 </div>
                 <div class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit" value="Request an appointment" />
+                    <input type="submit" name="submit" id="submit" class="submit" value="회원가입" />
                 </div>
             </form>
         </div>

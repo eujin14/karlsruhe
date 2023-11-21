@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -14,34 +15,51 @@
 </head>
 <body>
 <div class="container">
-<br><h1>게시물 등록</h1><br>
+<br><h1>게시물 수정</h1><br>
 	<!-- 게시물 등록 폼 -->
-	<form id="check" action="/board/create" method="post" enctype="multipart/form-data">
+	<form id="check" action="/board/update" method="post" enctype="multipart/form-data">
 		<div class="mb-3">
 			<label class="form-label">작성자</label> 
 			<input id="bwriter" name="bwriter" type="text" class="form-control" value="${user.username}" readonly="readonly" maxlength="100" style="width:100%;" />
 		</div>
 		<div class="mb-3">
 			<label class="form-label" >제목</label> 
-			<input id="btitle" name="btitle" type="text" class="form-control" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 "/>
+			<input id="btitle" name="btitle" type="text" class="form-control" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 " value="${board.btitle} "/>
 		</div>
 
 			<div class="mb-3">
 			<label class="form-label">부서</label> 
-			 <select name="bcategory" id="bcategory"> 
-            <option selected value="유아부">유아부</option>
-            <option value="청소년부">청소년부</option>
-            <option value="청년부">청년부</option>
+			 <select name="bcategory" id="bcategory" > 
+			 <c:choose>
+									<c:when test="${board.bcategory eq '유아부'}">
+										<option value="유아부">유아부</option>
+										<option value="청소년부">청소년부</option>
+										<option value="청년부">청년부</option>
+
+
+									</c:when>
+									<c:when test="${board.bcategory eq '청소년부'}">
+										<option value="청소년부">청소년부</option>
+										<option value="청년부">청년부</option>
+										<option value="유아부">유아부</option>
+
+									</c:when>
+									<c:otherwise>
+										<option value="청년부">청년부</option>
+										<option value="유아부">유아부</option>
+										<option value="청소년부">청소년부</option>
+									</c:otherwise>
+								</c:choose>
             </select>
 
 		</div>
 				<div class="mb-3">
 			<label class="form-label">내용</label>
-			<textarea class="form-control" id="summernote" rows="5" name="bcontent"></textarea>
+			<textarea class="form-control" id="summernote" rows="5" name="bcontent">${board.bcontent}</textarea>
 		</div>
 		<div class="mb-3">
 			<label class="form-label">첨부사진</label> 
-			<input id="bimage" name="bimage" type="file" class="form-control" />
+			<input id="bimage" name="bimage" type="file" class="form-control" value="${board.bimage} " />
 			         <br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
 		</div>
 		<div class="row">
