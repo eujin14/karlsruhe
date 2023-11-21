@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header>
-  <div class="container_12">
+<header style="background-color: LightBlue;">
+  <div class="container_12" >
     <div class="grid_12">
     <sec:authentication property="principal" var="user" />
       <sec:authorize access="isAnonymous()">
@@ -35,29 +35,22 @@
   =================================-->
     <div class="container_12">
         <div class="grid_12">          
-          <div class="navigation">
+          <div class="navigation" >
             <nav>
-              <ul class="sf-menu">
+              <ul class="sf-menu" >
                <li class="current"><a href="index.html">교회 소개</a></li>
                <li><a href="about.html">예배 안내</a></li>
                <li><a href="mission.html">갤러리</a></li>
                <li><a href="membership.html">게시판</a></li>
              </ul>
             </nav>
-            <div class="clear"></div>
+            
           </div>       
-         <div class="clear"></div>  
+         
      </div> 
      <div class="clear"></div>
     </div> 
   </section>
 </header>
-<section class="slider_wrapper">
-  <div id="camera_wrap" class="">
-    <div data-src="/resources/images/1.jpg"></div>
-    <div data-src="/resources/images/2.jpg"></div>
-    <div data-src="/resources/images/3.jpg"></div>  
-  </div>  
-</section> 
 </body>
 </html>
