@@ -11,9 +11,9 @@
 	<form action="/notice/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
 	<p>제목 : <input type="text" name="ntitle" id= "ntitle" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 "><p>
 	<p>작성자 : <input type="text" name="nwriter" id= "nwriter" maxlength="100" style="width:100%;"></p>
-	<p>공지유형 <select name="ncategory" id="ncategory"> <option selected>일반</option>
-				<option>2공지</option>
-				<option>3공지</option>
+	<p>공지유형 <select name="ncategory" id="ncategory"> <option selected>일반공지</option>
+				<option>긴급공지</option>
+				
 			</select>
 	<p>내용<textarea id="summernote" name="ncontent"></textarea>
 	<p>첨부사진
