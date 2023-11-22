@@ -13,7 +13,7 @@ public interface UsersService {
 	
 	void memberUpdate(Map<String, Object> map);
 	
-	void memberDelete(String uno);
+	void memberDelete(String username);
 	
 
 	

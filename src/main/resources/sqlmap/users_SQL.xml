@@ -23,7 +23,7 @@
 		SELECT * FROM 
 			users
 		WHERE 
-			uno = #{uno}
+			username = #{username}
 	]]>
 	</select>
 
@@ -33,13 +33,11 @@
 			SET
 		password = #{password},
 		uname = #{uname},
-		ubirth = #{ubirth},	
 		utel = #{utel},
 		uemail = #{uemail}, 
-		uaddr = #{uaddr},
-		uimg = #{uimg}
+		uaddr = #{uaddr}
 			WHERE
-		uno = #{uno}
+		username = #{username}
 	]]>
 	
 	</update>
@@ -49,7 +47,7 @@
 		DELETE FROM 
 			users
 		WHERE 
-			uno = #{uno}
+			username = #{username}
 	]]>
 	</delete>
 	

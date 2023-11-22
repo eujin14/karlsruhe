@@ -36,8 +36,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-	public void memberDelete(String uno) {
-		sqlSessionTemplate.delete("users.memberDelete", uno);
+	public void memberDelete(String username) {
+		sqlSessionTemplate.delete("users.memberDelete", username);
 		
 	}
 

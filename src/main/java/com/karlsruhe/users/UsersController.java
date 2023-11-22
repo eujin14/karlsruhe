@@ -78,15 +78,15 @@ public class UsersController {
 	@GetMapping("/memberDetail")
 	public String memberdetail(String username, Model model) {
 	    model.addAttribute("member", usersService.memberDetail(username));
-	    return "users/memberDetail";  // Just the logical view name without query parameters
+	    return "users/memberDetail";  
 	}
 
 	
 
 	@GetMapping("/memberUpdate")
-	public String update(@RequestParam ("uno") String uno, Model model) {
+	public String update(@RequestParam ("username") String username, Model model) {
 
-		model.addAttribute("member", usersService.memberDetail(uno));
+		model.addAttribute("member", usersService.memberDetail(username));
 
 		return "users/memberUpdate";
 	}
@@ -101,9 +101,9 @@ public class UsersController {
 	}
 
 	@GetMapping("/memberDelete")
-	public String delete(@RequestParam ("uno") String uno) {
+	public String delete(@RequestParam ("username") String username) {
 
-		usersService.memberDelete(uno);
+		usersService.memberDelete(username);
 		
 		return "redirect:/main";
 	}

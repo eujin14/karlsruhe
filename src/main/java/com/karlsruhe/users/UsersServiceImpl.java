@@ -27,8 +27,6 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public Map<String, Object> memberDetail(String username) {
 		
-	
-		
 		return usersRepository.memberDetail(username);
 	}
 
@@ -38,8 +36,8 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public void memberDelete(String uno) {
-		usersRepository.memberDelete(uno);
+	public void memberDelete(String username) {
+		usersRepository.memberDelete(username);
 
 	}
 

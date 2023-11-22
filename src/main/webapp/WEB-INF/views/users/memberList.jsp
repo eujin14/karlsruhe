@@ -11,7 +11,7 @@
 <c:forEach items="${members}" var="member">
 
 
-<a href="/users/memberDetail?uno=${member.uno}">${member.username}</a>
+<a href="/users/memberDetail?username=${member.username}">${member.username}</a>
 
 / ${member.uname} / ${member.uemail}/ ${member.udate}
 <br>
