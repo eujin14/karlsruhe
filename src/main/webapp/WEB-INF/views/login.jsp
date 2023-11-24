@@ -155,9 +155,9 @@ form {
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: #86db9f;
+	background: -webkit-linear-gradient(to right, #7ed899, #86db9f);
+	background: linear-gradient(to right, #7ed899, #86db9f);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -238,7 +238,7 @@ footer p {
 }
 
 footer i {
-    color: red;
+    color: #5fcf80;
 }
 
 footer a {
@@ -248,8 +248,8 @@ footer a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #7ed899;
+	background-color: #7ed899;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -261,8 +261,8 @@ button {
 
 .btn1 {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #7ed899;
+	background-color: #7ed899;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -479,7 +479,7 @@ function checkMember() {
 	</div>
 </div>
   
-<script id="rendered-js" >
+<script id="rende#5fcf80-js" >
 const signUpButton = document.getElementById('signUp');
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
