@@ -13,6 +13,13 @@ ${member.uno} <br><br>
 
 ${member.username} <br><br> 
 
+<div class="col-3">
+    <div id="password" name="password">****</div>
+</div>
+<div class="col-6 updatePwBtn">
+  <a href="/updatePw" class="button" id="updatePwBtn">수정</a>
+ </div>
+
 ${member.uname} <br><br> 
 
 ${member.utel} <br><br> 
@@ -26,7 +33,7 @@ ${member.udate} <br><br>
 <br><br> <br><br> 
 <a href="/users/memberUpdate?username=${member.username}">수정</a>
 <br><br> 
-<a href="/users/memberDelete?username=${member.username}">삭제</a>
+
 <a href="/logout">로그아웃</a>
 </body>
 </html>

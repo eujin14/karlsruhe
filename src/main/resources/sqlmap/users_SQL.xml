@@ -18,7 +18,7 @@
 	]]>
 	</select>
 
-	<select id="memberDetail" resultType="hashMap">
+	<select id="memberDetail" resultType="com.karlsruhe.users.UsersDTO">
 	<![CDATA[
 		SELECT * FROM 
 			users
@@ -39,10 +39,20 @@
 			WHERE
 		username = #{username}
 	]]>
+	</update>
+	
+		<update id="updatePasswordUsers" parameterType="hashMap">
+	<![CDATA[
+		UPDATE users 
+			SET
+		password = #{password}
+			WHERE
+		username = #{username}
+	]]>
 	
 	</update>
 	
-	<delete id="memberDelete" parameterType="String">
+	<delete id="memberDelete" parameterType="hashMap">
 	<![CDATA[
 		DELETE FROM 
 			users
@@ -51,24 +61,47 @@
 	]]>
 	</delete>
 	
-	<select id="memberExist" parameterType="String" resultType="com.karlsruhe.users.UsersDTO">
+     	<select id="totalCount" resultType="hashMap">
 	<![CDATA[
-		SELECT * FROM 
+		SELECT COUNT(username)
+			FROM
 			users
-		WHERE 
-			uemail = #{uemail}
 	]]>
 	</select>
 	
-	<select id="getUserDataByUsername" parameterType="String" resultType="Map">
-     <![CDATA[
-        SELECT uname, uposition, udepart, uemail FROM 
-        	users
-        WHERE 
-        	username = #{username}
-     
-     ]]>
-     </select>
-     
-     
+		<select id="telChk" resultType="com.karlsruhe.users.UsersDTO">
+	<![CDATA[
+		SELECT * FROM 
+			users
+		WHERE
+		    utel = #{utel}
+	]]>
+	</select>
+	
+		<select id="findIdUser" resultType="hashMap">
+	<![CDATA[
+		SELECT username from
+			users
+		WHERE
+		    uname = #{uname} and utel = #{utel}
+	]]>
+	</select>
+	
+		<select id="findPw" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			users
+		WHERE
+		    uname = #{uname} and utel = #{utel} and username = #{username}
+	]]>
+	</select>
+	
+		<select id="countUsers" resultType="hashMap">
+	<![CDATA[
+		SELECT count(*)
+		FROM
+			users
+		
+	]]>
+	</select>
 </mapper>

@@ -10,19 +10,33 @@ public interface UsersRepository {
 
 	List<Map<String, Object>>memberList();
 	
-	Map<String, Object> memberDetail(String username);
+	 UsersDTO memberDetail(String username);
 	
 	void memberUpdate(Map<String, Object> map);
 	
+	void updatePasswordUsers(String password, String username);
+	
 	void memberDelete(String username);
 	
-	
-	void findUpositionByUsername(String username);
-	
-
 	UsersDTO memberExist(String uemail);
 	
-	Map<String, Object> getUserDataByUsername(String username);
+
+	
+	String findIdUser(String name, String tel);
+	  
+    String findPw(String uname, String utel, String username);
+    
+    int totalCount();
+    
+    int countUsers();
+
+    UsersDTO telChk(String utel);
+	
+
+
+
+
+	
 
 
 }

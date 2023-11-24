@@ -1,5 +1,6 @@
 package com.karlsruhe.users;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/users")
 @Controller
 public class UsersController {
+
 
 
 	@Autowired
@@ -79,6 +81,7 @@ public class UsersController {
 	@GetMapping("/memberDetail")
 	public String memberdetail(String username, Model model) {
 	    model.addAttribute("member", usersService.memberDetail(username));
+
 	    return "users/memberDetail";  
 	}
 
