@@ -189,7 +189,7 @@ form {
 	transition: transform 0.6s ease-in-out;
 }
 
-.overlay-left {
+.overlay-left {  
 	transform: translateX(-20%);
 }
 
