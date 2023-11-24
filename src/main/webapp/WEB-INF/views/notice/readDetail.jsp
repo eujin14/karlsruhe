@@ -14,9 +14,11 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
 	crossorigin="anonymous"></script>
 
-<script>
 
-function createReply() {
+<script>
+/* 댓글 등록 */
+
+ function createReply() {
 
 	npid = $("#npid").val();
 	ncontent = $("#rncontent").val();
@@ -34,62 +36,60 @@ function createReply() {
 			xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
 		},
 		success : function(result) {
+			window.location.reload();
+			alert("댓글이 등록되었습니다.");
 		},
 		error : function(request, status, error) {
 		}
 	});
-	location.reload(); 
-	/* window.opener.location.href = "/main"; */
-}
+	window.location.reload();
+	} 
+
+
 </script>
+
+
 </head>
 <body>
-<sec:authentication property="principal" var="users" />
 
-<div class="grid_4 alpha">
-		<div class="block-3">
-			
-			<div class="text1 tx__1">${details.ntitle}</div>
-			<img src="/images/page2_img1.jpg" alt="" class="img_inner">
-			${details.ncontent}
-		</div>
-	</div>
+   <table class="table">
+      <thead class="table-light">
+         <tr>
+            <th>작성자 <b>${details.nwriter}</b>&nbsp;
+               ${details.ndate}&nbsp;
+              
+            </th>
+            
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+         <td><img src="https://sasa724.cdn1.cafe24.com/notice/${details.nimage}"
+            width="500" height="auto"></td></tr>
+           <tr> <td>${details.ncontent}</td></tr>
+         
+         <tr>
+            <td>
+               <div class="row">
+                  <div class="col-md">
+                     <button onclick="location.href='/notice/readList'" class="form-control">목록</button>
+                  </div>
+                  <div class="col-md-9">
+                  </div>
+                  <div class="col-md">
+                  <button onclick="location.href='/notice/update?nid=${details.nid}'" class="form-control">수정</button>
+                  </div>
+                  <div class="col-md">
+                        <button onclick="location.href='/notice/delete?nid=${details.nid}'" class="form-control">삭제</button>                  
+                  </div>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+   </table>
 
-<img src="https://sasa724.cdn1.cafe24.com/notice/${details.nimage}"
-							width="500px" height="auto">
-
-${details.nid} / ${details.ncategory} / ${details.ntitle} / ${details.ncontent} / ${details.nwriter} / ${details.ndate}
-<br>
 
 
-
-<sec:authorize access="hasAuthority('USER_ADMIN')">
-<a href="/notice/update?nid=${details.nid}" class="btn btn-outline-primary">수정</a>
-<a href="/notice/delete?nid=${details.nid}" class="btn btn-outline-danger">삭제</a>
-</sec:authorize>
-
-<c:forEach items="${replyLists}" var="reply">
-
-${reply.nwriter}/${reply.ncontent}
-
-
-</c:forEach>
-
-<div class="card-footer">
-
-		<input type="hidden" id="npid" name="npid" value="${details.nid}">
-		<input type="hidden" id="nwriter" name="nwriter"
-			value="user">
-		<div class="hstack gap-3">
-
-
-			<input class="form-control me-auto" type="text" id="rncontent"
-				placeholder="댓글을 작성하세요" /> <a href="javascript:createReply()"
-				class="btn btn-success">댓글 작성<span
-				class="fa-solid fa-paper-plane ms-1"></span></a>
-
-		</div>
-	</div>
 
 
 

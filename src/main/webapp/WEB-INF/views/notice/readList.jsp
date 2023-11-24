@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,7 +111,7 @@
 												</c:otherwise>
 											</c:choose></td>
 										<td class="align-middle ntitle"><a
-											href="/noti/readdetail?nno=${notice.nid}">${notice.ntitle}</a></td>
+											href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
 										<td class="align-middle ndate text-end py-3 pe-3">${notice.ndate}</td>
 									</tr>
 								</c:forEach>
