@@ -11,7 +11,7 @@
 <a href="main">phoenix test</a>
 <br>
 
-<a href="/users/join">회원가입</a>
+<a href="/login2">회원가입</a>
 <br>
 <a href="/users/memberList">회원목록</a>
 <br>

@@ -30,15 +30,16 @@ public class UsersController {
 	@Autowired
 	private UsersService usersService;
 
-	/*@Autowired
-	private MailService mailService;*/
-
-	@GetMapping("/join")
+	/*
+	 * @Autowired private MailService mailService;
+	 */
+	@GetMapping("/create")
 	public String join() {
-		return "/users/join";
+		return "/users/create";
 	}
 
-	@PostMapping("/join")
+	@PostMapping("/create")
+	
 	public String join(@RequestParam Map<String, Object> map) {
 		
 		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -140,6 +141,8 @@ public class UsersController {
 		}
 
 	}
+	
+	
 
 }
 
