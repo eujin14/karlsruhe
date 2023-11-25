@@ -23,7 +23,12 @@ public interface UsersService {
 
 	Map<String, Object> getUserDataByUsername(String username);
 
-	
+	/*
+	 * String pwCheck(String username)throws Exception;
+	 * 
+	 * void pwUpdate(String username, String hashedPw)throws Exception;
+	 */
+
 
 
 }

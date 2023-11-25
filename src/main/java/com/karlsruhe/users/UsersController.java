@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RequestMapping("/users")
 @Controller
@@ -140,6 +141,26 @@ public class UsersController {
 		}
 
 	}
-
+	
+	/*
+	 * @GetMapping("/pwUpdateView") public String pwUpdateView() throws Exception{
+	 * return "/users/pwUpdate"; }
+	 * 
+	 * @PostMapping("/pwCheck")
+	 * 
+	 * @ResponseBody public int pwCheck(UsersDTO users) throws Exception { String
+	 * memberPw = usersService.pwCheck(users.getUsername()); if (users == null ||
+	 * !BCrypt.checkpw(users.getPassword(), memberPw)) { return 0; } return 1; }
+	 * 
+	 * @PostMapping("/pwUpdate") public String pwUpdate(String username, String
+	 * memberPw1, RedirectAttributes rttr, HttpSession session) throws Exception {
+	 * String hashedPw = BCrypt.hashpw(memberPw1, BCrypt.gensalt());
+	 * usersService.pwUpdate(username, hashedPw); session.invalidate();
+	 * rttr.addFlashAttribute("msg", "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
+	 * 
+	 * return "redirect:/login"; }
+	 */
 }
+
+
 

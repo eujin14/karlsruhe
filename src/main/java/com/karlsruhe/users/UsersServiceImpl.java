@@ -4,12 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsersServiceImpl implements UsersService {
+public abstract class UsersServiceImpl implements UsersService {
 	
 	@Autowired
 	private UsersRepository usersRepository;
@@ -57,4 +55,13 @@ public class UsersServiceImpl implements UsersService {
 		  return usersRepository.getUserDataByUsername(username);
 	}
 
+	/*
+	 * @Override public String pwCheck(String username) throws Exception { return
+	 * usersRepository.pwCheck(username); }
+	 * 
+	 * @Override public void pwUpdate(String username, String hashedPw) throws
+	 * Exception { usersRepository.pwUpdate(username, hashedPw);
+	 * 
+	 * }
+	 */
 }

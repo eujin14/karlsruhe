@@ -42,6 +42,23 @@
 	
 	</update>
 	
+	<select id="pwCheck" resultType="String">
+    <![CDATA[
+        SELECT password FROM 
+        users 
+        WHERE 
+        username = #{username}
+    ]]>
+    </select>
+
+   <update id="pwUpdate" parameterType="hashMap">
+    <![CDATA[
+        UPDATE users
+        SET password = #{memberPw}
+        WHERE username = #{username}
+    ]]>
+</update>
+	
 	<delete id="memberDelete" parameterType="String">
 	<![CDATA[
 		DELETE FROM 

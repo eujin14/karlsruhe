@@ -23,6 +23,10 @@ public interface UsersRepository {
 	UsersDTO memberExist(String uemail);
 	
 	Map<String, Object> getUserDataByUsername(String username);
-
+	/*
+	 * String pwCheck(String username)throws Exception;
+	 * 
+	 * public void pwUpdate(String username, String hashedPw)throws Exception;
+	 */
 
 }
