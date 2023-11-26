@@ -182,6 +182,21 @@ public class UsersController {
 	 
 	  return "redirect:/login"; 
 	  }
+	  
+
+		 @GetMapping({"/findId"})
+		  public String FindId() {
+		    return "users/findId";
+		  }
+		
+		@ResponseBody
+		  @PostMapping(value = {"/findId"}, produces = {"text/html;charset=UTF-8"})
+		  public String submitFindId(@RequestParam String name, @RequestParam String tel) {
+		    String username = this.usersService.findIdUser(name, tel);
+		    if (username == null || username.equals(""))
+		      return "<p>아이디가 존재하지 않습니다<br>이름과 전화번호를 확인해 주세요</p>";
+		    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
+		  }
 	 
 }
 

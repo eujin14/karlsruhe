@@ -27,6 +27,10 @@ public interface UsersRepository {
 	  String pwCheck(String username)throws Exception;
 	 
 	  public void pwUpdate(String username, String hashedPw)throws Exception;
+
+	 String findIdUser(String uname, String utel);
+
+
 	 
 
 }

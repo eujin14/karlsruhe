@@ -1,7 +1,10 @@
 package com.karlsruhe.karlsruhe;
 
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -61,12 +64,8 @@ public class MainController {
 		return "logout";
 	}
 	
-	 @GetMapping({"/findId"})
-	  public String FindId() {
-	    return "findId";
-	  }
-	  
-	 
+	
+
 	  
 	  
 	}

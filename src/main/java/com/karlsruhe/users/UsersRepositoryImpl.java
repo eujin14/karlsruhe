@@ -71,10 +71,15 @@ public class UsersRepositoryImpl implements UsersRepository {
 	  sqlSessionTemplate.update("users.pwUpdate", map);
 	  
 	  }
-	 
-	
-	
 
-	
+	@Override
+	public String findIdUser(String uname, String utel) {
+		 Map<String, Object> parameters = new HashMap<>();
+	        parameters.put("uname", uname);
+	        parameters.put("utel", utel);
+
+	        return sqlSessionTemplate.selectOne("users.findIdUser", parameters);
+	    }
+
 
 }

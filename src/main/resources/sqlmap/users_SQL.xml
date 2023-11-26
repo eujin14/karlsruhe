@@ -87,5 +87,15 @@
      ]]>
      </select>
      
+     <select id="findIdUser" parameterType="map" resultType="string">
+      <![CDATA[
+		select username from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		 ]]>
+</select>
      
 </mapper>

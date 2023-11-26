@@ -8,6 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="CodePen">
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 <title>로그인</title>
+   <link rel="stylesheet" href="/resources/css/login.css" type="text/css">
 <link rel="canonical" href="https://codepen.io/Rh2o/pen/yLgxJoG">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
@@ -131,7 +132,6 @@ function checkMember() {
 
 </script>
   
-  <link rel="stylesheet" href="/resources/users/css/login.css" type="text/css">
 </head>
 
 <body translate="no">
@@ -165,7 +165,7 @@ function checkMember() {
 			
 			<input type="text" name="username" placeholder="아이디" />
 			<input type="password" name="password" placeholder="비밀번호" />
-			<a href="/findId">아이디 찾기</a>
+			<a href="/users/findId">아이디 찾기</a>
 			<a href="/findPw" id="findPw">비밀번호 찾기</a>
 			<button>로그인</button>
 			

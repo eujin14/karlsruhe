@@ -28,6 +28,9 @@ public interface UsersService {
 	 
 	 void pwUpdate(String username, String hashedPw)throws Exception;
 	 
+	 String findIdUser(String paramString1, String paramString2);
+
+	   
 
 
 
