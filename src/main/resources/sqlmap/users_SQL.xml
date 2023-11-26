@@ -54,7 +54,7 @@
    <update id="pwUpdate" parameterType="hashMap">
     <![CDATA[
         UPDATE users
-        SET password = #{memberPw}
+        SET password = #{password}
         WHERE username = #{username}
     ]]>
 </update>

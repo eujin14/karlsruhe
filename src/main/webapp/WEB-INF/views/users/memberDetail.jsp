@@ -21,7 +21,7 @@ ${member.username} <br><br>
                             <div id="password" name="password">****</div>
                         </div>
                         <div class="col-6 updatePwBtn">
-                            <a href="/updatePw" class="button" id="updatePwBtn">수정</a>
+                            <a href="/users/pwUpdate" class="button" >수정</a>
                         </div>
                     </div>
 

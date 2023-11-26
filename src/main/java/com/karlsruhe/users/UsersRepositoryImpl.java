@@ -1,5 +1,6 @@
 package com.karlsruhe.users;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -57,17 +58,20 @@ public class UsersRepositoryImpl implements UsersRepository {
 		 return sqlSessionTemplate.selectOne("users.getUserDataByUsername", username);
 	}
 
-	/*
-	 * @Override public String pwCheck(String username) throws Exception { return
-	 * sqlSessionTemplate.selectOne("users.pwCheck", username); }
-	 * 
-	 * @Override public void pwUpdate(String username, String hashedPw) throws
-	 * Exception { Map<String,Object> map = new HashMap<String, Object>();
-	 * map.put("username", username); map.put("password", hashedPw);
-	 * sqlSessionTemplate.update("users.pwUpdate", map);
-	 * 
-	 * }
-	 */
+	
+	  @Override 
+	  public String pwCheck(String username) throws Exception { return
+	  sqlSessionTemplate.selectOne("users.pwCheck", username); }
+	  
+	  @Override 
+	  public void pwUpdate(String username, String hashedPw) throws
+	  Exception { Map<String,Object> map = new HashMap<String, Object>();
+	  map.put("username", username);
+	  map.put("password", hashedPw);
+	  sqlSessionTemplate.update("users.pwUpdate", map);
+	  
+	  }
+	 
 	
 	
 

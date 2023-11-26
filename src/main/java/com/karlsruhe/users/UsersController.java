@@ -6,21 +6,25 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @RequestMapping("/users")
@@ -34,12 +38,12 @@ public class UsersController {
 	/*@Autowired
 	private MailService mailService;*/
 
-	@GetMapping("/join")
+	@GetMapping("/create")
 	public String join() {
-		return "/users/join";
+		return "/users/create";
 	}
 
-	@PostMapping("/join")
+	@PostMapping("/create")
 	public String join(@RequestParam Map<String, Object> map) {
 		
 		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -142,24 +146,43 @@ public class UsersController {
 
 	}
 	
-	/*
-	 * @GetMapping("/pwUpdateView") public String pwUpdateView() throws Exception{
-	 * return "/users/pwUpdate"; }
-	 * 
-	 * @PostMapping("/pwCheck")
-	 * 
-	 * @ResponseBody public int pwCheck(UsersDTO users) throws Exception { String
-	 * memberPw = usersService.pwCheck(users.getUsername()); if (users == null ||
-	 * !BCrypt.checkpw(users.getPassword(), memberPw)) { return 0; } return 1; }
-	 * 
-	 * @PostMapping("/pwUpdate") public String pwUpdate(String username, String
-	 * memberPw1, RedirectAttributes rttr, HttpSession session) throws Exception {
-	 * String hashedPw = BCrypt.hashpw(memberPw1, BCrypt.gensalt());
-	 * usersService.pwUpdate(username, hashedPw); session.invalidate();
-	 * rttr.addFlashAttribute("msg", "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
-	 * 
-	 * return "redirect:/login"; }
-	 */
+	@RequestMapping(value = "/pwUpdate", method = { RequestMethod.GET, RequestMethod.POST })
+	public String pwUpdate() throws Exception {
+	    return "users/pwUpdate";
+	}
+	
+	
+	@RequestMapping(value = "/pwCheck", method = RequestMethod.POST, consumes = "application/json")
+	@ResponseBody
+	public int pwCheck(@RequestBody Map<String, String> pwUpdateForm) throws Exception {
+	    String username = pwUpdateForm.get("username");
+	    String password = pwUpdateForm.get("password");
+
+	    String hashedPassword = usersService.pwCheck(username);
+
+	   
+	    if (hashedPassword == null || hashedPassword.isEmpty()) {
+	        return -1; // Indicates that the user does not exist
+	    }
+
+	   
+	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	    if (!passwordEncoder.matches(password, hashedPassword)) {
+	        return 0; // Indicates that the password is incorrect
+	    }
+
+	    return 1; // Indicates that the password is correct
+	}
+	 
+	  @RequestMapping(value="/pwUpdate" , method=RequestMethod.POST) 
+	 public String pwUpdate(String username, String newPassword1, RedirectAttributes rttr, HttpSession session) throws Exception {
+	  String hashedPw = BCrypt.hashpw(newPassword1, BCrypt.gensalt());
+	  usersService.pwUpdate(username, hashedPw); session.invalidate();
+	 rttr.addFlashAttribute("msg", "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
+	 
+	  return "redirect:/login"; 
+	  }
+	 
 }
 
 
