@@ -13,12 +13,17 @@ ${member.uno} <br><br>
 
 ${member.username} <br><br> 
 
-<div class="col-3">
-    <div id="password" name="password">****</div>
-</div>
-<div class="col-6 updatePwBtn">
-  <a href="/updatePw" class="button" id="updatePwBtn">수정</a>
- </div>
+ <div class="row g-3 align-items-center">
+                        <div class="col-3">
+                            <label for="password" class="col-form-label">비밀번호 : </label>
+                        </div>
+                        <div class="col-3">
+                            <div id="password" name="password">****</div>
+                        </div>
+                        <div class="col-6 updatePwBtn">
+                            <a href="/users/pwUpdate" class="button" >수정</a>
+                        </div>
+                    </div>
 
 ${member.uname} <br><br> 
 
@@ -33,7 +38,7 @@ ${member.udate} <br><br>
 <br><br> <br><br> 
 <a href="/users/memberUpdate?username=${member.username}">수정</a>
 <br><br> 
-
+<a href="/users/memberDelete?username=${member.username}">삭제</a>
 <a href="/logout">로그아웃</a>
 </body>
 </html>

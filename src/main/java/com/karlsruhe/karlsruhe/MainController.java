@@ -1,7 +1,10 @@
 package com.karlsruhe.karlsruhe;
 
 import java.security.Principal;
+import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -61,56 +64,8 @@ public class MainController {
 		return "logout";
 	}
 	
-	 @GetMapping({"/findId"})
-	  public String FindId() {
-	    return "findId";
-	  }
-	  
-	  @ResponseBody
-	  @PostMapping(value = {"/findId"}, produces = {"text/html;charset=UTF-8"})
-	  public String submitFindId(@RequestParam String name, @RequestParam String tel) {
-	    String username = this.usersService.findIdUser(name, tel);
-	    if (username == null || username.equals(""))
-	    	 return "<p>아이디가 존재하지 않습니다<br>이름과 전화번호를 확인해주세요</p>"; 
-	    	return "<p>찾으시는 아이디<span style=\"color:green\">"+username +"</span>입니다.</p>";
-	  }
-	  
-	  @GetMapping({"/findPw"})
-	  public String FindPw(Model model) {
-	    return "findPw";
-	  }
-	  
-	  @ResponseBody
-	  @PostMapping({"/findPw"})
-	  public String submitFindPw(@RequestParam String name, @RequestParam String tel, @RequestParam String username) {
-	    return this.usersService.findPw(name, tel, username);
-	  }
-	  
-	  @ResponseBody
-	  @RequestMapping({"/IdChk"})
-	  public Boolean IdChk(@RequestParam String username) {
-		  UsersDTO member = this.usersService.memberDetail(username);
-	    if (member == null)
-	      return Boolean.valueOf(true); 
-	    return Boolean.valueOf(false);
-	  }
-	  
-	  @ResponseBody
-	  @RequestMapping({"/TelChk"})
-	  public Boolean TelChk(@RequestParam String tel, @RequestParam(value = "username", required = false) String username) {
-	    if (username != null) {
-	    	UsersDTO member = this.usersService.memberDetail(username);
-	      String oldTel = member.getUtel();
-	      if (oldTel.equals(tel))
-	        return Boolean.valueOf(true); 
-	    } 
-	    UsersDTO member =  this.usersService.telChk(tel);
-	    return (member == null) ? Boolean.valueOf(true) : Boolean.valueOf(false);
-	  }
 	
-	  
-	
-	
+
 	  
 	  
 	}

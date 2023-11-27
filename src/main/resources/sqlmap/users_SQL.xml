@@ -18,7 +18,7 @@
 	]]>
 	</select>
 
-	<select id="memberDetail" resultType="com.karlsruhe.users.UsersDTO">
+	<select id="memberDetail" resultType="hashMap">
 	<![CDATA[
 		SELECT * FROM 
 			users
@@ -39,22 +39,27 @@
 			WHERE
 		username = #{username}
 	]]>
+	
 	</update>
 	
+	<select id="pwCheck" resultType="String">
+    <![CDATA[
+        SELECT password FROM 
+        users 
+        WHERE 
+        username = #{username}
+    ]]>
+    </select>
 
+   <update id="pwUpdate" parameterType="hashMap">
+    <![CDATA[
+        UPDATE users
+        SET password = #{password}
+        WHERE username = #{username}
+    ]]>
+</update>
 	
-	<select id="pwCheck" resultType="com.karlsruhe.users.UsersDTO">
-          select MEMBER_PW from mp_member where member_id = #{memberId}
-     </select>
-
-      <update id="pwUpdate">
-       update MP_MEMBER set 
-       MEMBER_PW =  #{memberPw}
-        where 
-        MEMBER_ID = #{memberId}
-      </update>
-	
-	<delete id="memberDelete" parameterType="hashMap">
+	<delete id="memberDelete" parameterType="String">
 	<![CDATA[
 		DELETE FROM 
 			users
@@ -63,47 +68,34 @@
 	]]>
 	</delete>
 	
-     	<select id="totalCount" resultType="hashMap">
-	<![CDATA[
-		SELECT COUNT(username)
-			FROM
-			users
-	]]>
-	</select>
-	
-		<select id="telChk" resultType="com.karlsruhe.users.UsersDTO">
+	<select id="memberExist" parameterType="String" resultType="com.karlsruhe.users.UsersDTO">
 	<![CDATA[
 		SELECT * FROM 
 			users
-		WHERE
-		    utel = #{utel}
+		WHERE 
+			uemail = #{uemail}
 	]]>
 	</select>
 	
-		<select id="findIdUser" resultType="hashMap">
-	<![CDATA[
-		SELECT username from
-			users
-		WHERE
-		    uname = #{uname} and utel = #{utel}
-	]]>
-	</select>
-	
-		<select id="findPw" resultType="hashMap">
-	<![CDATA[
-		SELECT * FROM 
-			users
-		WHERE
-		    uname = #{uname} and utel = #{utel} and username = #{username}
-	]]>
-	</select>
-	
-		<select id="countUsers" resultType="hashMap">
-	<![CDATA[
-		SELECT count(*)
-		FROM
-			users
-		
-	]]>
-	</select>
+	<select id="getUserDataByUsername" parameterType="String" resultType="Map">
+     <![CDATA[
+        SELECT uname, uposition, udepart, uemail FROM 
+        	users
+        WHERE 
+        	username = #{username}
+     
+     ]]>
+     </select>
+     
+     <select id="findIdUser" parameterType="map" resultType="string">
+      <![CDATA[
+		select username from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		 ]]>
+</select>
+     
 </mapper>

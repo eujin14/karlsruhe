@@ -4,11 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsersServiceImpl implements UsersService {
+public  class UsersServiceImpl implements UsersService {
 	
 	@Autowired
 	private UsersRepository usersRepository;
@@ -24,7 +23,7 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public UsersDTO memberDetail(String username) {
+	public Map<String, Object> memberDetail(String username) {
 		
 		return usersRepository.memberDetail(username);
 	}
@@ -40,52 +39,37 @@ public class UsersServiceImpl implements UsersService {
 
 	}
 
+	@Override
+	public void getUpositionByUsername(String username) {
+		 usersRepository.findUpositionByUsername(username);
+
+	}
 
 	@Override
 	public UsersDTO memberExist(String uemail) {
 		return usersRepository.memberExist(uemail);
 	}
 
-
 	@Override
-	public String findIdUser(String name, String tel) {
-		 return this.usersRepository.findIdUser(name, tel);
+	public Map<String, Object> getUserDataByUsername(String username) {
+		  return usersRepository.getUserDataByUsername(username);
 	}
 
-	@Override
-	public String findPw(String name, String tel, String username) {
-	    return this.usersRepository.findPw(name, tel, username);
+	
+	 @Override public String pwCheck(String username) throws Exception {
+		 return usersRepository.pwCheck(username); 
+		 }
+	  
+	  @Override public void pwUpdate(String username, String hashedPw) throws Exception { 
+		  usersRepository.pwUpdate(username, hashedPw);
 	  }
 
-	@Override
-	 public int totalCount() {
-	    return this.usersRepository.totalCount();
-	  }
-	@Override
-	public int countUsers() {
-	    return this.usersRepository.countUsers();
-	  }
-
-	@Override
-	public UsersDTO telChk(String utel) {
-		return this.usersRepository.telChk(utel);
-	}
-
-	@Override
-	public String pwCheck(String memberId)throws Exception{
-		return usersRepository.pwCheck(memberId);
-	}
-	
-	@Override
-	public void pwUpdate(String memberId, String hashedPw)throws Exception{
-		usersRepository.pwUpdate(memberId, hashedPw);
-	}
-
-
-	
-	
-
-	
+	  public String findIdUser(String uname, String utel) {
+		    return this.usersRepository.findIdUser(uname, utel);
+		  }
 
 	}
+
+
+
 
