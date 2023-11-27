@@ -42,15 +42,6 @@ public class MainController {
 		return "login";
 	}
 	
-	@GetMapping("/login2")
-	public String signup(Model model) {
-		
-		String signup = "signup";
-		
-		model.addAttribute("signup", signup);
-		
-		return "login";
-	}
 	
 	@GetMapping("/naverlogin")
 	public String naverlogin() {

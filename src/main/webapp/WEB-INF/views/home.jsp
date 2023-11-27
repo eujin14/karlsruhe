@@ -19,6 +19,6 @@
 <br>
 <a href="/notice/readList">공지목록</a>
 
-
+<a href="/admin/admin">공지목록</a>
 </body>
 </html>

@@ -22,33 +22,30 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          
+          <li class="dropdown"><a href="#"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="#">목사님의 인사말</a></li>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">교회연혁</a></li>
+              <li><a href="#">섬기는 이</a></li>
+              <li><a href="#">예배장소와 시간</a></li>
             </ul>
           </li>
+        <li><a href="services.html">공지사항</a></li>
+        <li><a href="services.html">주보</a></li>
+          <li><a href="services.html">게시판</a></li>
+          <li><a href="testimonials.html">갤러리</a></li>
+          
+           <sec:authorize access="hasRole('ROLE_ADMIN')">
+           <a class="nav-link" href="admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
+         </sec:authorize>
+          
         <li><sec:authentication property="principal" var="user" />
             <sec:authorize access="isAnonymous()">
              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button type="button" class="btn btn-outline-primary"><a href="/login2">회원가입</a></button>
+              <button type="button" class="btn btn-outline-primary"><a href="/users/create">회원가입</a></button>
               <button type="button" class="btn btn-outline-danger"><a href="/login">로그인</a></button>
               </div>
       </sec:authorize>   
