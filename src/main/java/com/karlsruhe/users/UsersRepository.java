@@ -14,7 +14,9 @@ public interface UsersRepository {
 	
 	void memberUpdate(Map<String, Object> map);
 	
-	void updatePasswordUsers(String password, String username);
+	 String pwCheck(String memberId)throws Exception;
+	 
+	 void pwUpdate(String memberId, String hashedPw)throws Exception;
 	
 	void memberDelete(String username);
 	

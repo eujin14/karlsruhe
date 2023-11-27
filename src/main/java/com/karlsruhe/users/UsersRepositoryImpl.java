@@ -1,5 +1,6 @@
 package com.karlsruhe.users;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -83,10 +84,18 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 
 	@Override
-	public void updatePasswordUsers(@Param("password") String password, @Param("username") String username) {
-	    sqlSessionTemplate.update("users.updatePasswordUsers", new UsersDTO());
+	public String pwCheck(String memberId)throws Exception{
+		return sqlSessionTemplate.selectOne("memberMapper.pwCheck", memberId);
 	}
-
+	
+	@Override
+	public void pwUpdate(String memberId, String hashedPw) throws Exception{
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("memberId", memberId);
+		map.put("memberPw", hashedPw);
+		sqlSessionTemplate.update("users.memberUpdate", map);
+		
+	}
 }
 	
 

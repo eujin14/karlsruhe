@@ -41,16 +41,18 @@
 	]]>
 	</update>
 	
-		<update id="updatePasswordUsers" parameterType="hashMap">
-	<![CDATA[
-		UPDATE users 
-			SET
-		password = #{password}
-			WHERE
-		username = #{username}
-	]]>
+
 	
-	</update>
+	<select id="pwCheck" resultType="com.karlsruhe.users.UsersDTO">
+          select MEMBER_PW from mp_member where member_id = #{memberId}
+     </select>
+
+      <update id="pwUpdate">
+       update MP_MEMBER set 
+       MEMBER_PW =  #{memberPw}
+        where 
+        MEMBER_ID = #{memberId}
+      </update>
 	
 	<delete id="memberDelete" parameterType="hashMap">
 	<![CDATA[

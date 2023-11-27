@@ -72,11 +72,14 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	public void updatePasswordUsers(String password, String username) {
-		 this.usersRepository.updatePasswordUsers(password, username);
-		
+	public String pwCheck(String memberId)throws Exception{
+		return usersRepository.pwCheck(memberId);
 	}
-
+	
+	@Override
+	public void pwUpdate(String memberId, String hashedPw)throws Exception{
+		usersRepository.pwUpdate(memberId, hashedPw);
+	}
 
 
 	

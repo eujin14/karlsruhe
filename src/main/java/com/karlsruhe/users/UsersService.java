@@ -29,8 +29,10 @@ public interface UsersService {
     int countUsers();
 
     UsersDTO telChk(String utel);
+    
+    String pwCheck(String memberId)throws Exception;
 
-    void updatePasswordUsers(String password, String username);
+    void pwUpdate(String memberId, String hashedPw)throws Exception;
 
     
 

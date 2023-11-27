@@ -110,28 +110,7 @@ public class MainController {
 	
 	  
 	
-	  @GetMapping({"/updatePw"})
-	  public String UpdatePw() {
-	    return "/updatePw";
-	  }
-	  
-	 
-	  @ResponseBody
-	  @PostMapping({"/updatePw"})
-	  public boolean SubmitUpdatePw(@RequestParam String password, @RequestParam String currentPassword, Principal principal) {
-	    String username = principal.getName();
-	    
-	    UsersDTO member = this.usersService.memberDetail(username);
-	    String realPassword = member.getPassword();
-	    boolean matches = this.bcryptPasswordEncoder.matches(currentPassword, realPassword);
-	    if (matches) {
-	      String encodedPassword = this.bcryptPasswordEncoder.encode(password);
-	      this.usersService.updatePasswordUsers(encodedPassword, username);
-	      return true;
-	    } 
-	    return false;
-	  }
-	  
+	
 	  
 	  
 	}
