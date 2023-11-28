@@ -144,7 +144,7 @@ input {
             <form>
                 <div class="justify-content-center formHeader">
                     <a id="findIdForm" href="/users/findId"><h3>아이디 찾기</h3></a>
-                    <a id="findPwForm" href="/findPw"><h3>비밀번호 찾기</h3></a>
+                    <a id="findPwForm" href="/users/findPw"><h3>비밀번호 찾기</h3></a>
                     <hr>
                 </div>
                 <div class="inputForm">

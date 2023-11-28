@@ -146,42 +146,41 @@ public class UsersController {
 
 	}
 	
-	@RequestMapping(value = "/pwUpdate", method = { RequestMethod.GET, RequestMethod.POST })
-	public String pwUpdate() throws Exception {
-	    return "users/pwUpdate";
-	}
-	
-	
-	@RequestMapping(value = "/pwCheck", method = RequestMethod.POST, consumes = "application/json")
-	@ResponseBody
-	public int pwCheck(@RequestBody Map<String, String> pwUpdateForm) throws Exception {
-	    String username = pwUpdateForm.get("username");
-	    String password = pwUpdateForm.get("password");
-
-	    String hashedPassword = usersService.pwCheck(username);
-
-	   
-	    if (hashedPassword == null || hashedPassword.isEmpty()) {
-	        return -1; // Indicates that the user does not exist
-	    }
-
-	   
-	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-	    if (!passwordEncoder.matches(password, hashedPassword)) {
-	        return 0; // Indicates that the password is incorrect
-	    }
-
-	    return 1; // Indicates that the password is correct
-	}
-	 
-	  @RequestMapping(value="/pwUpdate" , method=RequestMethod.POST) 
-	 public String pwUpdate(String username, String newPassword1, RedirectAttributes rttr, HttpSession session) throws Exception {
-	  String hashedPw = BCrypt.hashpw(newPassword1, BCrypt.gensalt());
-	  usersService.pwUpdate(username, hashedPw); session.invalidate();
-	 rttr.addFlashAttribute("msg", "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
-	 
-	  return "redirect:/login"; 
-	  }
+	/*
+	 * @RequestMapping(value = "/pwUpdate", method = { RequestMethod.GET,
+	 * RequestMethod.POST }) public String pwUpdate() throws Exception { return
+	 * "users/pwUpdate"; }
+	 * 
+	 * 
+	 * @RequestMapping(value = "/pwCheck", method = RequestMethod.POST, consumes =
+	 * "application/json")
+	 * 
+	 * @ResponseBody public int pwCheck(@RequestBody Map<String, String>
+	 * pwUpdateForm) throws Exception { String username =
+	 * pwUpdateForm.get("username"); String password = pwUpdateForm.get("password");
+	 * 
+	 * String hashedPassword = usersService.pwCheck(username);
+	 * 
+	 * 
+	 * if (hashedPassword == null || hashedPassword.isEmpty()) { return -1; //
+	 * Indicates that the user does not exist }
+	 * 
+	 * 
+	 * BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); if
+	 * (!passwordEncoder.matches(password, hashedPassword)) { return 0; // Indicates
+	 * that the password is incorrect }
+	 * 
+	 * return 1; // Indicates that the password is correct }
+	 * 
+	 * @RequestMapping(value="/pwUpdate" , method=RequestMethod.POST) public String
+	 * pwUpdate(String username, String newPassword1, RedirectAttributes rttr,
+	 * HttpSession session) throws Exception { String hashedPw =
+	 * BCrypt.hashpw(newPassword1, BCrypt.gensalt());
+	 * usersService.pwUpdate(username, hashedPw); session.invalidate();
+	 * rttr.addFlashAttribute("msg", "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
+	 * 
+	 * return "redirect:/login"; }
+	 */
 	  
 
 		 @GetMapping({"/findId"})
@@ -196,6 +195,17 @@ public class UsersController {
 		    if (username == null || username.equals(""))
 		      return "<p>아이디가 존재하지 않습니다<br>이름과 전화번호를 확인해 주세요</p>";
 		    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
+		  }
+		
+		@GetMapping({"/findPw"})
+		  public String FindPw(Model model) {
+		    return "users/findPw";
+		  }
+		  
+		  @ResponseBody
+		  @PostMapping({"/findPw"})
+		  public String submitFindPw(@RequestParam String name, @RequestParam String tel, @RequestParam String username) {
+		    return this.usersService.findPw(name, tel, username);
 		  }
 	 
 }
