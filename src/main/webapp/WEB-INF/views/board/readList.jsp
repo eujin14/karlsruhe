@@ -18,78 +18,68 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"></script>
+            
+            
+            
+            
+            
+  <!-- Vendor CSS Files -->
+   <link href="/resources/vendor/simple-datatables/style.css" rel="stylesheet">
 
+  
+  
+  
+  
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
 <div class="container">
-<div class="card shadow-none border border-300 mb-3"
-		data-component-card="data-component-card">
-		<div class="card-header p-4 border-bottom border-300 bg-soft">
-			<div class="row g-3 justify-content-between align-items-center">
-				<div class="col-12 col-md">
-					<h4 class="text-900 mb-0" data-anchor="data-anchor">자유 게시판</h4>
-				</div>
-			</div>
-		</div>
-		<div class="card-body p-0">
-		
-			<!-- 공지사항중 내용과 카테고리를 검색어로 원하는 내용만 확인 할 수 있게함  -->
-			<div class="p-4 code-to-copy">
-				<div id="tableExample4"
-					data-list='{"valueNames":["bno","btitle","bdate"],"page":10,"pagination":true,"filter":{"key":"btitle"}}'>
-					<div class="row justify-content-end g-0">
 
-						<div class="search-box mb-3 mx-auto">
-							<form class="position-relative" data-bs-toggle="search"
-								data-bs-display="static">
-								<input class="form-control search-input search form-control-sm"
-									type="search" placeholder="검색어를 입력하세요" aria-label="Search" />
-								<span class="fas fa-search search-box-icon"></span>
+<section class="section">
+      <div class="row">
+        <div class="col-lg-12">
 
-							</form>
-						</div>
-					</div>
-					<div class="table-responsive">
-						<table class="table table-sm fs--1 mb-0 table-hover">
-							<thead>
-								<tr class="be-light">
-									<th class="sort border-top ps-3" data-sort="bno">번호</th>
-									<th class="sort border-top" data-sort="btitle">제목</th>
-									<th class="sort border-top text-end pe-3" data-sort="bdate">작성일</th>
-								</tr>
-							</thead>
+          <div class="card">
+            <div class="card-body">
+              <h1 class="card-title">자유게시판</h1>
+ <h5 class="card-title">글과 의견을 자유롭게 제시할 수 있는 게시판입니다.</h5>
+              <p>
+비방성 글, 광고, 명예훼손의 우려가 있는 글 등 게시판 성격에 부합되지 않는 게시물은 관리자 권한으로 통보없이 이동, 삭제될 수 있습니다.</p>
 
-							<tbody class="list">
-								<c:forEach items="${boards}" var="board">
+              <!-- Table with stripped rows -->
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th data-sort="bno">번호</th>
+                    <th data-sort="btitle">제목</th>
+                    <th data-sort="bdate">작성일</th>
+                  </tr>
+                </thead>
+                <tbody>
+<c:forEach items="${boards}" var="board">
+                  <tr>
+                    <td>${board.bno}</td>
+                    <td><a href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
+                    <td>${board.bdate}</td>
+                  </tr>
+	</c:forEach>
+   </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
 
-									<tr>
-										<td class="align-middle ps-3 bno">${board.bno}</td>
-										<td class="align-middle btitle"><a
-											href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
-										<td class="align-middle bdate text-end py-3 pe-3">${board.bdate}</td>
-									</tr>
-								</c:forEach>
+            </div>
+          </div>
 
-							</tbody>
-						</table>
-							<a href="/board/create">작성</a>
-					</div>
-					<div class="d-flex justify-content-between mt-3">
-						<button class="page-link" data-list-pagination="prev">
-							<span class="fas fa-chevron-left"></span>
-						</button>
-						<ul class="mb-0 pagination"></ul>
-						<button class="page-link pe-0" data-list-pagination="next">
-							<span class="fas fa-chevron-right"></span>
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+        </div>
+      </div>
+    </section>
+
 	</div>
-	</div>
+	  <!-- Vendor JS Files -->
+  <script src="/resources/vendor/simple-datatables/simple-datatables.js"></script>
+
+
 </body>
 </html>

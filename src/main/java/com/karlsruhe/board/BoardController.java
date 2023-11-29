@@ -1,5 +1,6 @@
 package com.karlsruhe.board;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @RequestMapping("/board")
@@ -155,16 +157,15 @@ public class BoardController {
 		}
 
 		// 댓글이 작성될 수 있게 하며 댓글의 내용이 담길 수 있게 함
-		/*
-		 * @ResponseBody
-		 * 
-		 * @PostMapping("/readreply") public List<Map<String, Object>>
-		 * readreply(@RequestParam("breply") String breply) {
-		 * 
-		 * return boardService.readreply(breply);
-		 * 
-		 * }
-		 */
+		
+		  @ResponseBody
+		  @PostMapping("/readreply") 
+		  public List<Map<String, Object>>readreply(@RequestParam("breply") String breply) {
+		  
+		  return boardService.readreply(breply);
+		  
+		  }
+		 
 
 		// 좋아요 클릭시에 숫자 증가하고 나타나게 함
 		@PostMapping("/count")
