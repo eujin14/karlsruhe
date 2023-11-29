@@ -35,6 +35,5 @@ public interface UsersService {
 	 String findPw(String paramString1, String paramString2, String paramString3);
 	   
 
-
-
+	 void updatePasswordUsers(String paramString1, String paramString2);
 }

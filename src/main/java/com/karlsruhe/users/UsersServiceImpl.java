@@ -73,6 +73,10 @@ public  class UsersServiceImpl implements UsersService {
 	    return this.usersRepository.findPw(uname, utel,username);
 
 	}
+	
+	public void updatePasswordUsers(String password, String username) {
+	    this.usersRepository.updatePasswordUsers(password, username);
+	  }
 
 	}
 
