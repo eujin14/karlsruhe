@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+	<insert id="create" parameterType="hashMap">
+	<![CDATA[
+		INSERT INTO users
+		(username, password, authority, enabled, uname,  utel, uemail, uaddr)
+		VALUES
+		(#{username}, #{password}, "ROLE_USER", "1", #{uname}, #{utel}, #{uemail}, #{uaddr})
+	]]>
+	</insert>
+	
+	<select id="memberList" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			users
+	]]>
+	</select>
+
+	<select id="memberDetail" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			users
+		WHERE 
+			username = #{username}
+	]]>
+	</select>
+
+	<update id="memberUpdate" parameterType="hashMap">
+	<![CDATA[
+	    UPDATE users 
+	          SET
+		username = #{username}, 
+		password = #{password}, 
+		uname = #{uname}, 
+		utel = #{utel},  
+		uemail = #{uemail}, 
+		uaddr = #{uaddr}
+	        WHERE
+		uno = #{uno}
+]]>
+	
+	</update>
+	
+	<delete id="memberDelete" parameterType="String">
+	<![CDATA[
+		DELETE FROM 
+			users
+		WHERE 
+			uno = #{uno}
+	]]>
+	</delete>
+	
+	<select id="memberExist" parameterType="String" resultType="com.karlsruhe.users.UsersDTO">
+	<![CDATA[
+		SELECT * FROM 
+			users
+		WHERE 
+			uemail = #{uemail}
+	]]>
+	</select>
+	
+	<select id="getUserDataByUsername" parameterType="String" resultType="Map">
+     <![CDATA[
+        SELECT uname, uposition, udepart, uemail FROM 
+        	users
+        WHERE 
+        	username = #{username}
+     
+     ]]>
+     </select>
+     
+     
+</mapper>

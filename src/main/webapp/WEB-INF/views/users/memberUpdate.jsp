@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
   <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" name="Member" enctype="multipart/form-data">
            <input type="hidden" name="username" value="${member.username}">
               <div class="mb-3 text-start">
@@ -40,6 +41,23 @@
             
               <button class="btn btn-primary w-100 mb-3" type="submit" >회원정보 수정</button>
             </form>
+=======
+ <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" name="Member">
+<p>아이디:<input type="hidden" name="username" value="${member.username}" readonly>
+<p>패스워드:<input type="password" name="password" value="${member.password}" readonly>
+<p>이름:<input type="text" name="uname" value="${member.uname}">
+<p>연락처:<input type="text" name="utel" value="${member.utel}"  >
+<p>이메일:<input type="text" name="uemail" value="${member.uemail}" >
+<p>주소:<input type="text" name="uaddr" value="${member.uaddr}" >
+<input type="hidden" name="username" value="${member.username }">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+ <input type="hidden" name="uno" value="${member.uno}">
+
+<input type="submit" value="회원정보 수정">
+	
+
+</form>
+>>>>>>> origin/sunghee
 
 </body>
 </html>

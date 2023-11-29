@@ -41,10 +41,17 @@ public class BoardRepositoryImpl implements BoardRepository {
 
 	}
 
+<<<<<<< HEAD
 	/*
 	 * @Override public List<Map<String, Object>> readreply(String breply) { return
 	 * sqlSessionTemplate.selectList("board.breply",breply); }
 	 */
+=======
+	
+	  @Override public List<Map<String, Object>> readreply(String breply) { return
+	  sqlSessionTemplate.selectList("board.breply",breply); }
+	 
+>>>>>>> origin/sunghee
 	@Override
 	public void count(Map<String, Object> map) {
 		sqlSessionTemplate.update("board.count",map);

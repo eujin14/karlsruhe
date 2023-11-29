@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 <!-- name:sunghee kim
 date:2023/09/12
 mail: inew3w@gmail.com  -->
 
+=======
+>>>>>>> origin/sunghee
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -46,7 +49,11 @@ function createreply() {
 	/* window.opener.location.href = "/main"; */
 }
 
+<<<<<<< HEAD
 function count(nno) {
+=======
+function count(bno) {
+>>>>>>> origin/sunghee
 	
 	$.ajax({
 		type : "post",
@@ -68,8 +75,14 @@ function count(nno) {
 
 	</script>
 </head>
+<<<<<<< HEAD
 	
 	<br><h3>${board.btitle}</h3><br>
+=======
+<div class="container">
+<sec:authentication property="principal" var="users" />
+	<br><h3 style="color: white">${board.btitle}</h3><br>
+>>>>>>> origin/sunghee
 	<table class="table">
 		<thead class="table-light">
 			<tr>
@@ -78,6 +91,7 @@ function count(nno) {
 					<a href="" onclick="count('${board.bno}')"><span
 				class="text-900 fs-1 uil uil-thumbs-up"></span>${board.bcount}</a> 
 				</th>
+<<<<<<< HEAD
 				<th></th>
 			</tr>
 		</thead>
@@ -87,6 +101,18 @@ function count(nno) {
 				width="1200" height="200"></th>
 				<td>${board.bcontent}</td>
 			</tr>
+=======
+
+			</tr>
+		</thead>
+		<tbody>        
+         <tr>
+			<tr>
+			<td><img src="https://tjdgml789.cdn1.cafe24.com/board/${board.bimage}"  width="500" height="auto"></td>
+			</tr>
+			 <tr> <td>${board.bcontent}</td></tr>
+
+>>>>>>> origin/sunghee
 			<tr>
 				<td>
 					<div class="row">
@@ -115,13 +141,21 @@ function count(nno) {
 
 
 
+<<<<<<< HEAD
 <!-- 질문내용 -->
 <sec:authentication property="principal" var="users" />
+=======
+
+>>>>>>> origin/sunghee
 
 
 
 <!-- 댓글시작 -->
+<<<<<<< HEAD
 <div class="card flex-1 h-100 phoenix-offcanvas-container">
+=======
+<%-- <div class="card flex-1 h-100 phoenix-offcanvas-container">
+>>>>>>> origin/sunghee
 	<br>
 	<c:forEach items="${replylist}" var="reply">
 		<!-- 	댓글을 작성한 사람이 등록된 사람이면 오른쪽에 파란색으로 글이 나타남 -->
@@ -167,7 +201,11 @@ function count(nno) {
 
 
 
+<<<<<<< HEAD
 								<%-- <button class="btn btn-secondary me-1 mb-1" type="button"
+=======
+								<button class="btn btn-secondary me-1 mb-1" type="button"
+>>>>>>> origin/sunghee
 									data-bs-toggle="modal" data-bs-target="#verticallyCentered">${reply.nwriter}</button>
 								<div class="modal fade" id="verticallyCentered" tabindex="-1"
 									aria-labelledby="verticallyCenteredModalLabel"
@@ -191,7 +229,11 @@ function count(nno) {
 											</div>
 										</div>
 									</div>
+<<<<<<< HEAD
 								</div> --%>
+=======
+								</div>
+>>>>>>> origin/sunghee
 
 
 
@@ -233,10 +275,18 @@ function count(nno) {
 
 
 
+<<<<<<< HEAD
 </div>
 
 
 
 
+=======
+</div> --%>
+
+
+
+</div>
+>>>>>>> origin/sunghee
 </body>
 </html>

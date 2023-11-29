@@ -1,27 +1,42 @@
 package com.karlsruhe.users;
 
+<<<<<<< HEAD
 import java.security.Principal;
+=======
+>>>>>>> origin/sunghee
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+=======
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+>>>>>>> origin/sunghee
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+<<<<<<< HEAD
 import org.springframework.security.crypto.bcrypt.BCrypt;
+=======
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+>>>>>>> origin/sunghee
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,6 +44,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+=======
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+>>>>>>> origin/sunghee
 
 @RequestMapping("/users")
 @Controller
@@ -37,17 +56,29 @@ public class UsersController {
 
 	@Autowired
 	private UsersService usersService;
+<<<<<<< HEAD
 	private Object bcryptPasswordEncoder;
+=======
+>>>>>>> origin/sunghee
 
 	/*@Autowired
 	private MailService mailService;*/
 
+<<<<<<< HEAD
 	@GetMapping("/create")
 	public String join() {
 		return "/users/create";
 	}
 
 	@PostMapping("/create")
+=======
+	@GetMapping("/join")
+	public String join() {
+		return "/users/join";
+	}
+
+	@PostMapping("/join")
+>>>>>>> origin/sunghee
 	public String join(@RequestParam Map<String, Object> map) {
 		
 		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -87,15 +118,25 @@ public class UsersController {
 	@GetMapping("/memberDetail")
 	public String memberdetail(String username, Model model) {
 	    model.addAttribute("member", usersService.memberDetail(username));
+<<<<<<< HEAD
 	    return "users/memberDetail";  
+=======
+	    return "users/memberDetail";  // Just the logical view name without query parameters
+>>>>>>> origin/sunghee
 	}
 
 	
 
 	@GetMapping("/memberUpdate")
+<<<<<<< HEAD
 	public String update(@RequestParam ("username") String username, Model model) {
 
 		model.addAttribute("member", usersService.memberDetail(username));
+=======
+	public String update(@RequestParam ("uno") String uno, Model model) {
+
+		model.addAttribute("member", usersService.memberDetail(uno));
+>>>>>>> origin/sunghee
 
 		return "users/memberUpdate";
 	}
@@ -110,9 +151,15 @@ public class UsersController {
 	}
 
 	@GetMapping("/memberDelete")
+<<<<<<< HEAD
 	public String delete(@RequestParam ("username") String username) {
 
 		usersService.memberDelete(username);
+=======
+	public String delete(@RequestParam ("uno") String uno) {
+
+		usersService.memberDelete(uno);
+>>>>>>> origin/sunghee
 		
 		return "redirect:/main";
 	}
@@ -149,6 +196,7 @@ public class UsersController {
 		}
 
 	}
+<<<<<<< HEAD
 	
 
 		 @GetMapping({"/findId"})
@@ -198,3 +246,8 @@ public class UsersController {
 }
 
 
+=======
+
+}
+
+>>>>>>> origin/sunghee

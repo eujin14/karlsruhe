@@ -4,10 +4,19 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.stereotype.Service;
 
 @Service
 public  class UsersServiceImpl implements UsersService {
+=======
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UsersServiceImpl implements UsersService {
+>>>>>>> origin/sunghee
 	
 	@Autowired
 	private UsersRepository usersRepository;
@@ -25,6 +34,11 @@ public  class UsersServiceImpl implements UsersService {
 	@Override
 	public Map<String, Object> memberDetail(String username) {
 		
+<<<<<<< HEAD
+=======
+	
+		
+>>>>>>> origin/sunghee
 		return usersRepository.memberDetail(username);
 	}
 
@@ -34,8 +48,13 @@ public  class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void memberDelete(String username) {
 		usersRepository.memberDelete(username);
+=======
+	public void memberDelete(String uno) {
+		usersRepository.memberDelete(uno);
+>>>>>>> origin/sunghee
 
 	}
 
@@ -55,6 +74,7 @@ public  class UsersServiceImpl implements UsersService {
 		  return usersRepository.getUserDataByUsername(username);
 	}
 
+<<<<<<< HEAD
 	
 	/*
 	 * @Override public String pwCheck(String username) throws Exception { return
@@ -83,3 +103,6 @@ public  class UsersServiceImpl implements UsersService {
 
 
 
+=======
+}
+>>>>>>> origin/sunghee
