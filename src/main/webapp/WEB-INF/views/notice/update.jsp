@@ -20,9 +20,9 @@
 	<p>제목 : <input type="text" name="ntitle" id= "ntitle" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 " value="${details.ntitle}"><p>
 	<p>작성자 : <input type="text" name="nwriter" id= "nwriter" maxlength="100" style="width:100%;" value="${details.nwriter}"></p>
 	<p>공지유형 <select name="ncategory" id="ncategory" value="${details.ncategory}"><option selected>${details.ncategory}</option>
-				<option>2공지</option>
-				<option>3공지</option>
-			</select>
+				<option>일반공지</option>
+				<option>긴급공지</option>
+			 </select>
 	<p>내용<textarea id="summernote" name="ncontent">${details.ncontent}</textarea>
 	<p>첨부사진
 			<input type="file" name="nimage" id="nimage" value="${details.nimage}">
