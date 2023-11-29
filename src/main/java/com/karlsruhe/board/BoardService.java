@@ -13,16 +13,14 @@ public interface BoardService {
 	void update(Map<String,Object>map);
 	void delete(String bno);
 	
-<<<<<<< HEAD
+
 	/*
 	 * List<Map<String,Object>> readreply(String breply);
 	 */	
-=======
+
 	
 	  List<Map<String,Object>> readreply(String breply);
+	void count(Map<String, Object> map);
 	 	
->>>>>>> origin/sunghee
-	void count(Map<String,Object>map);
-
 
 }

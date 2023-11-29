@@ -29,26 +29,28 @@
 
 	<update id="memberUpdate" parameterType="hashMap">
 	<![CDATA[
-	    UPDATE users 
-	          SET
-		username = #{username}, 
-		password = #{password}, 
-		uname = #{uname}, 
-		utel = #{utel},  
+		UPDATE users 
+			SET
+		password = #{password},
+		uname = #{uname},
+		utel = #{utel},
 		uemail = #{uemail}, 
 		uaddr = #{uaddr}
-	        WHERE
-		uno = #{uno}
-]]>
+			WHERE
+		username = #{username}
+	]]>
 	
 	</update>
+	
+
+
 	
 	<delete id="memberDelete" parameterType="String">
 	<![CDATA[
 		DELETE FROM 
 			users
 		WHERE 
-			uno = #{uno}
+			username = #{username}
 	]]>
 	</delete>
 	
@@ -71,5 +73,40 @@
      ]]>
      </select>
      
+     <select id="findIdUser" parameterType="map" resultType="string">
+      <![CDATA[
+		select username from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		 ]]>
+</select>
+
+     <select id="findPw" parameterType="map" resultType="string">
+      <![CDATA[
+		select * from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		and 
+		username = #{username}
+		 ]]>
+</select>
+
+	<update id="updatePasswordUsers" parameterType="hashMap">
+	<![CDATA[
+		UPDATE users 
+			SET
+		password = #{password}
+			WHERE
+		username = #{username}
+	]]>
+	
+	</update>
      
+
 </mapper>

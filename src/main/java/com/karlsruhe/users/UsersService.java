@@ -13,11 +13,7 @@ public interface UsersService {
 	
 	void memberUpdate(Map<String, Object> map);
 	
-<<<<<<< HEAD
 	void memberDelete(String username);
-=======
-	void memberDelete(String uno);
->>>>>>> origin/sunghee
 	
 
 	
@@ -28,7 +24,6 @@ public interface UsersService {
 	Map<String, Object> getUserDataByUsername(String username);
 
 	
-<<<<<<< HEAD
 	/*
 	 * String pwCheck(String username)throws Exception;
 	 * 
@@ -41,8 +36,4 @@ public interface UsersService {
 	   
 
 	 void updatePasswordUsers(String paramString1, String paramString2);
-=======
-
-
->>>>>>> origin/sunghee
 }

@@ -37,22 +37,24 @@ public class BoardServiceImpl implements BoardService {
 		boardRepository.delete(bno);
 	}
 
-<<<<<<< HEAD
 	/*
 	 * @Override public List<Map<String, Object>> readreply(String breply) { return
 	 * boardRepository.readreply(breply); }
 	 */
-=======
+
 	
 	  @Override public List<Map<String, Object>> readreply(String breply) { return
 	  boardRepository.readreply(breply); }
-	 
->>>>>>> origin/sunghee
+
 
 	@Override
 	public void count(Map<String, Object> map) {
-		boardRepository.count(map);		
+		// TODO Auto-generated method stub
+		
 	}
+	 
+
+
 	
 }
 

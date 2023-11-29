@@ -1,144 +1,70 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notice">
 
 <insert id="create" parameterType="hashMap">
 <![CDATA[
-	INSERT INTO notice
-	(npid, ntitle, nwriter, ncontent, ncategory, nimage, ncount, npin)
-	VALUES
-	(#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{ncategory}, #{nimage}, #{ncount}, #{npin})
+   INSERT INTO notice
+   (npid, ntitle, nwriter, ncontent, ncategory, nimage, ncount, npin)
+   VALUES
+   (#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{ncategory}, #{nimage}, #{ncount}, #{npin})
 ]]>
 </insert>
 
 <select id="readList" resultType="hashMap">
 <![CDATA[
-	SELECT * FROM
-		notice
-	WHERE 
-		npid IS NULL
-	ORDER BY 
-		npin DESC , nid DESC
+   SELECT * FROM
+      notice
+   WHERE 
+      npid IS NULL
+   ORDER BY 
+      npin DESC , nid DESC
 ]]>
 </select>
 
 
 <select id="readDetail" parameterType="String" resultType="hashMap">
 <![CDATA[
-	SELECT * 
-	FROM notice
-	WHERE
-	nid = #{nid}
+   SELECT * 
+   FROM notice
+   WHERE
+   nid = #{nid}
 ]]>
 </select>
 
 <select id="readReply" parameterType="String" resultType="hashMap">
 <![CDATA[
-	SELECT * FROM 
-		notice
-	WHERE
-	    npid = #{npid}
-	ORDER BY 
-		nid DESC
+   SELECT * FROM 
+      notice
+   WHERE
+       npid = #{npid}
+   
 ]]>
 </select>
 
 <update id="update" parameterType="hashMap" >
 <![CDATA[
-	UPDATE notice SET
-	ntitle = #{ntitle},
-	nwriter = #{nwriter},
-	ncontent = #{ncontent},
-	ncategory = #{ncategory},
-	nimage = #{nimage},
-	npin = #{npin}
-	
-	WHERE 
-	nid = #{nid}
+   UPDATE notice SET
+   ntitle = #{ntitle},
+   nwriter = #{nwriter},
+   ncontent = #{ncontent},
+   ncategory = #{ncategory},
+   nimage = #{nimage},
+   npin = #{npin}
+   
+   WHERE 
+   nid = #{nid}
 ]]>
 </update>
 
 <delete id="delete" parameterType="String" >
 <![CDATA[
-	DELETE FROM notice
-	WHERE 
-	nid = #{nid}
+   DELETE FROM notice
+   WHERE 
+   nid = #{nid}
 ]]>
 </delete>
 
 
 
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="notice">
-
-<insert id="create" parameterType="hashMap">
-<![CDATA[
-	INSERT INTO notice
-	(npid, ntitle, nwriter, ncontent, ncategory, nimage, ncount, npin)
-	VALUES
-	(#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{ncategory}, #{nimage}, #{ncount}, #{npin})
-]]>
-</insert>
-
-<select id="readList" resultType="hashMap">
-<![CDATA[
-	SELECT * FROM
-		notice
-	WHERE 
-		npid IS NULL
-	ORDER BY 
-		npin DESC , nid DESC
-]]>
-</select>
-
-
-<select id="readDetail" parameterType="String" resultType="hashMap">
-<![CDATA[
-	SELECT * 
-	FROM notice
-	WHERE
-	nid = #{nid}
-]]>
-</select>
-
-<select id="readReply" parameterType="String" resultType="hashMap">
-<![CDATA[
-	SELECT * FROM 
-		notice
-	WHERE
-	    npid = #{npid}
-	ORDER BY 
-		nid DESC
-]]>
-</select>
-
-<update id="update" parameterType="hashMap" >
-<![CDATA[
-	UPDATE notice SET
-	ntitle = #{ntitle},
-	nwriter = #{nwriter},
-	ncontent = #{ncontent},
-	ncategory = #{ncategory},
-	nimage = #{nimage},
-	npin = #{npin}
-	
-	WHERE 
-	nid = #{nid}
-]]>
-</update>
-
-<delete id="delete" parameterType="String" >
-<![CDATA[
-	DELETE FROM notice
-	WHERE 
-	nid = #{nid}
-]]>
-</delete>
-
-
-
->>>>>>> origin/sunghee
 </mapper>

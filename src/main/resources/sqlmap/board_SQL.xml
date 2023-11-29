@@ -1,29 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
-
 <insert id="create" parameterType="hashMap">
-<<<<<<< HEAD
-<![CDATA[ INSERT INTO board (btitle, bcontent, bwriter, bcategory, bimage, bcount) VALUES (#{btitle}, #{bcontent}, #{bwriter}, #{bcategory},#{bimage}, 0) ]]>
-</insert>
-<select id="readList" resultType="hashMap">
-<![CDATA[ SELECT * FROM board WHERE bcategory IS NOT NULL ORDER BY bno DESC ]]>
-=======
 <![CDATA[ INSERT INTO board (btitle, bcontent, bwriter, bimage, bcount) VALUES (#{btitle}, #{bcontent}, #{bwriter},#{bimage}, 0) ]]>
 </insert>
 <select id="readList" resultType="hashMap">
-<![CDATA[ SELECT * FROM board ORDER BY bno DESC ]]>
->>>>>>> origin/sunghee
+<![CDATA[ SELECT * FROM board WHERE bcategory IS NOT NULL ORDER BY bno DESC ]]>
 </select>
-<select id="readDetail" parameterType="String" resultType="hashMap"> 
+<select id="readDetail" parameterType="String" resultType="hashMap">
 <![CDATA[ SELECT * FROM board WHERE bno = #{bno} ]]>
 </select>
 <update id="update" parameterType="hashMap">
-<<<<<<< HEAD
-<![CDATA[ UPDATE board SET btitle = #{btitle}, bcontent = #{bcontent}, bwriter = #{bwriter}, bcategory = #{bcategory}, bimage = #{bimage} WHERE bno = #{bno} ]]>
-=======
 <![CDATA[ UPDATE board SET btitle = #{btitle}, bcontent = #{bcontent}, bwriter = #{bwriter}, bimage = #{bimage} WHERE bno = #{bno} ]]>
->>>>>>> origin/sunghee
 </update>
 <delete id="delete" parameterType="String">
 <![CDATA[ DELETE FROM board WHERE bno = #{bno} ]]>
@@ -31,5 +17,4 @@
 <update id="count" parameterType="hashMap">
 <![CDATA[ UPDATE board SET bcount = bcount +1 WHERE bno = #{bno} ]]>
 </update>
-
 </mapper>

@@ -1,9 +1,6 @@
 package com.karlsruhe.users;
 
-<<<<<<< HEAD
 import java.util.HashMap;
-=======
->>>>>>> origin/sunghee
 import java.util.List;
 import java.util.Map;
 
@@ -40,13 +37,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public void memberDelete(String username) {
 		sqlSessionTemplate.delete("users.memberDelete", username);
-=======
-	public void memberDelete(String uno) {
-		sqlSessionTemplate.delete("users.memberDelete", uno);
->>>>>>> origin/sunghee
 		
 	}
 
@@ -65,7 +57,6 @@ public class UsersRepositoryImpl implements UsersRepository {
 	public Map<String, Object> getUserDataByUsername(String username) {
 		 return sqlSessionTemplate.selectOne("users.getUserDataByUsername", username);
 	}
-<<<<<<< HEAD
 
 
 	@Override
@@ -97,11 +88,3 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 
 
-=======
-	
-	
-
-	
-
-}
->>>>>>> origin/sunghee

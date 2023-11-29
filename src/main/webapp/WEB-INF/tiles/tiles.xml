@@ -28,10 +28,7 @@
 <put-attribute name="content" value="/WEB-INF/views/main.jsp"/>
 </definition>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/sunghee
 <definition name="board/*" extends="base-Template1">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
