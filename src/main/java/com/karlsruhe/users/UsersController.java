@@ -1,5 +1,6 @@
 package com.karlsruhe.users;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -34,6 +37,7 @@ public class UsersController {
 
 	@Autowired
 	private UsersService usersService;
+	private Object bcryptPasswordEncoder;
 
 	/*@Autowired
 	private MailService mailService;*/
@@ -146,42 +150,6 @@ public class UsersController {
 
 	}
 	
-	/*
-	 * @RequestMapping(value = "/pwUpdate", method = { RequestMethod.GET,
-	 * RequestMethod.POST }) public String pwUpdate() throws Exception { return
-	 * "users/pwUpdate"; }
-	 * 
-	 * 
-	 * @RequestMapping(value = "/pwCheck", method = RequestMethod.POST, consumes =
-	 * "application/json")
-	 * 
-	 * @ResponseBody public int pwCheck(@RequestBody Map<String, String>
-	 * pwUpdateForm) throws Exception { String username =
-	 * pwUpdateForm.get("username"); String password = pwUpdateForm.get("password");
-	 * 
-	 * String hashedPassword = usersService.pwCheck(username);
-	 * 
-	 * 
-	 * if (hashedPassword == null || hashedPassword.isEmpty()) { return -1; //
-	 * Indicates that the user does not exist }
-	 * 
-	 * 
-	 * BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(); if
-	 * (!passwordEncoder.matches(password, hashedPassword)) { return 0; // Indicates
-	 * that the password is incorrect }
-	 * 
-	 * return 1; // Indicates that the password is correct }
-	 * 
-	 * @RequestMapping(value="/pwUpdate" , method=RequestMethod.POST) public String
-	 * pwUpdate(String username, String newPassword1, RedirectAttributes rttr,
-	 * HttpSession session) throws Exception { String hashedPw =
-	 * BCrypt.hashpw(newPassword1, BCrypt.gensalt());
-	 * usersService.pwUpdate(username, hashedPw); session.invalidate();
-	 * rttr.addFlashAttribute("msg", "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
-	 * 
-	 * return "redirect:/login"; }
-	 */
-	  
 
 		 @GetMapping({"/findId"})
 		  public String FindId() {
@@ -207,8 +175,26 @@ public class UsersController {
 		  public String submitFindPw(@RequestParam String name, @RequestParam String tel, @RequestParam String username) {
 		    return this.usersService.findPw(name, tel, username);
 		  }
-	 
+		  
+		  @GetMapping({"/updatePw"})
+		  public String UpdatePw() {
+		    return "users/updatePw";
+		  }
+		  
+		  @ResponseBody
+		  @PostMapping("/updatePw")
+		  public boolean submitUpdatePw(@RequestParam String password, @RequestParam String Chkpassword, Principal principal) {
+		      String username = principal.getName();
+		      Map<String, Object> user = this.usersService.memberDetail(username);
+		      String realPassword = ((UsersDTO) user).getPassword();
+		      boolean matches = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).matches(Chkpassword, realPassword);
+		      if (matches) {
+		          String encodedPassword = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).encode(password);
+		          this.usersService.updatePasswordUsers(encodedPassword, username);
+		          return true;
+		      } 
+		      return false;
+		  }
 }
-
 
 

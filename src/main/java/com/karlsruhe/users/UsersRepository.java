@@ -26,14 +26,12 @@ public interface UsersRepository {
 	
 	Map<String, Object> getUserDataByUsername(String username);
 	
-	/*
-	 * String pwCheck(String username)throws Exception;
-	 * 
-	 * public void pwUpdate(String username, String hashedPw)throws Exception;
-	 */
+	
 	 String findIdUser(String uname, String utel);
 
 	 String findPw(String uname, String utel,  String username);
+
+	void updatePasswordUsers(String password, String username);
 	 
 
 }
