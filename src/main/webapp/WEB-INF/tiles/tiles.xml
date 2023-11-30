@@ -34,7 +34,7 @@
 		<put-attribute name="subheading" value="/"/>
 		<put-attribute name="content" value="/WEB-INF/views/board/{1}.jsp"/>
 	</definition>
-	
+	 
 	<definition name="guide/*" extends="base-Template1">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>

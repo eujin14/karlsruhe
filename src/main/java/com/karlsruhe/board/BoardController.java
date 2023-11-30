@@ -175,5 +175,16 @@ public class BoardController {
 
 			return "redirect:/board/readList";
 		}
+		
+		@GetMapping("/deletereply")
+		public String deletereply(@RequestParam("bno") String bno, @RequestParam("boardbno") String boardbno, Model model) {
+
+			boardService.delete(bno);
+
+			model.addAttribute("board", boardService.readDetail(boardbno));
+			model.addAttribute("replylist", boardService.readreply(bno));
+
+			return "redirect:/board/readDetail?bno=" + boardbno;
+		}
 
 	}

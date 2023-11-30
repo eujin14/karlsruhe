@@ -19,6 +19,9 @@
 <br>
 <a href="/notice/readList">공지목록</a>
 
+<br><a href="/board/readList">board목록</a>
+<br><a href="/board/create">board작성</a>
+
 
 </body>
 </html>
