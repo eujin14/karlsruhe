@@ -1,5 +1,6 @@
 package com.karlsruhe.notice;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -12,17 +13,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 
 @RequestMapping("/notice")
 @Controller
 public class NoticeController {
-	
+
 	@Autowired
 	private NoticeService noticeService;
-	
-		
+
+	@GetMapping("/temp")
+	public String temp() {
+		return "notice/temp";
+	}
+
 	@GetMapping("/create")
 	public String create() {
 		return "notice/create";
@@ -70,21 +75,20 @@ public class NoticeController {
 		noticeService.create(map);
 		return "redirect:/notice/readList";
 	}
-	
+
 	@GetMapping("/readList")
 	public String readList(Model model) {
 		model.addAttribute("lists", noticeService.readList());
 		return "notice/readList";
 	}
-	
+
 	@GetMapping("/readDetail")
 	public String readDetail(@RequestParam("nid") String nid, Model model) {
 		model.addAttribute("details", noticeService.readDetail(nid));
 		model.addAttribute("replyLists", noticeService.readReply(nid));
 		return "notice/readDetail";
 	}
-	
-	
+
 	@GetMapping("/update")
 	public String updateform(@RequestParam("nid") String nid, Model model) {
 
@@ -92,8 +96,7 @@ public class NoticeController {
 
 		return "notice/update";
 	}
-	
-	
+
 	@PostMapping("/update")
 	public String update(@RequestParam Map<String, Object> map, @RequestParam("nimage") MultipartFile file) {
 
@@ -136,7 +139,7 @@ public class NoticeController {
 
 		return "redirect:/notice/readList";
 	}
-		
+
 	@GetMapping("/delete")
 	public String delete(@RequestParam("nid") String nid) {
 		noticeService.delete(nid);
@@ -148,10 +151,28 @@ public class NoticeController {
 		noticeService.create(map);
 		return "redirect:/notice/readList";
 	}
-	
-	
-	
-	
-	
 
+	@ResponseBody
+	@PostMapping("/readReply")
+	public List<NoticeDTO> readReply(@RequestParam("npid") String npid) {
+
+		return noticeService.readReply(npid);
+
+	}
+
+	
+	 @GetMapping("/deleteReply") 
+	 public String deleteReply(@RequestParam("nid")
+	 String nid, @RequestParam("noticenid") String noticenid, Model model) {
+	 
+	 noticeService.delete(nid);
+	 
+	 model.addAttribute("qnab", noticeService.readDetail(noticenid));
+	 model.addAttribute("replyLists", noticeService.readReply(nid));
+	 
+	 return "redirect:/notice/readDetail?nid=" + noticenid; 
+	 
+	 }
+	 
+	
 }
