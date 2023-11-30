@@ -3,11 +3,11 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+  
 
     <link rel="stylesheet" href="/resources/users/fonts/icomoon/style.css">
 
@@ -18,15 +18,6 @@
     
     <!-- Style -->
     <link rel="stylesheet" href="/resources/users/css/style.css">
-
-   <!-- jquery -->
-   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  
-  	
-    <script src="/resources/public/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="/resources/public/vendors/simplebar/simplebar.min.js"></script>
-    <script src="/resources/public/assets/js/config.js"></script>
     
     
     
@@ -95,7 +86,7 @@ function checkMember() {
   
 
   <div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('/resources/users/images/bg_1.jpg');"></div>
+    <!-- <div class="bg order-1 order-md-2" style="background-image: url('/resources/users/images/bg_1.jpg');"></div> -->
     <div class="contents order-2 order-md-1">
 
       <div class="container">
@@ -156,9 +147,6 @@ function checkMember() {
     
     
 
-    <script src="/resources/users/js/jquery-3.3.1.min./resources/users/js"></script>
-    <script src="/resources/users/js/popper.min./resources/users/js"></script>
-    <script src="/resources/users/js/bootstrap.min./resources/users/js"></script>
-    <script src="/resources/users/js/main./resources/users/js"></script>
+   
   </body>
 </html>

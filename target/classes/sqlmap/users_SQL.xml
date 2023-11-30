@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+	<insert id="create" parameterType="hashMap">
+	<![CDATA[
+		INSERT INTO users
+		(username, password, authority, enabled, uname,  utel, uemail, uaddr)
+		VALUES
+		(#{username}, #{password}, "ROLE_USER", "1", #{uname}, #{utel}, #{uemail}, #{uaddr})
+	]]>
+	</insert>
+	
+	<select id="memberList" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			users
+	]]>
+	</select>
+
+	<select id="memberDetail" resultType="hashMap">
+	<![CDATA[
+		SELECT * FROM 
+			users
+		WHERE 
+			username = #{username}
+	]]>
+	</select>
+
+	<update id="memberUpdate" parameterType="hashMap">
+	<![CDATA[
+		UPDATE users 
+			SET
+		password = #{password},
+		uname = #{uname},
+		utel = #{utel},
+		uemail = #{uemail}, 
+		uaddr = #{uaddr}
+			WHERE
+		username = #{username}
+	]]>
+	
+	</update>
+	
+
+
+	
+	<delete id="memberDelete" parameterType="String">
+	<![CDATA[
+		DELETE FROM 
+			users
+		WHERE 
+			username = #{username}
+	]]>
+	</delete>
+	
+	<select id="memberExist" parameterType="String" resultType="com.karlsruhe.users.UsersDTO">
+	<![CDATA[
+		SELECT * FROM 
+			users
+		WHERE 
+			uemail = #{uemail}
+	]]>
+	</select>
+	
+     
+     <select id="findIdUser" parameterType="map" resultType="string">
+      <![CDATA[
+		select username from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		 ]]>
+</select>
+
+     <select id="findPw" parameterType="map" resultType="string">
+      <![CDATA[
+		select * from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		and 
+		username = #{username}
+		 ]]>
+</select>
+
+	<update id="updatePasswordUsers" parameterType="hashMap">
+	<![CDATA[
+		UPDATE users 
+			SET
+		password = #{password}
+			WHERE
+		username = #{username}
+	]]>
+	
+	</update>
+     
+<select id="getUserDataByUsername" parameterType="String" resultType="Map">
+    <![CDATA[
+        SELECT uname, uemail FROM 
+        users
+        WHERE 
+        username = #{username}
+    ]]>
+</select>
+</mapper>

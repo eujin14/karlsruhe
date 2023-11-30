@@ -16,6 +16,7 @@
   function naverSignInCallback() {
 	  location.href='/logincheck?username=' + naver_id_login.getProfileData('email')
   }
+  
 </script>
 </body>
 </html>
