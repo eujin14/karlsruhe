@@ -1,26 +1,34 @@
 package com.karlsruhe.users;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 @RequestMapping("/users")
 @Controller
@@ -29,16 +37,17 @@ public class UsersController {
 
 	@Autowired
 	private UsersService usersService;
+	private Object bcryptPasswordEncoder;
 
 	/*@Autowired
 	private MailService mailService;*/
 
-	@GetMapping("/join")
+	@GetMapping("/create")
 	public String join() {
-		return "/users/join";
+		return "/users/create";
 	}
 
-	@PostMapping("/join")
+	@PostMapping("/create")
 	public String join(@RequestParam Map<String, Object> map) {
 		
 		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -78,15 +87,15 @@ public class UsersController {
 	@GetMapping("/memberDetail")
 	public String memberdetail(String username, Model model) {
 	    model.addAttribute("member", usersService.memberDetail(username));
-	    return "users/memberDetail";  // Just the logical view name without query parameters
+	    return "users/memberDetail";  
 	}
 
 	
 
 	@GetMapping("/memberUpdate")
-	public String update(@RequestParam ("uno") String uno, Model model) {
+	public String update(@RequestParam ("username") String username, Model model) {
 
-		model.addAttribute("member", usersService.memberDetail(uno));
+		model.addAttribute("member", usersService.memberDetail(username));
 
 		return "users/memberUpdate";
 	}
@@ -101,9 +110,9 @@ public class UsersController {
 	}
 
 	@GetMapping("/memberDelete")
-	public String delete(@RequestParam ("uno") String uno) {
+	public String delete(@RequestParam ("username") String username) {
 
-		usersService.memberDelete(uno);
+		usersService.memberDelete(username);
 		
 		return "redirect:/main";
 	}
@@ -140,6 +149,50 @@ public class UsersController {
 		}
 
 	}
+	
 
+		 @GetMapping({"/findId"})
+		  public String FindId() {
+		    return "users/findId";
+		  }
+		
+		@ResponseBody
+		  @PostMapping(value = {"/findId"}, produces = {"text/html;charset=UTF-8"})
+		  public String submitFindId(@RequestParam String name, @RequestParam String tel) {
+		    String username = this.usersService.findIdUser(name, tel);
+		    if (username == null || username.equals(""))
+		      return "<p>아이디가 존재하지 않습니다<br>이름과 전화번호를 확인해 주세요</p>";
+		    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
+		  }
+		
+		@GetMapping({"/findPw"})
+		  public String FindPw(Model model) {
+		    return "users/findPw";
+		  }
+		  
+		  @ResponseBody
+		  @PostMapping({"/findPw"})
+		  public String submitFindPw(@RequestParam String name, @RequestParam String tel, @RequestParam String username) {
+		    return this.usersService.findPw(name, tel, username);
+		  }
+		  
+			/*
+			 * @GetMapping({"/updatePw"}) public String UpdatePw() { return
+			 * "users/updatePw"; }
+			 * 
+			 * @ResponseBody
+			 * 
+			 * @PostMapping("/updatePw") public boolean submitUpdatePw(@RequestParam String
+			 * password, @RequestParam String Chkpassword, Principal principal) { String
+			 * username = principal.getName(); Map<String, Object> user =
+			 * this.usersService.memberDetail(username); String realPassword = ((UsersDTO)
+			 * user).getPassword(); boolean matches = ((BCryptPasswordEncoder)
+			 * this.bcryptPasswordEncoder).matches(Chkpassword, realPassword); if (matches)
+			 * { String encodedPassword = ((BCryptPasswordEncoder)
+			 * this.bcryptPasswordEncoder).encode(password);
+			 * this.usersService.updatePasswordUsers(encodedPassword, username); return
+			 * true; } return false; }
+			 */
 }
+
 

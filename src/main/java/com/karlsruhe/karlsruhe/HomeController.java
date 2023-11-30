@@ -1,3 +1,4 @@
+
 package com.karlsruhe.karlsruhe;
 
 
@@ -41,31 +42,12 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping("/main")
-	public String main(Model model, Principal principal) {
-		
-		return "main";
-		
-	}
 	
-	@GetMapping("/login")
-	public String login() {
-		return "login";
-	}
-	
-	@GetMapping("/loginfailed")
-	public String loginfailed() {
-		return "loginfailed";
-	}
-	
-	@GetMapping("/logout")
-	public String logout() {
-		return "logout";
-	}
 
 }
 
 
 	
 	
+
 

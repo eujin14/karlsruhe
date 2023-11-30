@@ -4,52 +4,52 @@
 
 <insert id="create" parameterType="hashMap">
 <![CDATA[
-	INSERT INTO guide
-	(gtitle, gwriter, gcontent, gimage, gcount)
-	VALUES
-	(#{gtitle}, #{gwriter}, #{gcontent}, #{gimage}, #{gcount})
+   INSERT INTO guide
+   (gtitle, gwriter, gcontent, gimage, gcount)
+   VALUES
+   (#{gtitle}, #{gwriter}, #{gcontent}, #{gimage}, #{gcount})
 ]]>
 </insert>
 
 <select id="readList" resultType="hashMap">
 <![CDATA[
-	SELECT * FROM
-		guide
-	ORDER BY 
-		gid DESC
+   SELECT * FROM
+      guide
+   ORDER BY 
+      gid DESC
 ]]>
 </select>
 
 
 <select id="readDetail" parameterType="String" resultType="hashMap">
 <![CDATA[
-	SELECT * 
-	FROM guide
-	WHERE
-	gid = #{gid}
+   SELECT * 
+   FROM guide
+   WHERE
+   gid = #{gid}
 ]]>
 </select>
 
 
 <update id="update" parameterType="hashMap" >
 <![CDATA[
-	UPDATE guide SET
-	gtitle = #{gtitle},
-	gwriter = #{gwriter},
-	gcontent = #{gcontent},
-	gimage = #{gimage},
-	gpin = #{gpin}
-	
-	WHERE 
-	gid = #{gid}
+   UPDATE guide SET
+   gtitle = #{gtitle},
+   gwriter = #{gwriter},
+   gcontent = #{gcontent},
+   gimage = #{gimage},
+   gpin = #{gpin}
+   
+   WHERE 
+   gid = #{gid}
 ]]>
 </update>
 
 <delete id="delete" parameterType="String" >
 <![CDATA[
-	DELETE FROM guide
-	WHERE 
-	gid = #{gid}
+   DELETE FROM guide
+   WHERE 
+   gid = #{gid}
 ]]>
 </delete>
 

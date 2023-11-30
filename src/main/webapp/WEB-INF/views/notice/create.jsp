@@ -7,8 +7,15 @@
 <meta charset="UTF-8">
 <title>질문작성</title>
 
+<<<<<<< HEAD
+
+
+<body>
+	<form action="/notice/create" method="post" enctype="multipart/form-data">
+=======
 <body>
 	<form action="/notice/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+>>>>>>> origin/sunghee
 	<p>제목 : <input type="text" name="ntitle" id= "ntitle" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 "><p>
 	<p>작성자 : <input type="text" name="nwriter" id= "nwriter" maxlength="100" style="width:100%;"></p>
 	<p>공지유형 <select name="ncategory" id="ncategory"> <option selected>일반</option>
@@ -19,6 +26,16 @@
 	<p>첨부사진
 			<input type="file" name="nimage" id="nimage">
 			<br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
+<<<<<<< HEAD
+				
+	<p><input type="submit" value="저장"> 
+	</form>
+	
+	
+	
+	
+
+=======
 	<label class="col-sm-2 col-form-label" for="inputn">고정/미고정</label>
     <div class="col-sm-10">
     <div class="form-check form-check-inline">
@@ -33,6 +50,7 @@
 	<p><input type="submit" value="저장"> 
 	</form>
 	
+>>>>>>> origin/sunghee
 <script>
  $('#summernote').summernote({
         placeholder: '공지 내용을 입력하세요',
@@ -48,4 +66,13 @@
           ['view', ['fullscreen', 'codeview', 'help']]
         ]
       });
+<<<<<<< HEAD
  </script>
+
+    
+
+</body>
+</html>
+=======
+ </script>
+>>>>>>> origin/sunghee

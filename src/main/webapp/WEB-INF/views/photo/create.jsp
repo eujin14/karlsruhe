@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+   uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,8 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-	
-	
+   
+   
 </head>
 <meta charset="UTF-8">
 <title>공지 사항C</title>
@@ -30,14 +30,14 @@
 </div>
 </div>
                   </div>
-	
+   
 
- <div class="card-body p-0">			
+ <div class="card-body p-0">         
 <div class="p-4 code-to-copy">
 
 <!-- 토큰 때문에 전송이 되지 않아 액션에 토큰 심음 -->
 <form action="/photo/create"method="post" enctype="multipart/form-data">
-<%-- 			<sec:authentication property="principal" var="users" /> 
+<%--          <sec:authentication property="principal" var="users" /> 
  --%>  <div class="row mb-3">
 
     <label class="col-sm-2 col-form-label" for="inputntitle">제목</label>
@@ -61,12 +61,12 @@
     <label class="col-sm-2 col-form-label" for="inputncate">종류</label>
         <div class="col-sm-10">
     
-				<select class="form-select" id="ncate" name="ncate"
-					aria-label="Default select example">
-					<option selected="selected" value="긴급공지">긴급공지</option>
-					<option value="공지">공지</option>
-				</select>
-				</div>
+            <select class="form-select" id="ncate" name="ncate"
+               aria-label="Default select example">
+               <option selected="selected" value="긴급공지">긴급공지</option>
+               <option value="공지">공지</option>
+            </select>
+            </div>
   </div>
   
    <div class="row mb-3">
@@ -81,7 +81,7 @@
     <div class="row mb-3">
 
 <textarea class="form-control" id="summernote" name="pcontent"
-					rows="3" placeholder="내용을 입력하세요"></textarea>
+               rows="3" placeholder="내용을 입력하세요"></textarea>
   </div>
 
 <%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -97,11 +97,11 @@
                   
                 </div>
 <script>
-		$('#summernote').summernote({
-			placeholder : '내용을 입력하세요',
-			tabsize : 5,
-			height : 200
-		});
-	</script>
+      $('#summernote').summernote({
+         placeholder : '내용을 입력하세요',
+         tabsize : 5,
+         height : 200
+      });
+   </script>
 </body>
 </html>
