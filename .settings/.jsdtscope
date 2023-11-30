@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
+	<classpathentry excluding="**-*.min.js|**/**.js" kind="src" path=""/>
+=======
 	<classpathentry excluding="**/**.js|**/*.min.js" kind="src" path=""/>
+>>>>>>> origin/sunghee
 	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

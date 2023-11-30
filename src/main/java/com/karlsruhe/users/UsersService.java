@@ -13,7 +13,7 @@ public interface UsersService {
 	
 	void memberUpdate(Map<String, Object> map);
 	
-	void memberDelete(String uno);
+	void memberDelete(String username);
 	
 
 	
@@ -24,6 +24,16 @@ public interface UsersService {
 	Map<String, Object> getUserDataByUsername(String username);
 
 	
+	/*
+	 * String pwCheck(String username)throws Exception;
+	 * 
+	 * void pwUpdate(String username, String hashedPw)throws Exception;
+	 */
+	 
+	 String findIdUser(String paramString1, String paramString2);
+	 
+	 String findPw(String paramString1, String paramString2, String paramString3);
+	   
 
-
+	 void updatePasswordUsers(String paramString1, String paramString2);
 }

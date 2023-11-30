@@ -228,6 +228,12 @@
 <version>3.6</version>
 </dependency>
 	
+	<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.12.0</version> <!-- Use the latest version -->
+</dependency>
+	
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>

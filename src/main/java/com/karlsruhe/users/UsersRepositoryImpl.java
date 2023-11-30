@@ -1,5 +1,6 @@
 package com.karlsruhe.users;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,8 +37,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 	}
 
 	@Override
-	public void memberDelete(String uno) {
-		sqlSessionTemplate.delete("users.memberDelete", uno);
+	public void memberDelete(String username) {
+		sqlSessionTemplate.delete("users.memberDelete", username);
 		
 	}
 
@@ -56,9 +57,34 @@ public class UsersRepositoryImpl implements UsersRepository {
 	public Map<String, Object> getUserDataByUsername(String username) {
 		 return sqlSessionTemplate.selectOne("users.getUserDataByUsername", username);
 	}
-	
-	
 
-	
 
-}
+	@Override
+	public String findIdUser(String uname, String utel) {
+		 Map<String, Object> parameters = new HashMap<String, Object>();
+	        parameters.put("uname", uname);
+	        parameters.put("utel", utel);
+
+	        return sqlSessionTemplate.selectOne("users.findIdUser", parameters);
+	    }
+
+	@Override
+	public String findPw(String uname, String utel, String username) {
+		 Map<String, Object> parameters = new HashMap<String, Object>();
+	        parameters.put("uname", uname);
+	        parameters.put("utel", utel);
+	        parameters.put("username", username);
+
+	        return sqlSessionTemplate.selectOne("users.findIdUser", parameters);
+	    }
+
+	@Override
+	public void updatePasswordUsers(String password, String username) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	}
+
+
+

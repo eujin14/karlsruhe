@@ -14,6 +14,9 @@ public interface BoardRepository {
 	/*
 	 * List<Map<String,Object>> readreply(String breply);
 	 */	
-	void count(Map<String,Object>map);
 
+	  List<Map<String,Object>> readreply(String breply);
 }
+	 	
+
+

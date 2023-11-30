@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+   uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,10 +38,10 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <link rel="stylesheet"
-	href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+   href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-	crossorigin="anonymous"></script>
-	
+   crossorigin="anonymous"></script>
+   
 </head>
 
 <body>
@@ -334,20 +334,20 @@
 <script>
  function createReply() {
 
-	var npid = $("#npid").val();
-	var ncontent = $("#rncontent").val();
-	var nwriter = $("#nwriter").val();
-	
-	var requestData = {
-	        npid: npid,
-	        ncontent: ncontent,
-	        nwriter: nwriter
-	};
+   var npid = $("#npid").val();
+   var ncontent = $("#rncontent").val();
+   var nwriter = $("#nwriter").val();
+   
+   var requestData = {
+           npid: npid,
+           ncontent: ncontent,
+           nwriter: nwriter
+   };
 
-	$.ajax({
-		type : "post",
-		url : "/notice/createReply",
-		data: requestData,
+   $.ajax({
+      type : "post",
+      url : "/notice/createReply",
+      data: requestData,
         beforeSend: function(xhr) {
             xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
         },
@@ -355,13 +355,13 @@
             alert("댓글이 등록되었습니다.");
             window.location.reload();
         },
-		error : function(request, status, error) {
-		}
-	 });
+      error : function(request, status, error) {
+      }
+    });
  }
 </script>
     
-	
+   
 </body>
 
 </html>

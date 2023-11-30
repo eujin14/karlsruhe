@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+>>>>>>> origin/sunghee
 
 <!DOCTYPE html>
 <html>
@@ -25,6 +28,19 @@
 			<input type="file" name="nimage" id="nimage" value="${details.nimage}">
 			<br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
 			
+<<<<<<< HEAD
+	<input type="hidden" name="nwriter" value="${details.nwriter}">
+    <input type="hidden" name="nid" value="${details.nid}" />
+    <input type="hidden" name="nimage" value="${details.nimage}" />
+    	
+				
+	<p><input type="submit" value="저장"> 
+	</form>
+	
+	
+	
+	
+=======
 	<div class="row mb-3">
 						<label class="col-sm-2 col-form-label" for="inputn">고정/미고정</label>
 						<c:choose>
@@ -67,6 +83,7 @@
     <input type="hidden" name="nimage" value="${details.nimage}" />
 	<p><input type="submit" value="저장"> 
 	</form>
+>>>>>>> origin/sunghee
 
 <script>
  $('#summernote').summernote({
@@ -84,5 +101,11 @@
         ]
       });
  </script>
+<<<<<<< HEAD
+
+    
+
+=======
+>>>>>>> origin/sunghee
 </body>
 </html>

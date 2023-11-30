@@ -4,6 +4,8 @@ package com.karlsruhe.users;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+
 public interface UsersRepository {
 	
 	void create(Map<String, Object> map); 
@@ -14,7 +16,7 @@ public interface UsersRepository {
 	
 	void memberUpdate(Map<String, Object> map);
 	
-	void memberDelete(String uno);
+	void memberDelete(String username);
 	
 	
 	void findUpositionByUsername(String username);
@@ -23,6 +25,13 @@ public interface UsersRepository {
 	UsersDTO memberExist(String uemail);
 	
 	Map<String, Object> getUserDataByUsername(String username);
+	
+	
+	 String findIdUser(String uname, String utel);
 
+	 String findPw(String uname, String utel,  String username);
+
+	void updatePasswordUsers(String password, String username);
+	 
 
 }

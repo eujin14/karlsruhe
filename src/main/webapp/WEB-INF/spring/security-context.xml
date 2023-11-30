@@ -37,6 +37,8 @@
 
         <security:logout logout-url="/logout" invalidate-session="true"
         logout-success-url="/"/>
+        
+        
 
 </security:http>
 <!-- logout  -->
