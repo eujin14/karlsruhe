@@ -80,9 +80,12 @@ public class UsersRepositoryImpl implements UsersRepository {
 
 	@Override
 	public void updatePasswordUsers(String password, String username) {
-		// TODO Auto-generated method stub
-		
-	}
+		 Map<String, Object> parameters = new HashMap<String, Object>();
+	        parameters.put("password", password);
+	        parameters.put("username", username);
+
+	        sqlSessionTemplate.update("users.updatePasswordUsers", parameters);
+	    }
 	
 	}
 

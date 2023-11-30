@@ -11,11 +11,10 @@
 <c:forEach items="${members}" var="member">
 
 
-<<<<<<< HEAD
+
 <a href="/users/memberDetail?username=${member.username}">${member.username}</a>
-=======
+
 <a href="/users/memberDetail?uno=${member.uno}">${member.username}</a>
->>>>>>> origin/sunghee
 
 / ${member.uname} / ${member.uemail}/ ${member.udate}
 <br>

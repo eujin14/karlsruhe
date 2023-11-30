@@ -62,9 +62,13 @@
 
 <!-- 페이지 개별 적용 js -->
 <script type="text/javascript">
-    //findPw 제출 시 처리 (modal 생성 후 띄우기)
+//findPw 제출 시 처리 (modal 생성 후 띄우기)
+$(document).ready(function () {
+    var username; // Define username outside the click events to make it accessible to both
+
+    // findPw 제출 시 처리 (modal 생성 후 띄우기)
     $('#findPwBtn').on('click', function () {
-        var username = $('#username').val();
+        username = $('#username').val();
         var name = $('#uname').val();
         var tel = $('#utel').val();
 
@@ -76,15 +80,14 @@
                 tel: tel,
                 username: username
             },
-            dataType: 'text',
+            datatype: 'text',
             beforeSend: function (jqXHR, settings) {
                 var header = $("meta[name='_csrf_header']").attr("content");
                 var token = $("meta[name='_csrf']").attr("content");
                 jqXHR.setRequestHeader(header, token);
             },
             success: function (result) {
-                if (result != null && result != "") {
-                    // Modal 내용을 form으로 생성
+                if (result != null && result !== "") {
                     $("#modalContent").html("<form id=\"pwUpdateForm\">\n" +
                         "<div>새로 사용할 비밀번호를 입력해주세요.</div>" +
                         "<input name=\"password\" type=\"password\" id=\"password\" placeholder=\"비밀번호\"><br>" +
@@ -93,50 +96,7 @@
                         "</form>");
                     $("#modalBtn").html("<button type=\"button\" class=\"btn btn-secondary\" id=\"updatePwBtn\">비밀번호 변경</button>\n" +
                         "<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">닫기</button>");
-
-                    // Move the following block outside the 'click' event handler
-                    // Bind the 'click' event handler for the "Change Password" button
-                    $('#updatePwBtn').on('click', function () {
-                        var newPassword = $('#password').val();
-                        var confirmedPassword = $('#ChkPassword').val();
-
-                        if (newPassword === confirmedPassword) {
-                            // Proceed with the password change
-                            $.ajax({
-                                type: "POST",
-                                url: "/users/updatePw",
-                                data: {
-                                    username: username,
-                                    password: newPassword,
-                                    Chkpassword: confirmedPassword
-                                },
-                                dataType: 'text',
-                                beforeSend: function (jqXHR, settings) {
-                                    var header = $("meta[name='_csrf_header']").attr("content");
-                                    var token = $("meta[name='_csrf']").attr("content");
-                                    jqXHR.setRequestHeader(header, token);
-                                },
-                                success: function (updateResult) {
-                                    if (updateResult === "success") {
-                                        // 비밀 번호 변경 성공시 login 페이지로 이동
-                                        location.replace("/login");
-                                    } else {
-                                        // Show an error message
-                                        $("#modalContent").html("<p>비밀번호 변경에 실패했습니다. 다시 시도해주세요.</p>");
-                                    }
-                                },
-                                error: function (request, status, error) {
-                                    console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-                                }
-                            });
-                        } else {
-                            // Passwords do not match
-                            $("#modalContent").html("<p>입력한 비밀번호가 일치하지 않습니다. 다시 확인해주세요.</p>");
-                        }
-                    });
-
                 } else {
-                    // 비밀번호 변경 실패 시
                     $("#modalContent").html("<p>잘못된 정보를 입력하였습니다.<br>다시 입력해주세요.</p>");
                     $("#modalBtn").html("<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">닫기</button>");
                 }
@@ -147,9 +107,51 @@
             }
         });
     });
+
+    // updatePwBtn 클릭 시 처리
+    $(document).on('click', '#updatePwBtn', function () {
+    var password = $('#password').val();
+    var ChkPassword = $('#ChkPassword').val();
+    var currentPassword = prompt("Please enter your current password:");
+
+    if (currentPassword === null) {
+        return; // User pressed cancel
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "/users/updatePw",
+        data: {
+            username: username,
+            password: password,
+            Chkpassword: ChkPassword,
+            currentPassword: currentPassword
+        },
+        datatype: 'text',
+        beforeSend: function (jqXHR, settings) {
+            var header = $("meta[name='_csrf_header']").attr("content");
+            var token = $("meta[name='_csrf']").attr("content");
+            jqXHR.setRequestHeader(header, token);
+        },
+        success: function (result) {
+            if (password === ChkPassword) {
+                location.replace("/login"); // 비밀 번호 변경 성공시 login 페이지로 이동
+            } else {
+                $("#modalContent").html("<form id=\"pwUpdateForm\">\n" +
+                    "<div>새로 사용할 비밀번호를 입력해주세요.</div>" +
+                    "<input name=\"password\" type=\"password\" id=\"password\" placeholder=\"비밀번호\"><br>" +
+                    "<input name=\"ChkPassword\" type=\"password\" id=\"ChkPassword\" placeholder=\"비밀번호 확인\">" +
+                    "<input type=\"hidden\" name=\"${_csrf.parameterName}\" value=\"${_csrf.token}\" />\n" +
+                    "<div style='color:red;'>비밀번호가 일치하지 않습니다. 다시 입력해주세요. </div>" +
+                    "</form>");
+            }
+        },
+        error: function (request, status, error) {
+            console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+        }
+    });
+});
 </script>
 </body>
 </html>
 
-</body>
-</html>

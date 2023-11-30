@@ -3,11 +3,15 @@ package com.karlsruhe.users;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public  class UsersServiceImpl implements UsersService {
+	 @Autowired
+	    private BCryptPasswordEncoder bcryptPasswordEncoder;
 	
 	@Autowired
 	private UsersRepository usersRepository;
@@ -56,13 +60,7 @@ public  class UsersServiceImpl implements UsersService {
 	}
 
 	
-	/*
-	 * @Override public String pwCheck(String username) throws Exception { return
-	 * usersRepository.pwCheck(username); }
-	 * 
-	 * @Override public void pwUpdate(String username, String hashedPw) throws
-	 * Exception { usersRepository.pwUpdate(username, hashedPw); }
-	 */
+
 
 	  public String findIdUser(String uname, String utel) {
 		    return this.usersRepository.findIdUser(uname, utel);
@@ -73,13 +71,11 @@ public  class UsersServiceImpl implements UsersService {
 	    return this.usersRepository.findPw(uname, utel,username);
 
 	}
-	
+	@Override
 	public void updatePasswordUsers(String password, String username) {
-	    this.usersRepository.updatePasswordUsers(password, username);
-	  }
+		this.usersRepository.updatePasswordUsers(password, username);	
+		}
 
-	}
-
-
+}
 
 

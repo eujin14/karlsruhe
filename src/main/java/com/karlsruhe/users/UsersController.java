@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,10 +35,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class UsersController {
 
-
+	@Autowired
+	  BCryptPasswordEncoder bcryptPasswordEncoder;
+	
 	@Autowired
 	private UsersService usersService;
-	private Object bcryptPasswordEncoder;
 
 	/*@Autowired
 	private MailService mailService;*/
@@ -165,7 +167,7 @@ public class UsersController {
 		    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
 		  }
 		
-		@GetMapping({"/findPw"})
+		 @GetMapping({"/findPw"})
 		  public String FindPw(Model model) {
 		    return "users/findPw";
 		  }
@@ -182,19 +184,18 @@ public class UsersController {
 		  }
 		  
 		  @ResponseBody
-		  @PostMapping("/updatePw")
-		  public boolean submitUpdatePw(@RequestParam String password, @RequestParam String Chkpassword, Principal principal) {
-		      String username = principal.getName();
-		      Map<String, Object> user = this.usersService.memberDetail(username);
-		      String realPassword = ((UsersDTO) user).getPassword();
-		      boolean matches = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).matches(Chkpassword, realPassword);
-		      if (matches) {
-		          String encodedPassword = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).encode(password);
-		          this.usersService.updatePasswordUsers(encodedPassword, username);
-		          return true;
-		      } 
-		      return false;
+		  @PostMapping({"/updatePw"})
+		  public boolean SubmitUpdatePw(@RequestParam String password, @RequestParam String currentPassword, Principal principal) {
+		    String username = principal.getName();
+		    Map<String, Object> users = this.usersService.memberDetail(username);
+		    String realPassword = (String) users.get("password");
+		    boolean matches = this.bcryptPasswordEncoder.matches(currentPassword, realPassword);
+		    if (matches) {
+		      String encodedPassword = this.bcryptPasswordEncoder.encode(password);
+		      this.usersService.updatePasswordUsers(encodedPassword, username);
+		      return true;
+		    } 
+		    return false;
 		  }
+
 }
-
-

@@ -30,10 +30,10 @@ public interface UsersService {
 	 * void pwUpdate(String username, String hashedPw)throws Exception;
 	 */
 	 
-	 String findIdUser(String paramString1, String paramString2);
-	 
-	 String findPw(String paramString1, String paramString2, String paramString3);
-	   
+	 String findIdUser(String uname, String utel);
 
-	 void updatePasswordUsers(String paramString1, String paramString2);
+	 String findPw(String uname, String utel,  String username);
+
+	  void updatePasswordUsers(String password, String username);
+	 
 }
