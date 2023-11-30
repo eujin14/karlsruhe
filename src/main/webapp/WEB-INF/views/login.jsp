@@ -1,112 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-
+<!doctype html>
+<html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="/resources/users/fonts/icomoon/style.css">
 
-    <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Phoenix</title>
+    <link rel="stylesheet" href="/resources/users/css/owl.carousel.min.css">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/resources/users/css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="/resources/users/css/style.css">
 
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/resources/public/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/resources/public/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/resources/public/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/public/assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="/resources/public/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/resources/public/assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="/resources/public/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="/resources/public/vendors/simplebar/simplebar.min.js"></script>
-    <script src="/resources/public/assets/js/config.js"></script>
-
-
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
-    <link href="/resources/public/vendors/simplebar/simplebar.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="/resources/public/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-    <link href="/resources/public/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
-    <link href="/resources/public/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
-    <link href="/resources/public/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
-    <script>
-      var phoenixIsRTL = window.config.config.phoenixIsRTL;
-      if (phoenixIsRTL) {
-        var linkDefault = document.getElementById('style-default');
-        var userLinkDefault = document.getElementById('user-style-default');
-        linkDefault.setAttribute('disabled', true);
-        userLinkDefault.setAttribute('disabled', true);
-        document.querySelector('html').setAttribute('dir', 'rtl');
-      } else {
-        var linkRTL = document.getElementById('style-rtl');
-        var userLinkRTL = document.getElementById('user-style-rtl');
-        linkRTL.setAttribute('disabled', true);
-        userLinkRTL.setAttribute('disabled', true);
-      }
-    </script>
+    <title>Login #6</title>
   </head>
-
-
   <body>
+  
 
-    <!-- ===============================================-->
-    <!--    Main Content-->
-    <!-- ===============================================-->
-    <main class="main" id="top">
-      <div class="row vh-100 g-0">
-        <div class="col-lg-6 position-relative d-none d-lg-block">
-          <div class="bg-holder" style="background-image:url(/resources/public/assets/img/bg/31.png);">
-          </div>
-          <!--/.bg-holder-->
+  <div class="d-lg-flex half">
+    <div class="bg order-1 order-md-2" style="background-image: url('/resources/users/images/bg_1.jpg');"></div>
+    <div class="contents order-2 order-md-1">
 
-        </div>
-        <div class="col-lg-6">
-          <div class="row flex-center h-100 g-0 px-4 px-sm-0">
-            <div class="col col-sm-6 col-lg-7 col-xl-6">
-              <div class="text-center mb-6 mx-auto"><img class="mb-7 d-dark-none" src="/resources/public/assets/img/spot-illustrations/1.png" alt="phoenix" /><img class="mb-7 d-light-none" src="/resources/public/assets/img/spot-illustrations/dark_1.png" alt="phoenix" />
-                <div class="mb-6">
-                  <h4 class="text-1000">로그아웃</h4>
-                  <p class="text-700">정말 로그아웃 하시겠습니까?<br class="d-lg-none" /></p>
-                </div>
-                <form action="/logout" method="post">
-                <input type="submit" value="로그아웃">
-              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-              </form>
-              </div>
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7">
+            <div class="mb-4">
+              <h3>Sign In</h3>
+              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
             </div>
+            <form action="/login?${_csrf.parameterName}=${_csrf.token}" method="post">
+              <div class="form-group first">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username"  name="username">
+
+              </div>
+              <div class="form-group last mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+                
+              </div>
+              
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="/users/findId" class="forgot-pass">아이디찾기</a></span> 
+                <span class="ml-auto"><a href="/users/findPw" class="forgot-pass">비밀번호 찾기</a></span> 
+              </div>
+
+              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+
+              <span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
+              
+              <div class="social-login">
+                <a href="#" class="facebook btn d-flex justify-content-center align-items-center">
+                  <span class="icon-facebook mr-3"></span> 네이버 로그인
+                </a>
+                <a href="#" class="twitter btn d-flex justify-content-center align-items-center">
+                  <span class="icon-twitter mr-3"></span> 카카오 로그인
+                </a>
+                <a href="#" class="google btn d-flex justify-content-center align-items-center">
+                  <span class="icon-google mr-3"></span> 구글 로그인
+                </a>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-     
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="/resources/public/vendors/popper/popper.min.js"></script>
-    <script src="/resources/public/vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="/resources/public/vendors/anchorjs/anchor.min.js"></script>
-    <script src="/resources/public/vendors/is/is.min.js"></script>
-    <script src="/resources/public/vendors/fontawesome/all.min.js"></script>
-    <script src="/resources/public/vendors/lodash/lodash.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="/resources/public/vendors/list.js/list.min.js"></script>
-    <script src="/resources/public/vendors/feather-icons/feather.min.js"></script>
-    <script src="/resources/public/vendors/dayjs/dayjs.min.js"></script>
-    <script src="/resources/public/assets/js/phoenix.js"></script>
+    </div>
 
+    
+  </div>
+   
   </body>
-
 </html>

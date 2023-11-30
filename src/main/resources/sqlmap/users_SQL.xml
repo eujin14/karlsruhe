@@ -63,15 +63,6 @@
 	]]>
 	</select>
 	
-	<select id="getUserDataByUsername" parameterType="String" resultType="Map">
-     <![CDATA[
-        SELECT uname, uposition, udepart, uemail FROM 
-        	users
-        WHERE 
-        	username = #{username}
-     
-     ]]>
-     </select>
      
      <select id="findIdUser" parameterType="map" resultType="string">
       <![CDATA[
@@ -108,5 +99,12 @@
 	
 	</update>
      
-
+<select id="getUserDataByUsername" parameterType="String" resultType="Map">
+    <![CDATA[
+        SELECT uname, uemail FROM 
+        users
+        WHERE 
+        username = #{username}
+    ]]>
+</select>
 </mapper>

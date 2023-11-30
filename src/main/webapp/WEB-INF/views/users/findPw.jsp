@@ -100,6 +100,13 @@
                         var newPassword = $('#password').val();
                         var confirmedPassword = $('#ChkPassword').val();
 
+                        // Ensure that newPassword is not empty before proceeding
+                        if (newPassword.trim() === "") {
+                            // Handle the case where newPassword is empty
+                            console.log("New password is empty");
+                            return;
+                        }
+
                         if (newPassword === confirmedPassword) {
                             // Proceed with the password change
                             $.ajax({
@@ -134,7 +141,6 @@
                             $("#modalContent").html("<p>입력한 비밀번호가 일치하지 않습니다. 다시 확인해주세요.</p>");
                         }
                     });
-
                 } else {
                     // 비밀번호 변경 실패 시
                     $("#modalContent").html("<p>잘못된 정보를 입력하였습니다.<br>다시 입력해주세요.</p>");

@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,10 +35,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class UsersController {
 
-
+	@Autowired
+	private BCryptPasswordEncoder bcryptPasswordEncoder;
 	@Autowired
 	private UsersService usersService;
-	private Object bcryptPasswordEncoder;
+
 
 	/*@Autowired
 	private MailService mailService;*/
@@ -53,15 +55,19 @@ public class UsersController {
 		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
 		
 
-		String pass = (String) map.get("password");
+		  String pass = (String) map.get("password");
 
-		String encodedPassword = bcryptPasswordEncoder.encode(pass);
+		    // Check if the password is not empty before encoding
+		    if (pass != null && !pass.isEmpty()) {
+		        String encodedPassword = bcryptPasswordEncoder.encode(pass);
+		        map.put("password", encodedPassword);
+		    } else {
+		        // Handle the case where an empty password is not allowed
+		        // You can return an error message or take appropriate action
+		    }
 
-		map.put("password", encodedPassword);
+		    usersService.create(map);
 
-		
-
-		usersService.create(map);
 
 		/*
 		 * String to = (String) map.get("uemail"); String uname = (String)
@@ -183,17 +189,26 @@ public class UsersController {
 		  
 		  @ResponseBody
 		  @PostMapping("/updatePw")
-		  public boolean submitUpdatePw(@RequestParam String password, @RequestParam String Chkpassword, Principal principal) {
-		      String username = principal.getName();
-		      Map<String, Object> user = this.usersService.memberDetail(username);
-		      String realPassword = ((UsersDTO) user).getPassword();
-		      boolean matches = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).matches(Chkpassword, realPassword);
-		      if (matches) {
-		          String encodedPassword = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).encode(password);
-		          this.usersService.updatePasswordUsers(encodedPassword, username);
-		          return true;
-		      } 
-		      return false;
+		  public String submitUpdatePw(@RequestParam String password, @RequestParam String Chkpassword, @RequestParam String username) {
+		      if (StringUtils.isBlank(password) || StringUtils.isBlank(Chkpassword)) {
+		          return "emptyPassword";
+		      }
+
+		      Map<String, Object> user = usersService.getUserDataByUsername(username);
+
+		      if (user != null) {
+		          String realPassword = (String) user.get("password");
+
+		          // Check if Chkpassword is empty before attempting to match
+		          if (StringUtils.isNotBlank(Chkpassword) && bcryptPasswordEncoder.matches(Chkpassword, realPassword)) {
+		              usersService.updatePasswordUsers(bcryptPasswordEncoder.encode(password), username);
+		              return "success";
+		          } else {
+		              return "passwordMismatch";
+		          }
+		      } else {
+		          return "userNotFound";
+		      }
 		  }
 }
 
