@@ -56,12 +56,12 @@
 		<put-attribute name="content" value="/WEB-INF/views/guide/{1}.jsp"/>
 	</definition>
 	
-	<definition name="notice/*" extends="base-Template1">
+	<!-- <definition name="notice/*" extends="base-Template1">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>
 		<put-attribute name="content" value="/WEB-INF/views/notice/{1}.jsp"/>
-	</definition>
+	</definition> -->
 	
 	<definition name="photo/*" extends="base-Template1">
 		<put-attribute name="title" value="/"/>
