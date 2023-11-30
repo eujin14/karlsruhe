@@ -176,25 +176,23 @@ public class UsersController {
 		    return this.usersService.findPw(name, tel, username);
 		  }
 		  
-		  @GetMapping({"/updatePw"})
-		  public String UpdatePw() {
-		    return "users/updatePw";
-		  }
-		  
-		  @ResponseBody
-		  @PostMapping("/updatePw")
-		  public boolean submitUpdatePw(@RequestParam String password, @RequestParam String Chkpassword, Principal principal) {
-		      String username = principal.getName();
-		      Map<String, Object> user = this.usersService.memberDetail(username);
-		      String realPassword = ((UsersDTO) user).getPassword();
-		      boolean matches = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).matches(Chkpassword, realPassword);
-		      if (matches) {
-		          String encodedPassword = ((BCryptPasswordEncoder) this.bcryptPasswordEncoder).encode(password);
-		          this.usersService.updatePasswordUsers(encodedPassword, username);
-		          return true;
-		      } 
-		      return false;
-		  }
+			/*
+			 * @GetMapping({"/updatePw"}) public String UpdatePw() { return
+			 * "users/updatePw"; }
+			 * 
+			 * @ResponseBody
+			 * 
+			 * @PostMapping("/updatePw") public boolean submitUpdatePw(@RequestParam String
+			 * password, @RequestParam String Chkpassword, Principal principal) { String
+			 * username = principal.getName(); Map<String, Object> user =
+			 * this.usersService.memberDetail(username); String realPassword = ((UsersDTO)
+			 * user).getPassword(); boolean matches = ((BCryptPasswordEncoder)
+			 * this.bcryptPasswordEncoder).matches(Chkpassword, realPassword); if (matches)
+			 * { String encodedPassword = ((BCryptPasswordEncoder)
+			 * this.bcryptPasswordEncoder).encode(password);
+			 * this.usersService.updatePasswordUsers(encodedPassword, username); return
+			 * true; } return false; }
+			 */
 }
 
 
