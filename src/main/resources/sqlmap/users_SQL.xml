@@ -42,22 +42,8 @@
 	
 	</update>
 	
-	<select id="pwCheck" resultType="String">
-    <![CDATA[
-        SELECT password FROM 
-        users 
-        WHERE 
-        username = #{username}
-    ]]>
-    </select>
 
-   <update id="pwUpdate" parameterType="hashMap">
-    <![CDATA[
-        UPDATE users
-        SET password = #{password}
-        WHERE username = #{username}
-    ]]>
-</update>
+
 	
 	<delete id="memberDelete" parameterType="String">
 	<![CDATA[
@@ -97,5 +83,29 @@
 		utel = #{utel}
 		 ]]>
 </select>
+
+     <select id="findPw" parameterType="map" resultType="string">
+      <![CDATA[
+		select * from 
+		    users
+		WHERE  
+		uname = #{uname}
+		and 
+		utel = #{utel}
+		and 
+		username = #{username}
+		 ]]>
+</select>
+
+	<update id="updatePasswordUsers" parameterType="hashMap">
+	<![CDATA[
+		UPDATE users 
+			SET
+		password = #{password}
+			WHERE
+		username = #{username}
+	]]>
+	
+	</update>
      
 </mapper>

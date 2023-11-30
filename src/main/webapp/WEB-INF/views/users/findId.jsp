@@ -4,132 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style type="text/css">
-/* 전체적인 기본 틀 */
-.find_box {
-    width: 100%;
-    height: 600px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 1px 4px 22px -8px #0004;
-    display: flex;
-    overflow: hidden;
-}
 
-.formHeader {
-    display: inline-block;
-    margin-bottom: 40px;
-}
-#findPwForm {
-    float: right;
-    margin-left: 15px;
-}
-#findIdForm {
-    border-right: 1px solid #afafaf;
-    padding: 20px;
-}
-#findPwForm {
-    padding:20px;
-}
-hr {
-    margin:0px;
-}
-
-form > div > a{
-    display: inline-block;
-    text-decoration: none!important;
-    color: #452A5A;
-    font-size: 0.9rem;
-    transition: .3s;
-    margin-top: 20px;
-}
-
-/* 폼 입력하는 부분 */
-.find_box .contact{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    height: 100%;
-    margin: auto;
-}
-.find_box  h3{
-    text-align: center;
-}
-input {
-    display: block;
-    border: none;
-    margin: 15px 0px;
-    border-bottom: 1px solid #4f30677d;
-    padding: 7px 9px;
-    width: 100%;
-    overflow: hidden;
-    background: transparent;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.find_box{
-    background: linear-gradient(-45deg, #dcd7e0, #fff);
-}
-
-.BtnGroup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.submit, .button{
-    width: 40%;
-    border: none;
-    padding: 15px;
-    border-radius: 8px;
-    display: inline-block;
-    margin: 30px 5px 5px;
-    background: #583672;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
-    text-align: center;
-}
-
-/* 모달 위치 조정 */
-.modal {
-    text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-    .modal:before {
-        display: inline-block;
-        vertical-align: middle;
-        content: " ";
-        height: 100%;
-    }
-}
-
-.modal-dialog {
-    display: inline-block;
-    text-align: left;
-    vertical-align: middle;
-}
-
-@media (max-width: 936px){
-    form > div > a{
-        font-size: 0.7rem;
-        padding: 5px!important;
-    }
-    .submit {
-        padding: 5px;
-    }
-    .button {
-        font-size: 1rem;
-    }
-}</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-
+<!-- 페이지 개별 적용 css -->
+    <link rel="stylesheet" href="/resources/users/css/find.css" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <meta id="_csrf" name="_csrf" content="${_csrf.token}" />
@@ -144,7 +24,7 @@ input {
             <form>
                 <div class="justify-content-center formHeader">
                     <a id="findIdForm" href="/users/findId"><h3>아이디 찾기</h3></a>
-                    <a id="findPwForm" href="/findPw"><h3>비밀번호 찾기</h3></a>
+                    <a id="findPwForm" href="/users/findPw"><h3>비밀번호 찾기</h3></a>
                     <hr>
                 </div>
                 <div class="inputForm">

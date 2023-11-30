@@ -58,28 +58,33 @@ public class UsersRepositoryImpl implements UsersRepository {
 		 return sqlSessionTemplate.selectOne("users.getUserDataByUsername", username);
 	}
 
-	
-	  @Override 
-	  public String pwCheck(String username) throws Exception { return
-	  sqlSessionTemplate.selectOne("users.pwCheck", username); }
-	  
-	  @Override 
-	  public void pwUpdate(String username, String hashedPw) throws
-	  Exception { Map<String,Object> map = new HashMap<String, Object>();
-	  map.put("username", username);
-	  map.put("password", hashedPw);
-	  sqlSessionTemplate.update("users.pwUpdate", map);
-	  
-	  }
 
 	@Override
 	public String findIdUser(String uname, String utel) {
-		 Map<String, Object> parameters = new HashMap<>();
+		 Map<String, Object> parameters = new HashMap<String, Object>();
 	        parameters.put("uname", uname);
 	        parameters.put("utel", utel);
 
 	        return sqlSessionTemplate.selectOne("users.findIdUser", parameters);
 	    }
 
+	@Override
+	public String findPw(String uname, String utel, String username) {
+		 Map<String, Object> parameters = new HashMap<String, Object>();
+	        parameters.put("uname", uname);
+	        parameters.put("utel", utel);
+	        parameters.put("username", username);
 
-}
+	        return sqlSessionTemplate.selectOne("users.findIdUser", parameters);
+	    }
+
+	@Override
+	public void updatePasswordUsers(String password, String username) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	}
+
+
+
