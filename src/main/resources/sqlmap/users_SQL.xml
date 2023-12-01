@@ -75,18 +75,30 @@
 		 ]]>
 </select>
 
-     <select id="findPw" parameterType="map" resultType="string">
-      <![CDATA[
-		select * from 
-		    users
-		WHERE  
-		uname = #{uname}
-		and 
-		utel = #{utel}
+    <update id="findPw" >
+    	<![CDATA[
+		update users set 
+		password = #{password} 
+		where 
+		uemail = #{uemail}
 		and 
 		username = #{username}
-		 ]]>
+		]]>
+</update>
+
+<select id="findPwCheck" resultType="int">
+     <![CDATA[
+		select count(*) from 
+		users 
+		where 
+		uemail = #{uemail} 
+		and 
+		username = #{username}
+		]]>
 </select>
+
+
+
 
 	<update id="updatePasswordUsers" parameterType="hashMap">
 	<![CDATA[
@@ -98,6 +110,8 @@
 	]]>
 	
 	</update>
+	
+	
      
 <select id="getUserDataByUsername" parameterType="String" resultType="Map">
     <![CDATA[

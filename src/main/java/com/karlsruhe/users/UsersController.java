@@ -4,7 +4,8 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;  
 import javax.servlet.http.HttpSession;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,6 +35,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/users")
 @Controller
 public class UsersController {
+	
+    private static final Logger logger = LoggerFactory.getLogger(UsersController.class);
 
 	@Autowired
 	  BCryptPasswordEncoder bcryptPasswordEncoder;
@@ -153,30 +156,47 @@ public class UsersController {
 	}
 	
 
-		 @GetMapping({"/findId"})
-		  public String FindId() {
-		    return "users/findId";
-		  }
+	 @GetMapping({"/findId"})
+	  public String FindId() {
+	    return "users/findId";
+	  }
+	
+	@ResponseBody
+	  @PostMapping(value = {"/findId"}, produces = {"text/html;charset=UTF-8"})
+	  public String submitFindId(@RequestParam String name, @RequestParam String tel) {
+	    String username = this.usersService.findIdUser(name, tel);
+	    if (username == null || username.equals(""))
+	      return "<p>아이디가 존재하지 않습니다<br>이름과 전화번호를 확인해 주세요</p>";
+	    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
+	  }
 		
-		@ResponseBody
-		  @PostMapping(value = {"/findId"}, produces = {"text/html;charset=UTF-8"})
-		  public String submitFindId(@RequestParam String name, @RequestParam String tel) {
-		    String username = this.usersService.findIdUser(name, tel);
-		    if (username == null || username.equals(""))
-		      return "<p>아이디가 존재하지 않습니다<br>이름과 전화번호를 확인해 주세요</p>";
-		    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
-		  }
 		
-		 @GetMapping({"/findPw"})
-		  public String FindPw(Model model) {
-		    return "users/findPw";
-		  }
-		  
-		  @ResponseBody
-		  @PostMapping({"/findPw"})
-		  public String submitFindPw(@RequestParam String name, @RequestParam String tel, @RequestParam String username) {
-		    return this.usersService.findPw(name, tel, username);
-		  }
+		@RequestMapping(value="/findPwView" , method=RequestMethod.GET)
+		public String findPwView() throws Exception{
+			return"/users/findPwView";
+		}
+			
+		
+		@RequestMapping(value = "/findPw", method = RequestMethod.POST ,produces = {"text/html;charset=UTF-8"})
+		public ResponseEntity<String> findPw(@RequestParam("username") String username,
+		                                     @RequestParam("uemail") String uemail) {
+		    try {
+		        // Check if the username and email exist in the database
+		        UsersDTO user = usersService.memberExist(uemail);
+
+		        if (user != null && user.getUsername().equals(username)) {
+		            // Generate and send the temporary password
+		            usersService.findPw(uemail, username);
+		            return ResponseEntity.ok("임시메일이 전송되었습니다.");
+		        } else {
+		            // Return an error response to the client if username or email is invalid
+		            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("아이디와 이메일을 확인해주세요");
+		        }
+		    } catch (Exception e) {
+		        // Handle any other exceptions that may occur during the process
+		        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
+		    }
+		}
 		  
 		  @GetMapping({"/updatePw"})
 		  public String UpdatePw() {
@@ -185,11 +205,11 @@ public class UsersController {
 		  
 		  @ResponseBody
 		  @PostMapping({"/updatePw"})
-		  public boolean SubmitUpdatePw(@RequestParam String password, @RequestParam String currentPassword, Principal principal) {
+		  public boolean SubmitUpdatePw(@RequestParam String password, @RequestParam String ChkPassword, Principal principal) {
 		    String username = principal.getName();
 		    Map<String, Object> users = this.usersService.memberDetail(username);
 		    String realPassword = (String) users.get("password");
-		    boolean matches = this.bcryptPasswordEncoder.matches(currentPassword, realPassword);
+		    boolean matches = this.bcryptPasswordEncoder.matches(ChkPassword, realPassword);
 		    if (matches) {
 		      String encodedPassword = this.bcryptPasswordEncoder.encode(password);
 		      this.usersService.updatePasswordUsers(encodedPassword, username);

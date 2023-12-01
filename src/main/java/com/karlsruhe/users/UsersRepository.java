@@ -28,10 +28,9 @@ public interface UsersRepository {
 	
 	
 	 String findIdUser(String uname, String utel);
-
-	 String findPw(String uname, String utel,  String username);
-
-	void updatePasswordUsers(String password, String username);
 	 
-
+	 
+	 int findPwCheck(UsersDTO usersDTO)throws Exception; 
+	 
+	 int findPw(@Param("password") String password, @Param("uemail") String uemail, @Param("username") String username) throws Exception;
 }

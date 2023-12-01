@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -69,23 +70,19 @@ public class UsersRepositoryImpl implements UsersRepository {
 	    }
 
 	@Override
-	public String findPw(String uname, String utel, String username) {
-		 Map<String, Object> parameters = new HashMap<String, Object>();
-	        parameters.put("uname", uname);
-	        parameters.put("utel", utel);
-	        parameters.put("username", username);
+	public int findPwCheck(UsersDTO usersDTO) throws Exception {
+		return sqlSessionTemplate.selectOne("users.findPwCheck", usersDTO);		}
 
-	        return sqlSessionTemplate.selectOne("users.findIdUser", parameters);
-	    }
 
 	@Override
-	public void updatePasswordUsers(String password, String username) {
-		 Map<String, Object> parameters = new HashMap<String, Object>();
-	        parameters.put("password", password);
-	        parameters.put("username", username);
-
-	        sqlSessionTemplate.update("users.updatePasswordUsers", parameters);
-	    }
+	public int findPw(@Param("password") String password, @Param("uemail") String uemail, @Param("username") String username) throws Exception {
+	    Map<String, Object> map = new HashMap<String, Object>();
+	    map.put("uemail", uemail);
+	    map.put("username", username);
+	    map.put("password", password);
+	    return sqlSessionTemplate.update("users.findPw", map);
+	}
+	
 	
 	}
 

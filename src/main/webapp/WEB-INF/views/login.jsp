@@ -53,7 +53,7 @@
                   <div class="control__indicator"></div>
                 </label>
                 <span class="ml-auto"><a href="/users/findId" class="forgot-pass">아이디찾기</a></span> 
-                <span class="ml-auto"><a href="/users/findPw" class="forgot-pass">비밀번호 찾기</a></span> 
+                <span class="ml-auto"><a href="/users/findPwView" class="forgot-pass">비밀번호 찾기</a></span> 
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary">

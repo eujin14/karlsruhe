@@ -114,6 +114,11 @@ function checkMember() {
                 <input type="password" class="form-control" id="password2" name="password2">
                 
               </div>
+               <div class="form-group last mb-3">
+                <label for="이름">이름</label>
+                <input type="text" class="form-control" id="uname" name="uname">
+                
+              </div>
               
               <div class="form-group last mb-3">
                 <label for="이메일">이메일</label>
@@ -123,7 +128,7 @@ function checkMember() {
               
               <div class="form-group last mb-3">
                 <label for="휴대폰번호 010-0000-0000">휴대폰번호 010-0000-0000</label>
-                <input type="text" class="form-control" id="password">
+                <input type="text" class="form-control" id="utel" name="utel">
                 
               </div>
               

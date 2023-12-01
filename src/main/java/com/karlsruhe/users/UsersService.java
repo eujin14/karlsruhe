@@ -24,15 +24,12 @@ public interface UsersService {
 	Map<String, Object> getUserDataByUsername(String username);
 
 	
-	/*
-	 * String pwCheck(String username)throws Exception;
-	 * 
-	 * void pwUpdate(String username, String hashedPw)throws Exception;
-	 */
+	int findPwCheck(UsersDTO usersDTO)throws Exception; 
 	 
-	 String findIdUser(String uname, String utel);
+	void  findPw(String uemail,String username)throws Exception;
+	 
+	 String findIdUser(String paramString1, String paramString2);
 
-	 String findPw(String uname, String utel,  String username);
 
 	  void updatePasswordUsers(String password, String username);
 	 
