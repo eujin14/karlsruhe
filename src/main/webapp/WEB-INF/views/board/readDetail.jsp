@@ -11,8 +11,7 @@
   
   <link rel="stylesheet"
    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-   crossorigin="anonymous"></script>
+
    <script>
  function createReply() {
 
@@ -27,7 +26,7 @@
 		   };
 		   $.ajax({
 		      type : "post",
-		      url : "/board/createreply",
+		      url : "/board/createReply",
 		      data: requestData,
 		        beforeSend: function(xhr) {
 		            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
@@ -42,7 +41,8 @@
 		 }
 </script>
     
-   
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+   crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -160,7 +160,7 @@
                   
                   <div class="row">
                     <div class="col form-group">
-                      <textarea id="rncontent" class="form-control" placeholder="댓글을 남겨주세요"></textarea>
+                      <textarea id="rbcontent" class="form-control" placeholder="댓글을 남겨주세요"></textarea>
                     </div>
                   </div>
                   <input type="hidden" id="breply" name="breply" value="${board.bno}">

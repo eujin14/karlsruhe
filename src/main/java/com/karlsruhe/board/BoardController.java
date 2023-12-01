@@ -72,8 +72,8 @@ public class BoardController {
 			return "redirect:/board/readList";
 		}
 		
-		@PostMapping("/createreply")
-		public String createreply(@RequestParam Map<String, Object> map) {
+		@PostMapping("/createReply")
+		public String createReply(@RequestParam Map<String, Object> map) {
 
 			boardService.create(map);
 			return "redirect:/board/readList";
@@ -91,7 +91,7 @@ public class BoardController {
 			model.addAttribute("board", boardService.readDetail(bno));
 
 			// 디테일에서 댓글의 목록을 볼 수 있게 함
-			//model.addAttribute("replylist", boardService.readreply(bno));
+			model.addAttribute("replyLists", boardService.readReply(bno));
 
 			return "board/readDetail";
 		}
@@ -158,20 +158,20 @@ public class BoardController {
 		// 댓글이 작성될 수 있게 하며 댓글의 내용이 담길 수 있게 함
 		
 		  @ResponseBody
-		  @PostMapping("/readreply") 
-		  public List<Map<String, Object>>readreply(@RequestParam("breply") String breply) {
+		  @PostMapping("/readReply") 
+		  public List<Map<String, Object>>readReply(@RequestParam("breply") String breply) {
 		  
-		  return boardService.readreply(breply);
+		  return boardService.readReply(breply);
 		  
 		  }
 		
-		@GetMapping("/deletereply")
-		public String deletereply(@RequestParam("bno") String bno, @RequestParam("boardbno") String boardbno, Model model) {
+		@GetMapping("/deleteReply")
+		public String deleteReply(@RequestParam("bno") String bno, @RequestParam("boardbno") String boardbno, Model model) {
 
 			boardService.delete(bno);
 
 			model.addAttribute("board", boardService.readDetail(boardbno));
-			model.addAttribute("replylist", boardService.readreply(bno));
+			model.addAttribute("replyLists", boardService.readReply(bno));
 
 			return "redirect:/board/readDetail?bno=" + boardbno;
 		}

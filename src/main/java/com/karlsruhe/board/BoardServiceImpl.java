@@ -36,8 +36,8 @@ public class BoardServiceImpl implements BoardService {
 		boardRepository.delete(bno);
 	}
 	
-	  @Override public List<Map<String, Object>> readreply(String breply) { 
-		  return boardRepository.readreply(breply); 
+	  @Override public List<Map<String, Object>> readReply(String breply) { 
+		  return boardRepository.readReply(breply); 
 	  }
 	
 }
