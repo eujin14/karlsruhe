@@ -55,6 +55,8 @@
     <link href="/resources/public/vendors/leaflet.markercluster/MarkerCluster.css" rel="stylesheet">
     <link href="/resources/public/vendors/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
     
+    
+
 </head>
 <body>
 
@@ -84,10 +86,6 @@
 	navbarVertical.classList.add('navbar-darker');
 	}
 </script>
-
-
-
-
 
 
 	<script src="/resources/public/vendors/popper/popper.min.js"></script>

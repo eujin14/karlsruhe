@@ -91,7 +91,7 @@ public class BoardController {
 			model.addAttribute("board", boardService.readDetail(bno));
 
 			// 디테일에서 댓글의 목록을 볼 수 있게 함
-			model.addAttribute("replyLists", boardService.readReply(bno));
+			model.addAttribute("replyList", boardService.readReply(bno));
 
 			return "board/readDetail";
 		}
@@ -171,7 +171,7 @@ public class BoardController {
 			boardService.delete(bno);
 
 			model.addAttribute("board", boardService.readDetail(boardbno));
-			model.addAttribute("replyLists", boardService.readReply(bno));
+			model.addAttribute("replyList", boardService.readReply(bno));
 
 			return "redirect:/board/readDetail?bno=" + boardbno;
 		}

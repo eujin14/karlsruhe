@@ -12,37 +12,7 @@
   <link rel="stylesheet"
    href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
-   <script>
- function createReply() {
-
-    var breply = $("#breply").val();
-		   var bcontent = $("#rbcontent").val();
-		   var bwriter = $("#bwriter").val();
-
-		   var requestData = {
-				   breply: breply,
-				   bcontent: bcontent,
-				   bwriter: bwriter
-		   };
-		   $.ajax({
-		      type : "post",
-		      url : "/board/createReply",
-		      data: requestData,
-		        beforeSend: function(xhr) {
-		            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-		        },
-		        success: function(result) {
-		            alert("댓글이 등록되었습니다.");
-		            window.location.reload();
-		        },
-		      error : function(request, status, error) {
-		      }
-		    });
-		 }
-</script>
-    
-   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-   crossorigin="anonymous"></script>
+ 
 </head>
 
 <body>
@@ -130,20 +100,17 @@
             <h4 class="comments-count">8 Comments</h4>
             
             
-            <c:forEach items="${replyLists}" var="reply">
+            <c:forEach items="${replyList}" var="reply">
               <div id="comment-1" class="comment">
                 <div class="d-flex">
-                  <div class="comment-img"><img src="/resources/assets/img/blog/comments-1.jpg" alt=""></div>
-                  <div>
-	       <h5><a href="">${reply.bwriter}</a> <a href="/board/deleteReply?bno=${reply.bno}&boardbno=${board.bno}" class="reply"><i class="bi bi-x-square-fill"></i> 삭제</a></h5>
+                <div>
+                    <h5>${reply.bwriter}</h5> 
                     <time datetime="2020-01-01">${reply.bdate}</time>
                     <p>${reply.bcontent}
                     </p>
+                    <h6> <a href="/board/deleteReply?bno=${reply.bno}&boardbno=${board.bno}" class="reply"><i class="bi bi-trash3"></i>삭제</a></h6> 
                   </div>
                 </div>
-
-               
-
               </div><!-- End comment #1-->
 
              </c:forEach>
@@ -183,7 +150,37 @@
 
   </main><!-- End #main -->
 
+  <script>
+ function createReply() {
 
+    var breply = $("#breply").val();
+		   var bcontent = $("#rbcontent").val();
+		   var bwriter = $("#bwriter").val();
+
+		   var requestData = {
+				   breply: breply,
+				   bcontent: bcontent,
+				   bwriter: bwriter
+		   };
+		   $.ajax({
+		      type : "post",
+		      url : "/board/createReply",
+		      data: requestData,
+		        beforeSend: function(xhr) {
+		            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+		        },
+		        success: function(result) {
+		            alert("댓글이 등록되었습니다.");
+		            window.location.reload();
+		        },
+		      error : function(request, status, error) {
+		      }
+		    });
+		 }
+</script>
+    
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+   crossorigin="anonymous"></script>
 
 
 </body>
