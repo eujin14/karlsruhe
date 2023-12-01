@@ -37,10 +37,5 @@ public class PhotoServiceImpl implements PhotoService {
 		photoRepository.delete(pno);
 	}
 
-	@Override
-	public void count(Map<String, Object> map) {
-		photoRepository.count(map);		
-	}
-	
 }
 

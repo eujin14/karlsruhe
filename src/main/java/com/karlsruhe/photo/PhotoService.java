@@ -10,6 +10,4 @@ public interface PhotoService {
 	Map<String,Object> readDetail(String pno);
 	void update(Map<String,Object>map);
 	void delete(String pno);
-	
-	void count(Map<String,Object>map);
 }

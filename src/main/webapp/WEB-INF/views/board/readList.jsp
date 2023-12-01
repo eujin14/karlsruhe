@@ -18,9 +18,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"></script>
-<<<<<<< HEAD
-
-=======
             
             
             
@@ -33,97 +30,10 @@
   
   
   
->>>>>>> origin/sunghee
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-<div class="container">
-<br><h1>자유게시판</h1><br>
-
-<!-- 게시물 목록 -->
-   <table class="table table-hover">
-         <tr>
-            <th class="col-md">번호</th>
-            <th class="col-md-8">제목</th>
-            <th class="col-md-2">작성일</th>
-            <th class="col-md">카테고리</th>
-         </tr>
-         <c:forEach items="${boards}" var="board">
-         <tr>
-            <td>${board.bno}</td>
-            <td><a class="title" href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
-            <td>${board.bdate}</td>
-            <td>${board.bcategory}</td>
-         </tr>
-      </c:forEach>         
-   </table>
-   <!-- END 게시물 목록 -->
-   <!-- paging -->
-   <div align="center">
-   
-   
-      <span> 
-          
-         
-            &nbsp;<b class="text-primary">1</b>&nbsp;
-         
-      </span>
-   
-   
-   </div>
-   <!-- END paging -->
-   <br>
-   <div class="row">
-      <!-- 검색 -->
-      <div class="col-md-2">
-         <select name="searchType" class="form-select">
-            <option value="title" selected>제목</option>
-            <option value="content" >내용</option>
-            <option value="writer" >작성자</option>
-         </select> 
-      </div>
-      <div class="col-md-3">
-         <input type="text" name="keyword" class="form-control" value="" placeholder="검색어를 입력해주세요."/>
-      </div>
-      <div class="col-md">
-         <button type="button" class="form-control" id="searchBtn">검색</button>
-      </div>
-      <!-- END 검색 -->
-      <!-- 글작성버튼 -->
-      <div class="col-md-4"></div>
-      <div class="col-md-2">
-      </div>
-      <button onclick="location.href='/board/create'" class="form-control">글작성</button>
-		</div>
-      <!-- END 글작성버튼 -->
-      
-   </div><br>
-   <!-- END 메인 -->
-   
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script>
-/* 검색 */
-document.getElementById("searchBtn").onclick = function () {
-   let searchType = document.getElementsByName("searchType")[0].value;
-   let keyword =  document.getElementsByName("keyword")[0].value;
-   
-   location.href = "/board/readList?num=1" + "&searchType=" + searchType + "&keyword=" + keyword;
-};
-/* window 특정 크기 이하일때(모바일) title 줄여서 뿌리기 */
-window.onload = function() {
-   if ($(window).width() < 770) {
-      for(var i = 0; i < 10; i++){
-         if(document.getElementsByClassName("title")[i].innerText.length>5){
-            var title = document.getElementsByClassName("title")[i].innerText.slice(0,3);
-            document.getElementsByClassName("title")[i].innerText= title + '...';
-         }
-      }
-   }
-}
-</script>
-=======
 <sec:authentication property="principal" var="users" />
 <div class="container">
 
@@ -171,6 +81,5 @@ window.onload = function() {
   <script src="/resources/vendor/simple-datatables/simple-datatables.js"></script>
 
 
->>>>>>> origin/sunghee
 </body>
 </html>

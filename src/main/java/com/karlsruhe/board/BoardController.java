@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/board")
 @Controller
 public class BoardController {
-
 		
 		@Autowired
 		private BoardService boardService;
@@ -165,16 +164,6 @@ public class BoardController {
 		  return boardService.readreply(breply);
 		  
 		  }
-		 
-
-		// 좋아요 클릭시에 숫자 증가하고 나타나게 함
-		@PostMapping("/count")
-		public String count(@RequestParam Map<String, Object> map, Model model) {
-
-			boardService.count(map);
-
-			return "redirect:/board/readList";
-		}
 		
 		@GetMapping("/deletereply")
 		public String deletereply(@RequestParam("bno") String bno, @RequestParam("boardbno") String boardbno, Model model) {
