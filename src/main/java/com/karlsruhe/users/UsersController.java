@@ -100,6 +100,7 @@ public class UsersController {
 	@GetMapping("/memberUpdate")
 	public String update(@RequestParam ("username") String username, Model model) {
 
+		
 		model.addAttribute("member", usersService.memberDetail(username));
 
 		return "users/memberUpdate";
@@ -108,15 +109,27 @@ public class UsersController {
 	@PostMapping("/memberUpdate")
 	public String updatepost(@RequestParam Map<String, Object> map) {
 		
+        BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
+		
+
+		String pass = (String) map.get("password");
+
+		String encodedPassword = bcryptPasswordEncoder.encode(pass);
+
+		map.put("password", encodedPassword);
+
+		
 		usersService.memberUpdate(map);
 		
-		return "redirect:/users/memberDetail";
+		return "redirect:/";
 
 	}
 
 	@GetMapping("/memberDelete")
 	public String delete(@RequestParam ("username") String username) {
 
+		
+		
 		usersService.memberDelete(username);
 		
 		return "redirect:/main";
@@ -124,7 +137,7 @@ public class UsersController {
 
 
 	
-
+   //카카오톡 
 	@PostMapping("/kakaocheck")
 	public String ajaxkakao(HttpServletRequest req, @RequestParam("uemail") String uemail) {
 		System.out.println("컨트롤러로 넘어온 데이터 값 : " + uemail);
@@ -155,12 +168,13 @@ public class UsersController {
 
 	}
 	
-
+     //아이디 찾기
 	 @GetMapping({"/findId"})
 	  public String FindId() {
 	    return "users/findId";
 	  }
-	
+	 
+	 //아이디 찾기
 	@ResponseBody
 	  @PostMapping(value = {"/findId"}, produces = {"text/html;charset=UTF-8"})
 	  public String submitFindId(@RequestParam String name, @RequestParam String tel) {
@@ -170,13 +184,14 @@ public class UsersController {
 	    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
 	  }
 		
-		
+		//임시비밀번호
 		@RequestMapping(value="/findPwView" , method=RequestMethod.GET)
 		public String findPwView() throws Exception{
 			return"/users/findPwView";
 		}
 			
-		
+		//임시비밀번호 발송
+		@ResponseBody
 		@RequestMapping(value = "/findPw", method = RequestMethod.POST ,produces = {"text/html;charset=UTF-8"})
 		public ResponseEntity<String> findPw(@RequestParam("username") String username,
 		                                     @RequestParam("uemail") String uemail) {
@@ -197,25 +212,35 @@ public class UsersController {
 		        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
 		    }
 		}
-		  
-		  @GetMapping({"/updatePw"})
-		  public String UpdatePw() {
-		    return "users/updatePw";
-		  }
-		  
-		  @ResponseBody
-		  @PostMapping({"/updatePw"})
-		  public boolean SubmitUpdatePw(@RequestParam String password, @RequestParam String ChkPassword, Principal principal) {
-		    String username = principal.getName();
-		    Map<String, Object> users = this.usersService.memberDetail(username);
-		    String realPassword = (String) users.get("password");
-		    boolean matches = this.bcryptPasswordEncoder.matches(ChkPassword, realPassword);
-		    if (matches) {
-		      String encodedPassword = this.bcryptPasswordEncoder.encode(password);
-		      this.usersService.updatePasswordUsers(encodedPassword, username);
-		      return true;
-		    } 
-		    return false;
-		  }
-
+		
+		
+		/*
+		 * @RequestMapping(value = "/pwUpdateView", method = RequestMethod.GET) public
+		 * String pwUpdateView() throws Exception { return "/users/pwUpdateView"; }
+		 * 
+		 * @RequestMapping(value = "/pwCheck", method = RequestMethod.POST)
+		 * 
+		 * @ResponseBody public int pwCheck(@RequestBody UsersDTO usersDTO) throws
+		 * Exception { // Retrieve the hashed password from the database based on the
+		 * username String password = usersService.pwCheck(usersDTO.getUsername()); if(
+		 * usersDTO == null || !BCrypt.checkpw(usersDTO.getPassword(),password)) {
+		 * return 0; } return 1; }
+		 */
+		
+		
+		/*
+		 * @GetMapping({"/pwUpdate"}) public String pwUpdate() { return
+		 * "users/pwUpdateView"; }
+		 */
+		/*
+		 * @RequestMapping(value = "/pwUpdate", method = RequestMethod.POST) public
+		 * String pwUpdate(String username, String password1, RedirectAttributes rttr,
+		 * HttpSession session) throws Exception { String hashedPw =
+		 * BCrypt.hashpw(password1, BCrypt.gensalt()); usersService.pwUpdate(username,
+		 * hashedPw); session.invalidate(); rttr.addFlashAttribute("msg",
+		 * "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
+		 * 
+		 * return "redirect:/users/loginView"; }
+		 */
 }
+

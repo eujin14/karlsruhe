@@ -98,18 +98,26 @@
 </select>
 
 
+<select id="pwCheck" resultType="String">
+ <![CDATA[
+   select password from 
+       users 
+    where 
+       username = #{username}
+]]>
+
+</select>
+
+<update id="pwUpdate">
+ <![CDATA[
+   update users set 
+      password = #{password}  
+    where 
+      username = #{username}
+]]>
+</update>
 
 
-	<update id="updatePasswordUsers" parameterType="hashMap">
-	<![CDATA[
-		UPDATE users 
-			SET
-		password = #{password}
-			WHERE
-		username = #{username}
-	]]>
-	
-	</update>
 	
 	
      

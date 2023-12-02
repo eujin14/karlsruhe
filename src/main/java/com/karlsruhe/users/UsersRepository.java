@@ -33,4 +33,11 @@ public interface UsersRepository {
 	 int findPwCheck(UsersDTO usersDTO)throws Exception; 
 	 
 	 int findPw(@Param("password") String password, @Param("uemail") String uemail, @Param("username") String username) throws Exception;
-}
+
+		/*
+		 * String pwCheck(String usersname)throws Exception;
+		 * 
+		 * void pwUpdate(String usersname, String hashedPw)throws Exception;
+		 */
+
+  }

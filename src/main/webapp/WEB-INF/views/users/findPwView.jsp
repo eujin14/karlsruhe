@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <!-- Spring security로 인한 csrf 토큰 -->
-    <meta id="_csrf" name="_csrf" content="${_csrf.token}" />
-    <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}" />
-
+   
     <title>비밀번호 찾기</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- 부트스트랩 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -28,7 +26,7 @@
                     placeholder="Enter Email Address...">
             </div>
             <button type="submit" id="myButton" class="btn btn-primary btn-user btn-block">
-             Find PW
+             전송하기
             </button>
         </form>
         <hr>
@@ -42,29 +40,36 @@
     </div>
 
     <!-- Move the script to the end of the body or use DOMContentLoaded -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- <script type="text/javascript">
-    $(document).ready(function() {
-        $("#findPwForm").submit(function(event) {
-            event.preventDefault(); // Prevent the form from submitting
+     <!-- jQuery script -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <!-- Your custom script -->
+        <script type="text/javascript" th:inline="javascript">
+            $(document).ready(function() {
+                $("#findPwButton").click(function() {
+                    var username = $("#username").val();
+                    var uemail = $("#uemail").val();
+                    var csrfToken = $("#_csrf").attr("content");
 
-            var formData = $("#findPwForm").serialize();
-            
-            $.ajax({
-                type: "POST",
-                url: "/users/findPw",
-                data: formData,
-                success: function(data) {
-                    // Handle the success response, e.g., show a success message
-                    alert("임시메일이 전송되었습니다.!");
-                },
-                error: function(error) {
-                    // Handle the error response, e.g., show an error message
-                    alert("Error: " + error.responseText);
-                }
+                    $.ajax({
+                        type: "POST",
+                        url: "/users/findPw",
+                        data: {
+                            username: username,
+                            uemail: uemail
+                        },
+                        headers: {
+                            "X-CSRF-TOKEN": csrfToken
+                        },
+                        success: function(data) {
+                            // Handle success
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error
+                        }
+                    });
+                });
             });
-        });
-    });
-</script> -->
+        </script>
+    </div>
 </body>
 </html>

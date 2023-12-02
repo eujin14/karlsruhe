@@ -29,8 +29,10 @@ public interface UsersService {
 	void  findPw(String uemail,String username)throws Exception;
 	 
 	 String findIdUser(String paramString1, String paramString2);
-
-
-	  void updatePasswordUsers(String password, String username);
+		/*
+		 * String pwCheck(String username)throws Exception;
+		 * 
+		 * void pwUpdate(String username, String hashedPw)throws Exception;
+		 */
 	 
 }

@@ -82,7 +82,20 @@ public class UsersRepositoryImpl implements UsersRepository {
 	    map.put("password", password);
 	    return sqlSessionTemplate.update("users.findPw", map);
 	}
-	
+
+	/*
+	 * @Override public String pwCheck(String usersname) throws Exception { return
+	 * sqlSessionTemplate.selectOne("users.pwCheck", usersname); }
+	 */
+
+	/*
+	 * @Override public void pwUpdate(String usersname, String hashedPw) throws
+	 * Exception { Map<String,Object> map = new HashMap<String, Object>();
+	 * map.put("usersname", usersname); map.put("password", hashedPw);
+	 * sqlSessionTemplate.update("users.pwUpdate", map);
+	 * 
+	 * }
+	 */
 	
 	}
 

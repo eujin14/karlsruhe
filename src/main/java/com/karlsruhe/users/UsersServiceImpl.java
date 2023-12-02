@@ -105,12 +105,17 @@ public  class UsersServiceImpl implements UsersService {
 	    }
 	}
 	
-	@Override
-	public void updatePasswordUsers(String password, String username) {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
+
+	/*
+	 * @Override public String pwCheck(String username) throws Exception { return
+	 * usersRepository.pwCheck(username); }
+	 * 
+	 * @Override public void pwUpdate(String username, String password) throws
+	 * Exception { usersRepository.pwUpdate(username, password);
+	 * 
+	 * }
+	 */
 }
 
 
