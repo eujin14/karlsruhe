@@ -44,7 +44,6 @@
 	
 
 
-	
 	<delete id="memberDelete" parameterType="String">
 	<![CDATA[
 		DELETE FROM 
@@ -97,30 +96,6 @@
 		]]>
 </select>
 
-
-<select id="pwCheck" resultType="String">
- <![CDATA[
-   select password from 
-       users 
-    where 
-       username = #{username}
-]]>
-
-</select>
-
-<update id="pwUpdate">
- <![CDATA[
-   update users set 
-      password = #{password}  
-    where 
-      username = #{username}
-]]>
-</update>
-
-
-	
-	
-     
 <select id="getUserDataByUsername" parameterType="String" resultType="Map">
     <![CDATA[
         SELECT uname, uemail FROM 
@@ -129,4 +104,16 @@
         username = #{username}
     ]]>
 </select>
+
+	<update id="updatePasswordUsers" parameterType="hashMap">
+	<![CDATA[
+		UPDATE users 
+			SET
+		password = #{password}
+			WHERE
+		username = #{username}
+	]]>
+	
+	</update>
+
 </mapper>

@@ -12,7 +12,7 @@
 <put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp"/>
 </definition>
 
-<definition name="base-Template1" template="/WEB-INF/tiles/layout/baseLayout.jsp">
+<definition name="base-Template1" template="/WEB-INF/tiles/layout/baseLayout1.jsp">
 <put-attribute name="title" value="Sample Title"/>
 <put-attribute name="heading" value="/"/>
 <put-attribute name="subheading" value="/"/>

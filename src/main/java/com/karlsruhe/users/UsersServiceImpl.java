@@ -1,5 +1,6 @@
 package com.karlsruhe.users;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +43,8 @@ public  class UsersServiceImpl implements UsersService {
 	public void memberUpdate(Map<String, Object> map) {
 		usersRepository.memberUpdate(map);
 	}
+	
+
 
 	@Override
 	public void memberDelete(String username) {
@@ -104,18 +107,16 @@ public  class UsersServiceImpl implements UsersService {
 	        throw new Exception("Invalid username or email.");
 	    }
 	}
+
+
+	public void updatePasswordUsers(String password, String username) {
+	    this.usersRepository.updatePasswordUsers(password, username);
+	  }
+
 	
 
 
-	/*
-	 * @Override public String pwCheck(String username) throws Exception { return
-	 * usersRepository.pwCheck(username); }
-	 * 
-	 * @Override public void pwUpdate(String username, String password) throws
-	 * Exception { usersRepository.pwUpdate(username, password);
-	 * 
-	 * }
-	 */
+
 }
 
 

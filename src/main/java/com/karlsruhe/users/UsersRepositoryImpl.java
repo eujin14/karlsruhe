@@ -36,6 +36,8 @@ public class UsersRepositoryImpl implements UsersRepository {
 		sqlSessionTemplate.update("users.memberUpdate", map);
 		
 	}
+	
+
 
 	@Override
 	public void memberDelete(String username) {
@@ -83,19 +85,17 @@ public class UsersRepositoryImpl implements UsersRepository {
 	    return sqlSessionTemplate.update("users.findPw", map);
 	}
 
-	/*
-	 * @Override public String pwCheck(String usersname) throws Exception { return
-	 * sqlSessionTemplate.selectOne("users.pwCheck", usersname); }
-	 */
+	@Override
+	public int updatePasswordUsers(@Param("password") String password, @Param("username") String username) {
+		Map<String, Object> map = new HashMap<String, Object>();
+	    map.put("password", password);
+	    map.put("username", username);
+	   
+	    return sqlSessionTemplate.update("users.updatePasswordUsers", map);
+	}
 
-	/*
-	 * @Override public void pwUpdate(String usersname, String hashedPw) throws
-	 * Exception { Map<String,Object> map = new HashMap<String, Object>();
-	 * map.put("usersname", usersname); map.put("password", hashedPw);
-	 * sqlSessionTemplate.update("users.pwUpdate", map);
-	 * 
-	 * }
-	 */
+	
+
 	
 	}
 

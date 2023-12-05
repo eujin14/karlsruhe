@@ -105,25 +105,22 @@ public class UsersController {
 
 		return "users/memberUpdate";
 	}
+	
 
 	@PostMapping("/memberUpdate")
 	public String updatepost(@RequestParam Map<String, Object> map) {
 		
-        BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
-		
-
-		String pass = (String) map.get("password");
-
-		String encodedPassword = bcryptPasswordEncoder.encode(pass);
-
-		map.put("password", encodedPassword);
-
+     
 		
 		usersService.memberUpdate(map);
 		
 		return "redirect:/";
 
+		
 	}
+	
+	
+
 
 	@GetMapping("/memberDelete")
 	public String delete(@RequestParam ("username") String username) {
@@ -214,33 +211,44 @@ public class UsersController {
 		}
 		
 		
-		/*
-		 * @RequestMapping(value = "/pwUpdateView", method = RequestMethod.GET) public
-		 * String pwUpdateView() throws Exception { return "/users/pwUpdateView"; }
-		 * 
-		 * @RequestMapping(value = "/pwCheck", method = RequestMethod.POST)
-		 * 
-		 * @ResponseBody public int pwCheck(@RequestBody UsersDTO usersDTO) throws
-		 * Exception { // Retrieve the hashed password from the database based on the
-		 * username String password = usersService.pwCheck(usersDTO.getUsername()); if(
-		 * usersDTO == null || !BCrypt.checkpw(usersDTO.getPassword(),password)) {
-		 * return 0; } return 1; }
-		 */
+		@GetMapping({"/updatePw"})
+		  public String UpdatePw() {
+		    return "users/updatePw";
+		  }
+		
+		@ResponseBody
+		@PostMapping("/updatePw")
+		public ResponseEntity<String> SubmitUpdatePw(@RequestParam String password, @RequestParam String currentPassword, Principal principal) {
+		    try {
+		        String username = principal.getName();
+
+		        // Retrieve user details as Map<String, Object>
+		        Map<String, Object> user = this.usersService.memberDetail(username);
+
+		        if (user != null) {
+		            String realPassword = (String) user.get("password");
+
+		            // Verify the current password
+		            boolean matches = this.bcryptPasswordEncoder.matches(currentPassword, realPassword);
+
+		            if (matches) {
+		                // Update the password if the current password is correct
+		                String encodedPassword = this.bcryptPasswordEncoder.encode(password);
+		                this.usersService.updatePasswordUsers(encodedPassword, username);
+		                return ResponseEntity.ok("Password updated successfully");
+		            }
+		        }
+
+		        // Return an error response if there's an issue with the password update
+		        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Incorrect current password");
+		    } catch (Exception e) {
+		        // Handle any other exceptions that may occur during the process
+		        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
+		    }
+		}
 		
 		
-		/*
-		 * @GetMapping({"/pwUpdate"}) public String pwUpdate() { return
-		 * "users/pwUpdateView"; }
-		 */
-		/*
-		 * @RequestMapping(value = "/pwUpdate", method = RequestMethod.POST) public
-		 * String pwUpdate(String username, String password1, RedirectAttributes rttr,
-		 * HttpSession session) throws Exception { String hashedPw =
-		 * BCrypt.hashpw(password1, BCrypt.gensalt()); usersService.pwUpdate(username,
-		 * hashedPw); session.invalidate(); rttr.addFlashAttribute("msg",
-		 * "정보 수정이 완료되었습니다. 다시 로그인해주세요.");
-		 * 
-		 * return "redirect:/users/loginView"; }
-		 */
-}
+	}
+	
+
 

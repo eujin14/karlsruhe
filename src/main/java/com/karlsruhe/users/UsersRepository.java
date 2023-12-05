@@ -1,6 +1,7 @@
 package com.karlsruhe.users;
 
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ public interface UsersRepository {
 	Map<String, Object> memberDetail(String username);
 	
 	void memberUpdate(Map<String, Object> map);
+	
 	
 	void memberDelete(String username);
 	
@@ -34,10 +36,6 @@ public interface UsersRepository {
 	 
 	 int findPw(@Param("password") String password, @Param("uemail") String uemail, @Param("username") String username) throws Exception;
 
-		/*
-		 * String pwCheck(String usersname)throws Exception;
-		 * 
-		 * void pwUpdate(String usersname, String hashedPw)throws Exception;
-		 */
+	 int updatePasswordUsers(@Param("password") String password, @Param("username") String username);
 
   }

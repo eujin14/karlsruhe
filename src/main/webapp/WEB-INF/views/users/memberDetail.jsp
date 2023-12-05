@@ -16,9 +16,14 @@ ${member.username} <br><br>
 
  <div class="row g-3 align-items-center">
                 <div class="col-3">
-                            <label for="password" class="col-form-label">비밀번호 : ******** </label>
+                            <label for="password" class="col-form-label">비밀번호 : </label>
                         </div>
-                        
+                        <div class="col-3">
+                            <div id="password" name="password">********</div>
+                        </div>
+                        <div class="col-6 updatePwBtn">
+                         <a href="/users/updatePw?username=${member.username}" class="button">수정</a>
+                        </div>
                     </div>
 
 
