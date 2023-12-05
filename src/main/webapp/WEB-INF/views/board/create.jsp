@@ -14,6 +14,7 @@
 
 </head>
 <body>
+<br><br>
 <div class="container">
 <!-- 로그인 정보 받기 -->
 <sec:authentication property="principal" var="user" />

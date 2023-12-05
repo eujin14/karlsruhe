@@ -9,13 +9,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<!--     <link href="/resources/public/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
- -->
+   
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
-
-<br><br>
+<br><br><br>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
@@ -34,36 +32,45 @@
 
 
 <br><br>
-<div class="card">
-            <div class="card-body" style="text-align: center;">
+<div class="container">
+<div class="card shadow-none border border-300 mb-3"
+		data-component-card="data-component-card">
+		<div class="card-header p-4 border-bottom border-300 bg-soft">
+		<div class="row g-3 justify-content-between align-items-center">
+		<div class="col-12 col-md">
  <h5 class="card-title">글과 의견을 자유롭게 제시할 수 있는 게시판입니다.</h5>
               <p>비방성 글, 광고, 명예훼손의 우려가 있는 글 등 게시판 성격에 부합되지 않는 게시물은</p><p> 관리자 권한으로 통보없이 이동,삭제될 수 있습니다.</p>
-<div class="container">
-<div id="tableExample3" data-list='{"valueNames":["bno","btitle","bdate"],"page":10,"pagination":true}'>
+              </div>
+			</div>
+		</div>
+<div class="card-body p-0">
+<div class="p-4 code-to-copy">
+<div id="tableExample3" data-list='{"valueNames":["bno","btitle","bdate"],"page":5,"pagination":true,"filter":{"key":"btitle"}}'>
+  <div class="row justify-content-end g-0">
   <div class="search-box mb-3 mx-auto">
     <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
       <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
       <span class="fas fa-search search-box-icon"></span>
-
     </form>
   </div>
+  </div>
   <div class="table-responsive">
-    <table class="table table-striped table-sm fs--1 mb-0">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th class="sort border-top ps-3" data-sort="bno">번호</th>
           <th class="sort border-top" data-sort="btitle">제목</th>
           <th class="sort border-top" data-sort="bdate">작성일</th>
-          <th class="sort text-end align-middle pe-0 border-top" scope="col">ACTION</th>
-        </tr>
+          <th class="sort border-top text-end pe-3" scope="col">ACTION</th>
+         </tr>
       </thead>
-      <tbody class="list">
+      <tbody class="list" id="table-regions-by-revenue">
       <c:forEach items="${boards}" var="board">
         <tr>
           <td class="align-middle ps-3 bno">${board.bno}</td>
           <td class="align-middle btitle"><a href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
           <td class="align-middle bdate">${board.bdate}</td>
-          <td class="align-middle white-space-nowrap text-end pe-0">
+          <td class="align-middle text-end py-3 pe-3">
           <sec:authorize access="hasAuthority('USER_ADMIN')">
             <div class="font-sans-serif btn-reveal-trigger position-static">
               <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
@@ -78,21 +85,30 @@
       </tbody>
     </table>
     </div>
-<div class="d-flex justify-content-between mt-3"><span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span>
-    <div class="d-flex">
-      <button class="page-link" data-list-pagination="prev"><span class="fas fa-chevron-left"></span></button>
-      <ul class="mb-0 pagination"></ul>
-      <button class="page-link pe-0" data-list-pagination="next"><span class="fas fa-chevron-right"></span></button>
-    </div>
-  </div>    
-  </div>
-  </div>
+   
+<div class="d-flex justify-content-between mt-3">
+         <span class="d-none d-sm-inline-block"
+            data-list-info="data-list-info"></span>
+         <div class="d-flex">
+            <button class="page-link" data-list-pagination="prev">
+               <span class="fas fa-chevron-left"></span>
+            </button>
+            <ul class="mb-0 pagination"></ul>
+            <button class="page-link pe-0" data-list-pagination="next">
+               <span class="fas fa-chevron-right"></span>
+            </button>
+         </div>
+      </div>
  
+ 
+ 
+ 
+  </div>
+  </div>
+ </div>
 </div>
 </div>
 
-
-    <script src="/resources/public/vendors/fontawesome/all.min.js"></script>
-
+<br><br><br><br><br>
 </body>
 </html>
