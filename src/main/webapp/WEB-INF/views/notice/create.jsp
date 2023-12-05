@@ -34,11 +34,11 @@
       </div>
     </section><!-- End Breadcrumbs -->
 
-
 <div class="container">
-        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+
+        <div class="row mt-5 justify-content-center" >
           <div class="col-lg-10">
-            <form action="/notice/create?${_csrf.parameterName}=${_csrf.token}" method="post" role="form" class="php-email-form">
+            <form action="/notice/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="ntitle" class="form-control" id="ntitle" placeholder="제목을 입력해주세요" required>
@@ -47,6 +47,7 @@
                   <input type="file" class="form-control" name="nimage" id="nimage">
                 </div>
               </div>
+            
               <div class="form-group mt-3">
                  <textarea class="form-control" id="summernote" name="ncontent"></textarea>
               </div>
@@ -67,17 +68,19 @@
   </div>
              </div>   
               
-              <!-- <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div> -->
-              <div class="text-center"><button type="submit">등록</button></div>
-              <button onclick="location.href='/notice/readList'" class="btn btn-outline-primary">목록</button>
+      
+         
+         <div class="text-center"><button type="submit" class="btn btn-outline-secondary">등록</button></div>
+        
+      
+      
             </form>
+            <a class="cta-btn align-middle" href="/notice/readList">목록</a>
           </div>
-        </div>
+         </div>
       </div>
+       
+
       </main>  
    
 <script>

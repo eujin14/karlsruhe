@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
->>>>>>> origin/sunghee
+
 
 <!DOCTYPE html>
 <html>
@@ -13,34 +11,19 @@
 <meta charset="UTF-8">
 <title>질문작성</title>
 
-
+<br><br><br>
 
 <body>
-	<form action="/notice/update" method="post" enctype="multipart/form-data">
-	<p>제목 : <input type="text" name="ntitle" id= "ntitle" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 " value="${details.ntitle}"><p>
+	<form action="/notice/update?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+	
+	<p>제목 : <input type="text" name="ntitle" id= "ntitle" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 " value="${details.ntitle}"></p>
 	<p>작성자 : <input type="text" name="nwriter" id= "nwriter" maxlength="100" style="width:100%;" value="${details.nwriter}"></p>
-	<p>공지유형 <select name="ncategory" id="ncategory" value="${details.ncategory}"><option selected>${details.ncategory}</option>
-				<option>일반공지</option>
-				<option>긴급공지</option>
-			 </select>
+	
 	<p>내용<textarea id="summernote" name="ncontent">${details.ncontent}</textarea>
 	<p>첨부사진
 			<input type="file" name="nimage" id="nimage" value="${details.nimage}">
 			<br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
-			
-<<<<<<< HEAD
-	<input type="hidden" name="nwriter" value="${details.nwriter}">
-    <input type="hidden" name="nid" value="${details.nid}" />
-    <input type="hidden" name="nimage" value="${details.nimage}" />
-    	
-				
-	<p><input type="submit" value="저장"> 
-	</form>
-	
-	
-	
-	
-=======
+
 	<div class="row mb-3">
 						<label class="col-sm-2 col-form-label" for="inputn">고정/미고정</label>
 						<c:choose>
@@ -83,7 +66,6 @@
     <input type="hidden" name="nimage" value="${details.nimage}" />
 	<p><input type="submit" value="저장"> 
 	</form>
->>>>>>> origin/sunghee
 
 <script>
  $('#summernote').summernote({
@@ -101,11 +83,9 @@
         ]
       });
  </script>
-<<<<<<< HEAD
+
 
     
 
-=======
->>>>>>> origin/sunghee
 </body>
 </html>

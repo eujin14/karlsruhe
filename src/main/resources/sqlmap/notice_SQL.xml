@@ -5,9 +5,9 @@
 <insert id="create" parameterType="hashMap">
 <![CDATA[
    INSERT INTO notice
-   (npid, ntitle, nwriter, ncontent, nimage, ncount, npin)
+   (npid, ntitle, nwriter, ncontent, nimage, npin)
    VALUES
-   (#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{nimage}, #{ncount}, #{npin})
+   (#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{nimage}, #{npin})
 ]]>
 </insert>
 
