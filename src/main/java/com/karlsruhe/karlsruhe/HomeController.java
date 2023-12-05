@@ -1,64 +1,53 @@
+
 package com.karlsruhe.karlsruhe;
 
+
 import java.security.Principal;
-import java.util.HashMap;
-import java.util.Map;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.karlsruhe.users.UsersDTO;
-import com.karlsruhe.users.UsersService;
-
+/**
+ * Handles requests for the application home page.
+ */
 @Controller
 public class HomeController {
 	
-	 @Autowired
-	  UsersService usersService;
-	 
-
-	  @Autowired
-	  BCryptPasswordEncoder bcryptPasswordEncoder;
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping("/")
-	public String main(Model model, Principal principal) {
+	/**
+	 * Simply selects the home view to render by returning its name.
+	 */
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		return "main";
+		Date date = new Date();
+		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
-	}
-	
-	@GetMapping("/login")
-	public String login() {
+		String formattedDate = dateFormat.format(date);
 		
-		return "login";
-	}
-	
-	
-	@GetMapping("/naverlogin")
-	public String naverlogin() {
+		model.addAttribute("serverTime", formattedDate );
 		
-		return "naverlogin";
-	}
-	
-	@GetMapping("/logout")
-	public String logout() {
-		
-		return "logout";
+		return "home";
 	}
 	
 	
 
-	  
-	  
-	}
+}
+
+
+	
+	
 
 
