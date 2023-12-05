@@ -74,15 +74,15 @@ function checkMember() {
   
 
   <div class="d-lg-flex half">
-   <div class="bg order-1 order-md-2" style="background-image: url('/resources/users/images/bg_1.jpg');"></div> 
-    <div class="contents order-2 order-md-1">
+   <div class="bg order-2 order-md-1" style="background-image: url('/resources/users/images/bg_1.jpg');"></div> 
+    <div class="contents order-1 order-md-2">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <div class="mb-4">
-              <h3>회원가입</h3>
-              <p class="mb-4">회원가입을 환영합니다</p>
+              <h4>회원가입</h4>
+        
             </div>
             <form action="/users/create?${_csrf.parameterName}=${_csrf.token}"  name="Member" method="post" onsubmit="return checkMember()">
             

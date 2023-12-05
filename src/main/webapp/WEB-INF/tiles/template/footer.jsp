@@ -5,6 +5,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: -10px;
+      
+        text-align: center;
+    }
+
+    /* Add the following style to remove space between the content and the footer */
+    body > div {
+        margin-bottom: 0; /* Adjust as needed */
+    }
+</style>
 </head>
 <body>
 <footer id="footer">
@@ -33,6 +53,6 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 </body>
 </html>

@@ -37,13 +37,14 @@
         <li><a href="services.html">주보</a></li>
           <li><a href="services.html">게시판</a></li>
           <li><a href="testimonials.html">갤러리</a></li>
-          
+          &nbsp; &nbsp;
            <sec:authorize access="hasRole('ROLE_ADMIN')">
            <a class="nav-link" href="admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
          </sec:authorize>
           
         <li><sec:authentication property="principal" var="user" />
             <sec:authorize access="isAnonymous()">
+             
              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <button type="button" class="btn btn-outline-primary btn-sm""><a href="/users/create">회원가입</a></button>
               <button type="button" class="btn btn-outline-danger btn-sm""><a href="/login">로그인</a></button>

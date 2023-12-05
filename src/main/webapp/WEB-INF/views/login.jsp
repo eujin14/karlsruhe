@@ -19,7 +19,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="/resources/users/css/style.css">
 
-    <title>Login #6</title>
+    
   </head>
   <body>
   
