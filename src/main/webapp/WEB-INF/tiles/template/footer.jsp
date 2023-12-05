@@ -15,7 +15,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        padding: -10px;
+        padding: 0px;
       
         text-align: center;
     }
@@ -31,7 +31,7 @@
 
     
 
-    <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-1">
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
@@ -45,7 +45,7 @@
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <div class="social-links text-center text-md-right pt-0 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>

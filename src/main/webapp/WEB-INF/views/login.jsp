@@ -60,17 +60,6 @@
 
               <span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
               
-              <div class="social-login">
-                <a href="#" class="facebook btn d-flex justify-content-center align-items-center">
-                  <span class="icon-facebook mr-3"></span> 네이버 로그인
-                </a>
-                <a href="#" class="twitter btn d-flex justify-content-center align-items-center">
-                  <span class="icon-twitter mr-3"></span> 카카오 로그인
-                </a>
-                <a href="#" class="google btn d-flex justify-content-center align-items-center">
-                  <span class="icon-google mr-3"></span> 구글 로그인
-                </a>
-              </div>
             </form>
           </div>
         </div>
