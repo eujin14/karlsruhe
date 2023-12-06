@@ -5,13 +5,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 0px;
+      
+        text-align: center;
+    }
+
+    /* Add the following style to remove space between the content and the footer */
+    body > div {
+        margin-bottom: 0; /* Adjust as needed */
+    }
+</style>
 </head>
 <body>
 <footer id="footer">
 
     
 
-    <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-1">
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
@@ -25,7 +45,7 @@
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <div class="social-links text-center text-md-right pt-0 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -33,6 +53,6 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 </body>
 </html>

@@ -19,65 +19,53 @@
     <!-- Style -->
     <link rel="stylesheet" href="/resources/users/css/style.css">
     
-    
-    
-<script>
+  <script>
 function checkMember() {
-
-	var regExpUsername = /^[a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-    var regExpUname = /^[가-힣]*$/;
-    var regExpPasswd = /^[0-9]*$/;
+    var regExpUsername = /^[a-zA-Z가-힣]+$/;
+    var regExpUname = /^[가-힣]+$/;
+    var regExpPasswd = /^[0-9]+$/;
     var regExpTel = /^\d{3}-\d{3,4}-\d{4}$/;
-    var regExpEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    
-    
-    var username = document.getElementById("username").value;
-    var uname = document.getElementById("uname").value;
-    var password = document.getElementById("password").value;
-    var password2 = document.getElementById("password2").value;
-    var utel = document.getElementById("utel").value;
-    var uemail = document.getElementById("uemail").value;
+    var regExpEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
-
+    var username = document.getElementById("username").value.trim();
+    var uname = document.getElementById("uname").value.trim();
+    var password = document.getElementById("password").value.trim();
+    var password2 = document.getElementById("password2").value.trim();
+    var utel = document.getElementById("utel").value.trim();
+    var uemail = document.getElementById("uemail").value.trim();
 
     if (!regExpUsername.test(username)) {
-        alert("아이디는 문자로 입력하세요");
+        alert("아이디는 영문과 한글로만 입력해주세요.");
         return false;
     }
-   
+
     if (!regExpUname.test(uname)) {
-        alert("이름은 한글만 입력해주세요");
+        alert("이름은 한글로만 입력해주세요.");
         return false;
     }
-    
+
     if (!regExpPasswd.test(password)) {
-        alert("비밀 번호는 숫자만 입력해주세요!!");
+        alert("비밀번호는 숫자만 입력해주세요.");
         return false;
     }
-    
+
     if (password !== password2) {
         alert("비밀번호가 일치하지 않습니다.");
         return false;
-     }
+    }
 
-    
     if (!regExpTel.test(utel)) {
-        alert("연락처를 입력해주세요");
+        alert("올바른 연락처를 입력하세요. (XXX-XXXX-XXXX).");
         return false;
     }
-    
-    
+
     if (!regExpEmail.test(uemail)) {
-        alert("이메일을 입력해 주세요");
+        alert("유효한 이메일 주소를 입력하세요.");
         return false;
     }
-    
-  
-    document.Member.submit();
 
+    document.forms["Member"].submit();
 }
-
-
 </script>
   
     
@@ -86,17 +74,17 @@ function checkMember() {
   
 
   <div class="d-lg-flex half">
-    <!-- <div class="bg order-1 order-md-2" style="background-image: url('/resources/users/images/bg_1.jpg');"></div> -->
-    <div class="contents order-2 order-md-1">
+   <div class="bg order-2 order-md-1" style="background-image: url('/resources/users/images/bg_1.jpg');"></div> 
+    <div class="contents order-1 order-md-2">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <div class="mb-4">
-              <h3>회원가입</h3>
-              <p class="mb-4">회원가입을 환영합니다</p>
+              <h4>회원가입</h4>
+        
             </div>
-            <form action="/users/create?${_csrf.parameterName}=${_csrf.token}" name="Member" method="post">
+            <form action="/users/create?${_csrf.parameterName}=${_csrf.token}"  name="Member" method="post" onsubmit="return checkMember()">
             
             <div class="form-group last mb-3">
                 <label for="아이디">아이디</label>
@@ -114,6 +102,11 @@ function checkMember() {
                 <input type="password" class="form-control" id="password2" name="password2">
                 
               </div>
+               <div class="form-group last mb-3">
+                <label for="이름">이름</label>
+                <input type="text" class="form-control" id="uname" name="uname">
+                
+              </div>
               
               <div class="form-group last mb-3">
                 <label for="이메일">이메일</label>
@@ -123,7 +116,7 @@ function checkMember() {
               
               <div class="form-group last mb-3">
                 <label for="휴대폰번호 010-0000-0000">휴대폰번호 010-0000-0000</label>
-                <input type="text" class="form-control" id="password">
+                <input type="text" class="form-control" id="utel" name="utel">
                 
               </div>
               
@@ -133,9 +126,7 @@ function checkMember() {
                 
               </div>
               <button class="btn btn-primary w-100 mb-3" type="submit" value="회원가입" onclick="checkMember()" >회원 가입</button>
-            
-              
-            
+
             </form>
           </div>
         </div>
@@ -145,8 +136,6 @@ function checkMember() {
     
   </div>
     
-    
-
-   
+     
   </body>
 </html>

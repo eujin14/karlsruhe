@@ -19,7 +19,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="/resources/users/css/style.css">
 
-    <title>Login #6</title>
+    
   </head>
   <body>
   
@@ -32,8 +32,7 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <div class="mb-4">
-              <h3>Sign In</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+              <h3>로그인</h3>
             </div>
             <form action="/login?${_csrf.parameterName}=${_csrf.token}" method="post">
               <div class="form-group first">
@@ -53,24 +52,13 @@
                   <div class="control__indicator"></div>
                 </label>
                 <span class="ml-auto"><a href="/users/findId" class="forgot-pass">아이디찾기</a></span> 
-                <span class="ml-auto"><a href="/users/findPw" class="forgot-pass">비밀번호 찾기</a></span> 
+                <span class="ml-auto"><a href="/users/findPwView" class="forgot-pass">비밀번호 찾기</a></span> 
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary">
 
               <span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
               
-              <div class="social-login">
-                <a href="#" class="facebook btn d-flex justify-content-center align-items-center">
-                  <span class="icon-facebook mr-3"></span> 네이버 로그인
-                </a>
-                <a href="#" class="twitter btn d-flex justify-content-center align-items-center">
-                  <span class="icon-twitter mr-3"></span> 카카오 로그인
-                </a>
-                <a href="#" class="google btn d-flex justify-content-center align-items-center">
-                  <span class="icon-google mr-3"></span> 구글 로그인
-                </a>
-              </div>
             </form>
           </div>
         </div>
