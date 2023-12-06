@@ -40,13 +40,6 @@ public class PhotoRepositoryImpl implements PhotoRepository {
 		sqlSessionTemplate.delete("photo.delete",pno);
 
 	}
-	@Override
-	public void count(Map<String, Object> map) {
-		sqlSessionTemplate.update("photo.count",map);
-		
-	}
-	
-
 
 }
 
