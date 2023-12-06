@@ -16,7 +16,6 @@ public class BoardServiceImpl implements BoardService {
 		boardRepository.create(map);
 	}
 
-
 	@Override
 	public List<Map<String, Object>> readList() {
 		return boardRepository.readList();
@@ -36,25 +35,10 @@ public class BoardServiceImpl implements BoardService {
 	public void delete(String bno) {
 		boardRepository.delete(bno);
 	}
-
-	/*
-	 * @Override public List<Map<String, Object>> readreply(String breply) { return
-	 * boardRepository.readreply(breply); }
-	 */
-
 	
-	  @Override public List<Map<String, Object>> readreply(String breply) { return
-	  boardRepository.readreply(breply); }
-
-
-	@Override
-	public void count(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		
-	}
-	 
-
-
+	  @Override public List<Map<String, Object>> readReply(String breply) { 
+		  return boardRepository.readReply(breply); 
+	  }
 	
 }
 

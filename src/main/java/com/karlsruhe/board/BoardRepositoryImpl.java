@@ -40,17 +40,11 @@ public class BoardRepositoryImpl implements BoardRepository {
 		sqlSessionTemplate.delete("board.delete",bno);
 
 	}
-
-
-	/*
-	 * @Override public List<Map<String, Object>> readreply(String breply) { return
-	 * sqlSessionTemplate.selectList("board.breply",breply); }
-	 */
-
 	
 	  @Override 
-	  public List<Map<String, Object>> readreply(String breply) { return
-	  sqlSessionTemplate.selectList("board.breply",breply); }
+	  public List<Map<String, Object>> readReply(String breply) {
+		  return sqlSessionTemplate.selectList("board.readReply",breply); 
+		  }
 	 
 
 	

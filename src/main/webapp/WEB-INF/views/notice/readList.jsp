@@ -82,6 +82,7 @@
 								</tr>
 							</thead>
 
+
 							<tbody class="list">
 								<c:forEach items="${lists}" var="notice">
 

@@ -27,14 +27,14 @@ public class PhotoController {
 		}
 
 		@PostMapping("/create")
-		public String create(@RequestParam Map<String, Object> map, @RequestParam("pcontent") MultipartFile file) {
+		public String create(@RequestParam Map<String, Object> map, @RequestParam("pimage") MultipartFile file) {
 
 			String filecheck = file.getOriginalFilename();
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 				String REMOTE_DIRECTORY = "photo";
 
 				String uuid = UUID.randomUUID().toString();
@@ -61,10 +61,8 @@ public class PhotoController {
 				} catch (Exception e) {
 					System.out.println("fail!!!");
 				}
-				map.put("pcontent", filename);
-
+				map.put("pimage", filename);
 			}
-
 			photoService.create(map);
 			return "redirect:/photo/readList";
 		}
@@ -87,9 +85,6 @@ public class PhotoController {
 
 			model.addAttribute("photo", photoService.readDetail(pno));
 
-			// 디테일에서 댓글의 목록을 볼 수 있게 함
-			//model.addAttribute("replylist", photoService.readreply(pno));
-
 			return "photo/readDetail";
 		}
 
@@ -103,13 +98,13 @@ public class PhotoController {
 
 		// U 저장시에 사진값이 mdn에 담길 수 있는 방법 + 사진이 안 담겼을 경우 mdn에 저장 되지 않게함
 		@PostMapping("/update")
-		public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("pcontent") MultipartFile file) {
+		public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("pimage") MultipartFile file) {
 			String filecheck = file.getOriginalFilename();
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
@@ -135,12 +130,9 @@ public class PhotoController {
 				} catch (Exception e) {
 					System.out.println("fail!!!");
 				}
-				map.put("pcontent", filename);
-
+				map.put("pimage", filename);
 			}
-
 			photoService.update(map);
-
 			return "redirect:/photo/readList";
 		}
 
@@ -148,15 +140,6 @@ public class PhotoController {
 		public String delete(@RequestParam("pno") String pno) {
 
 			photoService.delete(pno);
-
-			return "redirect:/photo/readList";
-		}
-
-		// 좋아요 클릭시에 숫자 증가하고 나타나게 함
-		@PostMapping("/count")
-		public String count(@RequestParam Map<String, Object> map, Model model) {
-
-			photoService.count(map);
 
 			return "redirect:/photo/readList";
 		}
