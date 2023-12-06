@@ -76,7 +76,7 @@ public class UsersController {
 		 * mailService.sendMail(to, subject, body);
 		 */
 
-		return "redirect:/main";
+		return "redirect:/login";
 	}
 
 	@GetMapping("/memberList")
