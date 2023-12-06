@@ -12,23 +12,18 @@
 
 </head>
 <body>
+
   <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" >
            <input type="hidden" name="username" value="${member.username}">
+           <input type="hidden" name="password" value="${member.password}">
+           <br><br><br>
               <div class="mb-3 text-start">
-                <label class="form-label" for="username">아이디</label>
-                <p>${member.username}</p>
+                <label class="form-label" for="username">아이디: ${member.username}</label>
               </div>
               <div class="mb-3 text-start">
                 <label class="form-label" for="password">암호:******</label>
               </div>
-              <div class="mb-3 text-start">
-                <label class="form-label" for="password">암호</label>
-             <input class="form-control" id="password" type="password" name="password"   />
-              </div>
-               <div class="mb-3 text-start">
-                <label class="form-label" for="password1">암호</label>
-             <input class="form-control" id="password2" type="password" name="password2" />
-              </div>
+
               <div class="mb-3 text-start">
                 <label class="form-label" for="uname">이름</label>
              <input class="form-control" id="uname" type="text" name="uname"  value="${member.uname}" />
@@ -47,6 +42,6 @@
               </div>
               <button class="btn btn-primary w-100 mb-3" type="submit" value="회원수정" >회원정보 수정</button>              
             </form>
-
+<br><br><br><br><br>
 </body>
 </html>

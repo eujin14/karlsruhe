@@ -35,12 +35,12 @@
             </div>
             <form action="/login?${_csrf.parameterName}=${_csrf.token}" method="post">
               <div class="form-group first">
-                <label for="username">Username</label>
+                <label for="username"></label>
                 <input type="text" class="form-control" id="username"  name="username">
 
               </div>
               <div class="form-group last mb-3">
-                <label for="password">Password</label>
+                <label for="password"></label>
                 <input type="password" class="form-control" id="password" name="password">
                 
               </div>
