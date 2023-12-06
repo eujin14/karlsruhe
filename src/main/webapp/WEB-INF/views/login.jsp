@@ -19,7 +19,6 @@
     <!-- Style -->
     <link rel="stylesheet" href="/resources/users/css/style.css">
 
-    <title>Login #6</title>
   </head>
   <body>
   
@@ -32,8 +31,7 @@
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <div class="mb-4">
-              <h3>Sign In</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+              <h3>로그인</h3>
             </div>
             <form action="/login?${_csrf.parameterName}=${_csrf.token}" method="post">
               <div class="form-group first">
