@@ -33,8 +33,8 @@ public class PhotoController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 				String REMOTE_DIRECTORY = "photo";
 
 				String uuid = UUID.randomUUID().toString();
@@ -103,8 +103,8 @@ public class PhotoController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();

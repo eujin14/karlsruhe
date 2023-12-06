@@ -36,8 +36,8 @@ public class BoardController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 				String REMOTE_DIRECTORY = "board";
 
 				String uuid = UUID.randomUUID().toString();
@@ -111,8 +111,8 @@ public class BoardController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
@@ -128,7 +128,7 @@ public class BoardController {
 						con.enterLocalPassiveMode();
 						con.setFileType(FTP.BINARY_FILE_TYPE);
 
-						con.changeWorkingDirectory("noti");
+						con.changeWorkingDirectory("board");
 
 						con.storeFile(filename, file.getInputStream());
 						con.logout();

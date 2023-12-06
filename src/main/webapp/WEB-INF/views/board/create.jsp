@@ -26,9 +26,9 @@
    <form id="check" action="/board/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
       <div class="mb-3">
          <label class="form-label">작성자</label> 
-         <input id="bwriter" name="bwriter" type="text" class="form-control"  maxlength="100" style="width:100%;" />
-<%--          <input id="bwriter" name="bwriter" type="text" class="form-control" value="${user.username}" readonly maxlength="100" style="width:100%;" />
- --%>      </div>
+<!--          <input id="bwriter" name="bwriter" type="text" class="form-control"  maxlength="100" style="width:100%;" />
+ -->        <input id="bwriter" name="bwriter" type="text" class="form-control" value="${user.username}" readonly maxlength="100" style="width:100%;" />
+    </div>
       <div class="mb-3">
          <label class="form-label" >제목</label> 
          <input id="btitle" name="btitle" type="text" class="form-control" maxlength="100" style="width:100%;" placeholder="제목을 입력하세요 "/>
