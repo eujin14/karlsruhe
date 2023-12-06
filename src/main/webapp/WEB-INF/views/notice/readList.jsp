@@ -50,7 +50,8 @@
 					<tr class="be-light">
 									<th class="sort border-top ps-3" data-sort="nid">번호</th>
 									<th class="sort border-top" data-sort="ntitle">제목</th>
-									<th class="sort border-top text-end pe-3" data-sort="ndate">작성일</th>
+									<th class="sort border-top" data-sort="ntitle">작성자</th>
+									<th class="sort border-top pe-3" data-sort="ndate">작성일</th>
 								</tr>
 				</thead>
 				<tbody class="list">
@@ -59,7 +60,8 @@
 									<tr>
 										<td class="align-middle ps-3 nid">${notice.nid}</td>
 										<td class="align-middle ntitle"><a href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
-										<td class="align-middle ndate text-end py-3 pe-3">${notice.ndate}</td>
+										<td class="align-middle nwriter">관리자</td>
+										<td class="align-middle ndate py-3 pe-3">${notice.ndate}</td>
 									</tr>
 								</c:forEach>
 

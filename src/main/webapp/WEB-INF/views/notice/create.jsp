@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <meta charset="UTF-8">
-
+<title>공지작성</title>
 <main id="main">
 <br><br><br>
     <!-- ======= Breadcrumbs ======= -->
@@ -69,13 +69,10 @@
              </div>   
               
       
-         
-         <div class="text-center"><button type="submit" class="btn btn-outline-secondary">등록</button></div>
-        
-      
-      
+         <div class="text-center"><button type="submit" class="btn" style="display: inline-block; padding: 10px 25px; border-radius: 2px; transition: 0.4s; margin: 10px; border-radius: 4px; border: 2px solid #f03c02; color: #f03c02; background: #fff;"
+>등록</button></div>
+          
             </form>
-            <a class="cta-btn align-middle" href="/notice/readList">목록</a>
           </div>
          </div>
       </div>
