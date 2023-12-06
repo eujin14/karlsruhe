@@ -86,6 +86,8 @@ public class NoticeController {
 	public String readDetail(@RequestParam("nid") String nid, Model model) {
 		model.addAttribute("details", noticeService.readDetail(nid));
 		model.addAttribute("replyLists", noticeService.readReply(nid));
+		List<NoticeDTO> replyLists = noticeService.readReply(nid);
+		model.addAttribute("replyListsSize", replyLists.size());
 		return "notice/readDetail";
 	}
 
