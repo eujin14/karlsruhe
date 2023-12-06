@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <main id="main">
+<sec:authentication property="principal" var="users" />
 <br><br><br>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -29,9 +29,8 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
-
+<br><br>
     <!-- ======= Blog Single Section ======= -->
-    <sec:authentication property="principal" var="users"/> 
     <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
@@ -49,7 +48,7 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>${board.bwriter}</li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i>${board.bdate}</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 ${replyListsSize}</li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 <%-- ${replyListsSize} --%></li>
                 </ul>
               </div>
               <br>
@@ -93,7 +92,7 @@
 
             <div class="blog-comments">
             
-            <h4 class="comments-count">댓글 ${replyListsSize}</h4>
+            <h4 class="comments-count">댓글 <%-- ${replyListsSize} --%></h4>
            
             <c:forEach items="${replyList}" var="reply">
               <div id="comment-1" class="comment">
@@ -123,7 +122,7 @@
                   </div>
                   <input type="hidden" id="breply"  name="breply" value="${board.bno}">
                   <input type="hidden" id="bwriter" name="bwriter" value="${users.username}">
-                  <a href="javascript:createReply()" class="btn btn-primary">등록</a>
+                  <a href="javascript:createReply()" class="btn btn-primary">등록<%-- ${replyListsSize} --%></a>
 
                 </form>
 

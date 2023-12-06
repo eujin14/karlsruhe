@@ -91,7 +91,7 @@
 	navbarTop.removeAttribute('style');
 </script>
 
-<a href="#" id="toTop" class="fa fa-angle-up"></a>
+<a href= "#" id="toTop" class="fa fa-angle-up"></a>
 
 <!-- <div class="content"> -->
 <tiles:insertAttribute name="content"/>
