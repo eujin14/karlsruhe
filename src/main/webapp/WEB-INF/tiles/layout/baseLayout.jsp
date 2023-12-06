@@ -95,10 +95,10 @@
 
 <!-- <div class="content"> -->
 <tiles:insertAttribute name="content"/>
+<tiles:insertAttribute name="footer"/>
 <!-- </div> -->
 
  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <tiles:insertAttribute name="footer"/>
 
 <!-- 피닉스 -->
 <script>
