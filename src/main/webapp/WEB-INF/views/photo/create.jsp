@@ -22,14 +22,14 @@
 <sec:authentication property="principal" var="user" />
 <br><br><br>
     <!-- 메인 -->
-    <section id="breadcrumbs" class="breadcrumbs">
+     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>자유게시판</h2>
+          <h2>gallery</h2>
           <ol>
             <li><a href="/main">홈</a></li>
-            <li><a href="/photo/readList">사진함</a></li>
+            <li><a href="/photo/readList">gallery</a></li>
             <li>${photo.ptitle}</li>
           </ol>
         </div>
@@ -66,13 +66,13 @@
                          <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="pcontent">내용</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" id="summernote" name="bcontent" placeholder="제목을 입력하세요" ></textarea>
+                                <textarea class="form-control" id="summernote" name="pcontent" placeholder="제목을 입력하세요" ></textarea>
                             </div>
                         </div>
                          <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="pimage">첨부사진</label>
                             <div class="col-sm-10">
-                                <input  class="form-control" id="bimage" name="bimage" type="file"  required />
+                                <input  class="form-control" id="pimage" name="pimage" type="file"  required />
                                 <br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
                             </div>
                         </div>
@@ -110,7 +110,7 @@
    })
  </script>
 
-      <br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 </body>
 </html>

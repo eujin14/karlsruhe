@@ -5,13 +5,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+ <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        #footer {
+            margin-top: auto; /* This will push the footer to the bottom of the page */
+            padding: 20px; /* Add padding to the footer if needed */
+        }
+
+        /* Your existing CSS styles for social links */
+        .social-links {
+            text-align: center;
+            text-md-right;
+            padding-top: 3px;
+            padding-md-top: 0;
+        }
+
+        .social-links a {
+            /* Your existing styles for social links */
+        }
+    </style>
+</head>
 </head>
 <body>
 <footer id="footer">
 
     
 
-    <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-1">
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">

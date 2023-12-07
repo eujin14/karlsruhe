@@ -26,10 +26,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>자유게시판</h2>
+          <h2>gallery</h2>
           <ol>
             <li><a href="/main">홈</a></li>
-            <li><a href="/photo/readList">사진함</a></li>
+            <li><a href="/photo/readList">gallery</a></li>
             <li>${photo.ptitle}</li>
           </ol>
         </div>
@@ -110,7 +110,7 @@
    })
  </script>
 
-      <br><br>
-    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </body>
 </html>

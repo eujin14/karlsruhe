@@ -9,10 +9,10 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
    crossorigin="anonymous"></script>
 
-
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
+<input type="hidden" id="bno"  name="bno" value="${board.bno}">
 <br><br><br>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -31,7 +31,8 @@
     </section><!-- End Breadcrumbs -->
 <br><br>
     <!-- ======= Blog Single Section ======= -->
-    <section id="blog" class="blog">
+  
+
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -48,7 +49,7 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>${board.bwriter}</li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i>${board.bdate}</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 <%-- ${replyListsSize} --%></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 </li>
                 </ul>
               </div>
               <br>
@@ -72,7 +73,7 @@
             
               </div>
              <br>
-             <c:choose>
+            <c:choose>
             <c:when test="${board.bwriter == users.username||users.username=='admin'}">
              
               <div class="entry-footer" style="padding-left: 20px;">
@@ -86,13 +87,13 @@
                 </ul>
               </div>
               </c:when>
-              </c:choose>
+              </c:choose> 
 
             </article><!-- End blog entry -->
 
-            <div class="blog-comments">
+             <div class="blog-comments">
             
-            <h4 class="comments-count">댓글 <%-- ${replyListsSize} --%></h4>
+            <h4 class="comments-count">댓글 ${replyListsSize}</h4>
            
             <c:forEach items="${replyList}" var="reply">
               <div id="comment-1" class="comment">
@@ -122,13 +123,13 @@
                   </div>
                   <input type="hidden" id="breply"  name="breply" value="${board.bno}">
                   <input type="hidden" id="bwriter" name="bwriter" value="${users.username}">
-                  <a href="javascript:createReply()" class="btn btn-primary">등록<%-- ${replyListsSize} --%></a>
+                  <a href="javascript:createReply()" class="btn btn-primary">등록${replyListsSize}</a>
 
                 </form>
 
               </div>
 
-            </div><!-- End blog comments -->
+            </div><!-- End blog comments --> 
 
           </div><!-- End blog entries list -->
 
@@ -136,12 +137,9 @@
         </div>
 
       </div>
-    </section><!-- End Blog Single Section -->
 
-  </main><!-- End #main -->
 
  
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <script>
  function createReply() {
@@ -173,6 +171,7 @@
  }
 </script>
 
-</body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+</body>
 </html>

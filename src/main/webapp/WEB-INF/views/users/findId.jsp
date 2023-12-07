@@ -8,8 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<!-- 페이지 개별 적용 css -->
-    <link rel="stylesheet" href="/resources/users/css/find.css" type="text/css">
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
  <meta id="_csrf" name="_csrf" content="${_csrf.token}" />
@@ -23,9 +22,7 @@
         <div class="contact">
             <form>
                 <div class="justify-content-center formHeader">
-                    <a id="findIdForm" href="/users/findId"><h3>아이디 찾기</h3></a>
-                    <a id="findPwForm" href="/users/findPw"><h3>비밀번호 찾기</h3></a>
-                    <hr>
+                    <a id="findIdForm" ><h3>아이디 찾기</h3></a>
                 </div>
                 <div class="inputForm">
                     <input name="uname" type="text" id="uname" placeholder="이름">
