@@ -48,7 +48,7 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="/main">ekgkarlsruhe</a></h1>
+        <h1 class="text-light"><a href="/">ekgkarlsruhe</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -59,11 +59,10 @@
           
           <li class="dropdown"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/greetings">목사님의 인사말</a></li>
-                <ul>
-                </ul>
+               <li><a href="/greetings">목사님의 인사말</a></li>
               <li><a href="/history">교회연혁</a></li>
-              <li><a href="/location">예배장소와 시간</a></li>
+              <li><a href="/time">예배시간</a></li>
+              <li><a href="/location">예배장소</a></li>
             </ul>
           </li>
         <li><a href="services.html">공지사항</a></li>
@@ -117,7 +116,7 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Some <strong>Features</strong> we do provide</h2>
+          <h2>교회 <strong>예배</strong>시간</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -126,25 +125,25 @@
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
                 <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
-                  <h4>Modi sit est</h4>
+                  <h4>유치부</h4>
                   <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
-                  <h4>Unde praesentium sed</h4>
+                  <h4>청소년부</h4>
                   <p>Voluptas vel esse repudiandae quo excepturi.</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
-                  <h4>Pariatur explicabo vel</h4>
+                  <h4>청년부</h4>
                   <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p>
                 </a>
               </li>
               <li class="nav-item mt-2">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
-                  <h4>Nostrum qui quasi</h4>
+                  <h4>성인부</h4>
                   <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>
                 </a>
               </li>

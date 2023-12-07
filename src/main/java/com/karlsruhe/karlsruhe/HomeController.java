@@ -38,10 +38,10 @@ public class HomeController {
 		return "logout";
 	}
 	
-	@GetMapping("/location")
-	public String location() {
+	@GetMapping("/time")
+	public String time() {
 		
-		return "location";
+		return "time";
 	}
 	
 	@GetMapping("/greetings")
@@ -56,6 +56,10 @@ public class HomeController {
 		return "history";
 	}
 	
-	
+	@GetMapping("/location")
+	public String location() {
+		
+		return "location";
+	}
 }
 

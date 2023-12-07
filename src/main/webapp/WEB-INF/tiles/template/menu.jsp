@@ -14,7 +14,7 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="/main">ekgkarlsruhe</a></h1>
+        <h1 class="text-light"><a href="/">ekgkarlsruhe</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -23,13 +23,12 @@
         <ul>
           
           
-          <li class="dropdown"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/greetings">목사님의 인사말</a></li>
-                <ul>
-                </ul>
               <li><a href="/history">교회연혁</a></li>
-              <li><a href="/location">예배시간</a></li>
+              <li><a href="/time">예배시간</a></li>
+              <li><a href="location">예배장소</a></li>
             </ul>
           </li>
         <li><a href="services.html">공지사항</a></li>
