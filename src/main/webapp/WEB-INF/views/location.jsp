@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,7 +95,6 @@
 
     </div>
   </header><!-- End Header -->
-
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -104,123 +102,57 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Testimonials</h2>
+          <h2>Contact</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Testimonials</li>
+            <li><a href="/">홈</a></li>
+            <li>예배 장소</li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <!-- ======= Contact Section ======= -->
+    <div class="map-section">
+      <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <section id="contact" class="contact">
       <div class="container">
 
-        <div class="row">
+        <div class="row justify-content-center" data-aos="fade-up">
 
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>2017년 – 현재 Knielingenkirche 교회</h3>
-              <p>
-              <ul>
-                 <li>﻿2022년 10월 코로나 이후 간략화된 예전 복원</li>
-                <li>﻿2021년 6월 김두식 목사 담임목사 취임</li>
-                <li>﻿2021년 2월 김두식 목사 주일 설교 전담</li>
-                <li>﻿2020년 11월30일 김성호 목사 사임</li>
-                <li>﻿2017년 10월 예배처소를 ﻿Knielingen Kirche Gemeindezentrum으로 옮김.</li>
-             </ul>
-              </p>
+          <div class="col-lg-10">
+
+            <div class="info-wrap">
+              <div class="row">
+                <div class="col-lg-4 info">
+                  <i class="bi bi-geo-alt"></i>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street<br>New York, NY 535022</p>
+                </div>
+
+                <div class="col-lg-4 info mt-4 mt-lg-0">
+                  <i class="bi bi-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>info@example.com<br>contact@example.com</p>
+                </div>
+
+                <div class="col-lg-4 info mt-4 mt-lg-0">
+                  <i class="bi bi-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-item mt-4 mt-lg-0">
-              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>2000년 – 2016년 Jacobuskirche 교회</h3>
-              <p>
-                <ul>
-                <li>﻿2010년 11월 18일 E.V. 등록</li>
-                <li>﻿2010년 4월 대한기독교장로회 김성호 목사 담임목사 취임</li>
-                <li>﻿2010년 3월  손창근 목사 사임</li>
-                <li>﻿2004년 1월 손창근 목사 담임목사 취임</li>
-                <li>﻿2003년 12월 손창근 목사 주일설교 전담</li>
-                <li>﻿﻿2001년 1월  강태영 목사 담임목사 취임</li>
-                <li>﻿﻿﻿2000년 3월 예배처소를 Jacobus Kirche로 옮김</li>
-              </ul>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>﻿1992년 – 1999년 Lukaskirche 교회</h3>
-
-              <p>
-               <ul>
-                <li>﻿1999년 11월  강태영 목사 주일설교 전담 </li>
-                <li>﻿1996년 12월 기독교대한감리회 임재훈 목사 부임 </li>
-                <li>﻿1996년 지역 한인교회인 경향교회와 통합</li>
-                <li>﻿1992년 8월 예배처소를 미군부대 Chapel에서 Lukaskirche로 옮김 </li>
-                <li>﻿992년 3월 신성국 목사 부임</li>
-              </ul>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>﻿﻿1975-1991년 칼스루에 한인교회 설립 및 정착기</h3>
-              <p>
-                <ul>
-                <li>﻿1991년 10월 대한예수교장로회 통합측 이성휘 목사 부임</li>
-                <li>﻿﻿1989년 3월 대한예수교장로회 통합측 김도훈 목사 부임</li>
-                <li>﻿1988년 4월 대한예수교장로회 통합측 문성호 목사 부임</li>
-                <li>﻿﻿1987년 11월 조병하 목사 부임</li>
-                <li>﻿﻿1985년 5월 오재성 전도사 부임</li>
-                <li>﻿1984년 지역 한인 학생교회와 통합</li>
-                <li>﻿1983년 12월  이신건 전도사 부임</li>
-                <li>﻿﻿1981년 11월 김희성 목사 부임</li>
-                <li>﻿﻿﻿﻿1981년 11월 예배처소로 미군부대 Chapel을 사용 </li>
-                <li>﻿1975년 6월 20일 하이델베르크 주둔 미군 군목인 이정일 목사님을 모시고 가정교회로 시작</li>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-6.jpg" class="testimonial-img" alt="">
-              <h3>Emily Harison</h3>
-              <h4>Store Owner</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Eius ipsam praesentium dolor quaerat inventore rerum odio. Quos laudantium adipisci eius. Accusamus qui iste cupiditate sed temporibus est aspernatur. Sequi officiis ea et quia quidem.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
           </div>
 
         </div>
 
+
       </div>
-    </section><!-- End Testimonials Section -->
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 

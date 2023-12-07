@@ -36,12 +36,12 @@
             <form action="/login?${_csrf.parameterName}=${_csrf.token}" method="post">
               <div class="form-group first">
                 <label for="username"></label>
-                <input type="text" class="form-control" id="username"  name="username">
+                <input type="text" class="form-control" id="username"  name="username" placeholder="아이디">
 
               </div>
               <div class="form-group last mb-3">
                 <label for="password"></label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
                 
               </div>
               

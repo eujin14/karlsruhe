@@ -19,6 +19,22 @@
     <!-- Style -->
     <link rel="stylesheet" href="/resources/users/css/style.css">
     
+    <style>
+  /* Add this style block to your HTML, either in the head or in a separate stylesheet */
+
+  .form-group.last {
+    margin-bottom: 1rem; /* You can adjust this margin to control the vertical space between form groups */
+  }
+
+  input.form-control {
+    height: 2rem; /* Adjust the height to your preference */
+  }
+
+  button.btn.btn-primary {
+    height: 2rem; /* Adjust the height of the button to match the input fields */
+  }
+</style>
+    
   <script>
 function checkMember() {
     var regExpUsername = /^[a-zA-Z가-힣]+$/;
@@ -87,35 +103,35 @@ function checkMember() {
             <form action="/users/create?${_csrf.parameterName}=${_csrf.token}"  name="Member" method="post" onsubmit="return checkMember()">
             
             <div class="form-group last mb-3">
-                <input type="text" class="form-control" id="username" name="username" maxlength="18" title="4자 까지 입력" required autofocus>
+                <input type="text" class="form-control" id="username" name="username" placeholder="아이디">
               </div>
 
               <div class="form-group last mb-3">
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호">
                 
               </div>
     
              <div class="form-group last mb-3">
-                <input type="password" class="form-control" id="password2" name="password2">
+                <input type="password" class="form-control" id="password2" name="password2" placeholder="비밀번호 확인">
                 
               </div>
                <div class="form-group last mb-3">
-                <input type="text" class="form-control" id="uname" name="uname">
+                <input type="text" class="form-control" id="uname" name="uname" placeholder="이름">
                 
               </div>
               
               <div class="form-group last mb-3">
-                <input type="email" class="form-control" id="uemail" name="uemail">
+                <input type="email" class="form-control" id="uemail" name="uemail" placeholder="이메일">
                 
               </div>
               
               <div class="form-group last mb-3">
-                <input type="text" class="form-control" id="utel" name="utel">
+                <input type="text" class="form-control" id="utel" name="utel" placeholder="전화번호">
                 
               </div>
               
                 <div class="form-group last mb-3">
-                <input type="text" class="form-control" id="uaddr" name="uaddr">
+                <input type="text" class="form-control" id="uaddr" name="uaddr" placeholder="주소">
                 
               </div>
               <button class="btn btn-primary w-100 mb-3" type="submit" value="회원가입" onclick="checkMember()" >회원 가입</button>
