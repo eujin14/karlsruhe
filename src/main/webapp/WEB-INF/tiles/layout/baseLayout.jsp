@@ -118,7 +118,7 @@
   
   <!-- 피닉스   -->
   <script src="/resources/assets/js/main.js"></script>
-<script src="/resources/public/vendors/popper/popper.min.js"></script>
+  <script src="/resources/public/vendors/popper/popper.min.js"></script>
     <script src="/resources/public/vendors/bootstrap/bootstrap.min.js"></script>
     <script src="/resources/public/vendors/anchorjs/anchor.min.js"></script>
     <script src="/resources/public/vendors/is/is.min.js"></script>
