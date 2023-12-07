@@ -6,6 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+  }
+</style>
 </head>
 <body>
        <div class="content d-flex justify-content-center align-items-center">
@@ -46,7 +57,7 @@
                       <button class="btn btn-phoenix-primary w-100" type="button"><a href="/users/updatePw?username=${member.username}">비밀번호 수정</a></button>
                     </div>
                     <div class="col-6 col-sm-auto">
-                      <button class="btn btn-phoenix-primary w-100" type="button"><span ></span>로그아웃</button>
+                      <button class="btn btn-phoenix-primary w-100" type="button"><a href="/logout">로그아웃 </a></button>
                     </div>
                     <div class="col-6 col-sm-auto">
                       <button class="btn btn-phoenix-primary w-100" type="button"><a href="/main">회원탈퇴 </a> </button>
