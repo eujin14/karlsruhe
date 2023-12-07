@@ -19,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/board")
 @Controller
 public class BoardController {
-
 		
 		@Autowired
 		private BoardService boardService;
@@ -37,8 +36,8 @@ public class BoardController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 				String REMOTE_DIRECTORY = "board";
 
 				String uuid = UUID.randomUUID().toString();
@@ -73,8 +72,8 @@ public class BoardController {
 			return "redirect:/board/readList";
 		}
 		
-		@PostMapping("/createreply")
-		public String createreply(@RequestParam Map<String, Object> map) {
+		@PostMapping("/createReply")
+		public String createReply(@RequestParam Map<String, Object> map) {
 
 			boardService.create(map);
 			return "redirect:/board/readList";
@@ -92,7 +91,7 @@ public class BoardController {
 			model.addAttribute("board", boardService.readDetail(bno));
 
 			// 디테일에서 댓글의 목록을 볼 수 있게 함
-			//model.addAttribute("replylist", boardService.readreply(bno));
+			model.addAttribute("replyList", boardService.readReply(bno));
 
 			return "board/readDetail";
 		}
@@ -112,8 +111,8 @@ public class BoardController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "tjdgml789";
-				String PSW = "qwaserdf123";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
@@ -129,7 +128,7 @@ public class BoardController {
 						con.enterLocalPassiveMode();
 						con.setFileType(FTP.BINARY_FILE_TYPE);
 
-						con.changeWorkingDirectory("noti");
+						con.changeWorkingDirectory("board");
 
 						con.storeFile(filename, file.getInputStream());
 						con.logout();
@@ -159,21 +158,22 @@ public class BoardController {
 		// 댓글이 작성될 수 있게 하며 댓글의 내용이 담길 수 있게 함
 		
 		  @ResponseBody
-		  @PostMapping("/readreply") 
-		  public List<Map<String, Object>>readreply(@RequestParam("breply") String breply) {
+		  @PostMapping("/readReply") 
+		  public List<Map<String, Object>>readReply(@RequestParam("breply") String breply) {
 		  
-		  return boardService.readreply(breply);
+		  return boardService.readReply(breply);
 		  
 		  }
-		 
+		
+		@GetMapping("/deleteReply")
+		public String deleteReply(@RequestParam("bno") String bno, @RequestParam("boardbno") String boardbno, Model model) {
 
-		// 좋아요 클릭시에 숫자 증가하고 나타나게 함
-		@PostMapping("/count")
-		public String count(@RequestParam Map<String, Object> map, Model model) {
+			boardService.delete(bno);
 
-			boardService.count(map);
+			model.addAttribute("board", boardService.readDetail(boardbno));
+			model.addAttribute("replyList", boardService.readReply(bno));
 
-			return "redirect:/board/readList";
+			return "redirect:/board/readDetail?bno=" + boardbno;
 		}
 
 	}

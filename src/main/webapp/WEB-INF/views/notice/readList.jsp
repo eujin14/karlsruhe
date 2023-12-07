@@ -53,8 +53,15 @@
 									<th class="sort border-top" data-sort="ntitle">작성자</th>
 									<th class="sort border-top pe-3" data-sort="ndate">작성일</th>
 								</tr>
+
 				</thead>
 				<tbody class="list">
+
+							</thead>
+
+
+							<tbody class="list">
+
 								<c:forEach items="${lists}" var="notice">
 
 									<tr>

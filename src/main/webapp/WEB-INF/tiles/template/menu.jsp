@@ -45,8 +45,8 @@
         <li><sec:authentication property="principal" var="user" />
             <sec:authorize access="isAnonymous()">
              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button type="button" class="btn btn-outline-primary"><a href="/users/create">회원가입</a></button>
-              <button type="button" class="btn btn-outline-danger"><a href="/login">로그인</a></button>
+              <button type="button" class="btn btn-outline-primary btn-sm""><a href="/users/create">회원가입</a></button>
+              <button type="button" class="btn btn-outline-danger btn-sm""><a href="/login">로그인</a></button>
               </div>
       </sec:authorize>   
       <sec:authorize access="isAuthenticated()">

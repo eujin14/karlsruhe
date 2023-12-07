@@ -6,18 +6,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
 </head>
 <body>
-<<<<<<< HEAD
-  <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" name="Member" enctype="multipart/form-data">
+  <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" >
            <input type="hidden" name="username" value="${member.username}">
               <div class="mb-3 text-start">
                 <label class="form-label" for="username">아이디</label>
                 <p>${member.username}</p>
               </div>
               <div class="mb-3 text-start">
+                <label class="form-label" for="password">암호:******</label>
+              </div>
+              <div class="mb-3 text-start">
                 <label class="form-label" for="password">암호</label>
-                <input class="form-control" id="password" type="password" name="password" placeholder="10자 이내로 입력하세요." />
+             <input class="form-control" id="password" type="password" name="password"   />
+              </div>
+               <div class="mb-3 text-start">
+                <label class="form-label" for="password1">암호</label>
+             <input class="form-control" id="password2" type="password" name="password2" />
               </div>
               <div class="mb-3 text-start">
                 <label class="form-label" for="uname">이름</label>
@@ -35,29 +45,8 @@
                 <label class="form-label" for="uaddr">주소</label>
                 <input class="form-control" id="uaddr" type="text" name="uaddr"  value="${member.uaddr}"/>
               </div>
-            
-              
-       
-            
-              <button class="btn btn-primary w-100 mb-3" type="submit" >회원정보 수정</button>
+              <button class="btn btn-primary w-100 mb-3" type="submit" value="회원수정" >회원정보 수정</button>              
             </form>
-=======
- <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" name="Member">
-<p>아이디:<input type="hidden" name="username" value="${member.username}" readonly>
-<p>패스워드:<input type="password" name="password" value="${member.password}" readonly>
-<p>이름:<input type="text" name="uname" value="${member.uname}">
-<p>연락처:<input type="text" name="utel" value="${member.utel}"  >
-<p>이메일:<input type="text" name="uemail" value="${member.uemail}" >
-<p>주소:<input type="text" name="uaddr" value="${member.uaddr}" >
-<input type="hidden" name="username" value="${member.username }">
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
- <input type="hidden" name="uno" value="${member.uno}">
-
-<input type="submit" value="회원정보 수정">
-	
-
-</form>
->>>>>>> origin/sunghee
 
 </body>
 </html>

@@ -13,27 +13,22 @@ public interface UsersService {
 	
 	void memberUpdate(Map<String, Object> map);
 	
+	
 	void memberDelete(String username);
 	
-
 	
 	void getUpositionByUsername(String username);
 
 	UsersDTO memberExist(String uemail);
 
 	Map<String, Object> getUserDataByUsername(String username);
-
-	
-	/*
-	 * String pwCheck(String username)throws Exception;
-	 * 
-	 * void pwUpdate(String username, String hashedPw)throws Exception;
-	 */
+		
+	int findPwCheck(UsersDTO usersDTO)throws Exception; 
+	 
+	void  findPw(String uemail,String username)throws Exception;
 	 
 	 String findIdUser(String paramString1, String paramString2);
-	 
-	 String findPw(String paramString1, String paramString2, String paramString3);
-	   
+		
+	  void updatePasswordUsers(String paramString1, String paramString2);
 
-	 void updatePasswordUsers(String paramString1, String paramString2);
 }

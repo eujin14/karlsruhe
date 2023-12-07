@@ -12,7 +12,7 @@
 <put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp"/>
 </definition>
 
-<definition name="base-Template1" template="/WEB-INF/tiles/layout/baseLayout.jsp">
+<definition name="base-Template1" template="/WEB-INF/tiles/layout/baseLayout1.jsp">
 <put-attribute name="title" value="Sample Title"/>
 <put-attribute name="heading" value="/"/>
 <put-attribute name="subheading" value="/"/>
@@ -21,14 +21,14 @@
 <put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp"/>
 </definition>
 
-<definition name="main" extends="base-Template">
+<definition name="main" extends="base-Template1">
 <put-attribute name="title" value="/"/>
 <put-attribute name="heading" value="/"/>
 <put-attribute name="subheading" value="/"/>
 <put-attribute name="content" value="/WEB-INF/views/main.jsp"/>
 </definition>
 
-<!-- <definition name="login" extends="base-Template1">
+<definition name="login" extends="base-Template">
 <put-attribute name="title" value="/"/>
 <put-attribute name="heading" value="/"/>
 <put-attribute name="subheading" value="/"/>
@@ -40,30 +40,30 @@
 <put-attribute name="heading" value="/"/>
 <put-attribute name="subheading" value="/"/>
 <put-attribute name="content" value="/WEB-INF/views/users/{1}.jsp"/>
-</definition> -->
+</definition>
 
-<definition name="board/*" extends="base-Template1">
+<definition name="board/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>
 		<put-attribute name="content" value="/WEB-INF/views/board/{1}.jsp"/>
 	</definition>
 	
-	<definition name="guide/*" extends="base-Template1">
+	<definition name="guide/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>
 		<put-attribute name="content" value="/WEB-INF/views/guide/{1}.jsp"/>
 	</definition>
 	
-	<definition name="notice/*" extends="base-Template1">
+	<definition name="notice/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>
 		<put-attribute name="content" value="/WEB-INF/views/notice/{1}.jsp"/>
-	</definition> 
+	</definition>
 	
-	<definition name="photo/*" extends="base-Template1">
+	<definition name="photo/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>

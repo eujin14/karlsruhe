@@ -3,11 +3,11 @@
 <mapper namespace="board">
 
 <insert id="create" parameterType="hashMap">
-<![CDATA[ INSERT INTO board (btitle, bcontent, bwriter, bimage, bcount) VALUES (#{btitle}, #{bcontent}, #{bwriter},#{bimage}, 0) ]]>
+<![CDATA[ INSERT INTO board (btitle, bcontent, bwriter, bimage, breply) VALUES (#{btitle}, #{bcontent}, #{bwriter},#{bimage},#{breply}) ]]>
 </insert>
 
 <select id="readList" resultType="hashMap">
-<![CDATA[ SELECT * FROM board WHERE bcategory IS NOT NULL ORDER BY bno DESC ]]>
+<![CDATA[ SELECT * FROM board WHERE breply IS NULL ORDER BY bno DESC ]]>
 </select>
 
 <select id="readDetail" parameterType="String" resultType="hashMap">
@@ -22,8 +22,14 @@
 <![CDATA[ DELETE FROM board WHERE bno = #{bno} ]]>
 </delete>
 
-<update id="count" parameterType="hashMap">
-<![CDATA[ UPDATE board SET bcount = bcount +1 WHERE bno = #{bno} ]]>
-</update>
+<select id="readReply" parameterType="String" resultType="hashMap">
+<![CDATA[
+	SELECT * FROM board
+	WHERE 
+		breply = #{breply}
+	ORDER BY 
+		bno DESC
+]]>
+</select>
 
 </mapper>
