@@ -67,12 +67,6 @@ public class PhotoController {
 			return "redirect:/photo/readList";
 		}
 		
-		@PostMapping("/createreply")
-		public String createreply(@RequestParam Map<String, Object> map) {
-
-			photoService.create(map);
-			return "redirect:/photo/readList";
-		}
 		@GetMapping("/readList")
 		public String readList(Model model) {
 
