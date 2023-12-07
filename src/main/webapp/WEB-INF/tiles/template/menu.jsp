@@ -23,14 +23,13 @@
         <ul>
           
           
-          <li class="dropdown"><a href="#"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">목사님의 인사말</a></li>
+              <li><a href="/greetings">목사님의 인사말</a></li>
                 <ul>
                 </ul>
-              <li><a href="#">교회연혁</a></li>
-              <li><a href="#">섬기는 이</a></li>
-              <li><a href="#">예배장소와 시간</a></li>
+              <li><a href="/history">교회연혁</a></li>
+              <li><a href="/location">예배시간</a></li>
             </ul>
           </li>
         <li><a href="services.html">공지사항</a></li>

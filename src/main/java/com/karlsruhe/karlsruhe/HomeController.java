@@ -2,12 +2,6 @@
 package com.karlsruhe.karlsruhe;
 
 
-import java.security.Principal;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-
 
 import org.springframework.stereotype.Controller;
 
@@ -25,7 +19,43 @@ public class HomeController {
 		return "main";
 	}
 	
+	@GetMapping("/login")
+	public String login() {
+		
+		return "login";
+	}
 	
-
+	
+	@GetMapping("/naverlogin")
+	public String naverlogin() {
+		
+		return "naverlogin";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		
+		return "logout";
+	}
+	
+	@GetMapping("/location")
+	public String location() {
+		
+		return "location";
+	}
+	
+	@GetMapping("/greetings")
+	public String greetings() {
+		
+		return "greetings";
+	}
+	
+	@GetMapping("/history")
+	public String history() {
+		
+		return "history";
+	}
+	
+	
 }
 
