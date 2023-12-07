@@ -16,15 +16,15 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <meta charset="UTF-8">
-<title>공지작성</title>
+<title>공지사항 등록</title>
 <main id="main">
-<br><br><br>
+<br><br>
     <!-- ======= Breadcrumbs ======= -->
 <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
        <div class="d-flex justify-content-between align-items-center">
-          <h2>공지작성</h2>
+          <h2>공지사항 등록</h2>
           <ol>
             <li><a href="index.html">홈</a></li>
             <li><a href="/notice/readList">공지사항</a></li>
@@ -33,10 +33,9 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
-
-<div class="container">
-
-        <div class="row mt-5 justify-content-center" >
+    <br>
+<div class="container" style="padding: 30px; margin-bottom: 60px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
+       <div class="row mt-5 justify-content-center" >
           <div class="col-lg-10">
             <form action="/notice/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
               <div class="row">
@@ -51,11 +50,7 @@
               <div class="form-group mt-3">
                  <textarea class="form-control" id="summernote" name="ncontent"></textarea>
               </div>
-              
               <div class="form-group mt-3">
-               
-            
-              
               <div class="col-sm-10">
     <div class="form-check form-check-inline">
       <input class="form-check-input" id="flexRadioDefault1" type="radio" name="npin" value="1" checked="checked"/>
@@ -67,20 +62,15 @@
     </div>
   </div>
              </div>   
-              
-      
+                    
          <div class="text-center"><button type="submit" class="btn" style="display: inline-block; padding: 10px 25px; border-radius: 2px; transition: 0.4s; margin: 10px; border-radius: 4px; border: 2px solid #f03c02; color: #f03c02; background: #fff;"
 >등록</button></div>
-          
             </form>
           </div>
          </div>
-      </div>
-       
-
+         </div>
       </main>  
-   
-<script>
+   <script>
 
  $('#summernote').summernote({
         placeholder: '공지 내용을 입력하세요',
