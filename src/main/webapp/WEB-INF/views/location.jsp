@@ -56,8 +56,6 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          
-          
           <li class="dropdown"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                <li><a href="/greetings">목사님의 인사말</a></li>

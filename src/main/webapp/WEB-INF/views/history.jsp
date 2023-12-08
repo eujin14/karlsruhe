@@ -182,11 +182,7 @@
                 <li>﻿1988년 4월 대한예수교장로회 통합측 문성호 목사 부임</li>
                 <li>﻿﻿1987년 11월 조병하 목사 부임</li>
                 <li>﻿﻿1985년 5월 오재성 전도사 부임</li>
-                <li>﻿1984년 지역 한인 학생교회와 통합</li>
-                <li>﻿1983년 12월  이신건 전도사 부임</li>
-                <li>﻿﻿1981년 11월 김희성 목사 부임</li>
-                <li>﻿﻿﻿﻿1981년 11월 예배처소로 미군부대 Chapel을 사용 </li>
-                <li>﻿1975년 6월 20일 하이델베르크 주둔 미군 군목인 이정일 목사님을 모시고 가정교회로 시작</li>
+                </ul>
               </p>
             </div>
           </div>
@@ -194,12 +190,14 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="testimonial-item mt-4">
               <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
+              <h3>1975-1991년 칼스루에 한인교회 설립 및 정착기</h3>
               <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              <ul>
+                <li>﻿1984년 지역 한인 학생교회와 통합</li>
+                <li>﻿1983년 12월  이신건 전도사 부임</li>
+                <li>﻿﻿1981년 11월 김희성 목사 부임</li>
+                <li>﻿﻿﻿﻿1981년 11월 예배처소로 미군부대 Chapel을 사용 </li>
+                </ul>
               </p>
             </div>
           </div>
@@ -207,12 +205,11 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
             <div class="testimonial-item mt-4">
               <img src="assets/img/testimonials/testimonials-6.jpg" class="testimonial-img" alt="">
-              <h3>Emily Harison</h3>
-              <h4>Store Owner</h4>
+              <h3>EKGKARLSRUHE</h3>
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Eius ipsam praesentium dolor quaerat inventore rerum odio. Quos laudantium adipisci eius. Accusamus qui iste cupiditate sed temporibus est aspernatur. Sequi officiis ea et quia quidem.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+				   1975년 6월 20일 하이델베르크 주둔 미군 군목인 이정일 목사님을 모시고 가정교회로 시작               
+				 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
             </div>
           </div>
