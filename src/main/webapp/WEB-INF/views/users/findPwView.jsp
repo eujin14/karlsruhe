@@ -34,74 +34,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
- <style>
-        body {
-            background-color: #f8f9fa;
-        }
+<!-- 페이지 개별 적용 css -->
+    <link rel="stylesheet" href="/resources/users/css/findPwView.css" type="text/css">
 
-        .find {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .find_box {
-            background-color: white;
-            padding: 187px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact form {
-            max-width: 400px;
-            margin: auto;
-        }
-
-        .formHeader {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .inputForm input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .BtnGroup {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .submit {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .modal-content {
-            border-radius: 10px;
-        }
-        
-        
-    </style>
 </head>
 
 <body>
