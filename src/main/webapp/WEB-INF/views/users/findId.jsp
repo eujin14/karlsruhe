@@ -14,10 +14,78 @@
  <meta id="_csrf" name="_csrf" content="${_csrf.token}" />
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}" />
 
+<style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .find {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .find_box {
+            background-color: white;
+            padding: 223px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .formHeader {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .inputForm input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .BtnGroup {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .submit {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+        }
+        
+        
+    </style>
+
 </head>
 <body>
 <body>
-<section class="find">
     <div class="find_box">
         <div class="contact">
             <form>
@@ -36,7 +104,6 @@
             </form>
         </div>
     </div>
-</section>
 
 <!-- 모달 창 -->
 <div class="modal" id="findIdModal" tabindex="-1">
