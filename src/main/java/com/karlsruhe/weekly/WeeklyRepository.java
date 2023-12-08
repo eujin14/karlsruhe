@@ -1,9 +1,9 @@
-package com.karlsruhe.guide;
+package com.karlsruhe.weekly;
 
 import java.util.List;
 import java.util.Map;
 
-public interface GuideRepository {
+public interface WeeklyRepository {
 	
 	void create(Map<String, Object> map);
 	

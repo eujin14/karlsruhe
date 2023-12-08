@@ -1,4 +1,4 @@
-package com.karlsruhe.guide;
+package com.karlsruhe.weekly;
 
 import java.util.Map;
 import java.util.UUID;
@@ -15,21 +15,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 
-@RequestMapping("/guide")
+@RequestMapping("/weekly")
 @Controller
-public class GuideController {
+public class WeeklyController {
 	
 	@Autowired
-	private GuideService guideService;
+	private WeeklyService weeklyService;
 	
 	@GetMapping("/temp")
 	public String main() {
-		return "guide/temp";
+		return "weekly/temp";
 		
 	}
 	@GetMapping("/create")
 	public String create() {
-		return "guide/create";
+		return "weekly/create";
 	}
 
 	@PostMapping("/create")
@@ -41,7 +41,7 @@ public class GuideController {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 				String LOGIN = "sasa724";
 				String PSW = "skehahffk8*";
-				String REMOTE_DIRECTORY = "guide";
+				String REMOTE_DIRECTORY = "weekly";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
@@ -71,27 +71,27 @@ public class GuideController {
 
 			}
 	
-			guideService.create(map);
-			return "redirect:/guide/readList";
+			weeklyService.create(map);
+			return "redirect:/weekly/readList";
 		}
 		
 		@GetMapping("/readList")
 		public String readList(Model model) {
-			model.addAttribute("lists", guideService.readList());
-			return "guide/readList";
+			model.addAttribute("lists", weeklyService.readList());
+			return "weekly/readList";
 		}
 		
 		@GetMapping("/readDetail")
 		public String readDetail(@RequestParam("gid") String gid, Model model) {
-			model.addAttribute("details", guideService.readDetail(gid));
+			model.addAttribute("details", weeklyService.readDetail(gid));
 			
-			return "guide/readDetail";
+			return "weekly/readDetail";
 		}
 		
 		@GetMapping("/update")
 		public String updateform(@RequestParam("nid") String gid, Model model) {
 
-			model.addAttribute("details", guideService.readDetail(gid));
+			model.addAttribute("details", weeklyService.readDetail(gid));
 
 			return "notice/update";
 		}
@@ -105,7 +105,7 @@ public class GuideController {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 				String LOGIN = "sasa724";
 				String PSW = "skehahffk8*";
-				String REMOTE_DIRECTORY = "guide";
+				String REMOTE_DIRECTORY = "weekly";
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
@@ -135,17 +135,17 @@ public class GuideController {
 
 			}
 
-			guideService.update(map);
+			weeklyService.update(map);
 
-			return "redirect:/guide/readList";
+			return "redirect:/weekly/readList";
 		}
 		
 		
 		
 		@GetMapping("/delete")
 		public String delete(@RequestParam("gid") String gid) {
-			guideService.delete(gid);
-			return "redirect:/guide/readList";
+			weeklyService.delete(gid);
+			return "redirect:/weekly/readList";
 		}
 
 }

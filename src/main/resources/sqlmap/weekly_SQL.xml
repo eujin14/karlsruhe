@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="guide">
+<mapper namespace="weekly">
 
 <insert id="create" parameterType="hashMap">
 <![CDATA[
-   INSERT INTO guide
+   INSERT INTO weekly
    (gtitle, gwriter, gcontent, gimage, gcount)
    VALUES
    (#{gtitle}, #{gwriter}, #{gcontent}, #{gimage}, #{gcount})
@@ -14,7 +14,7 @@
 <select id="readList" resultType="hashMap">
 <![CDATA[
    SELECT * FROM
-      guide
+      weekly
    ORDER BY 
       gid DESC
 ]]>
@@ -24,7 +24,7 @@
 <select id="readDetail" parameterType="String" resultType="hashMap">
 <![CDATA[
    SELECT * 
-   FROM guide
+   FROM weekly
    WHERE
    gid = #{gid}
 ]]>
@@ -33,7 +33,7 @@
 
 <update id="update" parameterType="hashMap" >
 <![CDATA[
-   UPDATE guide SET
+   UPDATE weekly SET
    gtitle = #{gtitle},
    gwriter = #{gwriter},
    gcontent = #{gcontent},
@@ -47,7 +47,7 @@
 
 <delete id="delete" parameterType="String" >
 <![CDATA[
-   DELETE FROM guide
+   DELETE FROM weekly
    WHERE 
    gid = #{gid}
 ]]>

@@ -1,4 +1,4 @@
-package com.karlsruhe.guide;
+package com.karlsruhe.weekly;
 
 import java.util.List;
 import java.util.Map;
@@ -7,35 +7,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GuideServiceImpl implements GuideService {
+public class WeeklyServiceImpl implements WeeklyService {
 	
 	@Autowired
-	private GuideRepository guideRepository;
+	private WeeklyRepository weeklyRepository;
 
 	@Override
 	public void create(Map<String, Object> map) {
-		guideRepository.create(map);
+		weeklyRepository.create(map);
 
 	}
 
 	@Override
 	public List<Map<String, Object>> readList() {
-		return guideRepository.readList();
+		return weeklyRepository.readList();
 	}
 
 	@Override
 	public Map<String, Object> readDetail(String gid) {
-		return guideRepository.readDetail(gid);
+		return weeklyRepository.readDetail(gid);
 	}
 
 	@Override
 	public void update(Map<String, Object> map) {
-		guideRepository.update(map);	
+		weeklyRepository.update(map);	
 	}
 
 	@Override
 	public void delete(String gid) {
-		guideRepository.delete(gid);
+		weeklyRepository.delete(gid);
 
 	}
 

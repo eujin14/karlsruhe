@@ -1,9 +1,9 @@
-package com.karlsruhe.guide;
+package com.karlsruhe.weekly;
 
 import lombok.Data;
 
 @Data
-public class GuideDTO {
+public class WeeklyDTO {
 	
 	private String gid, gtitle, gwriter, gcontent, gimage, gcount, gdate;
 

@@ -49,11 +49,11 @@
 		<put-attribute name="content" value="/WEB-INF/views/board/{1}.jsp"/>
 	</definition>
 	
-	<definition name="guide/*" extends="base-Template">
+	<definition name="weekly/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>
-		<put-attribute name="content" value="/WEB-INF/views/guide/{1}.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/weekly/{1}.jsp"/>
 	</definition>
 	
 	<definition name="notice/*" extends="base-Template">
