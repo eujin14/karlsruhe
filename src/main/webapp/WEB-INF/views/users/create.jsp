@@ -214,7 +214,6 @@ function checkMember() {
                 
               </div>
               <button class="btn btn-primary w-100 mb-3" type="submit" value="회원가입" onclick="checkMember()" >회원 가입</button>
-
             </form>
           </div>
         </div>
