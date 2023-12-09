@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.karlsruhe.board.BoardService;
-import com.karlsruhe.guide.GuideService;
 import com.karlsruhe.notice.NoticeService;
 import com.karlsruhe.photo.PhotoService;
 import com.karlsruhe.users.UsersService;
+import com.karlsruhe.weekly.WeeklyService;
 
 @RequestMapping("/admin")
 @Controller
@@ -30,7 +30,7 @@ public class AdminController {
 	private NoticeService noticeService;
 	
 	@Autowired
-	private GuideService guideService;
+	private WeeklyService WeeklyService;
 	
 	@Autowired
 	private BoardService boardService;
