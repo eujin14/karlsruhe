@@ -70,7 +70,7 @@
           <li><a href="testimonials.html">갤러리</a></li>
           <br><br>
            <sec:authorize access="hasRole('ROLE_ADMIN')">
-           <a class="nav-link" href="admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
+           <a class="nav-link" href="/admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
          </sec:authorize>
           
         <li><sec:authentication property="principal" var="user" />

@@ -14,7 +14,7 @@
   naver_id_login.get_naver_userprofile("naverSignInCallback()");
   // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
   function naverSignInCallback() {
-	  location.href='/logincheck?username=' + naver_id_login.getProfileData('email')
+	  location.href='/logincheck?email=' + naver_id_login.getProfileData('email')
   }
   
 </script>

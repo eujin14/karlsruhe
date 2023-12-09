@@ -60,10 +60,10 @@
                       <button class="btn btn-phoenix-primary w-100" type="button"><a href="/logout">로그아웃 </a></button>
                     </div>
                     <div class="col-6 col-sm-auto">
-                      <button class="btn btn-phoenix-primary w-100" type="button"><a href="/main">회원탈퇴 </a> </button>
+                      <button class="btn btn-phoenix-primary w-100" type="button"><a href="/">회원탈퇴 </a> </button>
                     </div>
                     <div class="col-6 col-sm-auto">
-                      <button class="btn btn-phoenix-primary w-100" type="button"><a href="/main">처음으로 </a> </button>
+                      <button class="btn btn-phoenix-primary w-100" type="button"><a href="/">처음으로 </a> </button>
                     </div>
                   </div>
                 </div>

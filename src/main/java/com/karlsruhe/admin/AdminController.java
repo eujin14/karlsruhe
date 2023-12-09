@@ -46,7 +46,7 @@ public class AdminController {
 	public String memberlist(Model model) {
 		
 		model.addAttribute("members", usersService.memberList());
-		model.addAttribute("users", sqlSessionTemplate.selectList("admi.userlist"));
+		model.addAttribute("users", sqlSessionTemplate.selectList("admin.userlist"));
 		
 		
 		return "admin/memberlist";

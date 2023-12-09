@@ -37,6 +37,9 @@
                     </div>
                 </div>
             </form>
+             <div class="text-center">
+            <a class="small" href="/">메인페이지</a>
+        </div>
         </div>
     </div>
 
