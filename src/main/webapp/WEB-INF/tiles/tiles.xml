@@ -28,21 +28,36 @@
 <put-attribute name="content" value="/WEB-INF/views/main.jsp"/>
 </definition>
 
-<definition name="login" extends="base-Template">
+<definition name="history" extends="base-Template1">
 <put-attribute name="title" value="/"/>
 <put-attribute name="heading" value="/"/>
 <put-attribute name="subheading" value="/"/>
-<put-attribute name="content" value="/WEB-INF/views/login.jsp"/>
+<put-attribute name="content" value="/WEB-INF/views/history.jsp"/>
 </definition>
+
+<definition name="greetings" extends="base-Template1">
+<put-attribute name="title" value="/"/>
+<put-attribute name="heading" value="/"/>
+<put-attribute name="subheading" value="/"/>
+<put-attribute name="content" value="/WEB-INF/views/greetings.jsp"/>
+</definition>
+
+<definition name="time" extends="base-Template1">
+<put-attribute name="title" value="/"/>
+<put-attribute name="heading" value="/"/>
+<put-attribute name="subheading" value="/"/>
+<put-attribute name="content" value="/WEB-INF/views/time.jsp"/>
+</definition>
+
 
 <definition name="users/*" extends="base-Template">
-<put-attribute name="title" value="/"/>
-<put-attribute name="heading" value="/"/>
-<put-attribute name="subheading" value="/"/>
-<put-attribute name="content" value="/WEB-INF/views/users/{1}.jsp"/>
-</definition>
+		<put-attribute name="title" value="/"/>
+		<put-attribute name="heading" value="/"/>
+		<put-attribute name="subheading" value="/"/>
+		<put-attribute name="content" value="/WEB-INF/views/users/{1}.jsp"/>
+	</definition>
 
-<definition name="board/*" extends="base-Template1">
+<definition name="board/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>

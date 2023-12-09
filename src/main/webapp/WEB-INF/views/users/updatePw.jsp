@@ -17,6 +17,9 @@
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- 페이지 개별 적용 css -->
+    <link rel="stylesheet" href="/resources/users/css/updatePw.css" type="text/css">
+
 
 </head>
 <body>

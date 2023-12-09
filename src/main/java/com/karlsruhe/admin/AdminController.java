@@ -7,6 +7,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.karlsruhe.board.BoardService;
+import com.karlsruhe.guide.GuideService;
+import com.karlsruhe.notice.NoticeService;
+import com.karlsruhe.photo.PhotoService;
 import com.karlsruhe.users.UsersService;
 
 @RequestMapping("/admin")
@@ -19,6 +23,18 @@ public class AdminController {
 	@Autowired
 	private UsersService usersService;
 	
+	@Autowired
+	private PhotoService photoService;
+	
+	@Autowired
+	private NoticeService noticeService;
+	
+	@Autowired
+	private GuideService guideService;
+	
+	@Autowired
+	private BoardService boardService;
+	
 	@GetMapping("/admin")
 	public String admin() {
 		
@@ -30,7 +46,7 @@ public class AdminController {
 	public String memberlist(Model model) {
 		
 		model.addAttribute("members", usersService.memberList());
-//		model.addAttribute("users", sqlSessionTemplate.selectList("admi.userlist"));
+		model.addAttribute("users", sqlSessionTemplate.selectList("admin.userlist"));
 		
 		
 		return "admin/memberlist";

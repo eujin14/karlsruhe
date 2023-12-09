@@ -14,10 +14,13 @@
  <meta id="_csrf" name="_csrf" content="${_csrf.token}" />
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}" />
 
+<!-- 페이지 개별 적용 css -->
+    <link rel="stylesheet" href="/resources/users/css/findId.css" type="text/css">
+
+
 </head>
 <body>
 <body>
-<section class="find">
     <div class="find_box">
         <div class="contact">
             <form>
@@ -34,9 +37,11 @@
                     </div>
                 </div>
             </form>
+             <div class="text-center">
+            <a class="small" href="/">메인페이지</a>
+        </div>
         </div>
     </div>
-</section>
 
 <!-- 모달 창 -->
 <div class="modal" id="findIdModal" tabindex="-1">

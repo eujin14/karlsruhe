@@ -14,7 +14,7 @@
     <div class="container d-flex justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="/main">ekgkarlsruhe</a></h1>
+        <h1 class="text-light"><a href="/">ekgkarlsruhe</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -25,12 +25,10 @@
           
           <li class="dropdown"><a href="#"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">목사님의 인사말</a></li>
-                <ul>
-                </ul>
-              <li><a href="#">교회연혁</a></li>
-              <li><a href="#">섬기는 이</a></li>
-              <li><a href="#">예배장소와 시간</a></li>
+              <li><a href="/greetings">목사님의 인사말</a></li>
+              <li><a href="/history">교회연혁</a></li>
+              <li><a href="/time">예배시간</a></li>
+              <li><a href="location">예배장소</a></li>
             </ul>
           </li>
         <li><a href="services.html">공지사항</a></li>
@@ -39,7 +37,7 @@
           <li><a href="testimonials.html">갤러리</a></li>
           <br><br>
            <sec:authorize access="hasRole('ROLE_ADMIN')">
-           <a class="nav-link" href="admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
+           <a class="nav-link" href="/admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
          </sec:authorize>
           
         <li><sec:authentication property="principal" var="user" />
@@ -50,10 +48,12 @@
               <button type="button" class="btn btn-outline-primary btn-sm""><a href="/users/create">회원가입</a></button>
               <button type="button" class="btn btn-outline-danger btn-sm""><a href="/login">로그인</a></button>
               </div>
-      </sec:authorize>   
-      <sec:authorize access="isAuthenticated()">
-        <div id="name" class="d-grid gap-2 d-md-flex justify-content-md-end" ><a href="/users/memberDetail?username=${user.username}">[${user.username} ]님 로그인 중입니다.</a></div>
-      </sec:authorize></li>
+              </sec:authorize> 
+              
+                
+              <sec:authorize access="isAuthenticated()">
+              <div id="name" class="d-grid gap-2 d-md-flex justify-content-md-end" ><a href="/users/memberDetail?username=${user.username}">[${user.username} ]님 로그인 중입니다.</a></div>
+              </sec:authorize></li>
           
         </ul>
         

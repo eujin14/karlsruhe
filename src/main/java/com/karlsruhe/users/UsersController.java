@@ -76,7 +76,7 @@ public class UsersController {
 		 * mailService.sendMail(to, subject, body);
 		 */
 
-		return "redirect:/main";
+		return "redirect:/login";
 	}
 
 	@GetMapping("/memberList")
@@ -129,7 +129,7 @@ public class UsersController {
 		
 		usersService.memberDelete(username);
 		
-		return "redirect:/main";
+		return "redirect:/admin/admin";
 	}
 
 
@@ -189,9 +189,9 @@ public class UsersController {
 			
 		//임시비밀번호 발송
 		@ResponseBody
-		@RequestMapping(value = "/findPw", method = RequestMethod.POST ,produces = {"text/html;charset=UTF-8"})
+		@RequestMapping(value = "/findPw", method = RequestMethod.POST, produces = {"text/html;charset=UTF-8"})
 		public ResponseEntity<String> findPw(@RequestParam("username") String username,
-		                                     @RequestParam("uemail") String uemail) {
+		                                      @RequestParam("uemail") String uemail) {
 		    try {
 		        // Check if the username and email exist in the database
 		        UsersDTO user = usersService.memberExist(uemail);
