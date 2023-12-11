@@ -26,29 +26,30 @@
 
   <!-- Template Main CSS File -->
   <link href="/resources/assets/css/style.css" rel="stylesheet">
+   
+
+
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
 <br><br><br>
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
+       <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-         <h2>자유게시판</h2>
+          <h2>gallery</h2>
           <ol>
             <li><a href="/main">홈</a></li>
-            <li><a href="/board/readList">자유게시판</a></li>
-            <li>${board.btitle}</li>
+            <li><a href="/photo/readList">gallery</a></li>
+            <li>${photo.ptitle}</li>
           </ol>
         </div>
 
       </div>
-    </section><!-- End Breadcrumbs -->
+    </section>
 <br><br>
     <!-- ======= Blog Single Section ======= -->
-  
-
+    <section id="blog" class="blog">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -57,7 +58,7 @@
 
             <article class="entry entry-single">
             
-              <div class="container">
+                 <div class="container">
                <h2 class="entry-title">
                ${board.btitle}
               </h2>
@@ -70,7 +71,7 @@
               </div>
               <br>
               
-              <div class="container" style="padding-left: 1cm;">
+               <div class="container" style="padding-left: 1cm;">
                 <c:choose>
                <c:when test="${not empty board.bimage}">
                <br>
@@ -89,10 +90,9 @@
             
               </div>
              <br>
-            <c:choose>
-            <c:when test="${board.bwriter == users.username||users.username=='admin'}">
-             
-              <div class="entry-footer" style="padding-left: 20px;">
+             <c:choose>
+          <c:when test="${board.bwriter == users.username||users.username=='admin'}">
+             <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
                 <ul class="tags">
                   <li><a href="/board/update?bno=${board.bno}">수정</a></li>
@@ -102,12 +102,12 @@
                  <li><a href="/board/delete?bno=${board.bno}">삭제</a></li>
                 </ul>
               </div>
+             
               </c:when>
-              </c:choose> 
+              </c:choose>
 
             </article><!-- End blog entry -->
-
-             <div class="blog-comments">
+<div class="blog-comments">
             
             <h4 class="comments-count">댓글 ${replyListsSize}</h4>
            
@@ -153,9 +153,11 @@
         </div>
 
       </div>
+    </section><!-- End Blog Single Section -->
 
 
  
+
 
 <script>
  function createReply() {
