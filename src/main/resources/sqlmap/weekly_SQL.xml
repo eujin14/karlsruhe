@@ -5,9 +5,9 @@
 <insert id="create" parameterType="hashMap">
 <![CDATA[
    INSERT INTO weekly
-   (gtitle, gwriter, gcontent, gimage, gcount)
+   (gtitle, gcontent, gimage)
    VALUES
-   (#{gtitle}, #{gwriter}, #{gcontent}, #{gimage}, #{gcount})
+   (#{gtitle}, #{gcontent}, #{gimage})
 ]]>
 </insert>
 
@@ -35,10 +35,8 @@
 <![CDATA[
    UPDATE weekly SET
    gtitle = #{gtitle},
-   gwriter = #{gwriter},
    gcontent = #{gcontent},
-   gimage = #{gimage},
-   gpin = #{gpin}
+   gimage = #{gimage}
    
    WHERE 
    gid = #{gid}

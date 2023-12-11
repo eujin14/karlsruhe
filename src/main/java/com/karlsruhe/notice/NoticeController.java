@@ -23,11 +23,7 @@ public class NoticeController {
 	@Autowired
 	private NoticeService noticeService;
 
-	@GetMapping("/temp")
-	public String temp() {
-		return "notice/temp";
-	}
-
+	
 	@GetMapping("/create")
 	public String create() {
 		return "notice/create";
@@ -40,8 +36,8 @@ public class NoticeController {
 
 		if (filecheck != null && !filecheck.trim().isEmpty()) {
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-			String LOGIN = "sasa724";
-			String PSW = "skehahffk8*";
+			String LOGIN = "ekgkarlsruhe";
+			String PSW = "gkdlel9254";
 			String REMOTE_DIRECTORY = "notice";
 
 			String uuid = UUID.randomUUID().toString();
@@ -105,8 +101,8 @@ public class NoticeController {
 		String filecheck = file.getOriginalFilename();
 		if (filecheck != null && !filecheck.trim().isEmpty()) {
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-			String LOGIN = "sasa724";
-			String PSW = "skehahffk8*";
+			String LOGIN = "ekgkarlsruhe";
+			String PSW = "gkdlel9254";
 			String REMOTE_DIRECTORY = "notice";
 
 			String uuid = UUID.randomUUID().toString();

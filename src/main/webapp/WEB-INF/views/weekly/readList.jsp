@@ -1,108 +1,107 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/resources/css/header.css" type="text/css">
+  
 
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-            crossorigin="anonymous"></script>
-
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
 <body>
+<sec:authentication property="principal" var="users" />
+ <main id="main" style="background-color: white;">
+<br><br>
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+    
+      <div class="container">
 
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>주보</h2>
+          <ol>
+            <li><a style="text-decoration: none;" href="index.html">홈</a></li>
+            <li><a style="text-decoration: none;" href="/weekly/readList">주보</a></li>
+          </ol>
+        </div>
 
-<!-- 게시물 목록 -->
-	<table class="table table-hover">
-			<tr>
-				<th class="col-md">번호</th>
-				<th class="col-md-8">제목</th>
-				<th class="col-md-2">작성일</th>
-				<th class="col-md">조회수</th>
-			</tr>
-			<c:forEach items="${lists}" var="guide">
-			<tr>
-				<td>${guide.gid}</td>
-				<td><a href="/guide/readDetail?gid=${guide.gid}">${guide.gtitle}</a></td>
-				<td>${guide.gdate}</td>
-				<td>${guide.gcount}</td>
-			</tr>
-		</c:forEach>			
-	</table>
-	<!-- END 게시물 목록 -->
-	<!-- paging -->
-	<div align="center">
-	
-	
-		<span> 
-			 
+      </div>
+    </section><!-- End Breadcrumbs -->
+   
+     <div class="container" style="padding-left:150px; padding-right:150px;">
+     	<div class="card shadow-none border border-0 mb-3" style="background-color: white;"
+		data-component-card="data-component-card">
+
+			<div class="p-4 code-to-copy">
 			
-				&nbsp;<b class="text-primary">1</b>&nbsp;
-			
-		</span>
-	
-	
-	</div>
-	<!-- END paging -->
-	<br>
-	<div class="row">
-		<!-- 검색 -->
-		<div class="col-md-2">
-			<select name="searchType" class="form-select">
-				<option value="title" selected>제목</option>
-				<option value="content" >내용</option>
-				<option value="title_content" >제목+내용</option>
-				<option value="writer" >작성자</option>
-			</select> 
-		</div>
-		<div class="col-md-3">
-			<input type="text" name="keyword" class="form-control" value="" placeholder="검색어를 입력해주세요."/>
-		</div>
-		<div class="col-md">
-			<button type="button" class="form-control" id="searchBtn">검색</button>
-		</div>
-		<!-- END 검색 -->
-		<!-- 글작성버튼 -->
-		<div class="col-md-4"></div>
-		<div class="col-md-2">
-		</div>
-		<!-- END 글작성버튼 -->
-	</div><br>
-	<!-- END 메인 -->
-	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script>
-/* 검색 */
-document.getElementById("searchBtn").onclick = function () {
-	let searchType = document.getElementsByName("searchType")[0].value;
-	let keyword =  document.getElementsByName("keyword")[0].value;
-	
-	location.href = "/boards/list?num=1" + "&searchType=" + searchType + "&keyword=" + keyword;
-};
-/* window 특정 크기 이하일때(모바일) title 줄여서 뿌리기 */
-window.onload = function() {
-	if ($(window).width() < 770) {
-		for(var i = 0; i < 10; i++){
-			if(document.getElementsByClassName("title")[i].innerText.length>5){
-				var title = document.getElementsByClassName("title")[i].innerText.slice(0,3);
-				document.getElementsByClassName("title")[i].innerText= title + '...';
-			}
-		}
-	}
-}
-</script>
+    <div class="card-body p-0">
+<div class="p-4 code-to-copy">
+<div id="tableExample3" data-list='{"valueNames":["gid","gtitle","gdate"],"page":10,"pagination":true,"filter":{"key":"gtitle"}}'>
+  <div class="row justify-content-end g-0">
+  <div class="search-box mb-3 mx-auto">
+    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+      <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
+      <span class="fas fa-search search-box-icon"></span>
+    </form>
+  </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm fs--1 mb-0">
+      <thead>
+        <tr>
+        <th class="sort border-top text-center ps-3" data-sort="gid">번호</th>
+		<th class="sort border-top text-center" style=" padding-right:60px;" data-sort="gtitle">제목</th>
+		<th class="sort border-top text-center" data-sort="gtitle">작성자</th>
+		<th class="sort border-top text-center pe-3" data-sort="gdate">작성일</th>
+		
+        </tr>
+      </thead>
+      <tbody class="list" id="table-regions-by-revenue">
+      <c:forEach items="${lists}" var="weekly">
+        <tr>
+        <td class="align-middle text-center ps-3 gid" style="width:100px;">${weekly.gid}</td>
+		<td class="align-middle gtitle" style="width:300px;"><a style="text-decoration: none; color: black;" href="/weekly/readDetail?gid=${weekly.gid}">${weekly.gtitle}</a></td>
+		<td class="align-middle text-center gwriter" style="width:150px;">관리자</td>
+		<td class="align-middle text-center gdate py-3 pe-3" style="width:200px;">${weekly.gdate}</td>
+		
+        </tr>
+      </c:forEach>
+      </tbody>
+    </table>
+    </div>
+   
+<div class="d-flex justify-content-between mt-3">
+         <span class="d-none d-sm-inline-block"
+            data-list-info="data-list-info"></span>
+         <div class="d-flex">
+            <button class="page-link" data-list-pagination="prev">
+               <span class="fas fa-chevron-left"></span>
+            </button>
+            <ul class="mb-0 pagination"></ul>
+            <button class="page-link pe-0" data-list-pagination="next">
+               <span class="fas fa-chevron-right"></span>
+            </button>
+         </div>
+      </div>
+ 
+ 
+ 
+ 
+  </div>
+  </div>
+ </div>
+ </div>
+    </div>
+    </div>
+    
+    
+    </main>
 </body>
+
 </html>
+    
+
+
+
+
+	

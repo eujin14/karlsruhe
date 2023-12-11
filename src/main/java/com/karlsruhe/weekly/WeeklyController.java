@@ -22,11 +22,7 @@ public class WeeklyController {
 	@Autowired
 	private WeeklyService weeklyService;
 	
-	@GetMapping("/temp")
-	public String main() {
-		return "weekly/temp";
-		
-	}
+	
 	@GetMapping("/create")
 	public String create() {
 		return "weekly/create";
@@ -39,8 +35,8 @@ public class WeeklyController {
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "sasa724";
-				String PSW = "skehahffk8*";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 				String REMOTE_DIRECTORY = "weekly";
 
 				String uuid = UUID.randomUUID().toString();
@@ -89,11 +85,11 @@ public class WeeklyController {
 		}
 		
 		@GetMapping("/update")
-		public String updateform(@RequestParam("nid") String gid, Model model) {
+		public String updateform(@RequestParam("gid") String gid, Model model) {
 
 			model.addAttribute("details", weeklyService.readDetail(gid));
 
-			return "notice/update";
+			return "weekly/update";
 		}
 		
 		
@@ -103,8 +99,8 @@ public class WeeklyController {
 			String filecheck = file.getOriginalFilename();
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "sasa724";
-				String PSW = "skehahffk8*";
+				String LOGIN = "ekgkarlsruhe";
+				String PSW = "gkdlel9254";
 				String REMOTE_DIRECTORY = "weekly";
 
 				String uuid = UUID.randomUUID().toString();
