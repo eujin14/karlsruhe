@@ -67,7 +67,9 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
+<div class="sidebar-item tags" style="display: flex; justify-content: flex-end;">
+    <a href="/photo/create" style="display: inline-block; padding: 10px 25px; border-radius: 2px; transition: 0.4s; margin: 10px; border-radius: 4px; border: 2px solid #f03c02; color: #f03c02; background: #fff;" role="button">사진 등록</a>
+</div>
         <div class="row portfolio-container" data-aos="fade-up">
         <c:out value="${photo.pimage}" />
 <c:forEach items="${photos}" var="photo">
