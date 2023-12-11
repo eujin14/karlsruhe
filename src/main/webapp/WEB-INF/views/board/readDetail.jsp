@@ -8,11 +8,27 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
    crossorigin="anonymous"></script>
+<!-- Favicons -->
+  <link href="/resources/assets/img/favicon.png" rel="icon">
+  <link href="/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/resources/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/resources/assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
-<input type="hidden" id="bno"  name="bno" value="${board.bno}">
 <br><br><br>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
@@ -32,6 +48,7 @@
 <br><br>
     <!-- ======= Blog Single Section ======= -->
   
+    <section id="blog" class="blog">
 
       <div class="container" data-aos="fade-up">
 
@@ -93,7 +110,7 @@
 
              <div class="blog-comments">
             
-            <h4 class="comments-count">댓글 ${replyListsSize}</h4>
+            <h4 class="comments-count">댓글<%--  ${replyListsSize} --%></h4>
            
             <c:forEach items="${replyList}" var="reply">
               <div id="comment-1" class="comment">
@@ -123,7 +140,7 @@
                   </div>
                   <input type="hidden" id="breply"  name="breply" value="${board.bno}">
                   <input type="hidden" id="bwriter" name="bwriter" value="${users.username}">
-                  <a href="javascript:createReply()" class="btn btn-primary">등록${replyListsSize}</a>
+                  <a href="javascript:createReply()" class="btn btn-primary">등록<%-- ${replyListsSize} --%></a>
 
                 </form>
 
@@ -170,7 +187,17 @@
     });
  }
 </script>
+  <!-- Vendor JS Files -->
+  <script src="/resources/assets/vendor/aos/aos.js"></script>
+  <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/resources/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/resources/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/resources/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/resources/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
+  <script src="/resources/assets/js/main.js"></script>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
