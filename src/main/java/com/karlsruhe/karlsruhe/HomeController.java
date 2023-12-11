@@ -61,5 +61,11 @@ public class HomeController {
 		
 		return "location";
 	}
+	
+	@GetMapping("/loginfailed")
+	public String loginfailed() {
+		
+		return "loginfailed";
+	}
 }
 

@@ -119,19 +119,14 @@ public class UsersController {
 		
 	}
 	
-	
-
-
 	@GetMapping("/memberDelete")
 	public String delete(@RequestParam ("username") String username) {
 
-		
-		
 		usersService.memberDelete(username);
 		
 		return "redirect:/admin/admin";
 	}
-
+	
 
 	
    //카카오톡 
