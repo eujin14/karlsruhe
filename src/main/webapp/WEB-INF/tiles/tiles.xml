@@ -28,6 +28,13 @@
 <put-attribute name="content" value="/WEB-INF/views/main.jsp"/>
 </definition>
 
+<definition name="location" extends="base-Template1">
+<put-attribute name="title" value="/"/>
+<put-attribute name="heading" value="/"/>
+<put-attribute name="subheading" value="/"/>
+<put-attribute name="content" value="/WEB-INF/views/location.jsp"/>
+</definition>
+
 <definition name="history" extends="base-Template1">
 <put-attribute name="title" value="/"/>
 <put-attribute name="heading" value="/"/>

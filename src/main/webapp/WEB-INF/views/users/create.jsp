@@ -140,8 +140,8 @@ function checkMember() {
           </li>
         <li><a href="services.html">공지사항</a></li>
         <li><a href="services.html">주보</a></li>
-          <li><a href="services.html">게시판</a></li>
-          <li><a href="testimonials.html">갤러리</a></li>
+           <li><a href="/board/readList">게시판</a></li>
+          <li><a href="/photo/readList">갤러리</a></li>
           <br><br>
            <sec:authorize access="hasRole('ROLE_ADMIN')">
            <a class="nav-link" href="admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
