@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -95,14 +95,41 @@
     </div>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('#withdrawalBtn').on('click', function() {
-                // Handle withdrawal logic here
-                // You may want to make an AJAX request to your server to perform the withdrawal
-                // For now, let's redirect to a hypothetical URL "/memberDelete" as in your controller
-                window.location.href = "/memberDelete?username=${member.username}";
+    $(document).ready(function() {
+        $('#withdrawalBtn').on('click', function() {
+            // Handle withdrawal logic here
+            // You may want to make an AJAX request to your server to perform the withdrawal
+
+            // For now, let's redirect to a hypothetical URL "/memberDelete" as in your controller
+            var username = "${member.username}";
+            $.ajax({
+                type: "GET",
+                url: "/users/memberDelete?username=" + username,
+                success: function(data) {
+                    // Logout the user
+                    $.ajax({
+                        type: "GET",
+                        url: "/logout",
+                        success: function(logoutData) {
+                            // Redirect to the desired page after successful logout
+                            window.location.href = "/";
+                        },
+                        error: function(logoutError) {
+                            // Handle errors if any during logout
+                            console.error("Error during logout: ", logoutError);
+                            alert("Error during logout. Please try again.");
+                        }
+                    });
+                },
+                error: function(error) {
+                    // Handle errors if any during withdrawal
+                    console.error("Error deleting user: ", error);
+                    alert("Error deleting user. Please try again.");
+                }
             });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>

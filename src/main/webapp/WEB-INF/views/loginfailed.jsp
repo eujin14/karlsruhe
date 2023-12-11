@@ -102,9 +102,9 @@ mail : gkdlel9254 @ gmail.com
                           <h4 class="text-1000">로그인 실패</h4>
                           <!-- <p class="text-700">로그인을 실패 했습니다<br><br class="d-lg-none" /><br class="d-sm-none" />회원 가입 & 로그인을 다시 해주세요</p> -->
                         </div>
-                        <div class="d-grid"><a class="btn btn-primary" href="/"><span class="fas fa-angle-left me-2"></span>로그인 하러 가기</a></div>
+                        <div class="d-grid"><a class="btn btn-primary" href="/login"><span class="fas fa-angle-left me-2"></span>로그인 하러 가기</a></div>
                         <br><br>
-                        <div class="d-grid"><a class="btn btn-primary" href="/users/join"><span class="fas fa-angle-left me-2"></span>회원 가입 하러가기</a></div>
+                        <div class="d-grid"><a class="btn btn-primary" href="/users/create"><span class="fas fa-angle-left me-2"></span>회원 가입 하러가기</a></div>
                       </div>
                     </div>
                   </div>

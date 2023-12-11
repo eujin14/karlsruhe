@@ -67,5 +67,10 @@ public class HomeController {
 		
 		return "loginfailed";
 	}
+	
+	@GetMapping("/Withdrawal")
+	public String Withdrawal() {
+		return "Withdrawal";
+	}
 }
 

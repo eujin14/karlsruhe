@@ -59,7 +59,7 @@
               <div class="col-12 col-lg-6 text-center order-lg-1"><img class="img-fluid w-lg-100 d-dark-none" src="/resources/public/assets/img/spot-illustrations/500-illustration.png" alt="" width="400" /><img class="img-fluid w-md-50 w-lg-100 d-light-none" src="/resources/public/assets/img/spot-illustrations/dark_500-illustration.png" alt="" width="540" /></div>
               <div class="col-12 col-lg-6 text-center text-lg-start"><img class="img-fluid mb-6 w-50 w-lg-75 d-dark-none" src="/resources/public/assets/img/spot-illustrations/500.png" alt="" /><img class="img-fluid mb-6 w-50 w-lg-75 d-light-none" src="/resources/public/assets/img/spot-illustrations/dark_500.png" alt="" />
                 <h2 class="text-800 fw-bolder mb-3">페이지 오류!</h2>
-                <p class="text-900 mb-5">알 수 없는 오류가 발생했습니다. <br class="d-none d-sm-block" />메인으로 이동해주세요. </p><a class="btn btn-lg btn-primary" href="/main">메인으로 이동</a>
+                <p class="text-900 mb-5">알 수 없는 오류가 발생했습니다. <br class="d-none d-sm-block" />메인으로 이동해주세요. </p><a class="btn btn-lg btn-primary" href="/">메인으로 이동</a>
               </div>
             </div>
           </div>
