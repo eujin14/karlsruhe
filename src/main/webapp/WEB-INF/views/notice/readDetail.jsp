@@ -44,10 +44,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>공지게시판</h2>
+          <h2><a style="text-decoration: none; color: white;" href="/notice/readList">공지게시판</a></h2>
           <ol>
-            <li><a href="index.html">홈</a></li>
-            <li><a href="/notice/readList">공지사항</a></li>
+            <li><a style="text-decoration: none;" href="index.html">홈</a></li>
+            <li><a style="text-decoration: none;" href="/notice/readList">공지사항</a></li>
             <li>${details.ntitle}</li>
           </ol>
         </div>
@@ -84,7 +84,7 @@
 					<c:when test="${not empty details.nimage}">
 					<br>
               <div class="entry-img">
-               <img src="https://sasa724.cdn1.cafe24.com/notice/${details.nimage}"
+               <img src="https://ekgkarlsruhe.cdn1.cafe24.com/notice/${details.nimage}"
             width="500" height="auto" class="img-fluid">
               </div>
               </c:when>
@@ -98,19 +98,18 @@
             
               </div>
              <br>
-            <sec:authorize access="hasAuthority('USER_ADMIN')">
-             
+          <sec:authorize access="hasAuthority('USER_ADMIN')">
               <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
                 <ul class="tags">
-                  <li><a href="/notice/update?nid=${details.nid}">수정</a></li>
+                  <li><a style="text-decoration: none;" href="/notice/update?nid=${details.nid}">수정</a></li>
                 </ul> &nbsp;&nbsp;
                 <i class="bi bi-trash3"></i>
                 <ul class="tags">
-                 <li><a href="/notice/delete?nid=${details.nid}">삭제</a></li>
+                 <li><a style="text-decoration: none;" href="/notice/delete?nid=${details.nid}">삭제</a></li>
                 </ul>
               </div>
-              </sec:authorize>
+         </sec:authorize>
 
             </article><!-- End blog entry -->
 

@@ -9,104 +9,94 @@
   
 
 <body>
-
- <main id="main">
-<br><br><br>
+<sec:authentication property="principal" var="users" />
+ <main id="main" style="background-color: white;">
+<br><br>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
+    
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
           <h2>공지게시판</h2>
           <ol>
-            <li><a href="index.html">홈</a></li>
-            <li><a href="/notice/readList">공지사항</a></li>
-            
+            <li><a style="text-decoration: none;" href="index.html">홈</a></li>
+            <li><a style="text-decoration: none;" href="/notice/readList">공지사항</a></li>
           </ol>
         </div>
 
       </div>
     </section><!-- End Breadcrumbs -->
-    
-    <div class="container">
-
-
-
-	<div class="card shadow-none border border-300 mb-3"
+   
+     <div class="container" style="padding-left:150px; padding-right:150px;">
+     	<div class="card shadow-none border border-0 mb-3" style="background-color: white;"
 		data-component-card="data-component-card">
-		
-		<div class="card-body p-0">
-		
-			<!-- 공지사항중 내용과 카테고리를 검색어로 원하는 내용만 확인 할 수 있게함  -->
+
 			<div class="p-4 code-to-copy">
 			
+    <div class="card-body p-0">
+<div class="p-4 code-to-copy">
+<div id="tableExample3" data-list='{"valueNames":["nid","ntitle","ndate"],"page":10,"pagination":true,"filter":{"key":"ntitle"}}'>
+  <div class="row justify-content-end g-0">
+  <div class="search-box mb-3 mx-auto">
+    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+      <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
+      <span class="fas fa-search search-box-icon"></span>
+    </form>
+  </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm fs--1 mb-0">
+      <thead>
+        <tr>
+        <th class="sort border-top text-center ps-3" data-sort="nid">번호</th>
+		<th class="sort border-top text-center" style=" padding-right:60px;" data-sort="ntitle">제목</th>
+		<th class="sort border-top text-center" data-sort="ntitle">작성자</th>
+		<th class="sort border-top text-center pe-3" data-sort="ndate">작성일</th>
 		
-		<div id="tableExample3"
-		data-list='{"valueNames":["nid","ntitle","ncategory","ndate"],"page":10,"pagination":true}'>
+        </tr>
+      </thead>
+      <tbody class="list" id="table-regions-by-revenue">
+      <c:forEach items="${lists}" var="notice">
+        <tr>
+        <td class="align-middle text-center ps-3 nid" style="width:100px;">${notice.nid}</td>
+		<td class="align-middle ntitle" style="width:300px;"><a style="text-decoration: none; color: black;" href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
+		<td class="align-middle text-center nwriter" style="width:150px;">관리자</td>
+		<td class="align-middle text-center ndate py-3 pe-3" style="width:200px;">${notice.ndate}</td>
 		
-		<div class="table-responsive">
-			<table class="table table-sm fs--1 mb-0">
-				<thead>
-					<tr class="be-light">
-									<th class="sort border-top ps-3" data-sort="nid">번호</th>
-									<th class="sort border-top" data-sort="ntitle">제목</th>
-									<th class="sort border-top" data-sort="ntitle">작성자</th>
-									<th class="sort border-top pe-3" data-sort="ndate">작성일</th>
-								</tr>
-
-				</thead>
-				<tbody class="list">
-
-							</thead>
-
-
-							<tbody class="list">
-
-								<c:forEach items="${lists}" var="notice">
-
-									<tr>
-										<td class="align-middle ps-3 nid">${notice.nid}</td>
-										<td class="align-middle ntitle"><a href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
-										<td class="align-middle nwriter">관리자</td>
-										<td class="align-middle ndate py-3 pe-3">${notice.ndate}</td>
-									</tr>
-								</c:forEach>
-
-							</tbody>
-			</table>
-		</div>
-		<div class="d-flex justify-content-between mt-3">
-			<span class="d-none d-sm-inline-block"
-				data-list-info="data-list-info"></span>
-			<div class="d-flex">
-				<button class="page-link" data-list-pagination="prev">
-					<span class="fas fa-chevron-left"></span>
-				</button>
-				<ul class="mb-0 pagination"></ul>
-				<button class="page-link pe-0" data-list-pagination="next">
-					<span class="fas fa-chevron-right"></span>
-				</button>
-			</div>
-		</div>
-		<div class="search-box mb-3 mx-auto">
-			<form class="position-relative" data-bs-toggle="search"
-				data-bs-display="static">
-				<input class="form-control search-input search form-control-sm"
-					type="search" placeholder="Search" aria-label="Search" /> <span
-					class="fas fa-search search-box-icon"></span>
-
-			</form>
-		</div>
-		</div>
-		
-	
-			</div>
-		</div>
-	</div>
-	</div>
+        </tr>
+      </c:forEach>
+      </tbody>
+    </table>
+    </div>
+   
+<div class="d-flex justify-content-between mt-3">
+         <span class="d-none d-sm-inline-block"
+            data-list-info="data-list-info"></span>
+         <div class="d-flex">
+            <button class="page-link" data-list-pagination="prev">
+               <span class="fas fa-chevron-left"></span>
+            </button>
+            <ul class="mb-0 pagination"></ul>
+            <button class="page-link pe-0" data-list-pagination="next">
+               <span class="fas fa-chevron-right"></span>
+            </button>
+         </div>
+      </div>
+ 
+ 
+ 
+ 
+  </div>
+  </div>
+ </div>
+ </div>
+    </div>
+    </div>
+    
+    
+    </main>
 </body>
-
-
 
 </html>
     
