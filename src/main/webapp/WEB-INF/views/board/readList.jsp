@@ -32,17 +32,25 @@
 
 
 <br><br>
+
 <div class="container">
+<div class="sidebar-item tags" style="display: flex; justify-content: flex-end;">
+    <a href="/board/create" style="display: inline-block; padding: 10px 25px; border-radius: 4px; transition: 0.4s; margin: 10px; border: 2px solid #f03c02; color: #f03c02; background: #fff; margin-left: auto;" role="button">게시물 등록</a>
+</div>
+<br>
 <div class="card shadow-none border border-300 mb-3"
 		data-component-card="data-component-card">
+
 		<div class="card-header p-4 border-bottom border-300 bg-soft">
+		
 		<div class="row g-3 justify-content-between align-items-center">
 		<div class="col-12 col-md">
- <h5 class="card-title">글과 의견을 자유롭게 제시할 수 있는 게시판입니다.</h5>
+<h5 class="card-title">글과 의견을 자유롭게 제시할 수 있는 게시판입니다.</h5>
               <p>비방성 글, 광고, 명예훼손의 우려가 있는 글 등 게시판 성격에 부합되지 않는 게시물은</p><p> 관리자 권한으로 통보없이 이동,삭제될 수 있습니다.</p>
               </div>
 			</div>
 		</div>
+	
 <div class="card-body p-0">
 <div class="p-4 code-to-copy">
 <div id="tableExample3" data-list='{"valueNames":["bno","btitle","bdate"],"page":5,"pagination":true,"filter":{"key":"btitle"}}'>
