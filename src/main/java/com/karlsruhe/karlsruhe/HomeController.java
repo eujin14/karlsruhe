@@ -61,5 +61,16 @@ public class HomeController {
 		
 		return "location";
 	}
+	
+	@GetMapping("/loginfailed")
+	public String loginfailed() {
+		
+		return "loginfailed";
+	}
+	
+	@GetMapping("/Withdrawal")
+	public String Withdrawal() {
+		return "Withdrawal";
+	}
 }
 

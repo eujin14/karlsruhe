@@ -12,13 +12,24 @@
 		<!-- 관리자 페이지 security 처리 -->
 		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/users/memberList" access="hasRole('ROLE_ADMIN')"/>
-		
-		
 		<!-- 유저 관련 security 처리 -->
-	  <security:intercept-url pattern="/users/memberDetail" access="isAuthenticated()"/>
-      <security:intercept-url pattern="/users/memberUpdate" access="isAuthenticated()"/>
-      <security:intercept-url pattern="/users/updatePw" access="isAuthenticated()"/>
-		
+		  <security:intercept-url pattern="/users/memberDetail" access="isAuthenticated()"/>
+	      <security:intercept-url pattern="/users/memberUpdate" access="isAuthenticated()"/>
+	      <security:intercept-url pattern="/users/updatePw" access="isAuthenticated()"/>
+		  <!-- 게시판 페이지 security 처리 -->
+		  <security:intercept-url pattern="/board/readList" access="isAuthenticated()"/>
+		  <security:intercept-url pattern="/board/create" access="isAuthenticated()"/>
+		   <!-- 갤러리 페이지 security 처리 -->
+	      <security:intercept-url pattern="/photo/readList" access="isAuthenticated()"/>
+	      <security:intercept-url pattern="/photo/create" access="isAuthenticated()"/>
+		  <!-- 공지사항 페이지 security 처리 -->
+		   <security:intercept-url pattern="/notice/readList" access="permitAll"/>
+		  <security:intercept-url pattern="/notice/create" access="hasRole('ROLE_ADMIN')"/>
+		   <!-- 주보 페이지 security 처리 -->
+		  <security:intercept-url pattern="/weekly/readList" access="permitAll"/>
+		  <security:intercept-url pattern="/weekly/create" access="hasRole('ROLE_ADMIN')"/>
+	 
+	 
 		
 		<!-- 비회원이 볼수 있는 창  메인 교회 소개 -->
 		<security:intercept-url pattern="/" access="permitAll" />

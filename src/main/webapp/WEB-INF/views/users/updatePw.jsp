@@ -65,7 +65,7 @@
                     </div>
                     <div class="BtnGroup">
                         <button type="button" class="submit">비밀번호 변경</button>
-                        <a href="/detailUser" type="button" class="button">취소</a>
+                        <a href="/users/memberDetail" type="button" class="button">취소</a>
                     </div>
                 </div>
             </form>
@@ -130,7 +130,7 @@ $('.submit').on('click', function(e) {
               $('#errorModal').modal('show');
           } else { //유효성이 통과하면
               if(result) { //현재 비밀번호가 로그인한 유저의 비밀번호와 일치하면
-                  location.replace("/main")
+                  location.replace("/")
               } else {
                   $('#modalTitle').html('비밀번호가 일치하지 않습니다.');
                   $('#modalContent').html('<p>로그인 한 계정과 비밀번호가 일치하지 않습니다.<br>현재 비밀번호를 확인해주세요.</p>');

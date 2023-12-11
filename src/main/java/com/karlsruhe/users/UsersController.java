@@ -116,23 +116,22 @@ public class UsersController {
 		
 		return "redirect:/";
 
-		
 	}
 	
-	
-
-
 	@GetMapping("/memberDelete")
 	public String delete(@RequestParam ("username") String username) {
 
-		
-		
 		usersService.memberDelete(username);
 		
-		return "redirect:/admin/admin";
+		return "redirect:/";
 	}
 
-
+	@PostMapping("/memberDelete")
+	public String deletepost(@RequestParam("username") String username) {
+		// POST 요청 처리 로직
+		usersService.memberDelete(username);
+		return "redirect:/";
+	}
 	
    //카카오톡 
 	@PostMapping("/kakaocheck")

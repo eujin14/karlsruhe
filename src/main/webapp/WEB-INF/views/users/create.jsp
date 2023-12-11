@@ -66,7 +66,7 @@
   <script>
 function checkMember() {
     var regExpUsername = /^[a-zA-Z가-힣]+$/;
-    var regExpUname = /^[가-힣]+$/;
+    var regExpUname = /^[a-zA-Z가-힣]+$/;
     var regExpPasswd = /^[0-9]+$/;
     var regExpTel = /^\d{3}-\d{3,4}-\d{4}$/;
     var regExpEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
