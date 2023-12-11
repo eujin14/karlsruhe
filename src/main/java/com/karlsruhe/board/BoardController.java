@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.karlsruhe.notice.NoticeDTO;
+
 @RequestMapping("/board")
 @Controller
 public class BoardController {
@@ -89,9 +91,10 @@ public class BoardController {
 		public String readDetail(@RequestParam String bno, Model model) {
 
 			model.addAttribute("board", boardService.readDetail(bno));
-
 			// 디테일에서 댓글의 목록을 볼 수 있게 함
 			model.addAttribute("replyList", boardService.readReply(bno));
+			List<Map<String, Object>> replyList = boardService.readReply(bno);
+			model.addAttribute("replyListsSize", replyList.size());
 
 			return "board/readDetail";
 		}

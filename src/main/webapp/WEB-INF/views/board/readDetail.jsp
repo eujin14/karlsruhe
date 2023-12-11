@@ -66,7 +66,7 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>${board.bwriter}</li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i>${board.bdate}</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 </li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 ${replyListsSize} </li>
                 </ul>
               </div>
               <br>
@@ -110,7 +110,7 @@
 
              <div class="blog-comments">
             
-            <h4 class="comments-count">댓글<%--  ${replyListsSize} --%></h4>
+            <h4 class="comments-count">댓글 ${replyListsSize}</h4>
            
             <c:forEach items="${replyList}" var="reply">
               <div id="comment-1" class="comment">
@@ -140,7 +140,7 @@
                   </div>
                   <input type="hidden" id="breply"  name="breply" value="${board.bno}">
                   <input type="hidden" id="bwriter" name="bwriter" value="${users.username}">
-                  <a href="javascript:createReply()" class="btn btn-primary">등록<%-- ${replyListsSize} --%></a>
+                  <a href="javascript:createReply()" class="btn btn-primary">등록 </a>
 
                 </form>
 
