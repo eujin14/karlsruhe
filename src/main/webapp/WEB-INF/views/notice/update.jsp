@@ -26,7 +26,7 @@
        <div class="d-flex justify-content-between align-items-center">
           <h2>공지사항 수정</h2>
           <ol>
-            <li><a href="index.html">홈</a></li>
+            <li><a href="/">홈</a></li>
             <li><a href="/notice/readList">공지사항</a></li>
           </ol>
         </div>

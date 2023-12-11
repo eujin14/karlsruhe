@@ -21,7 +21,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>자유게시판</h2>
           <ol>
-            <li><a href="/main">홈</a></li>
+            <li><a href="/">홈</a></li>
             <li><a href="/board/readList">자유게시판</a></li>
             <li>${board.btitle}</li>
           </ol>

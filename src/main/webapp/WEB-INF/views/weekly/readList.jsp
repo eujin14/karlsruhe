@@ -20,7 +20,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>주보</h2>
           <ol>
-            <li><a style="text-decoration: none;" href="index.html">홈</a></li>
+            <li><a style="text-decoration: none;" href="/">홈</a></li>
             <li><a style="text-decoration: none;" href="/weekly/readList">주보</a></li>
           </ol>
         </div>

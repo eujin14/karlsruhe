@@ -26,7 +26,7 @@
        <div class="d-flex justify-content-between align-items-center">
           <h2>주보 등록</h2>
           <ol>
-            <li><a href="index.html">홈</a></li>
+            <li><a href="/">홈</a></li>
             <li><a href="/weekly/readList">주보</a></li>
           </ol>
         </div>

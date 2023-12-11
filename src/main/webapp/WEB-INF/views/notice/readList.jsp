@@ -20,7 +20,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>공지게시판</h2>
           <ol>
-            <li><a style="text-decoration: none;" href="index.html">홈</a></li>
+            <li><a style="text-decoration: none;" href="/">홈</a></li>
             <li><a style="text-decoration: none;" href="/notice/readList">공지사항</a></li>
           </ol>
         </div>

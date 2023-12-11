@@ -28,7 +28,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2>gallery</h2>
           <ol>
-            <li><a href="/main">홈</a></li>
+            <li><a href="/">홈</a></li>
             <li><a href="/photo/readList">gallery</a></li>
             <li>${photo.ptitle}</li>
           </ol>
