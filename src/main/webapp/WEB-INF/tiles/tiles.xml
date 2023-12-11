@@ -42,7 +42,7 @@
 <put-attribute name="content" value="/WEB-INF/views/users/{1}.jsp"/>
 </definition>
 
-<definition name="board/*" extends="base-Template1">
+<definition name="board/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>
