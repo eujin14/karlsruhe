@@ -31,8 +31,8 @@
               <li><a href="location">예배장소</a></li>
             </ul>
           </li>
-        <li><a href="services.html">공지사항</a></li>
-        <li><a href="services.html">주보</a></li>
+        <li><a href="/notice/readList">공지사항</a></li>
+        <li><a href="/weekly/readList">주보</a></li>
           <li><a href="/board/readList">게시판</a></li>
           <li><a href="/photo/readList">갤러리</a></li>
           <br><br>
