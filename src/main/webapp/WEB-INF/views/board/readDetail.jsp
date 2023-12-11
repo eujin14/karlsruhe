@@ -48,7 +48,6 @@
 <br><br>
     <!-- ======= Blog Single Section ======= -->
   
-    <section id="blog" class="blog">
 
       <div class="container" data-aos="fade-up">
 
