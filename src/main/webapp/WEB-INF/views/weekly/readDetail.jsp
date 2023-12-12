@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +98,7 @@
             
               </div>
              <br>
-          <sec:authorize access="hasAuthority('USER_ADMIN')">
+          <sec:authorize access="hasAuthority('ROLE_ADMIN')">
               <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
                 <ul class="tags">

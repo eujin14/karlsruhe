@@ -98,7 +98,7 @@
             
               </div>
              <br>
-          <sec:authorize access="hasAuthority('USER_ADMIN')">
+          <sec:authorize access="hasAuthority('ROLE_ADMIN')">
               <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
                 <ul class="tags">
@@ -126,7 +126,7 @@
                     <time datetime="2020-01-01">${reply.ndate}</time>
                     <p>${reply.ncontent}
                     </p>
-                    <sec:authorize access="hasAuthority('USER_ADMIN') or ${reply.nwriter == users.username}">
+                    <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${reply.nwriter == users.username}">
                     <h6><a href="/notice/deleteReply?nid=${reply.nid}&noticenid=${details.nid}" class="reply" style="text-decoration: none; color: #f03c02;"><i class="bi bi-trash3"></i>삭제</a></h6>
                     </sec:authorize>
                    </div>
