@@ -79,7 +79,7 @@
           <td class="align-middle btitle"><a href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
           <td class="align-middle bdate">${board.bdate}</td>
           <td class="align-middle text-end py-3 pe-3">
-          <sec:authorize access="hasAuthority('USER_ADMIN')">
+          <sec:authorize access="hasAuthority('ROLE_ADMIN')">
             <div class="font-sans-serif btn-reveal-trigger position-static">
               <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
               <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="/board/update?bno=${board.bno}"">수정</a>
