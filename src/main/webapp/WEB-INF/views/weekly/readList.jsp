@@ -57,9 +57,9 @@
         </tr>
       </thead>
       <tbody class="list" id="table-regions-by-revenue">
-      <c:forEach items="${lists}" var="weekly">
+      <c:forEach items="${lists}" var="weekly" varStatus="i">
         <tr>
-        <td class="align-middle text-center ps-3 gid" style="width:100px;">${weekly.gid}</td>
+        <td class="align-middle text-center ps-3 gid" style="width:100px;">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
 		<td class="align-middle gtitle" style="width:300px;"><a style="text-decoration: none; color: black;" href="/weekly/readDetail?gid=${weekly.gid}">${weekly.gtitle}</a></td>
 		<td class="align-middle text-center gwriter" style="width:150px;">관리자</td>
 		<td class="align-middle text-center gdate py-3 pe-3" style="width:200px;">${weekly.gdate}</td>

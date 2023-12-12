@@ -57,9 +57,9 @@
         </tr>
       </thead>
       <tbody class="list" id="table-regions-by-revenue">
-      <c:forEach items="${lists}" var="notice">
+      <c:forEach items="${lists}" var="notice" varStatus="i">
         <tr>
-        <td class="align-middle text-center ps-3 nid" style="width:100px;">${notice.nid}</td>
+        <td class="align-middle text-center ps-3 nid" style="width:100px;">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
 		<td class="align-middle ntitle" style="width:300px;"><a style="text-decoration: none; color: black;" href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
 		<td class="align-middle text-center nwriter" style="width:150px;">관리자</td>
 		<td class="align-middle text-center ndate py-3 pe-3" style="width:200px;">${notice.ndate}</td>
