@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 
@@ -13,11 +15,12 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between">
 
-      <div class="logo">
-        <h1 class="text-light"><a href="/">ekgkarlsruhe</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
+     <div class="logo d-flex align-items-center">
+    <a href="/" class="d-flex align-items-center text-decoration-none">
+        <img src="/resources/images/logo3.png" width="98px" alt="" class="img-fluid me-2">
+        <h1 class="text-dark mb-0">ekgkarlsruhe</h1>
+    </a>
+     </div>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -44,17 +47,26 @@
             <sec:authorize access="isAnonymous()">
              
              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-             <br><br>
-              <button type="button" class="btn btn-outline-primary btn-sm""><a href="/users/create">회원가입</a></button>
-              <button type="button" class="btn btn-outline-danger btn-sm""><a href="/login">로그인</a></button>
-              </div>
+			    <br><br>
+			    <a href="/users/create" >
+			        <button type="button" class="btn btn-outline-primary btn-sm">Sign up</button>
+			    </a>
+			    <a href="/login" >
+			        <button type="button" class="btn btn-outline-danger btn-sm">Login</button>
+			    </a>
+            </div>
               </sec:authorize> 
               
-                
-              <sec:authorize access="isAuthenticated()">
-              <div id="name" class="d-grid gap-2 d-md-flex justify-content-md-end" ><a href="/users/memberDetail?username=${user.username}">[${user.username} ]님 로그인 중입니다.</a></div>
-              </sec:authorize></li>
-          
+		                
+		     <sec:authorize access="isAuthenticated()">
+		       <div class="d-flex align-items-center">
+		        <div id="name"><a href="/users/memberDetail?username=${user.username}">[${user.username} ]님 로그인 중입니다.</a></div>
+		        <form:form method="post" action="/logout" cssStyle="display: inline-block;">
+		            <button type="submit" class="btn btn-link">로그아웃</button>
+		        </form:form>
+		    </div>
+		</sec:authorize>
+		          
         </ul>
         
         <i class="bi bi-list mobile-nav-toggle"></i>

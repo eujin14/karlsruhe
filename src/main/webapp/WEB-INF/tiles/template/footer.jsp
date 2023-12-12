@@ -5,7 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
 
+        #footer {
+            margin-top: auto;
+        }
+
+        /* Add your existing styles for #footer */
+    </style>
 </head>
 </head>
 <body>
