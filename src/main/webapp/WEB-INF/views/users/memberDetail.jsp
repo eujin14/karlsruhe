@@ -59,9 +59,6 @@
                     <div class="col-12 col-sm-auto flex-sm-grow-1 flex-md-grow-0">
                       <button class="btn btn-phoenix-primary w-100" type="button"><a href="/users/updatePw?username=${member.username}">비밀번호 수정</a></button>
                     </div>
-                    <div class="col-6 col-sm-auto">
-                      <button class="btn btn-phoenix-primary w-100" type="button"><a href="/logout">로그아웃 </a></button>
-                    </div>
                      <div class="col-6 col-sm-auto">
                         <button class="btn btn-phoenix-primary w-100" type="button" data-toggle="modal" data-target="#withdrawalModal">회원탈퇴 </button>
                     </div>

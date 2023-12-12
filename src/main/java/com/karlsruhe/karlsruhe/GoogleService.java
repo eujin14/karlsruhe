@@ -25,7 +25,7 @@ public class GoogleService implements MailService {
 	        MimeMessageHelper messageHelper;
 	        try {
 	            messageHelper = new MimeMessageHelper(message, true, "UTF-8");
-	            messageHelper.setFrom("gkdlel9254@gmail.com", "중앙HTA");
+	            messageHelper.setFrom("gkdlel9254@gmail.com", "EKGKARLSRUHE");
 	            messageHelper.setSubject(subject);
 	            messageHelper.setTo(to);
 	            messageHelper.setText(body, true);

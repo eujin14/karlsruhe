@@ -32,12 +32,6 @@ public class HomeController {
 		return "naverlogin";
 	}
 	
-	@GetMapping("/logout")
-	public String logout() {
-		
-		return "logout";
-	}
-	
 	@GetMapping("/time")
 	public String time() {
 		
