@@ -105,7 +105,7 @@
     <div class="bg order-1 order-md-2" style="background-image: url('/resources/users/images/bg_1.jpg');"></div>
     <div class="contents order-2 order-md-1">
 
-
+<br>
         <div class="row align-items-center justify-content-center">
           <div class="col-md-7">
             <div class="mb-4">
@@ -133,8 +133,8 @@
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
-              <span class="d-block text-center my-4 text-muted">&mdash; or &mdash;</span>
+              
+              <span class="d-block text-center my-4 text-muted"><div class="text-center"><a class="fs--1 fw-bold" href="/users/create">회원 가입</a></div></span>
               
               <div class="social-login">
                <a href="javascript:kakaologin()"><img src="/resources/images/kakao.png" class=" w-100 mb-3 h-20"></a>			   
@@ -148,8 +148,6 @@
 
     </div>
   </div>
-  
-  
   
   </body>
 </html>
