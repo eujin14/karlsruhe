@@ -5,9 +5,9 @@
 <insert id="create" parameterType="hashMap">
 <![CDATA[
    INSERT INTO notice
-   (npid, ntitle, nwriter, ncontent, nimage, npin)
+   (npid, ntitle, nwriter, ncontent, nimage)
    VALUES
-   (#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{nimage}, #{npin})
+   (#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{nimage})
 ]]>
 </insert>
 
@@ -18,7 +18,7 @@
    WHERE 
       npid IS NULL
    ORDER BY 
-      npin DESC , nid DESC
+      nid DESC
 ]]>
 </select>
 
@@ -48,9 +48,8 @@
    ntitle = #{ntitle},
    nwriter = #{nwriter},
    ncontent = #{ncontent},
-   nimage = #{nimage},
-   npin = #{npin}
-   
+   nimage = #{nimage}
+      
    WHERE 
    nid = #{nid}
 ]]>
