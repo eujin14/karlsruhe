@@ -33,15 +33,15 @@
 <body>
 <sec:authentication property="principal" var="users" />
 <br><br><br>
-       <section id="breadcrumbs" class="breadcrumbs">
+    <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>gallery</h2>
+          <h2>자유게시판</h2>
           <ol>
             <li><a href="/">홈</a></li>
-            <li><a href="/photo/readList">gallery</a></li>
-            <li>${photo.ptitle}</li>
+            <li><a href="/board/readList">자유게시판</a></li>
+            <li>${board.btitle}</li>
           </ol>
         </div>
 
@@ -89,9 +89,8 @@
               </div>
             
               </div>
-             <br>
-             <c:choose>
-          <c:when test="${board.bwriter == users.username||users.username=='admin'}">
+             <br> 
+             <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${board.bwriter == users.username}">
              <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
                 <ul class="tags">
@@ -102,9 +101,8 @@
                  <li><a href="/board/delete?bno=${board.bno}">삭제</a></li>
                 </ul>
               </div>
-             
-              </c:when>
-              </c:choose>
+
+              </sec:authorize>
 
             </article><!-- End blog entry -->
 <div class="blog-comments">
@@ -120,7 +118,9 @@
                     <time datetime="2020-01-01">${reply.bdate}</time>
                     <p>${reply.bcontent}
                     </p>
-                    <h6><a href="/board/deleteReply?bno=${reply.bno}&boardbno=${board.bno}" class="reply"><i class="bi bi-trash3"></i>삭제</a></h6>
+                    <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${reply.bwriter == users.username}">
+                    <h6><a href="/board/deleteReply?bno=${reply.bno}&boardbno=${board.bno}" class="reply" style="text-decoration: none; color: #f03c02;"><i class="bi bi-trash3"></i>삭제</a></h6>
+                    </sec:authorize>
                    </div>
                 </div>
                 

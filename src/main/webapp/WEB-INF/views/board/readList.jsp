@@ -13,7 +13,7 @@
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
-<br><br><br>
+<br><br>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
@@ -66,28 +66,19 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th class="sort border-top ps-3" data-sort="bno">번호</th>
-          <th class="sort border-top" data-sort="btitle">제목</th>
-          <th class="sort border-top" data-sort="bdate">작성일</th>
-          <th class="sort border-top text-end pe-3" scope="col">ACTION</th>
+          <th class="sort border-top text-center ps-3" data-sort="bno">번호</th>
+          <th class="sort border-top text-center" data-sort="btitle">제목</th>
+          <th class="sort border-top text-center" data-sort="bwriter">작성자</th>
+          <th class="sort border-top text-center text-end pe-3" scope="col" data-sort="bdate">작성일</th>
          </tr>
       </thead>
       <tbody class="list" id="table-regions-by-revenue">
       <c:forEach items="${boards}" var="board">
         <tr>
-          <td class="align-middle ps-3 bno">${board.bno}</td>
-          <td class="align-middle btitle"><a href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
-          <td class="align-middle bdate">${board.bdate}</td>
-          <td class="align-middle text-end py-3 pe-3">
-          <sec:authorize access="hasAuthority('ROLE_ADMIN')">
-            <div class="font-sans-serif btn-reveal-trigger position-static">
-              <button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-              <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="/board/update?bno=${board.bno}"">수정</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item text-danger"  href="/board/delete?bno=${board.bno}">삭제</a>
-              </div>
-            </div>
-            </sec:authorize>
-          </td>
+          <td class="align-middle text-center ps-3 bno">${board.bno}</td>
+          <td class="align-middle text-center btitle"><a href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
+          <td class="align-middle text-center bwriter">${board.bwriter}</td>
+          <td class="align-middle text-center text-end py-3 pe-3">${board.bdate}</td>
         </tr>
         </c:forEach>
       </tbody>

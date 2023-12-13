@@ -37,10 +37,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>gallery</h2>
+          <h2>Gallery</h2>
           <ol>
             <li><a href="/">홈</a></li>
-            <li><a href="/photo/readList">gallery</a></li>
+            <li><a href="/photo/readList">Gallery</a></li>
             <li>${photo.ptitle}</li>
           </ol>
         </div>
@@ -89,9 +89,8 @@
             
               </div>
              <br>
-             <c:choose>
-            <c:when test="${photo.pwriter == users.username||users.username=='admin'}">
              
+             <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${photo.pwriter == users.username}">
               <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
                 <ul class="tags">
@@ -102,8 +101,7 @@
                  <li><a href="/photo/delete?pno=${photo.pno}">삭제</a></li>
                 </ul>
               </div>
-              </c:when>
-              </c:choose>
+              </sec:authorize>
 
             </article><!-- End blog entry -->
 
