@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class WeeklyDTO {
 	
-	private String gid, gtitle, gwriter, gcontent, gimage, gcount, gdate;
+	private String gid, gtitle, gcontent, gimage, gdate;
 
 }
