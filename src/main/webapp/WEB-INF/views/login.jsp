@@ -14,7 +14,6 @@ mail : gkdlel9254 @ gmail.com
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
  
     
-    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     
   </head>
@@ -25,7 +24,6 @@ mail : gkdlel9254 @ gmail.com
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
-    <form class="form-signin" action="/login" method="post">
       <div class="container">
         <div class="row flex-center min-vh-100 py-5">
           <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3"><a class="d-flex flex-center text-decoration-none mb-4" href="resources/public/index.html">
@@ -37,6 +35,7 @@ mail : gkdlel9254 @ gmail.com
               <!-- <p class="text-700">Get access to your account</p> -->
             </div>
              
+           <form class="form-signin" action="/login" method="post">
        
             <div class="position-relative">
               <hr class="bg-200 mt-5 mb-4" />
@@ -54,12 +53,15 @@ mail : gkdlel9254 @ gmail.com
                 <input class="form-control form-icon-input" id="password" type="password" name="password" placeholder="비밀 번호를 입력하세요" /><span class="fas fa-key text-900 fs--1 form-icon"></span>
               </div>
             </div>
-              <span class="ml-auto"><a href="/users/findId" class="forgot-pass">아이디찾기</a></span> 
+              <a href="/users/findId" >아이디찾기</a></span> 
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-              <span class="ml-auto"><a href="/users/findPwView" class="forgot-pass">비밀번호 찾기</a></span> 
+              <a href="/users/findPwView" >비밀번호 찾기</a></span> 
              <br><br>
              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <button class="btn btn-primary w-100 mb-3">로그인</button>
+            <a href="/" >
+			<button type="button" class="btn btn-outline-success btn-sm w-100 mb-3">취소</button>
+			</a>
             <p><a href="javascript:kakaologin()"><img src="/resources/images/kakao.png" class=" w-100 mb-3 h-20"></a>
             </form>
       
@@ -114,7 +116,7 @@ mail : gkdlel9254 @ gmail.com
   		},
   		error : function(request, status, error){
   			alert("카카오 로그인 실패, 최초 한번 사이트 회원 가입을 하셔야 합니다.");
-  			window.location.assign('/creag');
+  			window.location.assign('/create');
   		}
   		
   	})
@@ -123,6 +125,7 @@ mail : gkdlel9254 @ gmail.com
 
   </script>
   
+      <script src="/resources/assets/js/main.js"></script>
 
   </body>
 

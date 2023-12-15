@@ -24,8 +24,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          
-          
+
           <li class="dropdown"><a href="#"><span>교회소개</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/greetings">목사님의 인사말</a></li>
@@ -38,9 +37,8 @@
         <li><a href="/weekly/readList">주보</a></li>
           <li><a href="/board/readList">게시판</a></li>
           <li><a href="/photo/readList">갤러리</a></li>
-          <br><br>
            <sec:authorize access="hasRole('ROLE_ADMIN')">
-           <a class="nav-link" href="/admin/admin" role="button"  aria-haspopup="true"><span class="uil fs-0 me-2" data-feather="user"></span>관리자전용</a>
+           <a class="nav-link" href="/admin/admin" role="button"  aria-haspopup="true">관리자전용</a>
          </sec:authorize>
           
         <li><sec:authentication property="principal" var="user" />

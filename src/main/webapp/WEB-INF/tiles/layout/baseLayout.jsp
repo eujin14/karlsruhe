@@ -56,7 +56,6 @@
     <link href="/resources/public/vendors/simplebar/simplebar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="/resources/public/assets/css/theme-rtl.min.css" type="text/css" rel="stylesheet" id="style-rtl">
-    <link href="/resources/public/assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
     <link href="/resources/public/assets/css/user-rtl.min.css" type="text/css" rel="stylesheet" id="user-style-rtl">
     <link href="/resources/public/assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
     
@@ -93,12 +92,14 @@
 
 <a href= "#" id="toTop" class="fa fa-angle-up"></a>
 
-<!-- <div class="content"> -->
+<!--  <div class="content"> -->
 <tiles:insertAttribute name="content"/>
 <tiles:insertAttribute name="footer"/>
-<!-- </div> -->
+<!-- </div>  -->
 
  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
 
 <!-- 피닉스 -->
 <script>
@@ -145,5 +146,7 @@
   <script src="/resources/assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
     
+    <!-- Template Main JS File -->
+  <script src="/resources/assets/js/main.js"></script>
 </body>
 </html>

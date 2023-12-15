@@ -129,6 +129,7 @@ function checkMember() {
      </div>
 
 
+      <script src="/resources/assets/js/main.js"></script>
 
   </body>
 
