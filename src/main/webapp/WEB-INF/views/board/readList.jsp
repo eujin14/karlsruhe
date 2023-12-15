@@ -54,14 +54,6 @@
 <div class="card-body p-0">
 <div class="p-4 code-to-copy">
 <div id="tableExample3" data-list='{"valueNames":["bno","btitle","bdate"],"page":5,"pagination":true,"filter":{"key":"btitle"}}'>
-  <div class="row justify-content-end g-0">
-  <div class="search-box mb-3 mx-auto">
-    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-      <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
-      <span class="fas fa-search search-box-icon"></span>
-    </form>
-  </div>
-  </div>
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
@@ -84,6 +76,14 @@
       </tbody>
     </table>
     </div>
+      <div class="row justify-content-end g-0">
+  <div class="search-box mb-3 mx-auto">
+    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+      <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
+      <span class="fas fa-search search-box-icon"></span>
+    </form>
+  </div>
+  </div>
    
 <div class="d-flex justify-content-between mt-3">
          <span class="d-none d-sm-inline-block"
