@@ -90,12 +90,11 @@ function checkMember() {
        <div class="content d-flex justify-content-center align-items-center">
        
           <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3">
-              <div class="d-flex align-items-center fw-bolder fs-5 d-inline-block"><img src="/resources/images/logo7.png"  class=" w-100 mb-3" />
+              <div class="d-flex align-items-center fw-bolder fs-5 d-inline-block">
               </div>
             
             <div class="text-center mb-7">
               <div class="position-relative">
-              <hr class="bg-200 mt-5 mb-4" />
               <div class="divider-content-center"><h2><span class="fas fa-user text-900 fs--1 form-icon"></span>회원가입</h2></div>
             </div>
               <!-- <p class="text-700">Get access to your account</p> -->
