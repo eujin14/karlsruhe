@@ -48,7 +48,7 @@
              
              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 			    <br><br>
-			    <a href="/users/create" >
+			    <a href="/create" >
 			        <button type="button" class="btn btn-outline-primary btn-sm">Sign up</button>
 			    </a>
 			    <a href="/login" >

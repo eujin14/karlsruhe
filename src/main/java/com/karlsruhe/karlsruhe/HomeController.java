@@ -3,14 +3,27 @@ package com.karlsruhe.karlsruhe;
 
 
 
-import org.springframework.stereotype.Controller;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.karlsruhe.users.UsersService;
 
 
 @Controller
 public class HomeController {
 	
+	@Autowired
+	private UsersService usersService;
 	
 	@GetMapping("/")
 	public String home() {
@@ -19,18 +32,54 @@ public class HomeController {
 		return "main";
 	}
 	
+	
+
+	@GetMapping("/create")
+	public String join() {
+		return "create";
+	}
+
+	@PostMapping("/create")
+	public String join(@RequestParam Map<String, Object> map) {
+		
+		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
+		
+
+		String pass = (String) map.get("password");
+
+		String encodedPassword = bcryptPasswordEncoder.encode(pass);
+
+		map.put("password", encodedPassword);
+
+		
+
+		usersService.create(map);
+
+		/*
+		 * String to = (String) map.get("uemail"); String uname = (String)
+		 * map.get("uname"); String body = uname + "님의 방문이 저희에게는 큰 감사가 되었습니다.";
+		 * String subject = uname + "님 방문해주셔서 대단히 감사드립니다.";
+		 * 
+		 * mailService.sendMail(to, subject, body);
+		 */
+
+		return "redirect:/login";
+	}
+	
+	
 	@GetMapping("/login")
 	public String login() {
 		
 		return "login";
 	}
 	
-	
-	@GetMapping("/naverlogin")
-	public String naverlogin() {
+	@GetMapping("/loginfailed")
+	public String loginfailed() {
 		
-		return "naverlogin";
+		return "loginfailed";
 	}
+	
+	
 	
 	@GetMapping("/time")
 	public String time() {
@@ -56,15 +105,5 @@ public class HomeController {
 		return "location";
 	}
 	
-	@GetMapping("/loginfailed")
-	public String loginfailed() {
-		
-		return "loginfailed";
-	}
-	
-	@GetMapping("/Withdrawal")
-	public String Withdrawal() {
-		return "Withdrawal";
-	}
 }
 

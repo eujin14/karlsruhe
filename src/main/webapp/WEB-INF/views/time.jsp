@@ -63,22 +63,22 @@
             <div class="tab-content">
               <div class="tab-pane active show" id="tab-1">
                 <figure>
-                  <img src="/resources/assets/img/features-1.png" alt="" class="img-fluid">
+                  <img src="/resources/assets/img/main.jpg" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-2">
                 <figure>
-                  <img src="/resources/assets/img/features-2.png" alt="" class="img-fluid">
+                  <img src="/resources/assets/img/main1.jpg" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-3">
                 <figure>
-                  <img src="/resources/assets/img/features-3.png" alt="" class="img-fluid">
+                  <img src="/resources/assets/img/main2.jpg" alt="" class="img-fluid">
                 </figure>
               </div>
               <div class="tab-pane" id="tab-4">
                 <figure>
-                  <img src="/resources/assets/img/features-4.png" alt="" class="img-fluid">
+                  <img src="/resources/assets/img/main.jpg" alt="" class="img-fluid">
                 </figure>
               </div>
             </div>

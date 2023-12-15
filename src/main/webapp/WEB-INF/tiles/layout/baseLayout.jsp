@@ -1,11 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+    <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>ekgkarlsruhe</title>
+<title>Home</title>
+ <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Flattern Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/resources/assets/img/favicon.png" rel="icon">
+  <link href="/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/resources/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/resources/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/resources/assets/css/style.css" rel="stylesheet">
+
 
 	<link href='${pageContext.request.contextPath}/resources/fullcalendar-5.11.5/lib/main.css' rel='stylesheet' />
 	<script src='${pageContext.request.contextPath}/resources/fullcalendar-5.11.5/lib/main.js'></script>
@@ -56,8 +81,8 @@
     <link href="/resources/public/vendors/leaflet.markercluster/MarkerCluster.Default.css" rel="stylesheet">
     
 </head>
-<body>
 
+<body>
 <tiles:insertAttribute name="menu"/>
 
 <script>
@@ -66,11 +91,16 @@
 	navbarTop.removeAttribute('style');
 </script>
 
-<div class="content">
+<a href= "#" id="toTop" class="fa fa-angle-up"></a>
+
+<!-- <div class="content"> -->
 <tiles:insertAttribute name="content"/>
 <tiles:insertAttribute name="footer"/>
-</div>
+<!-- </div> -->
 
+ <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- 피닉스 -->
 <script>
 	var navbarTopStyle = window.config.config.phoenixNavbarTopStyle;
 	var navbarTop = document.querySelector('.navbar-top');
@@ -85,12 +115,10 @@
 	}
 </script>
 
-
-
-
-
-
-	<script src="/resources/public/vendors/popper/popper.min.js"></script>
+  
+  <!-- 피닉스   -->
+  <script src="/resources/assets/js/main.js"></script>
+  <script src="/resources/public/vendors/popper/popper.min.js"></script>
     <script src="/resources/public/vendors/bootstrap/bootstrap.min.js"></script>
     <script src="/resources/public/vendors/anchorjs/anchor.min.js"></script>
     <script src="/resources/public/vendors/is/is.min.js"></script>
@@ -106,6 +134,16 @@
     <script src="/resources/public/vendors/leaflet.markercluster/leaflet.markercluster.js"></script>
     <script src="/resources/public/vendors/leaflet.tilelayer.colorfilter/leaflet-tilelayer-colorfilter.min.js"></script>
     <script src="/resources/public/assets/js/ecommerce-dashboard.js"></script>
+    
+    
+     <!-- Vendor JS Files -->
+  <script src="/resources/assets/vendor/aos/aos.js"></script>
+  <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/resources/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/resources/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/resources/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/resources/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
     
 </body>
 </html>

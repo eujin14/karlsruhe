@@ -12,22 +12,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Phoenix</title>
-
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/resources/public/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/resources/public/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/resources/public/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/logo8.ico">
-    <link rel="manifest" href="/resources/public/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="/resources/public/assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="/resources/public/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="/resources/public/vendors/simplebar/simplebar.min.js"></script>
-    <script src="/resources/public/assets/js/config.js"></script>
+    <title>ekgkarlsruhe</title>
 
 
     <!-- ===============================================-->
@@ -68,26 +53,7 @@
 
       
     </main>
-    <!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
-
-
-    <!-- ===============================================-->
-    <!--    JavaScripts-->
-    <!-- ===============================================-->
-    <script src="/resources/public/vendors/popper/popper.min.js"></script>
-    <script src="/resources/public/vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="/resources/public/vendors/anchorjs/anchor.min.js"></script>
-    <script src="/resources/public/vendors/is/is.min.js"></script>
-    <script src="/resources/public/vendors/fontawesome/all.min.js"></script>
-    <script src="/resources/public/vendors/lodash/lodash.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="/resources/public/vendors/list.js/list.min.js"></script>
-    <script src="/resources/public/vendors/feather-icons/feather.min.js"></script>
-    <script src="/resources/public/vendors/dayjs/dayjs.min.js"></script>
-    <script src="/resources/public/assets/js/phoenix.js"></script>
-
+   
   </body>
 
 </html>

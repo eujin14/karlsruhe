@@ -47,37 +47,6 @@ public class UsersController {
 	/*@Autowired
 	private MailService mailService;*/
 
-	@GetMapping("/create")
-	public String join() {
-		return "/users/create";
-	}
-
-	@PostMapping("/create")
-	public String join(@RequestParam Map<String, Object> map) {
-		
-		BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
-		
-
-		String pass = (String) map.get("password");
-
-		String encodedPassword = bcryptPasswordEncoder.encode(pass);
-
-		map.put("password", encodedPassword);
-
-		
-
-		usersService.create(map);
-
-		/*
-		 * String to = (String) map.get("uemail"); String uname = (String)
-		 * map.get("uname"); String body = uname + "님의 방문이 저희에게는 큰 위로와 감사가 되었습니다.";
-		 * String subject = uname + "님 방문해주셔서 대단히 감사드립니다.";
-		 * 
-		 * mailService.sendMail(to, subject, body);
-		 */
-
-		return "redirect:/login";
-	}
 
 	@GetMapping("/memberList")
 	public String memberList(Model model) {

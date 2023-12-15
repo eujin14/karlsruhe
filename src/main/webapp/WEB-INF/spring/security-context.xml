@@ -51,7 +51,7 @@
 
 
 <security:form-login login-page="/login"
-                    default-target-url="/"  
+                    default-target-url="/"
                     authentication-failure-url="/loginfailed"
                     username-parameter="username"  
                     password-parameter="password"/>
