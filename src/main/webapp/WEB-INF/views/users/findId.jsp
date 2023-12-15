@@ -16,6 +16,7 @@
 
 <!-- 페이지 개별 적용 css -->
     <link rel="stylesheet" href="/resources/users/css/findId.css" type="text/css">
+  <link href="/resources/assets/css/style.css" rel="stylesheet">
 
 
 </head>
@@ -84,5 +85,8 @@ $('#findIdBtn').on('click', function(){
     });
 });
 </script>
+
+  <script src="/resources/assets/js/main.js"></script>
+
 </body>
 </html>

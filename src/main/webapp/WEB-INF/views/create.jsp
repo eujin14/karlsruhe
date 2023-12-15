@@ -9,6 +9,9 @@ mail : gkdlel9254 @ gmail.com
 <html lang="en-US" dir="ltr">
 
   <head>
+  
+    <link rel="stylesheet" href="/resources/users/css/create.css" type="text/css">
+  
 
   <script>
 function checkMember() {
@@ -63,29 +66,46 @@ function checkMember() {
 
 
   <body>
+  <br><br>
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
 
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>회원가입</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>회원가입</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+  
+<br>
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
-      <div class="container">
-        <div class="row flex-center min-vh-100 py-5">
-          <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3"><a class="d-flex flex-center text-decoration-none mb-4" href="resources/public/index.html">
-              <div class="d-flex align-items-center fw-bolder fs-5 d-inline-block"><img src="/resources/images/logo7.png" alt="phoenix" class=" w-100 mb-3" />
+       <div class="content d-flex justify-content-center align-items-center">
+       
+          <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 col-xxl-3">
+              <div class="d-flex align-items-center fw-bolder fs-5 d-inline-block"><img src="/resources/images/logo7.png"  class=" w-100 mb-3" />
               </div>
-            </a>
+            
             <div class="text-center mb-7">
-              
+              <div class="position-relative">
+              <hr class="bg-200 mt-5 mb-4" />
+              <div class="divider-content-center"><h2><span class="fas fa-user text-900 fs--1 form-icon"></span>회원가입</h2></div>
+            </div>
               <!-- <p class="text-700">Get access to your account</p> -->
             </div>
              
-            <div class="position-relative">
-              <hr class="bg-200 mt-5 mb-4" />
-              <div class="divider-content-center">회원가입</div>
-            </div>
+            <br>
             <form action="/create?${_csrf.parameterName}=${_csrf.token}"  name="Member" method="post" onsubmit="return checkMember()">
             <div class="mb-3 text-start">
               <div class="form-icon-container">
-                <input class="form-control form-icon-input" id="username" type="text" name="username" placeholder="아이디를 입력하세요" /><span class="fas fa-user text-900 fs--1 form-icon"></span>
+                <input class="form-control form-icon-input" id="username" type="text" name="username" placeholder="아이디를 입력하세요" />
               </div>
             </div>
             <div class="row">
@@ -126,9 +146,9 @@ function checkMember() {
       
       </div>
       </div>
-     </div>
 
-
+<br>
+</main>
       <script src="/resources/assets/js/main.js"></script>
 
   </body>

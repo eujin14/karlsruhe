@@ -96,6 +96,8 @@
     
     
     </main>
+    
+          <script src="/resources/assets/js/main.js"></script>
 </body>
 
 </html>

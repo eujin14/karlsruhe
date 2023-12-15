@@ -134,4 +134,11 @@
 		<put-attribute name="content" value="/WEB-INF/views/admin/{1}.jsp"/>
 	</definition>
 	
+	<definition name="findPwView" extends="base-Template">
+		<put-attribute name="title" value="/"/>
+		<put-attribute name="heading" value="/"/>
+		<put-attribute name="subheading" value="/"/>
+		<put-attribute name="content" value="/WEB-INF/views/findPwView.jsp"/>
+	</definition>
+	
 </tiles-definitions>
