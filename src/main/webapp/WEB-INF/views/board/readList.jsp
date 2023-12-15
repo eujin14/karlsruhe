@@ -107,7 +107,8 @@
  </div>
 </div>
 </div>
-
+<!-- Template Main JS File -->
+  <script src="/resources/assets/js/main.js"></script>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>

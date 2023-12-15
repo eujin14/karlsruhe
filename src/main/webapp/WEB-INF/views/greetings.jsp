@@ -24,7 +24,8 @@
     <!-- ======= About Us Section ======= -->
     <section id="about-us" class="about-us">
       <div class="container">
-          <div class="col-xl-7 mx-auto ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
+<!--      <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start" data-aos="fade-right"></div>
+ -->          <div class="col-xl-7 mx-auto ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
             <div class="content d-flex flex-column justify-content-center">
               <h3 data-aos="fade-up">목사님의 인사말</h3>
               <p data-aos="fade-up">

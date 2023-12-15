@@ -127,4 +127,11 @@
 	</definition>
 	
 
+<definition name="admin/*" extends="base-Template1">
+		<put-attribute name="title" value="/"/>
+		<put-attribute name="heading" value="/"/>
+		<put-attribute name="subheading" value="/"/>
+		<put-attribute name="content" value="/WEB-INF/views/admin/{1}.jsp"/>
+	</definition>
+	
 </tiles-definitions>
