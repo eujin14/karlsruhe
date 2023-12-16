@@ -22,7 +22,23 @@
 </style>
 </head>
 <body>
-<br><br><br>
+<br><br>
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>회원정보</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>회원정보</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+<br>
        <div class="content d-flex justify-content-center align-items-center">
 
               <div class="card mb-9">
@@ -91,7 +107,7 @@
             </div>
         </div>
     </div>
-
+</main>
     <script type="text/javascript">
     $(document).ready(function() {
         $('#withdrawalBtn').on('click', function() {

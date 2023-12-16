@@ -22,7 +22,22 @@
 
 </head>
 <body>
+<br><br>
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
 
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>비밀번호 변경</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>비밀번호 변경</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
 
 
 <section class="section">
@@ -89,6 +104,7 @@
         </div>
     </div>
 </div>
+</main>
 <script type="text/javascript">
 var pwChk = false; //비밀번호 유효여부
 

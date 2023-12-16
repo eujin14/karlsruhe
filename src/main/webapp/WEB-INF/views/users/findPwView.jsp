@@ -37,6 +37,8 @@
 
 <body>
 
+
+
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between">
@@ -100,6 +102,22 @@
 
     </div>
   </header><!-- End Header -->
+  
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>비밀번호 찾기</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>비밀번호 찾기</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
 
 <div class="find_box">
     <div class="contact">
@@ -121,6 +139,7 @@
         </div>
     </div>
     </div>
+    </main>
     <!-- Move the script to the end of the body or use DOMContentLoaded -->
      <!-- jQuery script -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

@@ -11,6 +11,22 @@
 
 </head>
 <body>
+<br><br>
+<main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>회원정보수정</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>회원정보수정</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
 
   <form action="/users/memberUpdate?${_csrf.parameterName}=${_csrf.token}" method="post" >
            <input type="hidden" name="username" value="${member.username}">
@@ -41,8 +57,7 @@
               </div>
               <button class="btn btn-primary w-100 mb-3" type="submit" value="회원수정" >회원정보 수정</button>              
             </form>
-<br><br><br><br><br>
-
+</main>
   <script src="/resources/assets/js/main.js"></script>
 
 </body>

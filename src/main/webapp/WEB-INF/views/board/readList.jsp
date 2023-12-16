@@ -31,8 +31,6 @@
     </section><!-- End Breadcrumbs -->
 
 
-<br><br>
-
 <div class="container">
 <div class="sidebar-item tags" style="display: flex; justify-content: flex-end;">
     <a href="/board/create" style="display: inline-block; padding: 10px 25px; border-radius: 4px; transition: 0.4s; margin: 10px; border: 2px solid #f03c02; color: #f03c02; background: #fff; margin-left: auto;" role="button">게시물 등록</a>
@@ -109,6 +107,5 @@
 </div>
 <!-- Template Main JS File -->
   <script src="/resources/assets/js/main.js"></script>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
