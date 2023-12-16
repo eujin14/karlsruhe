@@ -145,33 +145,39 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <!-- Your custom script -->
         
-        <script type="text/javascript" th:inline="javascript">
-            $(document).ready(function() {
-                $("#findPwButton").click(function() {
-                    var username = $("#username").val();
-                    var uemail = $("#uemail").val();
-                    var csrfToken = $("#_csrf").attr("content");
+   <script type="text/javascript">
+    $(document).ready(function() {
+        $(".user").submit(function(event) {
+            // Prevent the form from submitting in the default way
+            event.preventDefault();
 
-                    $.ajax({
-                        type: "POST",
-                        url: "/users/findPw",
-                        data: {
-                            username: username,
-                            uemail: uemail
-                        },
-                        headers: {
-                            "X-CSRF-TOKEN": csrfToken
-                        },
-                        success: function(data) {
-                            // Handle success
-                        },
-                        error: function(xhr, status, error) {
-                            // Handle error
-                        }
-                    });
-                });
+            var username = $("#username").val();
+            var uemail = $("#uemail").val();
+            var csrfToken = $("#_csrf").attr("content");
+
+            $.ajax({
+                type: "POST",
+                url: "/users/findPw",
+                data: {
+                    username: username,
+                    uemail: uemail
+                },
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+                },
+                success: function(result) {
+                    alert("이메일 전송 성공");
+                    
+                    //로그인 페이지 이동
+                    window.location.href = "/login";
+                },
+                error: function(request, status, error) {
+                    alert("이메일 전송 실패: " + request.responseText);
+                }
             });
-        </script>
+        });
+    });
+</script>
  <!-- ======= Footer ======= -->
   <footer id="footer">
 

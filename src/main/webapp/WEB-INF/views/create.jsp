@@ -15,10 +15,10 @@ mail : gkdlel9254 @ gmail.com
 
   <script>
 function checkMember() {
-    var regExpUsername = /^[a-zA-Z가-힣]+$/;
+	var regExpUsername = /^[a-zA-Z가-힣0-9]+$/;
     var regExpUname = /^[a-zA-Z가-힣]+$/;
-    var regExpPasswd = /^[0-9]+$/;
-    var regExpTel = /^\d{3}-\d{3,4}-\d{4}$/;
+    var regExpPasswd = /^[a-zA-Z가-힣0-9]+$/;
+    var regExpTel = /^(\+\d{1,4}-)?(\d{1,4}-)?\d{1,14}$/;
     var regExpEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 
     var username = document.getElementById("username").value.trim();
