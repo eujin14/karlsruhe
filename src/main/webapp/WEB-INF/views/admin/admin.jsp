@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+<br><br>
 
 
     <!-- ======= Breadcrumbs ======= -->
@@ -79,6 +79,7 @@
       </div>
     </section><!-- End Services Section -->
   
+      <script src="/resources/assets/js/main.js"></script>
 
 </body>
 

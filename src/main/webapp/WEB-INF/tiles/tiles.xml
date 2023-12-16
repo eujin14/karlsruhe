@@ -84,12 +84,6 @@
 <put-attribute name="content" value="/WEB-INF/views/error403.jsp"/>
 </definition>
 
-<definition name="users/create" extends="base-Template1">
-		<put-attribute name="title" value="/"/>
-		<put-attribute name="heading" value="/"/>
-		<put-attribute name="subheading" value="/"/>
-		<put-attribute name="content" value="/WEB-INF/views/users/create.jsp"/>
-	</definition>
 
 <definition name="users/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
@@ -127,7 +121,7 @@
 	</definition>
 	
 
-<definition name="admin/*" extends="base-Template1">
+<definition name="admin/*" extends="base-Template">
 		<put-attribute name="title" value="/"/>
 		<put-attribute name="heading" value="/"/>
 		<put-attribute name="subheading" value="/"/>

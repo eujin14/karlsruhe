@@ -20,7 +20,7 @@
 <body>
 <!-- 로그인 정보 받기 -->
 <sec:authentication property="principal" var="user" />
-<br><br><br>
+<br><br>
     <!-- 메인 -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
@@ -36,7 +36,7 @@
 
       </div>
     </section>
-<br><br>
+<br>
     <div class="container">
    <!-- 게시물 등록 폼 -->
    <div class="card shadow-none border border-300 my-4" data-component-card="data-component-card">
@@ -110,7 +110,6 @@
    })
  </script>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 </body>
 </html>

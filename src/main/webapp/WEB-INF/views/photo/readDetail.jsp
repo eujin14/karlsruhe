@@ -32,7 +32,7 @@
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
-<br><br><br>
+<br><br>
        <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
@@ -119,8 +119,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <!-- Vendor JS Files -->
+	  <!-- Vendor JS Files -->
   <script src="/resources/assets/vendor/aos/aos.js"></script>
   <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/resources/assets/vendor/glightbox/js/glightbox.min.js"></script>
