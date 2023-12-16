@@ -130,7 +130,7 @@
                 <input type="email"  id="uemail"  name="uemail" placeholder="Enter Email Address...">
         <div class="BtnGroup">
             <button type="submit" id="myButton" class="btn btn-primary btn-user btn-block">전송하기</button>
-        <a href="/login" type="button" class="button">로그인</a>
+        <a href="/" type="button" class="button">취소</a>
         </div>
         </form>
         </div>
