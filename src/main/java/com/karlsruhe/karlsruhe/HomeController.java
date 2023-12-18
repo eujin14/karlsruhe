@@ -85,12 +85,7 @@ public class HomeController {
 	}
 	
 	
-	
-	@GetMapping("/time")
-	public String time() {
-		
-		return "time";
-	}
+
 	
 	@GetMapping("/greetings")
 	public String greetings() {

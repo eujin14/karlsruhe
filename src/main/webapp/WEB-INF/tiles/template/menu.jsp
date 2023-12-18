@@ -29,7 +29,6 @@
             <ul>
               <li><a href="/greetings">목사님의 인사말</a></li>
               <li><a href="/history">교회연혁</a></li>
-              <li><a href="/time">예배시간</a></li>
               <li><a href="location">예배장소</a></li>
             </ul>
           </li>
