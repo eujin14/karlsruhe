@@ -35,7 +35,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="bi bi-briefcase"></i></div>
-              <h4 class="title"><a href="">메인 사진 관리</a></h4>
+              <h4 class="title"><a href="/admin/create">메인 사진 관리</a></h4>
               <p class="description">메인 화면 사진 수정 가능합니다</p>
             </div>
           </div>

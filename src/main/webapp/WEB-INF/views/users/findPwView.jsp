@@ -58,7 +58,6 @@
             <ul>
               <li><a href="/greetings">목사님의 인사말</a></li>
               <li><a href="/history">교회연혁</a></li>
-              <li><a href="/time">예배시간</a></li>
               <li><a href="location">예배장소</a></li>
             </ul>
           </li>
@@ -130,7 +129,7 @@
                 <input type="email"  id="uemail"  name="uemail" placeholder="Enter Email Address...">
         <div class="BtnGroup">
             <button type="submit" id="myButton" class="btn btn-primary btn-user btn-block">전송하기</button>
-        <a href="/login" type="button" class="button">로그인</a>
+        <a href="/" type="button" class="button">취소</a>
         </div>
         </form>
         </div>
