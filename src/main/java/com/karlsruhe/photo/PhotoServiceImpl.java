@@ -37,5 +37,11 @@ public class PhotoServiceImpl implements PhotoService {
 		photoRepository.delete(pno);
 	}
 
+
+	@Override
+	public List<Map<String, Object>> readReply(String preply) {
+		  return photoRepository.readReply(preply); 
+	}
+
 }
 

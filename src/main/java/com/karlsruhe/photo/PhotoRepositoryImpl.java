@@ -41,5 +41,11 @@ public class PhotoRepositoryImpl implements PhotoRepository {
 
 	}
 
+	@Override
+	public List<Map<String, Object>> readReply(String preply) {
+		  return sqlSessionTemplate.selectList("photo.readReply",preply); 
+
+	}
+
 }
 
