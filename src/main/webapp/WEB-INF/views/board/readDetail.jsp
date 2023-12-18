@@ -8,12 +8,6 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
    crossorigin="anonymous"></script>
-
-  <!-- Template Main CSS File -->
-  <link href="/resources/assets/css/style.css" rel="stylesheet">
-   
-
-
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
@@ -112,7 +106,7 @@
                 </div><!-- End comment #1-->
 
              </c:forEach>
-
+<sec:authorize access="isAuthenticated()">
               <div class="reply-form">
                 
                 <form action="">
@@ -129,7 +123,7 @@
                 </form>
 
               </div>
-
+</sec:authorize>
             </div><!-- End blog comments --> 
 
           </div><!-- End blog entries list -->
@@ -173,9 +167,8 @@
     });
  }
 </script>
- 
-  <!-- Template Main JS File -->
-  <script src="/resources/assets/js/main.js"></script>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
 </html>
