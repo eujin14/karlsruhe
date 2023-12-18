@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
    crossorigin="anonymous"></script>
+   
 </head>
 <body>
 <sec:authentication property="principal" var="users" />
@@ -69,6 +70,7 @@
             
               </div>
              <br> 
+             <sec:authorize access="isAuthenticated()">
              <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${board.bwriter == users.username}">
              <div class="entry-footer" style="padding-left: 20px;">
                 <i class="bi bi-pencil-square"></i>
@@ -82,6 +84,7 @@
               </div>
 
               </sec:authorize>
+               </sec:authorize>
 
             </article><!-- End blog entry -->
 <div class="blog-comments">
@@ -97,8 +100,11 @@
                     <time datetime="2020-01-01">${reply.bdate}</time>
                     <p>${reply.bcontent}
                     </p>
+                    <sec:authorize access="isAuthenticated()">
+                    
                     <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${reply.bwriter == users.username}">
                     <h6><a href="/board/deleteReply?bno=${reply.bno}&boardbno=${board.bno}" class="reply" style="text-decoration: none; color: #f03c02;"><i class="bi bi-trash3"></i>삭제</a></h6>
+                    </sec:authorize>
                     </sec:authorize>
                    </div>
                 </div>
@@ -106,6 +112,9 @@
                 </div><!-- End comment #1-->
 
              </c:forEach>
+             <sec:authorize access="isAnonymous()">
+             <p>*로그인 하셔야 댓글을 입력할 수 있습니다. 
+             </sec:authorize>
 <sec:authorize access="isAuthenticated()">
               <div class="reply-form">
                 

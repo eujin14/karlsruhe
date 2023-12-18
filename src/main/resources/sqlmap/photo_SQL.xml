@@ -3,11 +3,11 @@
 <mapper namespace="photo">
 <insert id="create" parameterType="hashMap">
 
-<![CDATA[ INSERT INTO photo (ptitle, pcontent, pimage, pwriter) VALUES (#{ptitle}, #{pcontent}, #{pimage}, #{pwriter}) ]]>
+<![CDATA[ INSERT INTO photo (ptitle, pcontent, pimage, pwriter,preply) VALUES (#{ptitle}, #{pcontent}, #{pimage}, #{pwriter},#{preply}) ]]>
 
 </insert>
 <select id="readList" resultType="hashMap">
-<![CDATA[ SELECT * FROM photo ORDER BY pno DESC ]]>
+<![CDATA[ SELECT * FROM photo WHERE preply IS NULL ORDER BY pno DESC ]]>
 </select>
 <select id="readDetail" parameterType="String" resultType="hashMap"> 
 <![CDATA[ SELECT * FROM photo WHERE pno = #{pno} ]]>
@@ -20,5 +20,15 @@
 <delete id="delete" parameterType="String">
 <![CDATA[ DELETE FROM photo WHERE pno = #{pno} ]]>
 </delete>
+
+<select id="readReply" parameterType="String" resultType="hashMap">
+<![CDATA[
+	SELECT * FROM photo
+	WHERE 
+		preply = #{preply}
+	ORDER BY 
+		pno DESC
+]]>
+</select>
 
 </mapper>

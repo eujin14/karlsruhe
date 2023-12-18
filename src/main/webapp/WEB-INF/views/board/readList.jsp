@@ -64,10 +64,8 @@
       </thead>
       <tbody class="list" id="table-regions-by-revenue">
       <c:forEach items="${boards}" var="board" varStatus="i">
-        <tr>
-          <td>${board.bno}</td>
-          
-        <td class="align-middle text-center ps-3 bno">${Math.max(1, totalRecordCount - i.index)}</td>
+        <tr>          
+        <td class="align-middle text-center ps-3 bno">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
           <td class="align-middle text-center btitle"><a href="/board/readDetail?bno=${board.bno}">${board.btitle}</a></td>
           <td class="align-middle text-center bwriter">${board.bwriter}</td>
           <td class="align-middle text-center text-end py-3 pe-3">${board.bdate}</td>

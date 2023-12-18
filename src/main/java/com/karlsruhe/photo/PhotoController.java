@@ -1,5 +1,6 @@
 package com.karlsruhe.photo;
 
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -66,6 +67,12 @@ public class PhotoController {
 			photoService.create(map);
 			return "redirect:/photo/readList";
 		}
+		@PostMapping("/createReply")
+		public String createReply(@RequestParam Map<String, Object> map) {
+
+			photoService.create(map);
+			return "redirect:/photo/readList";
+		}
 		
 		@GetMapping("/readList")
 		public String readList(Model model) {
@@ -78,7 +85,9 @@ public class PhotoController {
 		public String readDetail(@RequestParam String pno, Model model) {
 
 			model.addAttribute("photo", photoService.readDetail(pno));
-
+			model.addAttribute("replyList", photoService.readReply(pno));
+			List<Map<String, Object>> replyList = photoService.readReply(pno);
+			model.addAttribute("replyListsSize", replyList.size());
 			return "photo/readDetail";
 		}
 
@@ -136,6 +145,23 @@ public class PhotoController {
 			photoService.delete(pno);
 
 			return "redirect:/photo/readList";
+		}
+		 @PostMapping("/readReply") 
+		  public List<Map<String, Object>>readReply(@RequestParam("preply") String preply) {
+		  
+		  return photoService.readReply(preply);
+		  
+		  }
+		
+		@GetMapping("/deleteReply")
+		public String deleteReply(@RequestParam("pno") String pno, @RequestParam("photopno") String photopno, Model model) {
+
+			photoService.delete(pno);
+
+			model.addAttribute("photo", photoService.readDetail(photopno));
+			model.addAttribute("replyList", photoService.readReply(pno));
+
+			return "redirect:/photo/readDetail?pno=" + photopno;
 		}
 
 	}

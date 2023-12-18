@@ -89,6 +89,7 @@
             
               </div>
              <br>
+                          <sec:authorize access="isAuthenticated()">
              
              <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${photo.pwriter == users.username}">
               <div class="entry-footer" style="padding-left: 20px;">
@@ -102,8 +103,56 @@
                 </ul>
               </div>
               </sec:authorize>
+              </sec:authorize>
 
-            </article><!-- End blog entry -->
+            </article>
+            <div class="blog-comments">
+            
+            <h4 class="comments-count">댓글 ${replyListsSize}</h4>
+           
+            <c:forEach items="${replyList}" var="reply">
+              <div id="comment-1" class="comment">
+                <div class="d-flex">
+                 
+                  <div>
+                    <h5>${reply.pwriter}</h5> 
+                    <time datetime="2020-01-01">${reply.pdate}</time>
+                    <p>${reply.pcontent}
+                    </p>
+                    <sec:authorize access="isAuthenticated()">
+                    
+                    <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${reply.pwriter == users.username}">
+                    <h6><a href="/photo/deleteReply?pno=${reply.pno}&photopno=${photo.pno}" class="reply" style="text-decoration: none; color: #f03c02;"><i class="bi bi-trash3"></i>삭제</a></h6>
+                    </sec:authorize>
+                    </sec:authorize>
+                   </div>
+                </div>
+                
+                </div><!-- End comment #1-->
+
+             </c:forEach>
+             <sec:authorize access="isAnonymous()">
+             <p>*로그인 하셔야 댓글을 입력할 수 있습니다. 
+             </sec:authorize>
+<sec:authorize access="isAuthenticated()">
+              <div class="reply-form">
+                
+                <form action="">
+          
+                  <div class="row">
+                    <div class="col form-group">
+                      <textarea id="rbcontent" class="form-control" placeholder="댓글을 남겨주세요"></textarea>
+                    </div>
+                  </div>
+                  <input type="hidden" id="preply"  name="preply" value="${photo.pno}">
+                  <input type="hidden" id="pwriter" name="pwriter" value="${users.username}">
+                  <a href="javascript:createReply()" class="btn btn-primary">등록 </a>
+
+                </form>
+
+              </div>
+</sec:authorize>
+            </div><!-- End blog entry -->
 
 
           </div><!-- End blog entries list -->
@@ -114,9 +163,36 @@
       </div>
     </section><!-- End Blog Single Section -->
 
+<script>
+ function createReply() {
 
+   var preply  = $("#preply").val();
+   var pcontent = $("#rpcontent").val();
+   var pwriter  = $("#pwriter").val();
+   
+   var requestData = {
+		   preply : preply ,
+		   pcontent : pcontent ,
+		   pwriter : pwriter
+   };
+
+   $.ajax({
+      type : "post",
+      url : "/photo/createReply",
+      data: requestData,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+        },
+        success: function(result) {
+            alert("댓글이 등록되었습니다.");
+            window.location.reload();
+        },
+      error : function(request, status, error) {
+      }
+    });
+ }
+</script>
  
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
 	  <!-- Vendor JS Files -->
