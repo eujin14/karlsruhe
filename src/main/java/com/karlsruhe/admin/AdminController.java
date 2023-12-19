@@ -28,9 +28,7 @@ public class AdminController {
 	
 	@Autowired
 	private UsersService usersService;
-	
-	@Autowired
-	private AdminService adminService;
+
 	
 	@Autowired
 	private NoticeService noticeService;
@@ -101,7 +99,7 @@ public class AdminController {
 			}
 			map.put("image1", "image1");
 		
-		adminService.create(map);
+	
 		return "redirect:/";
 	}
 	
@@ -146,7 +144,7 @@ public class AdminController {
 			}
 			map.put("image2","image2");
 		
-		adminService.create2(map);
+	
 		return "redirect:/";
 	}
 	
@@ -192,7 +190,7 @@ public class AdminController {
 			}
 			map.put("image3", "image3");
 		}
-		adminService.create3(map);
+	
 		return "redirect:/";
 	}
 	

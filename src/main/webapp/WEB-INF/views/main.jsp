@@ -14,18 +14,19 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-     <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg);">
-          <div class="carousel-container">
-          </div>
-        </div>
-        <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.jpg);">
-          <div class="carousel-container">
-          </div>
-        </div>
-		
+       <img src="https://ekgkarlsruhe.cdn1.cafe24.com/main1/image1.jpg" width="500" height="auto" class="img-fluid">
+	
+	
+		      <!--  <div class="carousel-item">
+	           <img src="https://ekgkarlsruhe.cdn1.cafe24.com/main1/image.jpg" width="500" height="auto" class="img-fluid">
+			    <div class="carousel-container">
+			        기존에 있던 다른 내용들을 유지하거나 필요에 따라 추가적인 내용을 넣을 수 있습니다.
+			    </div>
+			</div>
+			 -->
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(/resources/assets/img/main3.jpg);">
+        <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.jpg);">
           <div class="carousel-container">
           </div>
         </div>
