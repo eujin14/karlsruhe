@@ -64,11 +64,11 @@ public class AdminController {
 	
 	@GetMapping("/create")
 	public String create() {
-		return "admin/create";
+		return "admin/create1";
 	}
 
 	@PostMapping("/create")
-	public String create(@RequestParam Map<String, Object> map, @RequestParam("pimage") MultipartFile file) {
+	public String create(@RequestParam Map<String, Object> map, @RequestParam("image1") MultipartFile file) {
 
 		String filecheck = file.getOriginalFilename();
 
@@ -76,7 +76,7 @@ public class AdminController {
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 			String LOGIN = "ekgkarlsruhe";
 			String PSW = "gkdlel9254";
-			String REMOTE_DIRECTORY = "main";
+			String REMOTE_DIRECTORY = "main1";
 
 			String uuid = UUID.randomUUID().toString();
 			String filename = file.getOriginalFilename();
@@ -102,7 +102,97 @@ public class AdminController {
 			} catch (Exception e) {
 				System.out.println("fail!!!");
 			}
-			map.put("image", filename);
+			map.put("image1", filename);
+		}
+		photoService.create(map);
+		return "redirect:/admin/admin";
+	}
+	@GetMapping("/create")
+	public String create2() {
+		return "admin/create1";
+	}
+
+	@PostMapping("/create2")
+	public String create2(@RequestParam Map<String, Object> map, @RequestParam("image2") MultipartFile file) {
+
+		String filecheck = file.getOriginalFilename();
+
+		if (filecheck != null && !filecheck.trim().isEmpty()) {
+			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
+			String LOGIN = "ekgkarlsruhe";
+			String PSW = "gkdlel9254";
+			String REMOTE_DIRECTORY = "main2";
+
+			String uuid = UUID.randomUUID().toString();
+			String filename = file.getOriginalFilename();
+			filename = uuid + "_" + filename;
+
+			FTPClient con = null;
+
+			try {
+				con = new FTPClient();
+				con.connect(FTP_ADDRESS);
+
+				if (con.login(LOGIN, PSW)) {
+					con.enterLocalPassiveMode();
+					con.setFileType(FTP.BINARY_FILE_TYPE);
+
+					con.changeWorkingDirectory(REMOTE_DIRECTORY);
+
+					con.storeFile(filename, file.getInputStream());
+					con.logout();
+					con.disconnect();
+					System.out.println("success!!!");
+				}
+			} catch (Exception e) {
+				System.out.println("fail!!!");
+			}
+			map.put("image2", filename);
+		}
+		photoService.create(map);
+		return "redirect:/admin/admin";
+	}
+	@GetMapping("/create3")
+	public String create3() {
+		return "admin/create1";
+	}
+
+	@PostMapping("/create3")
+	public String create3(@RequestParam Map<String, Object> map, @RequestParam("image3") MultipartFile file) {
+
+		String filecheck = file.getOriginalFilename();
+
+		if (filecheck != null && !filecheck.trim().isEmpty()) {
+			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
+			String LOGIN = "ekgkarlsruhe";
+			String PSW = "gkdlel9254";
+			String REMOTE_DIRECTORY = "main3";
+
+			String uuid = UUID.randomUUID().toString();
+			String filename = file.getOriginalFilename();
+			filename = uuid + "_" + filename;
+
+			FTPClient con = null;
+
+			try {
+				con = new FTPClient();
+				con.connect(FTP_ADDRESS);
+
+				if (con.login(LOGIN, PSW)) {
+					con.enterLocalPassiveMode();
+					con.setFileType(FTP.BINARY_FILE_TYPE);
+
+					con.changeWorkingDirectory(REMOTE_DIRECTORY);
+
+					con.storeFile(filename, file.getInputStream());
+					con.logout();
+					con.disconnect();
+					System.out.println("success!!!");
+				}
+			} catch (Exception e) {
+				System.out.println("fail!!!");
+			}
+			map.put("image3", filename);
 		}
 		photoService.create(map);
 		return "redirect:/admin/admin";
