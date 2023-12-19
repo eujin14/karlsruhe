@@ -1,7 +1,6 @@
 package com.karlsruhe.admin;
 
 import java.util.Map;
-import java.util.UUID;
 
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
@@ -17,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.karlsruhe.board.BoardService;
 import com.karlsruhe.notice.NoticeService;
-import com.karlsruhe.photo.PhotoService;
 import com.karlsruhe.users.UsersService;
 import com.karlsruhe.weekly.WeeklyService;
 
@@ -32,7 +30,7 @@ public class AdminController {
 	private UsersService usersService;
 	
 	@Autowired
-	private PhotoService photoService;
+	private AdminService adminService;
 	
 	@Autowired
 	private NoticeService noticeService;
@@ -42,6 +40,7 @@ public class AdminController {
 	
 	@Autowired
 	private BoardService boardService;
+	
 	
 	@GetMapping("/admin")
 	public String admin() {
@@ -64,23 +63,21 @@ public class AdminController {
 	
 	@GetMapping("/create")
 	public String create() {
-		return "admin/create1";
+		return "admin/create";
 	}
 
 	@PostMapping("/create")
 	public String create(@RequestParam Map<String, Object> map, @RequestParam("image1") MultipartFile file) {
 
-		String filecheck = file.getOriginalFilename();
 
-		if (filecheck != null && !filecheck.trim().isEmpty()) {
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 			String LOGIN = "ekgkarlsruhe";
 			String PSW = "gkdlel9254";
 			String REMOTE_DIRECTORY = "main1";
 
-			String uuid = UUID.randomUUID().toString();
-			String filename = file.getOriginalFilename();
-			filename = uuid + "_" + filename;
+		
+			String filename = "image1.jpg";
+	
 
 			FTPClient con = null;
 
@@ -102,30 +99,30 @@ public class AdminController {
 			} catch (Exception e) {
 				System.out.println("fail!!!");
 			}
-			map.put("image1", filename);
-		}
-		photoService.create(map);
-		return "redirect:/admin/admin";
+			map.put("image1", "image1");
+		
+		adminService.create(map);
+		return "redirect:/";
 	}
-	@GetMapping("/create")
+	
+	@GetMapping("/create2")
 	public String create2() {
-		return "admin/create1";
+		return "admin/create2";
 	}
 
 	@PostMapping("/create2")
 	public String create2(@RequestParam Map<String, Object> map, @RequestParam("image2") MultipartFile file) {
 
-		String filecheck = file.getOriginalFilename();
+		
 
-		if (filecheck != null && !filecheck.trim().isEmpty()) {
+	
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 			String LOGIN = "ekgkarlsruhe";
 			String PSW = "gkdlel9254";
 			String REMOTE_DIRECTORY = "main2";
 
-			String uuid = UUID.randomUUID().toString();
-			String filename = file.getOriginalFilename();
-			filename = uuid + "_" + filename;
+		
+			String filename = "image2.jpg";
 
 			FTPClient con = null;
 
@@ -147,14 +144,15 @@ public class AdminController {
 			} catch (Exception e) {
 				System.out.println("fail!!!");
 			}
-			map.put("image2", filename);
-		}
-		photoService.create(map);
-		return "redirect:/admin/admin";
+			map.put("image2","image2");
+		
+		adminService.create2(map);
+		return "redirect:/";
 	}
+	
 	@GetMapping("/create3")
 	public String create3() {
-		return "admin/create1";
+		return "admin/create3";
 	}
 
 	@PostMapping("/create3")
@@ -168,9 +166,9 @@ public class AdminController {
 			String PSW = "gkdlel9254";
 			String REMOTE_DIRECTORY = "main3";
 
-			String uuid = UUID.randomUUID().toString();
-			String filename = file.getOriginalFilename();
-			filename = uuid + "_" + filename;
+	
+			String filename = "image3.jpg";
+
 
 			FTPClient con = null;
 
@@ -192,9 +190,11 @@ public class AdminController {
 			} catch (Exception e) {
 				System.out.println("fail!!!");
 			}
-			map.put("image3", filename);
+			map.put("image3", "image3");
 		}
-		photoService.create(map);
-		return "redirect:/admin/admin";
+		adminService.create3(map);
+		return "redirect:/";
 	}
+	
+
 }

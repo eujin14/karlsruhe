@@ -15,17 +15,18 @@ public class AdminRepositoryImpl implements AdminRepository {
 
 	@Override
 	public void create(Map<String, Object> map) {
-		 sqlSessionTemplate.insert("board.create", map);	
+		 sqlSessionTemplate.insert("admin.create", map);	
 	}
 	
 	@Override
 	public void create2(Map<String, Object> map) {
-		 sqlSessionTemplate.insert("board.create2", map);	
+		 sqlSessionTemplate.insert("admin.create2", map);	
 	}
 	@Override
 	public void create3(Map<String, Object> map) {
-		 sqlSessionTemplate.insert("board.create3", map);	
+		 sqlSessionTemplate.insert("admin.create3", map);	
 	}
+
 	
 }
 
