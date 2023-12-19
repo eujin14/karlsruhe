@@ -8,6 +8,8 @@ public interface AdminRepository {
 	void create(Map<String,Object>map);
 	void create2(Map<String,Object>map);
 	void create3(Map<String,Object>map);
+
+
 }
 	 	
 

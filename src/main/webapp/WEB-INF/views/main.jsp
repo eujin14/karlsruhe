@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +14,18 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(/resources/assets/img/main.jpg);">
+     <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg);">
           <div class="carousel-container">
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg);">
+        <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.jpg);">
           <div class="carousel-container">
           </div>
         </div>
+		
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.jpg);">
+        <div class="carousel-item" style="background-image: url(/resources/assets/img/main3.jpg);">
           <div class="carousel-container">
           </div>
         </div>

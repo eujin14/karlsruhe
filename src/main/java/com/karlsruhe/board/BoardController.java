@@ -95,7 +95,7 @@ public class BoardController {
 			model.addAttribute("replyList", boardService.readReply(bno));
 			List<Map<String, Object>> replyList = boardService.readReply(bno);
 			model.addAttribute("replyListsSize", replyList.size());
-
+			
 			return "board/readDetail";
 		}
 
