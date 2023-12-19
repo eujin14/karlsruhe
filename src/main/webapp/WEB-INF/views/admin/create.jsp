@@ -69,13 +69,6 @@
                             </div>
                         </div>
 
-                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label" for="pimage">첨부사진</label>
-                            <div class="col-sm-10">
-                                <input  class="form-control" id="pimage" name="pimage" type="file"  required />
-                                <br>※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
-                            </div>
-                        </div>
       <br><br>
                         <div class="vstack gap-2 col-md-5 mx-auto">
                             <button class="btn btn-primary" type="submit">등록</button>

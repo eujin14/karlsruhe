@@ -24,12 +24,7 @@
           </div>
         </div>
 
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.jpg);">
-          <div class="carousel-container">
-          </div>
-        </div>
-
+   
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
