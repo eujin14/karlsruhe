@@ -5,10 +5,6 @@
 	uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
-<head>
-
-
-</head>
 <body>
   <main id="main">
 <br><br>
@@ -31,11 +27,11 @@
     <!-- ======= Blog Single Section ======= -->
     <sec:authentication property="principal" var="users"/> 
     <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
+      <div class="container d-flex align justify-content-center" data-aos="fade-up">
 
-        <div class="row">
+        <div class="row w-75 h-auto">
 
-          <div class="col-lg-8 entries">
+         
 
             <article class="entry entry-single">
             
@@ -51,18 +47,7 @@
               </div>
               <br>
               
-              <div class="container" style="padding-left: 1cm;">
-                <c:choose>
-					<c:when test="${not empty details.gimage}">
-					<br>
-              <div class="entry-img">
-               <img src="https://ekgkarlsruhe.cdn1.cafe24.com/weekly/${details.gimage}"
-            width="500" height="auto" class="img-fluid">
-              </div>
-              </c:when>
-				</c:choose>
-				
-              </div>
+            
               
               <div class="entry-content" style="padding-left: 6px;">
                 <p>${details.gcontent}</p>
@@ -87,8 +72,6 @@
 
 
 
-          </div><!-- End blog entries list -->
-
  
         </div>
 
@@ -100,15 +83,6 @@
  
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-
-  <!-- Vendor JS Files -->
-  <script src="/resources/assets/vendor/aos/aos.js"></script>
-  <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/resources/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/resources/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/resources/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/resources/assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="/resources/assets/js/main.js"></script>

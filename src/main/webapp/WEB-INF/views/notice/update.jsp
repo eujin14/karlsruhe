@@ -26,7 +26,7 @@
       <div class="container">
 
        <div class="d-flex justify-content-between align-items-center">
-          <h2>공지사항 수정</h2>
+          <h2>공지사항</h2>
           <ol>
             <li><a href="/">홈</a></li>
             <li><a href="/notice/readList">공지사항</a></li>
@@ -36,24 +36,38 @@
       </div>
     </section><!-- End Breadcrumbs -->
 <br>
-<div class="container" style="padding: 30px; margin-bottom: 60px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-        <div class="row mt-5 justify-content-center" >
-          <div class="col-lg-10">
-            <form action="/notice/update?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="ntitle" class="form-control" id="ntitle" placeholder="제목을 입력해주세요" value="${details.ntitle}" required>
+  <div class="container">
+   <!-- 게시물 등록 폼 -->
+   <div class="card shadow-none border border-300 my-4">
+            <div class="card-header p-4 border-bottom border-300 bg-soft">
+                <div class="row g-3 justify-content-between align-items-center">
+                    <div class="col-12 col-md">
+                        <h4 class="text-900 mb-0">공지사항 수정</h4>
+                    </div>
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="file" class="form-control" name="nimage" id="nimage"  value="${details.nimage}">
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                 <textarea class="form-control" id="summernote" name="ncontent">${details.ncontent}</textarea>
-              </div>
-              <div class="form-group mt-3">
-            <c:choose>
-							<c:when test="${notice.npin eq '1'}">
+            </div>
+    <div class="card-body p-0">
+                <div class="p-4 code-to-copy">
+
+   <form action="/notice/update?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+       <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="ntitle">제목</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" id="ntitle" name="ntitle" type="text" placeholder="제목을 입력하세요" value="${details.ntitle}" required />
+                            </div>
+                        </div>
+                         
+                         <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="ncontent">내용</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="summernote" name="ncontent" placeholder="내용을 입력하세요" >${details.ncontent}</textarea>
+                            </div>
+                        </div>
+                   
+                        <div class="row mb-3">
+                             <label class="col-sm-2 col-form-label" for="npin">고정/미고정</label>
+                          <c:choose>
+							<c:when test="${details.npin eq '1'}">
 								<div class="col-sm-10">
 									<div class="form-check form-check-inline">
 										<input class="form-check-input" id="flexRadioDefault1"
@@ -87,44 +101,42 @@
 							</c:otherwise>
 						</c:choose>
              </div>   
-    <input type="hidden" name="nid" value="${details.nid}" />
-    <input type="hidden" name="nimage" value="${details.nimage}" />
-	<div class="text-center"><button type="submit" class="btn" style="display: inline-block; padding: 10px 25px; border-radius: 2px; transition: 0.4s; margin: 10px; border-radius: 4px; border: 2px solid #f03c02; color: #f03c02; background: #fff;"
->수정</button></div>
-            </form>
-          </div>
-         </div>
-      </div>
-      </main>  
+                            
+                       
+      <br><br>
+                        <div class="vstack gap-2 col-md-5 mx-auto">
+                         <input type="hidden" name="nid" value="${details.nid}" />
    
+                            <button class="btn btn-primary" type="submit">수정</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        </main>  
 <script>
-
  $('#summernote').summernote({
-        placeholder: '공지 내용을 입력하세요',
+        placeholder: '내용을 입력하세요',
         tabsize: 2,
-        height: 300,
-
+        height: 400,
         toolbar: [
-          ['style', ['style']],
-          ['font', ['bold', 'underline', 'clear']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['table', ['table']],
-          ['insert', ['link', 'picture', 'video']],
-          ['view', ['fullscreen', 'codeview', 'help']]
-        ]
+        	['fontname', ['fontname']],
+		    ['fontsize', ['fontsize']],
+		    ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+		    ['color', ['forecolor','color']],
+		    ['table', ['table']],
+		    ['para', ['ul', 'ol', 'paragraph']],
+		    ['height', ['height']],
+		    ['insert',['picture','link']],
+		    ['view', ['fullscreen', 'help']]
+		  ],
+		fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
+		fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
+        
       });
-
-   $('#check').on('submit', function(e) {
-        if($('#summernote').summernote('isEmpty')) {
-           alert("내용이 비었습니다.");
-          e.preventDefault();
-        }
-        else {
-        }
-   })
- </script>   
-         
+ 
+ </script>
+ 
 </body>
-
 </html>

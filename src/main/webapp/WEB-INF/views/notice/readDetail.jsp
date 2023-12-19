@@ -4,21 +4,6 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-   crossorigin="anonymous"></script>
- <!-- Favicons -->
-
-  <!-- =======================================================
-  * Template Name: Flattern
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
-</head>
 <body>
   <main id="main">
 <br><br>
@@ -41,11 +26,11 @@
     <!-- ======= Blog Single Section ======= -->
     <sec:authentication property="principal" var="users"/> 
     <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
+      <div class="container d-flex align justify-content-center" data-aos="fade-up">
 
-        <div class="row">
+        <div class="row w-75 h-auto">
 
-          <div class="col-lg-8 entries">
+         
 
             <article class="entry entry-single">
             
@@ -57,24 +42,12 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>관리자</li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i>${details.ndate}</li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i>댓글 ${replyListsSize}</li>
+               
                 </ul>
               </div>
               <br>
               
-              <div class="container" style="padding-left: 1cm;">
-                <c:choose>
-					<c:when test="${not empty details.nimage}">
-					<br>
-              <div class="entry-img">
-               <img src="https://ekgkarlsruhe.cdn1.cafe24.com/notice/${details.nimage}"
-            width="500" height="auto" class="img-fluid">
-              </div>
-              </c:when>
-				</c:choose>
-				
-              </div>
-              
+         
               <div class="entry-content" style="padding-left: 6px;">
                 <p>${details.ncontent}</p>
               </div>
@@ -96,49 +69,9 @@
 
             </article><!-- End blog entry -->
 
-            <div class="blog-comments">
-            
-            <h4 class="comments-count">댓글 ${replyListsSize}</h4>
-           
-            <c:forEach items="${replyLists}" var="reply">
-              <div id="comment-1" class="comment">
-                <div class="d-flex">
-                 
-                  <div>
-                    <h5>${reply.nwriter}</h5> 
-                    <time datetime="2020-01-01">${reply.ndate}</time>
-                    <p>${reply.ncontent}
-                    </p>
-                    <sec:authorize access="hasAuthority('ROLE_ADMIN') or ${reply.nwriter == users.username}">
-                    <h6><a href="/notice/deleteReply?nid=${reply.nid}&noticenid=${details.nid}" class="reply" style="text-decoration: none; color: #f03c02;"><i class="bi bi-trash3"></i>삭제</a></h6>
-                    </sec:authorize>
-                   </div>
-                </div>
-                
-                </div><!-- End comment #1-->
 
-             </c:forEach>
 
-              <div class="reply-form">
-                
-                <form action="">
-          
-                  <div class="row">
-                    <div class="col form-group">
-                      <textarea id="rncontent" class="form-control" placeholder="댓글을 남겨주세요"></textarea>
-                    </div>
-                  </div>
-                  <input type="hidden" id="npid" name="npid" value="${details.nid}">
-                  <input type="hidden" id="nwriter" name="nwriter" value="${users.username}">
-                  <a href="javascript:createReply()" class="btn btn-primary">등록</a>
-
-                </form>
-
-              </div>
-
-            </div><!-- End blog comments -->
-
-          </div><!-- End blog entries list -->
+        <!-- End blog entries list -->
 
  
         </div>
@@ -151,36 +84,6 @@
  
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<script>
- function createReply() {
-
-   var npid = $("#npid").val();
-   var ncontent = $("#rncontent").val();
-   var nwriter = $("#nwriter").val();
-   
-   var requestData = {
-           npid: npid,
-           ncontent: ncontent,
-           nwriter: nwriter
-   };
-
-   $.ajax({
-      type : "post",
-      url : "/notice/createReply",
-      data: requestData,
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
-        },
-        success: function(result) {
-            alert("댓글이 등록되었습니다.");
-            window.location.reload();
-        },
-      error : function(request, status, error) {
-      }
-    });
- }
-</script>
-  <!-- Vendor JS Files -->
 
 
   <!-- Template Main JS File -->
