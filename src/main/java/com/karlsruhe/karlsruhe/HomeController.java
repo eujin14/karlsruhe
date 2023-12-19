@@ -105,34 +105,6 @@ public class HomeController {
 		return "location";
 	}
 	
-	//임시비밀번호
-	@RequestMapping(value="/findPwView" , method=RequestMethod.GET)
-	public String findPwView() throws Exception{
-		return"/users/findPwView";
-	}
-		
-	//임시비밀번호 발송
-	@ResponseBody
-	@RequestMapping(value = "/findPw", method = RequestMethod.POST, produces = {"text/html;charset=UTF-8"})
-	public ResponseEntity<String> findPw(@RequestParam("username") String username,
-	                                      @RequestParam("uemail") String uemail) {
-	    try {
-	        // Check if the username and email exist in the database
-	        UsersDTO user = usersService.memberExist(uemail);
-
-	        if (user != null && user.getUsername().equals(username)) {
-	            // Generate and send the temporary password
-	            usersService.findPw(uemail, username);
-	            return ResponseEntity.ok("임시메일이 전송되었습니다.");
-	        } else {
-	            // Return an error response to the client if username or email is invalid
-	            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("아이디와 이메일을 확인해주세요");
-	        }
-	    } catch (Exception e) {
-	        // Handle any other exceptions that may occur during the process
-	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error: " + e.getMessage());
-	    }
-	}
 	
 	
 }

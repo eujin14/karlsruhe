@@ -149,7 +149,7 @@ public class UsersController {
 	    return "<p>찾으시는 아이디는<span style=\"color:green\">" + username + "</span>입니다</p>";
 	  }
 		
-		//임시비밀번호
+	//임시비밀번호
 		@RequestMapping(value="/findPwView" , method=RequestMethod.GET)
 		public String findPwView() throws Exception{
 			return"/users/findPwView";

@@ -51,7 +51,7 @@
                 <div class="p-4 code-to-copy">
                        <form action="/admin/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="image1">첨부사진</label>
+                        <label class="col-sm-2 col-form-label" for="image1">메인 1번째 사진</label>
                         <div class="col-sm-8">
                             <input class="form-control" id="image1" name="image1" type="file" />
                         </div>
@@ -69,7 +69,7 @@
                 
                  <form action="/admin/create2?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="image2">첨부사진</label>
+                        <label class="col-sm-2 col-form-label" for="image2">메인 2번째 사진</label>
                         <div class="col-sm-8">
                             <input class="form-control" id="image2" name="image2" type="file"  />
                         </div>
@@ -87,7 +87,7 @@
                 
                  <form action="/admin/create3?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="image">첨부사진</label>
+                        <label class="col-sm-2 col-form-label" for="image">메인 3번째 사진</label>
                         <div class="col-sm-8">
                             <input class="form-control" id="image3" name="image3" type="file"  />
                         </div>

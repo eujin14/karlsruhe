@@ -53,6 +53,7 @@
 </div>
       </div>
     </section><!-- End About Us Section -->
+      <script src="/resources/assets/js/main.js"></script>
 
 
   </main><!-- End #main -->
