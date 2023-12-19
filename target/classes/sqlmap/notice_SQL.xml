@@ -5,9 +5,9 @@
 <insert id="create" parameterType="hashMap">
 <![CDATA[
    INSERT INTO notice
-   (npid, ntitle, nwriter, ncontent, nimage)
+   (ntitle, ncontent, npin)
    VALUES
-   (#{npid}, #{ntitle}, #{nwriter}, #{ncontent}, #{nimage})
+   (#{ntitle}, #{ncontent}, #{npin})
 ]]>
 </insert>
 
@@ -15,10 +15,8 @@
 <![CDATA[
    SELECT * FROM
       notice
-   WHERE 
-      npid IS NULL
    ORDER BY 
-      nid DESC
+      npin DESC, nid DESC
 ]]>
 </select>
 
@@ -32,23 +30,13 @@
 ]]>
 </select>
 
-<select id="readReply" parameterType="String" resultType="hashMap">
-<![CDATA[
-   SELECT * FROM 
-      notice
-   WHERE
-       npid = #{npid}
-   
-]]>
-</select>
 
 <update id="update" parameterType="hashMap" >
 <![CDATA[
    UPDATE notice SET
    ntitle = #{ntitle},
-   nwriter = #{nwriter},
    ncontent = #{ncontent},
-   nimage = #{nimage}
+   npin = #{npin}
       
    WHERE 
    nid = #{nid}

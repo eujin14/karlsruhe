@@ -9,7 +9,7 @@
   
 
 <body>
-<sec:authentication property="principal" var="users" />
+
  <main id="main" style="background-color: white;">
 <br><br>
     <!-- ======= Breadcrumbs ======= -->
@@ -27,48 +27,58 @@
 
       </div>
     </section><!-- End Breadcrumbs -->
-   
-     <div class="container" style="padding-left:150px; padding-right:150px;">
-     	<div class="card shadow-none border border-0 mb-3" style="background-color: white;"
+    
+    
+    <div class="container">
+
+<br>
+<div class="card shadow-none border border-300 mb-3"
 		data-component-card="data-component-card">
 
-			<div class="p-4 code-to-copy">
-			
-    <div class="card-body p-0">
+		<div class="card-header p-4 border-bottom border-300 bg-soft">
+		
+		<div class="row g-3 justify-content-between align-items-center">
+		<div class="col-12 col-md">
+<h5 class="card-title">안내사항과 중요한 행사 소식을 전달하는 공지게시판입니다.</h5>
+              <p>공지게시판을 통해 제공되는 정보를 확인해 주시기 바랍니다.</p>
+              </div>
+			</div>
+		</div>
+	
+<div class="card-body p-0">
 <div class="p-4 code-to-copy">
 <div id="tableExample3" data-list='{"valueNames":["nid","ntitle","ndate"],"page":10,"pagination":true,"filter":{"key":"ntitle"}}'>
-  <div class="row justify-content-end g-0">
-  <div class="search-box mb-3 mx-auto">
-    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-      <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
-      <span class="fas fa-search search-box-icon"></span>
-    </form>
-  </div>
-  </div>
   <div class="table-responsive">
-    <table class="table table-sm fs--1 mb-0">
+    <table class="table table-hover">
       <thead>
         <tr>
-        <th class="sort border-top text-center ps-3" data-sort="nid">번호</th>
-		<th class="sort border-top text-center" style=" padding-right:60px;" data-sort="ntitle">제목</th>
-		<th class="sort border-top text-center" data-sort="ntitle">작성자</th>
-		<th class="sort border-top text-center pe-3" data-sort="ndate">작성일</th>
-		
-        </tr>
+          <th class="sort border-top text-center ps-3" data-sort="nid">번호</th>
+          <th class="sort border-top text-center" data-sort="ntitle">제목</th>
+          <th class="sort border-top text-center" data-sort="nwriter">작성자</th>
+          <th class="sort border-top text-center text-end pe-3" scope="col" data-sort="ndate">작성일</th>
+         </tr>
       </thead>
       <tbody class="list" id="table-regions-by-revenue">
       <c:forEach items="${lists}" var="notice" varStatus="i">
-        <tr>
-        <td class="align-middle text-center ps-3 nid" style="width:100px;">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
-		<td class="align-middle ntitle" style="width:300px;"><a style="text-decoration: none; color: black;" href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
-		<td class="align-middle text-center nwriter" style="width:150px;">관리자</td>
-		<td class="align-middle text-center ndate py-3 pe-3" style="width:200px;">${notice.ndate}</td>
-		
+        <tr>          
+        <td class="align-middle text-center ps-3 nid">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
+          <td class="align-middle text-center ntitle"><a href="/notice/readDetail?nid=${notice.nid}">${notice.ntitle}</a></td>
+          <td class="align-middle text-center nwriter">관리자</td>
+          <td class="align-middle text-center text-end py-3 pe-3 ndate">${notice.ndate}</td>
+        
         </tr>
-      </c:forEach>
+        </c:forEach>
       </tbody>
     </table>
     </div>
+    <br>
+      <div class="row justify-content-end g-0">
+  <div class="search-box d-flex justify-content-center">
+    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+      <input class="form-control search-input search form-control-sm" type="search" placeholder="검색" aria-label="Search"style="width: 400px;"/>
+     </form>
+  </div>
+  </div>
    
 <div class="d-flex justify-content-between mt-3">
          <span class="d-none d-sm-inline-block"
@@ -82,7 +92,7 @@
                <span class="fas fa-chevron-right"></span>
             </button>
          </div>
-      </div>
+ </div>
  
  
  
@@ -90,15 +100,19 @@
   </div>
   </div>
  </div>
- </div>
-    </div>
-    </div>
-    
-    
-    </main>
-      <script src="/resources/assets/js/main.js"></script>
-    
+</div>
+</div>
+</main>
+<!-- Template Main JS File -->
+  <script src="/resources/assets/js/main.js"></script>
 </body>
-
 </html>
+    
+    
+    
+    
+    
+    
+    
+   
     

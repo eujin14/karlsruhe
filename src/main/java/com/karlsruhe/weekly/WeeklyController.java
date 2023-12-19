@@ -29,43 +29,8 @@ public class WeeklyController {
 	}
 
 	@PostMapping("/create")
-	public String create(@RequestParam Map<String, Object> map, @RequestParam("gimage") MultipartFile file) {
+	public String create(@RequestParam Map<String, Object> map) {
 
-	String filecheck = file.getOriginalFilename();
-
-			if (filecheck != null && !filecheck.trim().isEmpty()) {
-				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "ekgkarlsruhe";
-				String PSW = "gkdlel9254";
-				String REMOTE_DIRECTORY = "weekly";
-
-				String uuid = UUID.randomUUID().toString();
-				String filename = file.getOriginalFilename();
-				filename = uuid + "_" + filename;
-
-				FTPClient con = null;
-
-				try {
-					con = new FTPClient();
-					con.connect(FTP_ADDRESS);
-
-					if (con.login(LOGIN, PSW)) {
-						con.enterLocalPassiveMode();
-						con.setFileType(FTP.BINARY_FILE_TYPE);
-
-						con.changeWorkingDirectory(REMOTE_DIRECTORY);
-
-						con.storeFile(filename, file.getInputStream());
-						con.logout();
-						con.disconnect();
-						System.out.println("success!!!");
-					}
-				} catch (Exception e) {
-					System.out.println("fail!!!");
-				}
-				map.put("gimage", filename);
-
-			}
 	
 			weeklyService.create(map);
 			return "redirect:/weekly/readList";
@@ -94,43 +59,9 @@ public class WeeklyController {
 		
 		
 		@PostMapping("/update")
-		public String update(@RequestParam Map<String, Object> map, @RequestParam("gimage") MultipartFile file) {
+		public String update(@RequestParam Map<String, Object> map) {
 
-			String filecheck = file.getOriginalFilename();
-			if (filecheck != null && !filecheck.trim().isEmpty()) {
-				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
-				String LOGIN = "ekgkarlsruhe";
-				String PSW = "gkdlel9254";
-				String REMOTE_DIRECTORY = "weekly";
-
-				String uuid = UUID.randomUUID().toString();
-				String filename = file.getOriginalFilename();
-				filename = uuid + "_" + filename;
-
-				FTPClient con = null;
-
-				try {
-					con = new FTPClient();
-					con.connect(FTP_ADDRESS);
-
-					if (con.login(LOGIN, PSW)) {
-						con.enterLocalPassiveMode();
-						con.setFileType(FTP.BINARY_FILE_TYPE);
-
-						con.changeWorkingDirectory(REMOTE_DIRECTORY);
-
-						con.storeFile(filename, file.getInputStream());
-						con.logout();
-						con.disconnect();
-						System.out.println("success!!!");
-					}
-				} catch (Exception e) {
-					System.out.println("fail!!!");
-				}
-				map.put("gimage", filename);
-
-			}
-
+			
 			weeklyService.update(map);
 
 			return "redirect:/weekly/readList";

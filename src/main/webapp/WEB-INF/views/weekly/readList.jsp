@@ -28,47 +28,58 @@
       </div>
     </section><!-- End Breadcrumbs -->
    
-     <div class="container" style="padding-left:150px; padding-right:150px;">
-     	<div class="card shadow-none border border-0 mb-3" style="background-color: white;"
+      
+    
+    <div class="container">
+
+<br>
+<div class="card shadow-none border border-300 mb-3"
 		data-component-card="data-component-card">
 
-			<div class="p-4 code-to-copy">
-			
-    <div class="card-body p-0">
+		<div class="card-header p-4 border-bottom border-300 bg-soft">
+		
+		<div class="row g-3 justify-content-between align-items-center">
+		<div class="col-12 col-md">
+<h5 class="card-title"> 매주 주보가 업데이트되는 주보게시판입니다.</h5>
+              <p>다가오는 주일 예배 안내 및 교회 소식을 확인해 주시기 바랍니다.</p>
+              </div>
+			</div>
+		</div>
+	
+<div class="card-body p-0">
 <div class="p-4 code-to-copy">
 <div id="tableExample3" data-list='{"valueNames":["gid","gtitle","gdate"],"page":10,"pagination":true,"filter":{"key":"gtitle"}}'>
-  <div class="row justify-content-end g-0">
-  <div class="search-box mb-3 mx-auto">
-    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-      <input class="form-control search-input search form-control-sm" type="search" placeholder="Search" aria-label="Search" />
-      <span class="fas fa-search search-box-icon"></span>
-    </form>
-  </div>
-  </div>
   <div class="table-responsive">
-    <table class="table table-sm fs--1 mb-0">
+    <table class="table table-hover">
       <thead>
         <tr>
-        <th class="sort border-top text-center ps-3" data-sort="gid">번호</th>
-		<th class="sort border-top text-center" style=" padding-right:60px;" data-sort="gtitle">제목</th>
-		<th class="sort border-top text-center" data-sort="gtitle">작성자</th>
-		<th class="sort border-top text-center pe-3" data-sort="gdate">작성일</th>
-		
-        </tr>
+          <th class="sort border-top text-center ps-3" data-sort="gid">번호</th>
+          <th class="sort border-top text-center" data-sort="gtitle">제목</th>
+          <th class="sort border-top text-center" data-sort="gwriter">작성자</th>
+          <th class="sort border-top text-center text-end pe-3" scope="col" data-sort="gdate">작성일</th>
+         </tr>
       </thead>
       <tbody class="list" id="table-regions-by-revenue">
       <c:forEach items="${lists}" var="weekly" varStatus="i">
-        <tr>
-        <td class="align-middle text-center ps-3 gid" style="width:100px;">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
-		<td class="align-middle gtitle" style="width:300px;"><a style="text-decoration: none; color: black;" href="/weekly/readDetail?gid=${weekly.gid}">${weekly.gtitle}</a></td>
-		<td class="align-middle text-center gwriter" style="width:150px;">관리자</td>
-		<td class="align-middle text-center gdate py-3 pe-3" style="width:200px;">${weekly.gdate}</td>
-		
+        <tr>          
+        <td class="align-middle text-center ps-3 gid">${totalRecordCount - ((currentPage * recordsPerPage) - i.index) + 1}</td>
+          <td class="align-middle text-center gtitle"><a href="/weekly/readDetail?gid=${weekly.gid}">${weekly.gtitle}</a></td>
+          <td class="align-middle text-center gwriter">관리자</td>
+          <td class="align-middle text-center text-end py-3 pe-3 gdate">${weekly.gdate}</td>
+        
         </tr>
-      </c:forEach>
+        </c:forEach>
       </tbody>
     </table>
     </div>
+    <br>
+      <div class="row justify-content-end g-0">
+  <div class="search-box d-flex justify-content-center">
+    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+      <input class="form-control search-input search form-control-sm" type="search" placeholder="검색" aria-label="Search"style="width: 400px;"/>
+     </form>
+  </div>
+  </div>
    
 <div class="d-flex justify-content-between mt-3">
          <span class="d-none d-sm-inline-block"
@@ -90,20 +101,17 @@
   </div>
   </div>
  </div>
- </div>
-    </div>
-    </div>
-    
-    
-    </main>
-    
-          <script src="/resources/assets/js/main.js"></script>
+</div>
+</div>
+</main>
+<!-- Template Main JS File -->
+  <script src="/resources/assets/js/main.js"></script>
 </body>
-
 </html>
     
-
-
-
-
-	
+    
+    
+    
+   
+   
+   
