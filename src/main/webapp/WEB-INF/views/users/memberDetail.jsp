@@ -43,7 +43,7 @@
 
               <div class="card mb-9">
                 <div class="card-body">
-                  <h1 class="lh-sm fs-2 fs-xxl-4 mb-2">회원 정보 수정</h1>
+                  <h1 class="lh-sm fs-2 fs-xxl-4 mb-2">회원 정보 </h1>
                   <div class="card mb-5 mb-xxl-7">
                     <div class="card-body">  
                           <div>
