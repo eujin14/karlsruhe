@@ -48,19 +48,19 @@
                 </div>
             </div>
     <div class="card-body p-0">
-                <div class="p-4 code-to-copy">
-                       <form id="check1" action="/admin/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+                <div class="p-4 code-to-copy">  
+                      <form id="check3" action="/admin/create3?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label" for="image1">첨부사진</label>
+                        <label class="col-sm-2 col-form-label" for="image3">첨부사진</label>
                         <div class="col-sm-8">
-                            <input class="form-control" id="image1" name="image1" type="file" required />
+                            <input class="form-control" id="image3" name="image3" type="file" required />
                         </div>
                         <div class="col-sm-2">
                             <!-- Move the 등록 button next to the file input -->
                             <button class="btn btn-primary" type="submit">등록</button>
                         </div>
                         <div class="col-sm-12 mt-2">
-                                                                                     ※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
+                            ※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
                         </div>
                     </div>
                 </form>
