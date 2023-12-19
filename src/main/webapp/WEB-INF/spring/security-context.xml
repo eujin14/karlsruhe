@@ -17,10 +17,8 @@
 	      <security:intercept-url pattern="/users/memberUpdate" access="isAuthenticated()"/>
 	      <security:intercept-url pattern="/users/updatePw" access="isAuthenticated()"/>
 		  <!-- 게시판 페이지 security 처리 -->
-		  <security:intercept-url pattern="/board/readList" access="isAuthenticated()"/>
 		  <security:intercept-url pattern="/board/create" access="isAuthenticated()"/>
 		   <!-- 갤러리 페이지 security 처리 -->
-	      <security:intercept-url pattern="/photo/readList" access="isAuthenticated()"/>
 	      <security:intercept-url pattern="/photo/create" access="isAuthenticated()"/>
 		  <!-- 공지사항 페이지 security 처리 -->
 		   <security:intercept-url pattern="/notice/readList" access="permitAll"/>

@@ -17,7 +17,7 @@
 <beans:property name="definitions" value="/WEB-INF/tiles/tiles.xml"/>
 </beans:bean>
 <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-<beans:property name="maxUploadSize" value="1000000"/>
+<beans:property name="maxUploadSize" value="52428000"/>
 <beans:property name="defaultEncoding" value="utf-8"/>
 <beans:property name="uploadTempDir" ref="uploadDirResource"/>
 </beans:bean>

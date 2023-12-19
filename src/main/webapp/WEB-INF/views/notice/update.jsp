@@ -15,8 +15,10 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
-<meta charset="UTF-8">
 <title>공지사항 수정</title>
+<body>
+<!-- 로그인 정보 받기 -->
+<sec:authentication property="principal" var="user" />
 <main id="main">
 <br><br>
     <!-- ======= Breadcrumbs ======= -->
