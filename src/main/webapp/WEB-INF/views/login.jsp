@@ -74,7 +74,7 @@ mail : gkdlel9254 @ gmail.com
             </div>
               <a href="/users/findId" >아이디찾기</a>
                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-              <a href="/findPwView" >비밀번호 찾기</a>
+              <a href="/users/findPwView" >비밀번호 찾기</a>
              <br><br>
              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
             <button class="btn btn-primary w-100 mb-3">로그인</button>

@@ -43,6 +43,7 @@
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
                   <p>ji02suk77@hotmail.com<br></p>
+                  <p> ekgkarlsruhe@gmail.com<br></p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">

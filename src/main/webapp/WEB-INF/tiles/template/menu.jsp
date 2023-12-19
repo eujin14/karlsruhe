@@ -14,10 +14,8 @@
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between">
-
      <div class="logo d-flex align-items-center">
     <a href="/" class="d-flex align-items-center text-decoration-none">
-        <img src="/resources/images/logo3.png" width="98px" alt="" class="img-fluid me-2">
         <h1 class="text-dark mb-0">ekgkarlsruhe</h1>
     </a>
      </div>

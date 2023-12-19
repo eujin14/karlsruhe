@@ -111,9 +111,6 @@ public class AdminController {
 	@PostMapping("/create2")
 	public String create2(@RequestParam Map<String, Object> map, @RequestParam("image2") MultipartFile file) {
 
-		
-
-	
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 			String LOGIN = "ekgkarlsruhe";
 			String PSW = "gkdlel9254";
@@ -156,9 +153,7 @@ public class AdminController {
 	@PostMapping("/create3")
 	public String create3(@RequestParam Map<String, Object> map, @RequestParam("image3") MultipartFile file) {
 
-		String filecheck = file.getOriginalFilename();
 
-		if (filecheck != null && !filecheck.trim().isEmpty()) {
 			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 			String LOGIN = "ekgkarlsruhe";
 			String PSW = "gkdlel9254";
@@ -189,7 +184,7 @@ public class AdminController {
 				System.out.println("fail!!!");
 			}
 			map.put("image3", "image3");
-		}
+
 	
 		return "redirect:/";
 	}
