@@ -26,11 +26,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Gallery</h2>
+          <h2>main</h2>
           <ol>
             <li><a href="/">홈</a></li>
-            <li><a href="/photo/readList">Gallery</a></li>
-            <li>${photo.ptitle}</li>
+            <li><a href="/admin/create">main</a></li>
           </ol>
         </div>
 
@@ -53,7 +52,7 @@
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="image1">메인 1번째 사진</label>
                         <div class="col-sm-8">
-                            <input class="form-control" id="image1" name="image1" type="file" />
+                            <input class="form-control" id="image1" name="filename1" type="file" />
                         </div>
                         <div class="col-sm-2">
                             <!-- Move the 등록 button next to the file input -->
