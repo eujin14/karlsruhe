@@ -49,7 +49,7 @@
     <div class="card-body p-0">
                 <div class="p-4 code-to-copy">
 
-   <form action="/notice/update?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+   <form id="check" action="/notice/update?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
        <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="ntitle">제목</label>
                             <div class="col-sm-10">
@@ -135,6 +135,13 @@
 		fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
         
       });
+ $('#check').on('submit', function(e) {
+		if ($('#summernote').summernote('isEmpty')) {
+			alert("내용이 비었습니다.");
+			e.preventDefault();
+		} else {
+		}
+	})
  
  </script>
  
