@@ -76,7 +76,7 @@
       <div class="row justify-content-end g-0">
   <div class="search-box d-flex justify-content-center">
     <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
-      <input class="form-control search-input search form-control-sm" type="search" placeholder="검색" aria-label="Search"style="width: 400px;"/>
+      <input class="form-control search-input search form-control-sm" type="search" placeholder="검색" aria-label="Search"style="width: 350px;"/>
      </form>
   </div>
   </div>
