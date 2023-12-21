@@ -266,7 +266,7 @@ public class AdminController {
 
 		model.addAttribute("admin", adminService.readDetail(id));
 		
-		return "admin/readDetail";
+		return "main";
 	}
 
 }
