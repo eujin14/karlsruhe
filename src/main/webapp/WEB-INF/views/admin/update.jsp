@@ -42,13 +42,13 @@
             <div class="card-header p-4 border-bottom border-300 bg-soft">
                 <div class="row g-3 justify-content-between align-items-center">
                     <div class="col-12 col-md">
-                        <h4 class="text-900 mb-0" data-anchor="data-anchor">사진 등록</h4>
+                        <h4 class="text-900 mb-0" data-anchor="data-anchor">사진 수정</h4>
                     </div>
                 </div>
             </div>
     <div class="card-body p-0">
                 <div class="p-4 code-to-copy">
-                       <form action="/admin/create?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+                       <form action="/admin/update?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <label class="col-sm-2 col-form-label" for="image1">메인 1번째 사진</label>
                         <div class="col-sm-8">
@@ -59,16 +59,50 @@
                             <button class="btn btn-primary" type="submit">등록</button>
                         </div>
                         <div class="col-sm-12 mt-2">
-                                                                                     ※ 개별 이미지의 파일 사이즈는 1Mbyte를 초과할 수 없습니다.
+                                                                                     ※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
+                        </div>
+                        <input type="hidden" name="${_csrf.parameterName}"
+                  value="${_csrf.token}" />
+                   <input type="hidden" name="id" value="${admin.id}" />
+						<input type="hidden" name="image1" value="${admin.image1}" />
+                    </div>
+                </form>
+                
+                 <form action="/admin/create2?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="image2">메인 2번째 사진</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="image2" name="image2" type="file"  />
+                        </div>
+                        <div class="col-sm-2">
+                            <!-- Move the 등록 button next to the file input -->
+                            <button class="btn btn-primary" type="submit">등록</button>
+                        </div>
+                        <div class="col-sm-12 mt-2">
+                                                                                     ※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
                         </div>
                         <input type="hidden" name="${_csrf.parameterName}"
                   value="${_csrf.token}" />
                     </div>
                 </form>
                 
-                
-                
-                
+                 <form action="/admin/create3?${_csrf.parameterName}=${_csrf.token}" method="post" enctype="multipart/form-data">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="image">메인 3번째 사진</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="image3" name="image3" type="file"  />
+                        </div>
+                        <div class="col-sm-2">
+                            <!-- Move the 등록 button next to the file input -->
+                            <button class="btn btn-primary" type="submit">등록</button>
+                        </div>
+                        <div class="col-sm-12 mt-2">
+                                                                                     ※ 개별 이미지의 파일 사이즈는 Mbyte를 초과할 수 없습니다.
+                        </div>
+                        <input type="hidden" name="${_csrf.parameterName}"
+                  value="${_csrf.token}" />
+                    </div>
+                </form>
                 </div>
             </div>
         </div>  

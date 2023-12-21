@@ -16,40 +16,42 @@ public class AdminRepositoryImpl implements AdminRepository {
 	@Override
 	public void create(Map<String, Object> map) {
 		 sqlSessionTemplate.insert("admin.create", map);
-		
 	}
 
 	@Override
 	public void create2(Map<String, Object> map) {
 		 sqlSessionTemplate.insert("admin.create2", map);
-		
 	}
 
 	@Override
 	public void create3(Map<String, Object> map) {
 		 sqlSessionTemplate.insert("admin.create3", map);
-		
 	}
 
 	@Override
-	public List<Map<String, Object>> readList1() {
-		// TODO Auto-generated method stub
-		return null;
+	public void update(Map<String, Object> map) {
+		sqlSessionTemplate.update("admin.update",map);
 	}
 
 	@Override
-	public List<Map<String, Object>> readList2() {
-		// TODO Auto-generated method stub
-		return null;
+	public void update2(Map<String, Object> map) {
+		sqlSessionTemplate.update("admin.update2",map);		
 	}
 
 	@Override
-	public List<Map<String, Object>> readList3() {
-		// TODO Auto-generated method stub
-		return null;
+	public void update3(Map<String, Object> map) {
+		sqlSessionTemplate.update("admin.update3",map);		
 	}
 
+	@Override
+	public Map<String, Object> readDetail(String id) {
+		return sqlSessionTemplate.selectOne("admin.readDetail",id);
+	}
 
+	@Override
+	public List<Map<String, Object>> readList() {
+		return sqlSessionTemplate.selectList("admin.readList");
+	}
 
 
 }

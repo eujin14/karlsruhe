@@ -106,7 +106,7 @@ public class AdminController {
 			map.put("image1", filename);
 		}
 		adminService.create(map);
-		return "redirect:/";
+		return "redirect:/admin/readList";
 	}
 	
 	
@@ -203,4 +203,70 @@ public class AdminController {
 		adminService.create3(map);
 		return "redirect:/";
 	}
+	
+	@GetMapping("/update")
+	public String update(@RequestParam("id") String id, Model model) {
+
+		model.addAttribute("admin", adminService.readDetail(id));
+
+		return "admin/update";
+	}
+
+	// U 저장시에 사진값이 mdn에 담길 수 있는 방법 + 사진이 안 담겼을 경우 mdn에 저장 되지 않게함
+	@PostMapping("/update")
+	public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("image1") MultipartFile file) {
+		String filecheck = file.getOriginalFilename();
+
+		if (filecheck != null && !filecheck.trim().isEmpty()) {
+			String FTP_ADDRESS = "iup.cdn1.cafe24.com";
+			String LOGIN = "ekgkarlsruhe";
+			String PSW = "gkdlel9254";
+
+			String uuid = UUID.randomUUID().toString();
+			String filename = file.getOriginalFilename();
+			filename = uuid + "_" + filename;
+
+			FTPClient con = null;
+
+			try {
+				con = new FTPClient();
+				con.connect(FTP_ADDRESS);
+
+				if (con.login(LOGIN, PSW)) {
+					con.enterLocalPassiveMode();
+					con.setFileType(FTP.BINARY_FILE_TYPE);
+
+					con.changeWorkingDirectory("main1");
+
+					con.storeFile(filename, file.getInputStream());
+					con.logout();
+					con.disconnect();
+					System.out.println("success!!!");
+				}
+			} catch (Exception e) {
+				System.out.println("fail!!!");
+			}
+			map.put("image1", filename);
+
+		}
+
+		adminService.update(map);
+
+		return "redirect:/";
+	}
+	@GetMapping("/readList")
+	public String readList(Model model) {
+
+		model.addAttribute("admin", adminService.readList());
+
+		return "admin/readList";
+	}
+	@GetMapping("/readDetail")
+	public String readDetail(@RequestParam String id, Model model) {
+
+		model.addAttribute("admin", adminService.readDetail(id));
+		
+		return "admin/readDetail";
+	}
+
 }
