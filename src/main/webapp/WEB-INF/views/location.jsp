@@ -42,14 +42,13 @@
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="bi bi-envelope"></i>
                   <h4>Email:</h4>
-                  <p>ji02suk77@hotmail.com<br></p>
                   <p> ekgkarlsruhe@gmail.com<br></p>
                 </div>
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="bi bi-phone"></i>
                   <h4>Call:</h4>
-                  <p>+49721567137<br></p>
+                  <p><br></p>
                 </div>
               </div>
             </div>
@@ -63,20 +62,6 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
-   <!-- ======= Footer ======= -->
-  
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="/resources/assets/vendor/aos/aos.js"></script>
-  <script src="/resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/resources/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/resources/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/resources/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/resources/assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/resources/assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="/resources/assets/js/main.js"></script>

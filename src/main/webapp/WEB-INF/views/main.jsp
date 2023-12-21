@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,22 +15,23 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-      <!--   <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg);">
+      <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url(/resources/assets/img/main.jpg); ">
           <div class="carousel-container">
           </div>
-        </div> -->
-        <img src="https://ekgkarlsruhe.cdn1.cafe24.com/main1/${admin.image1}" width="500" height="auto" class="img-fluid">
+        </div>
+
         <!-- Slide 2 -->
-      <!--   <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg);">
+        <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg);">
           <div class="carousel-container">
           </div>
-        </div> -->
+        </div>
 
         <!-- Slide 3 -->
-      <!--   <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.jpg);">
+        <div class="carousel-item" style="background-image: url(/resources/assets/img/main2.png);">
           <div class="carousel-container">
           </div>
-        </div> -->
+        </div>
 
       </div>
 
