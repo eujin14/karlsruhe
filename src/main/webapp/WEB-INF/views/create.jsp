@@ -49,7 +49,7 @@ function checkMember() {
     }
 
     if (!regExpTel.test(utel)) {
-        alert("올바른 연락처를 입력하세요. (XXX-XXXX-XXXX).");
+        alert("올바른 연락처를 입력하세요. (-는 빼고 입력해주세요).");
         return false;
     }
 

@@ -75,8 +75,9 @@
           <div class="col-lg-4 col-md-6">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="30">
               <div class="icon"><i class="bi bi-binoculars"></i></div>
-              <h4 class="title"><a href="">자유 게시판&갤러리</a></h4>
-              <p class="description">자유 게시판&갤러리는 로그인해야  보실 수 있습니다.</p>
+              <h4 class="title"><a href="/board/readList">자유 게시판</a></h4>
+              <h4 class="title"><a href="/photo/readList">갤러리</a></h4>
+              <p class="description">자유 게시판&갤러리 클릭시  보실 수 있습니다.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
