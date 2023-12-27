@@ -31,6 +31,7 @@ public class PhotoController {
 		public String create(@RequestParam Map<String, Object> map, @RequestParam("pimage") MultipartFile file) {
 
 			String filecheck = file.getOriginalFilename();
+			String nfilename = "";
 
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
@@ -40,7 +41,8 @@ public class PhotoController {
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
-				filename = uuid + "_" + filename;
+				String tarr = filename.split("\\.")[1];
+				nfilename = uuid + "." + tarr;
 
 				FTPClient con = null;
 
@@ -54,7 +56,7 @@ public class PhotoController {
 
 						con.changeWorkingDirectory(REMOTE_DIRECTORY);
 
-						con.storeFile(filename, file.getInputStream());
+						con.storeFile(nfilename, file.getInputStream());
 						con.logout();
 						con.disconnect();
 						System.out.println("success!!!");
@@ -62,7 +64,7 @@ public class PhotoController {
 				} catch (Exception e) {
 					System.out.println("fail!!!");
 				}
-				map.put("pimage", filename);
+				map.put("pimage", nfilename);
 			}
 			photoService.create(map);
 			return "redirect:/photo/readList";
@@ -101,9 +103,10 @@ public class PhotoController {
 
 		// U 저장시에 사진값이 mdn에 담길 수 있는 방법 + 사진이 안 담겼을 경우 mdn에 저장 되지 않게함
 		@PostMapping("/update")
-		public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("pimage") MultipartFile file) {
+		public String updatepost(@RequestParam Map<String, Object> map, @RequestParam("pimage") MultipartFile file,@RequestParam("pno") String pno) {
 			String filecheck = file.getOriginalFilename();
 
+			String nfilename = "";
 			if (filecheck != null && !filecheck.trim().isEmpty()) {
 				String FTP_ADDRESS = "iup.cdn1.cafe24.com";
 				String LOGIN = "ekgkarlsruhe";
@@ -111,7 +114,10 @@ public class PhotoController {
 
 				String uuid = UUID.randomUUID().toString();
 				String filename = file.getOriginalFilename();
-				filename = uuid + "_" + filename;
+				String tarr = filename.split("\\.")[1];
+				nfilename = uuid + "." + tarr;
+
+				
 
 				FTPClient con = null;
 
@@ -125,7 +131,7 @@ public class PhotoController {
 
 						con.changeWorkingDirectory("photo");
 
-						con.storeFile(filename, file.getInputStream());
+						con.storeFile(nfilename, file.getInputStream());
 						con.logout();
 						con.disconnect();
 						System.out.println("success!!!");
@@ -133,7 +139,8 @@ public class PhotoController {
 				} catch (Exception e) {
 					System.out.println("fail!!!");
 				}
-				map.put("pimage", filename);
+				map.put("pimage", nfilename);
+				map.put("pno", pno);
 			}
 			photoService.update(map);
 			return "redirect:/photo/readList";
