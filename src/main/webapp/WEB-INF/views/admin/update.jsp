@@ -55,9 +55,10 @@
 					        </div>
 					        <div class="col-sm-2">
 					            <button class="btn btn-primary" type="submit" style="font-size: 14px;">수정</button>
+					        						<img src="https://ekgkarlsruhe.cdn1.cafe24.com/main/${img1}" style="width: 120px; height: auto;" class="img-fluid">
+					        
 					        </div>
 					    </div>
-						<img src="https://ekgkarlsruhe.cdn1.cafe24.com/main/${img1}" style="width: 120px; height: auto;" class="img-fluid">
 						<input type="hidden" name="timg" value="${img1}" />
 						<input type="hidden" name="img" value="img1" />
 					</form>
@@ -75,9 +76,10 @@
 					        </div>
 					        <div class="col-sm-2">
 					            <button class="btn btn-primary" type="submit" style="font-size: 14px;">수정</button>
+					        <img src="https://ekgkarlsruhe.cdn1.cafe24.com/main/${img2}" style="width: 120px; height: auto;" class="img-fluid">
+					        
 					        </div>
 					    </div>
-						<img src="https://ekgkarlsruhe.cdn1.cafe24.com/main/${img2}" style="width: 120px; height: auto;" class="img-fluid">
 					
 								<input type="hidden" name="timg" value="${img2}" />
 						<input type="hidden" name="img" value="img2" />
@@ -97,9 +99,10 @@
 					        </div>
 					        <div class="col-sm-2">
 					            <button class="btn btn-primary" type="submit" style="font-size: 14px;">수정</button>
+					          <img src="https://ekgkarlsruhe.cdn1.cafe24.com/main/${img3}" style="width: 120px; height: auto;" class="img-fluid">
+					        
 					        </div>
 					    </div>
-										    <img src="https://ekgkarlsruhe.cdn1.cafe24.com/main/${img3}" style="width: 120px; height: auto;" class="img-fluid">
 					
 								<input type="hidden" name="timg" value="${img3}" />
 						<input type="hidden" name="img" value="img3" />
