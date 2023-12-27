@@ -9,11 +9,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import com.karlsruhe.admin.AdminService;
 import com.karlsruhe.users.UsersService;
 
 
@@ -24,10 +25,16 @@ public class HomeController {
 	private UsersService usersService;
 
 	
+	@Autowired
+	private AdminService adminService;
+	
 	@GetMapping("/")
-	public String home() {
+	public String home(Model model) {
 		
-
+		model.addAttribute("img1", adminService.readDetail("img1"));
+		model.addAttribute("img2", adminService.readDetail("img2"));
+		model.addAttribute("img3", adminService.readDetail("img3"));
+		
 		return "main";
 	}
 	

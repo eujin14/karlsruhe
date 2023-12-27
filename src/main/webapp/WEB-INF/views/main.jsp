@@ -16,19 +16,23 @@
 
         <!-- Slide 1 -->
       <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(/resources/assets/img/main.jpg); width: 100%; background-size: 100% 100%;">
+        <div class="carousel-item active" style="background-image: url(https://ekgkarlsruhe.cdn1.cafe24.com/main/${img1}); width: 100%; background-size: 100% 100%;">
           <div class="carousel-container">
           </div>
         </div>
 
         <!-- Slide 2 -->
-         <div class="carousel-item" style="background-image: url(/resources/assets/img/main1.jpg); width: 100%; background-size: 100% 100%;">
+         <div class="carousel-item" style="background-image: url(https://ekgkarlsruhe.cdn1.cafe24.com/main/${img2}); width: 100%; background-size: 100% 100%;">
           <div class="carousel-container">
           </div>
         </div>
 
-    
-      </div>
+         <!-- Slide 3 -->
+         <div class="carousel-item" style="background-image: url(https://ekgkarlsruhe.cdn1.cafe24.com/main/${img3}); width: 100%; background-size: 100% 100%;">
+          <div class="carousel-container">
+          </div>
+        </div>
+    </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bx bx-left-arrow" aria-hidden="true"></span>

@@ -33,6 +33,14 @@
 
         <div class="row">
           
+            <div class="col-lg-4 col-md-6">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bi bi-card-checklist"></i></div>
+              <h4 class="title"><a href="/admin/update">메인사진 수정</a></h4>
+              <p class="description">메인 사진 수정</p>
+            </div>
+          </div>
+          
           <div class="col-lg-4 col-md-6">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bi bi-card-checklist"></i></div>
