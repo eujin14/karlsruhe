@@ -72,7 +72,7 @@ public class UsersRepositoryImpl implements UsersRepository {
 	    }
 
 	@Override
-	public int findPwCheck(UsersDTO usersDTO) throws Exception {
+	public UsersDTO  findPwCheck(UsersDTO usersDTO) throws Exception {
 		return sqlSessionTemplate.selectOne("users.findPwCheck", usersDTO);		}
 
 

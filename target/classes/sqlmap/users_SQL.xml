@@ -74,7 +74,7 @@
 		 ]]>
 </select>
 
-    <update id="findPw" >
+    <update id="findPw"  parameterType="hashMap">
     	<![CDATA[
 		update users set 
 		password = #{password} 
@@ -105,7 +105,7 @@
     ]]>
 </select>
 
-	<update id="updatePasswordUsers" parameterType="hashMap">
+	<update id="updatePasswordUsers" parameterType="com.karlsruhe.users.UsersDTO">
 	<![CDATA[
 		UPDATE users 
 			SET

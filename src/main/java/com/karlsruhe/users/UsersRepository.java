@@ -32,7 +32,7 @@ public interface UsersRepository {
 	 String findIdUser(String uname, String utel);
 	 
 	 
-	 int findPwCheck(UsersDTO usersDTO)throws Exception; 
+	 UsersDTO  findPwCheck(UsersDTO usersDTO)throws Exception; 
 	 
 	 int findPw(@Param("password") String password, @Param("uemail") String uemail, @Param("username") String username) throws Exception;
 

@@ -131,7 +131,8 @@
                         error: function(logoutError) {
                             // Handle errors if any during logout
                             console.error("Error during logout: ", logoutError);
-                            alert("Error during logout. Please try again.");
+                            alert("회원탈퇴 성공  로그아웃 해주시면 됩니다.");
+                            window.location.href = "/";
                         }
                     });
                 },

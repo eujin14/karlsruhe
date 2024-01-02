@@ -1,10 +1,10 @@
 package com.karlsruhe.users;
 
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -76,7 +76,7 @@ public  class UsersServiceImpl implements UsersService {
 		  }
 
 	@Override
-	public int findPwCheck(UsersDTO usersDTO) throws Exception {
+	public UsersDTO findPwCheck(UsersDTO usersDTO) throws Exception {
 		return usersRepository.findPwCheck(usersDTO);
 	}
 

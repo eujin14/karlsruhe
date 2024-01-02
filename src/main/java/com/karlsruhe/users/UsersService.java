@@ -23,7 +23,7 @@ public interface UsersService {
 
 	Map<String, Object> getUserDataByUsername(String username);
 		
-	int findPwCheck(UsersDTO usersDTO)throws Exception; 
+	UsersDTO findPwCheck(UsersDTO usersDTO)throws Exception; 
 	 
 	void  findPw(String uemail,String username)throws Exception;
 	 
