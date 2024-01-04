@@ -47,8 +47,8 @@
 
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="bi bi-phone"></i>
-                  <h4>Call:</h4>
-                  <p><br></p>
+                  <h4>time:</h4>
+                  <p>pm 14:00<br></p>
                 </div>
               </div>
             </div>
