@@ -48,7 +48,7 @@
                 <div class="col-lg-4 info mt-4 mt-lg-0">
                   <i class="bi bi-phone"></i>
                   <h4>time:</h4>
-                  <p>pm 14:00<br></p>
+                  <p>예배시간:pm 14:00<br></p>
                 </div>
               </div>
             </div>
